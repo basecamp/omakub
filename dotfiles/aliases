@@ -1,0 +1,16 @@
+# File system
+alias ls='eza -lh --group-directories-first --icons'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
+
+# Tools
+alias n='nvim'
+alias g='git'
+alias d='docker'
+alias bat='batcat'
+
+# Git
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gcad='git commit -a --amend'
+

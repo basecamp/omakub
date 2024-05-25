@@ -1,0 +1,30 @@
+# History control
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Autocompletion
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+fi
+
+# Prefer current-directory bins
+export PATH="./bin:$PATH"
+set +h
+
+# Load configuration first from omabox, then local overwrites
+for file in ~/.{prompt,exports,aliases}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+	[ -r "$file.local" ] && [ -f "$file.local" ] && source "$file.local"
+done
+unset file
+
+# Run iniitializers
+eval "$(rbenv init - bash)"
+eval "$(nodenv init -)"
+eval "$(zoxide init bash)"
