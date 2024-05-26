@@ -17,7 +17,7 @@ sudo apt install xournalpp nautilus-dropbox alacritty
 sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 
 # Installers
-source install/*.sh
+source "$(pwd)"/install/*.sh
 
 # Configuration
 gh auth login
