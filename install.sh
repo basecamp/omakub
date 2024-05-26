@@ -9,12 +9,12 @@ sudo apt install -y \
 
 # CLI apps
 sudo apt install -y git curl fzf ripgrep bat eza zoxide btop apache2-utils
-sudo snap install code --classic
 sudo snap install zellij --classic
 
 # GUI apps
 sudo apt install -y xournalpp alacritty
 sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
+sudo snap install code --classic
 
 # Installers
 for script in ~/.omakub/install/*.sh; do source $script; done
