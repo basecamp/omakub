@@ -1,8 +1,8 @@
 # History control
 shopt -s histappend
 HISTCONTROL=ignoreboth
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=32768
+HISTFILESIZE="${HISTSIZE}"
 
 # Autocompletion
 source /usr/share/bash-completion/bash_completion
