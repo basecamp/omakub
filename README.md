@@ -54,3 +54,9 @@ Omakub was started by David Heinemeier Hansson to streamling his own Linux box b
 Omakub is being born as a single, curated setup for one specific company in one particular domain. Going forward, we could well expand that to just be a shared base, where further specialization by other curators is possible.
 
 But anyone using Omakub should still just have to run 1 command and the result should be 1 specific setup.
+
+## FAQ
+
+### Why not just use nixOS?
+
+Ubuntu is the most popular mainstream Linux distribution. It's available out-of-the-box from major manufacturers. It's learning curve is low, it's polished, it's stable, and if you hit problems, you'll easily find others online with the same issue. That doesn't mean it's The Best. Nobody is ever going to convince all existing Linux users that their distro of choice isn't actually better. And some, like nixOS, have been specifically designed for some of the same preconfiguration ideas that we're exploring here. But it just doesn't matter. This is a project for tailoring Ubuntu (and derivatives built on it and similar base elements).
