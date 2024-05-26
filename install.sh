@@ -21,6 +21,3 @@ sudo snap install code --classic
 # Installers
 echo -e "\e[32mRUNNING CUSTOM INSTALLERSe[0m"
 for script in ~/.omakub/install/*.sh; do source $script; done
-
-# Start services
-for script in ~/.omakub/start/*.sh; do source $script; done

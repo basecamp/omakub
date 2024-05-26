@@ -12,10 +12,6 @@ Ubuntu has a great pair of package managers in apt and snap, but many of the too
 
 Half the battle of getting a great development experience going on Linux lies in the dotfiles that control the configuration. Linux gets great power from how customizable it is, but that also presents a paradox of choice and a tall learning curve. Having good, curated defaults that integrate all the many tools in a coherent feel and look can help more developers acquire a taste for Linux, which they may then later inspire a fully bespoke setup (or not!).
 
-## Starters
-
-Many developers need to work with multiple versions of services like MySQL or Redis. There's a ton of different ways to solve that problem, but one easy one is use Docker, so that's what Omakub does. Instead of installing these services directly on the operating system, we run them as containers that can easily be swapped or run concurrently in different versions. 
-
 ## The Omakase Spirit
 
 Nothing in Omakub provides solutions to problems you couldn't also solve a million other ways. The main benefit is in The Omakase Spirit. The idea that an entire setup experience can benefit from being tailored upfront by someone with strong opinions about what works and looks good together.
