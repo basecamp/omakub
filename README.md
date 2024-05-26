@@ -30,16 +30,16 @@ But there's a large constituency of developers who are more than willing to trad
 ### Zellij
 ### Neovim w/ Lazyvim
 ### VSCode
+### Tactile
+### Ulauncher
+### Lazygit + Lazydocker
+### eza/fzf/bat/rg/zoxide
+### Fonts
+### Typora
 ### Google Chrome
 ### Docker
-### Fonts
-### Lazygit + Lazydocker
-### Typora
-### Ulauncher
-### Tactile
 ### Ruby + Node
 ### Virtualbox
-### eza/fzf/bat/rg/zoxide
 ### Spotify/Zoom/1password
 ### VLC/Signal/Pinta/Xournal
 ### Libraries and build tooling
