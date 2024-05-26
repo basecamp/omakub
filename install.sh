@@ -20,8 +20,8 @@ sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 source install/*.sh
 
 # Configuration
+gh auth login
 
 # Start
-gh auth login
 docker run -d --restart unless-stopped -p 3306:3306 --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8
 docker run -d --restart unless-stopped -p 6379:6379 --name=redis redis
