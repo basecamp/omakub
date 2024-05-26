@@ -16,7 +16,7 @@ sudo apt install -y xournalpp alacritty
 sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 
 # Installers
-source "$(pwd)"/install/*.sh
+for script in ~/.omakub/install/*.sh; do source $script; done
 
 # Start services
-source "$(pwd)"/start/*.sh
+for script in ~/.omakub/start/*.sh; do source $script; done
