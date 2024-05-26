@@ -9,7 +9,8 @@ sudo apt install -y \
 
 # CLI apps
 sudo apt install -y git curl fzf ripgrep bat eza zoxide btop apache2-utils
-sudo snap install code zellij --classic
+sudo snap install code --classic
+sudo snap install zellij --classic
 
 # GUI apps
 sudo apt install -y xournalpp alacritty
