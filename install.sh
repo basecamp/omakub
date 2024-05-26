@@ -21,3 +21,9 @@ sudo snap install code --classic
 # Installers
 echo -e "\e[32mRUNNING CUSTOM INSTALLERSe[0m"
 for script in ~/.omakub/install/*.sh; do source $script; done
+
+# Reboot to pick up all settings
+read -p "Ready to reboot the system for all settings to take effect? (YES/no): " response
+if [[ -z "$response" || "$response" =~ ^[Yy][Ee][Ss]$ || "$response" =~ ^[Yy]$ ]]; then
+	sudo reboot
+fi
