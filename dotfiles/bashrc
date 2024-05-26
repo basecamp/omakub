@@ -13,8 +13,8 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# Prefer current-directory bins
-export PATH="./bin:$PATH"
+# Set complete path
+export PATH="./bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 set +h
 
 # Load configuration first from omabox, then local overwrites
