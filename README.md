@@ -23,3 +23,33 @@ Nothing in Omakub provides solutions to problems you couldn't also solve a milli
 This doesn't make the choices necessarily better than other choices. Linux has inspired a million options for a million tastes. That's great and worthy of celebration.
 
 But there's a large constituency of developers who are more than willing to trade ultimate bespoke customization for a cohesive package of goods.
+
+## What's on the menu
+
+### Alacritty
+### Zellij
+### Neovim w/ Lazyvim
+### VSCode
+### Google Chrome
+### Docker
+### Fonts
+### Lazygit + Lazydocker
+### Typora
+### Ulauncher
+### Tactile
+### Ruby + Node
+### Virtualbox
+### eza/fzf/bat/rg/zoxide
+### Spotify/Zoom/1password
+### VLC/Signal/Pinta/Xournal
+### Libraries and build tooling
+
+## Origin and context
+
+Omakub was started by David Heinemeier Hansson to streamling his own Linux box boostrapping, as well as that of his employees at 37signals switching to Linux. That's very much a specific context where Ruby on Rails, web development tooling, and commercial services all intermingle. There's amble room to broaden that context to provide the same benefits to many other web developer communities, similarly dominated by a Mac bias. But that expansion will be carefully managed to stay with The Omakase Spirit. Rather install a few more tools than litter the project with endless configuration points. In the end, every tool preconfigured can be postconfigured in a different direction.
+
+## Future ideas
+
+Omakub is being born as a single, curated setup for one specific company in one particular domain. Going forward, we could well expand that to just be a shared base, where further specialization by other curators is possible.
+
+But anyone using Omakub should still just have to run 1 command and the result should be 1 specific setup.
