@@ -1,11 +1,13 @@
-DOCKER_COMPOSE_VERSION="2.27.0"
-sudo apt install -y docker.io docker-buildx
+if ! command -v docker &>/dev/null; then
+	DOCKER_COMPOSE_VERSION="2.27.0"
+	sudo apt install -y docker.io docker-buildx
 
-sudo usermod -aG docker ${USER}
-DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-mkdir -p $DOCKER_CONFIG/cli-plugins
-curl -SL https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+	sudo usermod -aG docker ${USER}
+	DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+	mkdir -p $DOCKER_CONFIG/cli-plugins
+	curl -SL https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+	chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-sudo docker create -d --restart unless-stopped -p 3306:3306 --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8
-sudo docker create -d --restart unless-stopped -p 6379:6379 --name=redis redis
+	sudo docker create -d --restart unless-stopped -p 3306:3306 --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8
+	sudo docker create -d --restart unless-stopped -p 6379:6379 --name=redis redis
+fi
