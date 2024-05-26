@@ -2,7 +2,6 @@
 echo -e "\e[32mINSTALLING CORE DEVELOPMENT LIBRARIES\e[0m"
 sudo apt update -y
 sudo apt install -y \
-	docker.io docker-buildx \
 	build-essential pkg-config autoconf bison rustc cargo clang \
 	libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 \
 	libvips imagemagick libmagickwand-dev mupdf mupdf-tools \

@@ -1,4 +1,5 @@
 DOCKER_COMPOSE_VERSION="2.27.0"
+sudo apt install -y docker.io docker-buildx
 
 sudo usermod -aG docker ${USER}
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
