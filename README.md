@@ -43,6 +43,7 @@ But there's a large constituency of developers who are more than willing to trad
 ### Spotify/Zoom/1password
 ### VLC/Signal/Pinta/Xournal
 ### Libraries and build tooling
+### Theme
 
 ## Origin and context
 
