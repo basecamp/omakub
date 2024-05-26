@@ -19,5 +19,5 @@ sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 # Installers
 source "$(pwd)"/install/*.sh
 
-# Start
-source start/containers.sh
+# Start services
+source "$(pwd)"/start/*.sh
