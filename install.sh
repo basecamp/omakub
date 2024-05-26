@@ -12,7 +12,7 @@ sudo apt install -y git curl fzf ripgrep bat eza zoxide btop apache2-utils
 sudo snap install code zellij --classic
 
 # GUI apps
-sudo apt install xournalpp nautilus-dropbox alacritty
+sudo apt install -y xournalpp nautilus-dropbox alacritty
 sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 
 # Installers
