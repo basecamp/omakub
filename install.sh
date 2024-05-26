@@ -17,17 +17,7 @@ sudo apt install xournalpp nautilus-dropbox alacritty
 sudo snap install 1password spotify vlc zoom-client signal-desktop pinta
 
 # Installers
-source install/gnome-tailoring.sh
-source install/chrome.sh
-source install/fonts.sh
-source install/ulauncher.sh
-source install/neovim.sh
-source install/lazygit.sh
-source install/lazydocker.sh
-source install/ruby.sh
-source install/nodenv.sh
-source install/gh.sh
-source install/docker.sh
+source install/*.sh
 
 # Configuration
 
