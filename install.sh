@@ -1,4 +1,3 @@
-# Libraries and infrastructure
 echo -e "\e[32mINSTALLING OMAKUB\e[0m"
 
 # Needed for all installers
