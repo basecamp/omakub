@@ -1,4 +1,5 @@
 if ! command -v nodenv &>/dev/null; then
+	# FIXME: Make this pick whatever the latest LTS is
 	DEFAULT_NODE_VERSION="20.13.1"
 
 	git clone https://github.com/nodenv/nodenv.git ~/.nodenv
