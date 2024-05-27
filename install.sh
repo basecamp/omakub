@@ -9,7 +9,7 @@ sudo apt install -y curl git
 for script in ~/.omakub/install/*.sh; do source $script; done
 
 # Reboot to pickup changes
-read -p "Ready to reboot the system for all settings to take effect? (YES/no): " response
-if [[ -z "$response" || "$response" =~ ^[Yy][Ee][Ss]$ || "$response" =~ ^[Yy]$ ]]; then
+read -p "Ready to reboot the system for all settings to take effect? [Y/n]: " response
+if [[ -z "$response" || "$response" =~ ^[Yy]$ ]]; then
 	sudo reboot
 fi
