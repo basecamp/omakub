@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+# Pick a preconfigured theme

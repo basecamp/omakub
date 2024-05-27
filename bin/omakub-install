@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ~/.local/share/omakub/install/gh.sh
+source ~/.local/share/omakub/install/optional/virtualbox.sh
