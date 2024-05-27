@@ -5,7 +5,7 @@ sudo apt update -y
 sudo apt install -y curl git
 
 # Run installers
-for script in ~/.omakub/install/*.sh; do source $script; done
+for script in ~/.local/share/omakub/install/*.sh; do source $script; done
 
 # Reboot to pickup changes
 read -p "Ready to reboot the system for all settings to take effect? [Y/n]: " response

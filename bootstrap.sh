@@ -1,4 +1,4 @@
 sudo apt update -y
 sudo apt install -y curl git
-git clone https://x ~/.omakub
-source ~/.omakub/install.sh
+git clone https://x ~/.local/share/omakub
+source ~/.local/share/omakub/install.sh
