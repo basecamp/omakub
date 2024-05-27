@@ -15,6 +15,8 @@ for entry in ~/.local/share/omakub/dotfiles/*; do
 		if [ ! -e $target ]; then
 			ln -s $entry $target
 		fi
+
+		touch $entry.local
 	fi
 
 	# Link all directories in ~/.config/
