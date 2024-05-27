@@ -1,26 +1,4 @@
-# History control
-shopt -s histappend
-HISTCONTROL=ignoreboth
-HISTSIZE=32768
-HISTFILESIZE="${HISTSIZE}"
+source ~/.local/share/omakub/defaults/bash/rc
 
-# Autocompletion
-source /usr/share/bash-completion/bash_completion
-
-# Set complete path
-export PATH="./bin:$HOME/.rbenv/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
-set +h
-
-# Load configuration first from omabox, then local overwrites
-for file in ~/.{prompt,exports,aliases}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
-	[ -r "$file.local" ] && [ -f "$file.local" ] && source "$file.local"
-done
-unset file
-
-# Run iniitializers
-eval "$(rbenv init - bash)"
-eval "$(nodenv init -)"
-eval "$(zoxide init bash)"
-eval "$(zellij setup --generate-auto-start bash)"
-source /usr/share/doc/fzf/examples/key-bindings.bash
+# Editor used by CLI
+export EDITOR="nvim"
