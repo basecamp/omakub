@@ -1,3 +1,9 @@
-sudo apt install -y gnome-tweak-tool gnome-shell-extension-manager
-echo "Use Tweak Tool to set Fonts > Size > Scaling Factor: 0.80"
-echo "Use Extension Manager to install: Tactile, Blur my Shell, Just Perfection"
+sudo apt install -y gnome-tweak-tool
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-purple-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Yaru-purple'
+
+# FIXME: Only do this on Framework laptops or similar displays
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
