@@ -1,4 +1,4 @@
-sudo apt install -y xournalpp alacritty
+sudo apt install -y xournalpp
 sudo snap install 1password
 sudo snap install spotify
 sudo snap install vlc
