@@ -6,5 +6,6 @@ if ! [ -f "$HOME/.local/share/fonts/CaskaydiaMonoNerdFont-Regular.ttf" ]; then
 	cp CascadiaFont/*.ttf ~/.local/share/fonts
 	rm -rf CascadiaMono.zip CascadiaFont
 	fc-cache
+	gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
 	cd -
 fi
