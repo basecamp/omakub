@@ -1,5 +1,6 @@
 if ! command -v gnome-tweak-tool &>/dev/null; then
 	sudo apt install -y gnome-tweak-tool
+fi
 
 
 # Set default UI theme
@@ -9,4 +10,3 @@ source ~/.local/share/omakub/themes/gnome/yaru-dark-purple.sh
 
 	# FIXME: Only do this on Framework laptops or similar displays
 	gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
-fi
