@@ -2,6 +2,9 @@ if ! command -v gnome-shell-extension-manager &>/dev/null; then
 	sudo apt install -y gnome-shell-extension-manager pipx
 	pipx install gnome-extensions-cli --system-site-packages
 
+	# Turn off default Ubuntu extensions
+	gsettings set org.gnome.shell disabled-extensions ['tiling-assistant@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'ubuntu-dock@ubuntu.com']
+
 	# FIXME: Break these extensions into individual installers
 	gext install tactile@lundal.io
 	gext install just-perfection-desktop@just-perfection
