@@ -1,11 +1,9 @@
 if ! command -v gnome-tweak-tool &>/dev/null; then
 	sudo apt install -y gnome-tweak-tool
 
-	gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-	gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'
-	gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-purple-dark'
-	gsettings set org.gnome.desktop.interface icon-theme 'Yaru-purple'
 
+# Set default UI theme
+source ~/.local/share/omakub/themes/gnome/yaru-dark-purple.sh
 
 	gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 
