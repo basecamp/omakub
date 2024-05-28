@@ -1,4 +1,4 @@
-sudo apt install -y xournalpp
+sudo apt install -y xournalpp gnome-tweak-tool
 sudo snap install 1password
 sudo snap install spotify
 sudo snap install vlc
