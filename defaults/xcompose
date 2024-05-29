@@ -4,7 +4,7 @@ include "%L"
 <Multi_key> <m> <c> : "😂" # cry
 <Multi_key> <m> <l> : "😍" # love
 <Multi_key> <m> <v> : "✌️"  # victory
-<Multi_key> <m> <h> : "♥️"  # heart
+<Multi_key> <m> <h> : "❤️"  # heart
 <Multi_key> <m> <y> : "👍" # yes
 <Multi_key> <m> <n> : "👎" # no
 <Multi_key> <m> <f> : "🖕" # fuck
