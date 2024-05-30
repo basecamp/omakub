@@ -56,3 +56,7 @@ But anyone using Omakub should still just have to run 1 command and the result s
 ### Why not just use nixOS?
 
 Ubuntu is the most popular mainstream Linux distribution. It's available out-of-the-box from major manufacturers. It's learning curve is low, it's polished, it's stable, and if you hit problems, you'll easily find others online with the same issue. That doesn't mean it's The Best. Nobody is ever going to convince all existing Linux users that their distro of choice isn't actually better. And some, like nixOS, have been specifically designed for some of the same preconfiguration ideas that we're exploring here. But it just doesn't matter. This is a project for tailoring Ubuntu (and derivatives built on it and similar base elements).
+
+## Acknowledgements
+
+Default 80s Palm Tree desktop background was designed by freepik.
