@@ -1,4 +1,7 @@
-import = [ "~/.local/share/omakub/defaults/alacritty.toml" ]
+import = [
+  "~/.local/share/omakub/defaults/alacritty.toml",
+  "~/.local/share/omakub/themes/alacritty/tokyo-night.toml"
+]
 
 [font]
 normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
