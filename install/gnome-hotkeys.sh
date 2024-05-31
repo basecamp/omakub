@@ -56,6 +56,3 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'new chrome'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'google-chrome'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Shift><Alt>1'
-
-# Set default pinned applications
-gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'Alacritty.desktop', 'code_code.desktop', 'signal-desktop_signal-desktop.desktop', 'spotify_spotify.desktop', 'typora_typora.desktop', 'zoom-client_zoom-client.desktop', 'pinta_pinta.desktop', 'com.github.xournalpp.xournalpp.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Settings.desktop']"

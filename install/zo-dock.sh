@@ -1,0 +1,2 @@
+# Set default pinned applications (funny installer name to ensure it runs after all app installations!)
+gettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'Alacritty.desktop', 'code_code.desktop', 'signal-desktop_signal-desktop.desktop', 'spotify_spotify.desktop', 'typora_typora.desktop', 'zoom-client_zoom-client.desktop', 'pinta_pinta.desktop', 'com.github.xournalpp.xournalpp.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Settings.desktop']"
