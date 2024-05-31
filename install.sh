@@ -1,4 +1,4 @@
-echo -e "\e[32mINSTALLING OMAKUB\e[0m"
+source ~/.local/share/omakub/ascii.sh
 
 # Needed for all installers
 sudo apt update -y
