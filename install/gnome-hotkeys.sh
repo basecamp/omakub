@@ -4,6 +4,9 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 # Make it easy to maximize like you can fill left/right
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
 
+# For keyboards that only have a start/stop button for music, like Logitech MX Keys Mini
+gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Shift>AudioPlay']"
+
 # Full-screen with title/navigation bar
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
 
@@ -32,9 +35,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6
 
 # Reserve slots for custom keybindings
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
-
-# For keyboards that only have a start/stop button for music, like Logitech MX Keys Mini
-gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Shift>AudioPlay']"
 
 # Set ulauncher to Super+Space
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source "@as []"
