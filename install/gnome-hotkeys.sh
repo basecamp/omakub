@@ -1,6 +1,9 @@
 # Alt+F4 is very cumbersome
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
+# Make it easy to maximize like you can fill left/right
+gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
+
 # Full-screen with title/navigation bar
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
 
