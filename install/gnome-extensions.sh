@@ -9,6 +9,7 @@ if ! command -v gnome-shell-extension-manager &>/dev/null; then
 	gnome-extensions disable ding@rastersoft.com
 
 	# Install new extensions
+	# FIXME: Install these manually to avoid needing the pop-up confirmation during the installation process
 	gext install tactile@lundal.io
 	gext install just-perfection-desktop@just-perfection
 	gext install blur-my-shell@aunetx
