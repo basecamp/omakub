@@ -5,6 +5,8 @@ if ! command -v ulauncher &>/dev/null; then
 	sudo apt install -y ulauncher
 
 	# Start ulauncher to have it populate config before we overwrite
-	ulauncher &
+	cp ~/.local/share/omakub/configs/ulauncher.desktop ~/.config/autostart/ulauncher.desktop
+	gtk-launch ulauncher.desktop
+	sleep 2 # ensure enough time for ulauncher to set defaults
 	cp ~/.local/share/omakub/configs/ulauncher.json ~/.config/ulauncher/settings.json
 fi
