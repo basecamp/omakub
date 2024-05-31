@@ -4,7 +4,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "editor.minimap.enabled": false,
   "git.ignoreMissingGitWarning": true,
-  "editor.fontSize": 12,
+  "editor.fontSize": 14,
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
   "editor.suggestOnTriggerCharacters": false,
