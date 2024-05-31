@@ -4,6 +4,7 @@ if ! command -v ulauncher &>/dev/null; then
 	sudo apt update -y
 	sudo apt install -y ulauncher
 
-	mkdir -p ~/.config/ulauncher
+	# Start ulauncher to have it populate config before we overwrite
+	ulauncher-toggle
 	cp ~/.local/share/omakub/configs/ulauncher.json ~/.config/ulauncher/settings.json
 fi
