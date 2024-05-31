@@ -3,5 +3,7 @@ if ! command -v ulauncher &>/dev/null; then
 	sudo add-apt-repository ppa:agornostal/ulauncher -y
 	sudo apt update -y
 	sudo apt install -y ulauncher
+
+	mkdir -p ~/.config/ulauncher
 	cp ~/.local/share/omakub/configs/ulauncher.json ~/.config/ulauncher/settings.json
 fi
