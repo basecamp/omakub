@@ -4,7 +4,8 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 # Full-screen with title/navigation bar
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
 
-# Expand from 4 to 6 default workspaces
+# Use 6 fixed workspaces instead of dynamic mode
+gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 
 # Use alt for pinned apps
