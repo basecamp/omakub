@@ -8,7 +8,7 @@ if ! command -v gnome-shell-extension-manager &>/dev/null; then
 	gnome-extensions disable ubuntu-dock@ubuntu.com
 	gnome-extensions disable ding@rastersoft.com
 
-	# FIXME: Break these extensions into individual installers
+	# Install new extensions
 	gext install tactile@lundal.io
 	gext install just-perfection-desktop@just-perfection
 	gext install blur-my-shell@aunetx
