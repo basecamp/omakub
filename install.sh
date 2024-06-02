@@ -15,7 +15,7 @@ for script in ~/.local/share/omakub/install/*.sh; do source $script; done
 gsettings set org.gnome.desktop.session idle-delay 300
 
 # Reboot to pickup changes
-read -p "Ready to reboot the system for all settings to take effect? [Y/n]: " response
+read -p "Ready to logout for all settings to take effect? [Y/n]: " response
 if [[ -z "$response" || "$response" =~ ^[Yy]$ ]]; then
-	sudo reboot
+	gnome-session-quit --logout --no-prompt
 fi
