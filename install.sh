@@ -2,6 +2,7 @@ source ~/.local/share/omakub/ascii.sh
 
 # Needed for all installers
 sudo apt update -y
+sudo apt upgrade -y
 sudo apt install -y curl git
 
 # Ensure computer doesn't go to sleep while installing
