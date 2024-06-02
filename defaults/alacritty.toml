@@ -5,6 +5,7 @@ TERM = "xterm-256color"
 padding.x = 16
 padding.y = 14
 decorations = "none"
+opacity = 0.97
 
 [keyboard]
 bindings = [
