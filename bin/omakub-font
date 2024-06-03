@@ -1,20 +1,19 @@
 #!/bin/bash
 set -e
 
-mkdir -p ~/.local/share/fonts
+# Pick a preconfigured theme
+FONT=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
-# Pick a preselected font
-
-if ! [ -f "$HOME/.local/share/fonts/CaskaydiaMonoNerdFont-Regular.ttf" ]; then
-	cd ~/Downloads
-	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaMono.zip
-	unzip CascadiaMono.zip -d CascadiaFont
-	mkdir -p ~/.local/share/fonts
-	cp CascadiaFont/*.ttf ~/.local/share/fonts
-	rm -rf CascadiaMono.zip CascadiaFont
-	fc-cache
-	cd -
+if [ "$FONT" == "cascadia-mono" ]; then
+	NERD_FONT="CaskaydiaMono Nerd Font"
+elif [ "$FONT" == "fira-mono" ]; then
+	NERD_FONT="FiraMono Nerd Font"
+elif [ "$FONT" == "jetbrains-mono" ]; then
+	NERD_FONT="JetBrainsMono NFM"
+elif [ "$FONT" == "meslo" ]; then
+	NERD_FONT="MesloLGLDZ Nerd Font"
 fi
 
-# Replace font = { family: X }
-gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
+gsettings set org.gnome.desktop.interface monospace-font-name "$NERD_FONT 10"
+cp $OMAKUB_PATH/fonts/alacritty/$FONT.toml ~/.config/alacritty/font.toml
+sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$NERD_FONT\"/g" ~/.config/Code/User/settings.json
