@@ -5,8 +5,7 @@ if ! command -v typora &>/dev/null; then
 	mkdir -p ~/.local/share/fonts
 	cp ia_typora/fonts/iAWriterMonoS-* ~/.local/share/fonts/
 	fc-cache
-	# FIXME: Make this version independent
-	mkdir -p ~/snap/typora/88/.config/Typora/themes/
-	cp ia_typora/ia_typora*.css ~/snap/typora/88/.config/Typora/themes/
+	mkdir -p ~/snap/typora/current/.config/Typora/themes/
+	cp ia_typora/ia_typora*.css ~/snap/typora/current/.config/Typora/themes/
 	cd -
 fi
