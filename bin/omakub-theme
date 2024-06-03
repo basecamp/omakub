@@ -3,9 +3,21 @@ set -e
 
 # Pick a preconfigured theme
 THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
-source $OMAKUB_PATH/themes/gnome/$THEME.sh
-cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
-cp $OMAKUB_PATH/themes/alacritty/$THEME.toml ~/.config/alacritty/theme.toml
-sed -i "s/theme \"\(.*\)\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 
-echo "Restart your terminal to enjoy the new look!"
+# Install theme in Gnome, Terminal, and both default editors
+source $OMAKUB_PATH/themes/gnome/$THEME.sh
+cp $OMAKUB_PATH/themes/alacritty/$THEME.toml ~/.config/alacritty/theme.toml
+cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
+sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
+
+# Translate to specific VSC theme name
+if [ "$THEME" == "gruvbox" ]; then
+	VSC_THEME="Gruvbox Dark Medium"
+elif [ "$THEME" == "catppuccin" ]; then
+	VSC_THEME="Catppuccin Frappé"
+else
+	VSC_THEME=$THEME
+fi
+sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
+
+echo "Restart your terminal and editor if theme hasn't changed"
