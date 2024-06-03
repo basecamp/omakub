@@ -1,2 +1,2 @@
 # Setup default theme
-source ~/.local/share/omakub/themes/gnome/yaru.sh
+source $OMAKUB_PATH/themes/gnome/tokyo-night.sh
