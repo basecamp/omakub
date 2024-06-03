@@ -1,4 +1,4 @@
 #!/bin/bash
 
 HELP=$(gum choose "Hotkeys" "Commands" "Tactile" | tr '[:upper:]' '[:lower:]')
-batcat $OMAKUB_PATH/help/$HELP.md
+gum pager <$OMAKUB_PATH/help/$HELP.md
