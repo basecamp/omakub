@@ -1,3 +1,4 @@
 #!/bin/bash
 
-batcat ~/.local/share/omakub/help/hotkeys.md
+HELP=$(gum choose "Hotkeys" "Commands" "Tactile" | tr '[:upper:]' '[:lower:]')
+batcat $OMAKUB_PATH/help/$HELP.md

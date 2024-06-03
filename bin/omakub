@@ -1,0 +1,4 @@
+#!/bin/bash
+
+SUB=$(gum choose "Help" "Theme" "Font" "Install" | tr '[:upper:]' '[:lower:]')
+source $OMAKUB_PATH/bin/omakub-$SUB
