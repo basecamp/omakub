@@ -1,3 +1,4 @@
+# Be fancy
 source ~/.local/share/omakub/ascii.sh
 
 # Needed for all installers
