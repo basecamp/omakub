@@ -14,9 +14,9 @@ sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 if [ "$THEME" == "gruvbox" ]; then
 	VSC_THEME="Gruvbox Dark Medium"
 elif [ "$THEME" == "catppuccin" ]; then
-	VSC_THEME="Catppuccin Frappé"
 else
 	VSC_THEME=$THEME
+	VSC_THEME="Catppuccin Macchiato"
 fi
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
 
