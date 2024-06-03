@@ -1,4 +1,4 @@
 #!/bin/bash
 
 INSTALLER=$(gum file $OMAKUB_PATH/install)
-[ -n "$INSTALLER" ] && gum confirm "Run installer?" && source $INSTALLER
+[ -n "$INSTALLER" ] && gum confirm "Run installer?" && FORCE=1 source $INSTALLER

@@ -1,4 +1,4 @@
-if ! command -v alacritty &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v alacritty &>/dev/null; then
 	sudo apt install -y alacritty
 	mkdir -p ~/.config/alacritty
 	cp $OMAKUB_PATH/configs/alacritty.toml ~/.config/alacritty/alacritty.toml

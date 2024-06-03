@@ -1,4 +1,4 @@
-if ! command -v gnome-shell-extension-manager &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v gnome-shell-extension-manager &>/dev/null; then
 	sudo apt install -y gnome-shell-extension-manager pipx
 	pipx install gnome-extensions-cli --system-site-packages
 

@@ -1,4 +1,4 @@
-if ! command -v typora &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v typora &>/dev/null; then
 	sudo snap install typora
 	cd ~/Downloads
 	git clone https://github.com/dhh/ia_typora

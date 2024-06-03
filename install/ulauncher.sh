@@ -1,4 +1,4 @@
-if ! command -v ulauncher &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v ulauncher &>/dev/null; then
 	sudo add-apt-repository universe -y
 	sudo add-apt-repository ppa:agornostal/ulauncher -y
 	sudo apt update -y

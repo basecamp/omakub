@@ -1,4 +1,4 @@
-if ! command -v neovim &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v neovim &>/dev/null; then
 	sudo add-apt-repository -y ppa:neovim-ppa/stable
 	sudo apt update -y
 	sudo apt install -y neovim

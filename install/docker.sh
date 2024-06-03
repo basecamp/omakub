@@ -1,4 +1,4 @@
-if ! command -v docker &>/dev/null; then
+if [ -n "$FORCE" ] || ! command -v docker &>/dev/null; then
 	sudo apt install -y docker.io docker-buildx
 	sudo usermod -aG docker ${USER}
 
