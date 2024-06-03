@@ -2,3 +2,10 @@
 set -e
 
 # Pick a preconfigured theme
+THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+source $OMAKUB_PATH/themes/gnome/$THEME.sh
+cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
+cp $OMAKUB_PATH/themes/alacritty/$THEME.toml ~/.config/alacritty/theme.toml
+sed -i "s/theme \"\(.*\)\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
+
+echo "Restart your terminal to enjoy the new look!"
