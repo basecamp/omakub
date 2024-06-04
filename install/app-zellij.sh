@@ -6,5 +6,5 @@ rm zellij.tar.gz
 cd -
 
 mkdir -p ~/.config/zellij/
-cp ~/.local/share/omakub/configs/zellij.kdl ~/.config/zellij/config.kdl
-ln -s ~/.local/share/omakub/themes/zellij ~/.config/zellij/themes
+[ ! -f "$HOME/.config/zellij/config.kdl" ] && cp ~/.local/share/omakub/configs/zellij.kdl ~/.config/zellij/config.kdl
+[ ! -L "$HOME/.config/zellij/themes" ] && ln -s ~/.local/share/omakub/themes/zellij ~/.config/zellij/themes
