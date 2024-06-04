@@ -57,5 +57,5 @@ if [ -n "$FORCE" ] || ! command -v gnome-shell-extension-manager &>/dev/null; th
 	# Configure Space Bar
 	gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-names false
 	gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
-	gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "[]"
+	gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
 fi
