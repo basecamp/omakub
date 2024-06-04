@@ -2,7 +2,7 @@
 set -e
 
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" --height 5 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 # Install theme in Gnome, Terminal, and both default editors
 source $OMAKUB_PATH/themes/gnome/$THEME.sh
