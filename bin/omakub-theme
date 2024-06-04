@@ -2,7 +2,7 @@
 set -e
 
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" "Rose Pine" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" "Rose Pine" --header "Choose your theme" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ ! -n "$THEME" ] && exit 0
 
