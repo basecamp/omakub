@@ -1,6 +1,3 @@
-#!/bin/bash
-set -e
-
 # Pick a preconfigured theme
 THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Rose Pine" --header "Choose your theme" --height 7 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 

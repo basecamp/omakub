@@ -1,6 +1,3 @@
-#!/bin/bash
-set -e
-
 # Pick a preconfigured theme
 FONT=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" --header "Choose your programming font:" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
