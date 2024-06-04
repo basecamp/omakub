@@ -1,11 +1,10 @@
-if [ -n "$FORCE" ] || ! command -v typora &>/dev/null; then
-	sudo snap install typora
-	cd ~/Downloads
-	git clone https://github.com/dhh/ia_typora
-	mkdir -p ~/.local/share/fonts
-	cp ia_typora/fonts/iAWriterMonoS-* ~/.local/share/fonts/
-	fc-cache
-	mkdir -p ~/snap/typora/current/.config/Typora/themes/
-	cp ia_typora/ia_typora*.css ~/snap/typora/current/.config/Typora/themes/
-	cd -
+if ! command -v typora &>/dev/null; then
+	wget -qO - https://typoraio.cn/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
+	sudo add-apt-repository 'deb https://typora.io/linux ./'
+	sudo apt-get update -y
+	sudo apt-get install -y typora
+
+	# Add iA Typora theme
+	ln -s ~/.local/share/omakub/themes/typora/ia_typora.css ~/.config/Typora/themes/
+	ln -s ~/.local/share/omakub/themes/typora/ia_typora_night.css ~/.config/Typora/themes/
 fi

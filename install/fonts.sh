@@ -21,6 +21,11 @@ unzip Meslo.zip -d Meslo
 cp Meslo/*.ttf ~/.local/share/fonts
 rm -rf Meslo.zip Meslo
 
+wget https://github.com/iaolo/iA-Fonts/archive/refs/heads/master.zip
+unzip master.zip -d iaFonts
+cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/share/fonts
+rm -rf master.zip iaFonts
+
 fc-cache
 cd -
 
