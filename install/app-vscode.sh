@@ -1,12 +1,15 @@
-if [ -n "$FORCE" ] || ! command -v code &>/dev/null; then
-	sudo snap install code --classic
-	mkdir -p ~/.config/Code/User
-	cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
+cd ~/Downloads
+wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+sudo apt install ./code.deb
+rm code.deb
+cd -
 
-	# Install default supported themes
-	code --install-extension enkia.tokyo-night
-	code --install-extension jdinhlife.gruvbox
-	code --install-extension Catppuccin.catppuccin-vsc
-	code --install-extension mvllow.rose-pine
-	code --install-extension sainnhe.everforest
-fi
+mkdir -p ~/.config/Code/User
+cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
+
+# Install default supported themes
+code --install-extension enkia.tokyo-night
+code --install-extension jdinhlife.gruvbox
+code --install-extension Catppuccin.catppuccin-vsc
+code --install-extension mvllow.rose-pine
+code --install-extension sainnhe.everforest
