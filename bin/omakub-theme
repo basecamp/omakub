@@ -2,7 +2,7 @@
 set -e
 
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" --height 5 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "Tokyo Night" "Gruvbox" "Catppuccin" "Rose Pine" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ ! -n "$THEME" ] && exit 0
 
@@ -19,6 +19,8 @@ elif [ "$THEME" == "catppuccin" ]; then
 	VSC_THEME="Catppuccin Macchiato"
 elif [ "$THEME" == "tokyo-night" ]; then
 	VSC_THEME="Tokyo Night"
+elif [ "$THEME" == "rose-pine" ]; then
+	VSC_THEME="Rosé Pine Dawn"
 fi
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
 

@@ -7,4 +7,5 @@ if [ -n "$FORCE" ] || ! command -v code &>/dev/null; then
 	code --install-extension enkia.tokyo-night
 	code --install-extension jdinhlife.gruvbox
 	code --install-extension Catppuccin.catppuccin-vsc
+	code --install-extension mvllow.rose-pine
 fi
