@@ -30,6 +30,7 @@ if [ -n "$FORCE" ] || ! command -v gnome-shell-extension-manager &>/dev/null; th
 	gsettings set org.gnome.shell.extensions.tactile col-3 0
 	gsettings set org.gnome.shell.extensions.tactile row-0 1
 	gsettings set org.gnome.shell.extensions.tactile row-1 1
+	gsettings set org.gnome.shell.extensions.tactile gap-size 48
 
 	# Configure Just Perfection
 	gsettings set org.gnome.shell.extensions.just-perfection animation 2
