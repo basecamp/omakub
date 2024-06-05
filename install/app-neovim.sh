@@ -1,6 +1,11 @@
-sudo add-apt-repository -y ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install -y neovim
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=Release
+make install
+cd ..
+rm -rf neovim
+cd .
 
 if [ ! -d "$HOME/.config/nvim" ]; then
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
