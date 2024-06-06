@@ -24,3 +24,5 @@ fi
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
 
 echo "Restart your terminal for a full theme change (Ctrl+w, then start again with Alt+2)"
+
+# vi: ft=sh

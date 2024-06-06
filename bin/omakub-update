@@ -1,3 +1,5 @@
 cd $OMAKUB_PATH
 git pull
 cd -
+
+# vi: ft=sh

@@ -12,3 +12,5 @@ export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:$HOME/.rbenv/b
 set +h
 
 export OMAKUB_PATH="/home/$USER/.local/share/omakub"
+
+# vi: ft=sh

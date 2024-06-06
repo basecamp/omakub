@@ -25,3 +25,5 @@ alias gcad='git commit -a --amend'
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
+
+# vi: ft=sh
