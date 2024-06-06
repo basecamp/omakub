@@ -64,7 +64,7 @@ This will start the installation process. It's almost entirely automated. You ju
 
 ## Origin and context
 
-Omakub was started by me, David Heinemeier Hansson, to streamling my own Linux box boostrapping, as well as to [help our technical employees at 37signals switch to Linux](https://world.hey.com/dhh/linux-as-the-new-developer-default-at-37signals-ef0823b7). That's very much a specific context where Ruby on Rails, web development tooling, and commercial services all intermingle. There's amble room to broaden that context to provide the same benefits to many other web developer communities (many of which are also dominated by a Mac bias). But that expansion will be carefully managed to stay with The Omakase Spirit. Rather install a few more tools than litter the project with endless configuration points. In the end, every tool preconfigured can be postconfigured in a different direction.
+Omakub was started by me, David Heinemeier Hansson, to streamling my own Linux box boostrapping, as well as to [help our technical employees at 37signals switch to Linux](https://world.hey.com/dhh/linux-as-the-new-developer-default-at-37signals-ef0823b7). That's very much a specific context where Ruby on Rails, web development tooling, and commercial services all intermingle. There's ample room to broaden that context to provide the same benefits to many other web developer communities (many of which are also dominated by a Mac bias). But that expansion will be carefully managed to stay with The Omakase Spirit. Rather install a few more tools than litter the project with endless configuration points. In the end, every tool preconfigured can be postconfigured in a different direction.
 
 ## Future ideas
 
