@@ -4,13 +4,14 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 
 ## Navigating
 
-| Hotkey          | Function             |
-| --------------- | -------------------- |
-| Super + Space   | Type app to launch   |
-| Super + W       | Close app            |
-| Super + 1/2/3/4 | Jump to workspace    |
-| Alt + 1/2/3/..  | Jump to dock app     |
-| Ctrl + 1/2/3/.. | Jump to browser tab  |
+| Hotkey                  | Function              |
+| ----------------------- | --------------------- |
+| Super + Space           | Type app to launch    |
+| Super + W               | Close app             |
+| Super + 1/2/3/4         | Jump to workspace     |
+| Shift + Super + 1/2/3/4 | Move app to workspace |
+| Alt + 1/2/3/..          | Jump to dock app      |
+| Ctrl + 1/2/3/..         | Jump to browser tab   |
 
 ## Tiling
 

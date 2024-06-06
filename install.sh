@@ -3,7 +3,7 @@ source ~/.local/share/omakub/ascii.sh
 
 # Needed for all installers
 sudo apt update -y
-sudo apt install -y curl git
+sudo apt install -y curl git jq
 
 # Ensure computer doesn't go to sleep while installing
 gsettings set org.gnome.desktop.session idle-delay 0

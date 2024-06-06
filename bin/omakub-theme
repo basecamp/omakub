@@ -1,5 +1,5 @@
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Rose Pine" --header "Choose your theme" --height 7 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Nord" "Rose Pine" --header "Choose your theme" --height 8 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ ! -n "$THEME" ] && exit 0
 
@@ -11,16 +11,25 @@ sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 
 # Translate to specific VSC theme name
 if [ "$THEME" == "gruvbox" ]; then
-	VSC_THEME="Gruvbox Dark Medium"
+  VSC_THEME="Gruvbox Dark Medium"
+  VSC_EXTENSION="jdinhlife.gruvbox"
 elif [ "$THEME" == "catppuccin" ]; then
-	VSC_THEME="Catppuccin Macchiato"
+  VSC_THEME="Catppuccin Macchiato"
+  VSC_EXTENSION="Catppuccin.catppuccin-vsc"
 elif [ "$THEME" == "tokyo-night" ]; then
-	VSC_THEME="Tokyo Night"
+  VSC_THEME="Tokyo Night"
+  VSC_EXTENSION="enkia.tokyo-night"
 elif [ "$THEME" == "everforest" ]; then
-	VSC_THEME="Everforest Dark"
+  VSC_THEME="Everforest Dark"
+  VSC_EXTENSION="sainnhe.everforest"
 elif [ "$THEME" == "rose-pine" ]; then
-	VSC_THEME="Rosé Pine Dawn"
+  VSC_THEME="Rosé Pine Dawn"
+  VSC_EXTENSION="mvllow.rose-pine"
+elif [ "$THEME" == "nord" ]; then
+  VSC_THEME="Nord"
+  VSC_EXTENSION="arcticicestudio.nord-visual-studio-code"
 fi
+code --install-extension $VSC_EXTENSION > /dev/null
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
 
-echo "Restart your terminal for a full theme change (Ctrl+w, then start again with Alt+2)"
+echo "Restart your terminal for a full theme change (Super + W, then start again with Alt + 2)"
