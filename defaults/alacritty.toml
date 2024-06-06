@@ -11,3 +11,7 @@ opacity = 0.97
 bindings = [
 { key = "F11", action = "ToggleFullscreen" }
 ]
+
+[shell]
+program = "zellij"
+# args = ["-l", "welcome"] # optionally, if you'd like to start Zellij with a welcome screen to help manage sessions
