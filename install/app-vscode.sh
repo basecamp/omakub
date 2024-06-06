@@ -9,7 +9,3 @@ cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
 
 # Install default supported themes
 code --install-extension enkia.tokyo-night
-code --install-extension jdinhlife.gruvbox
-code --install-extension Catppuccin.catppuccin-vsc
-code --install-extension mvllow.rose-pine
-code --install-extension sainnhe.everforest

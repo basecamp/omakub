@@ -1,3 +1,4 @@
+[colors]
 [colors.primary]
 background = "#2e3440"
 foreground = "#d8dee9"
@@ -14,14 +15,6 @@ cursor = "#d8dee9"
 [colors.selection]
 text = "CellForeground"
 background = "#4c566a"
-
-[colors.search.matches]
-foreground = "CellBackground"
-background = "#88c0d0"
-
-[colors.search.bar]
-background = "#434c5e"
-foreground = "#d8dee9"
 
 [colors.normal]
 black = "#3b4252"
