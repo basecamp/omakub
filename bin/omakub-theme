@@ -1,5 +1,6 @@
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Nord" "Rose Pine" --header "Choose your theme" --height 8 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME_NAMES=("Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Nord" "Rose Pine")
+THEME=$(gum choose "${THEME_NAMES[@]}" --header "Choose your theme" --height 8 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ ! -n "$THEME" ] && exit 0
 
