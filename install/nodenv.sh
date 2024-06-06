@@ -1,5 +1,5 @@
 if ! command -v nodenv &>/dev/null; then
-	URL=https://nodejs.org/download/release/index.json
+	URL="https://nodejs.org/download/release/index.json"
 	DEFAULT_NODE_VERSION=$(curl -s "$URL" | jq -r '.[] | select(.lts != false) | .version' | head -n 1)
 
 	git clone https://github.com/nodenv/nodenv.git ~/.nodenv
