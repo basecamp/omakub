@@ -1,9 +1,21 @@
 # Pick a preconfigured theme
-THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Rose Pine" "Nord" --header "Choose your theme" --height 7 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "Tokyo Night" "Catppuccin" "Everforest" "Gruvbox" "Rose Pine" "Nord" "Kanagawa" --header "Choose your theme" --height 7 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ ! -n "$THEME" ] && exit 0
 
-# Install theme in Gnome, Terminal, and both default editors
+if [ "$THEME" == "kanagawa" ]; then
+
+    sudo apt update
+    sudo apt install -y gtk2-engines-murrine gnome-themes-extra
+
+    wget https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/archive/refs/heads/main.zip -O kanagawa_theme.zip
+
+    unzip -q kanagawa_theme.zip -d ~/.themes/
+
+    rm kanagawa_theme.zip
+fi
+
+# Source theme script based on chosen theme
 source $OMAKUB_PATH/themes/gnome/$THEME.sh
 cp $OMAKUB_PATH/themes/alacritty/$THEME.toml ~/.config/alacritty/theme.toml
 cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
@@ -22,6 +34,8 @@ elif [ "$THEME" == "rose-pine" ]; then
     VSC_THEME="Rosé Pine Dawn"
 elif [ "$THEME" == "nord" ]; then
     VSC_THEME="Nord"
+elif [ "$THEME" == "kanagawa" ]; then
+    VSC_THEME="Kanagawa"
 fi
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
 
