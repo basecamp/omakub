@@ -1,6 +1,6 @@
 if ! command -v nodenv &>/dev/null; then
-	# FIXME: Make this pick whatever the latest LTS is
-	DEFAULT_NODE_VERSION="20.13.1"
+	URL=https://nodejs.org/download/release/index.json
+	DEFAULT_NODE_VERSION=(curl -s "$URL" | jq -r '.[] | select(.lts != false) | .version' | head -n 1)
 
 	git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 	sudo ln -vs ~/.nodenv/bin/nodenv /usr/local/bin/nodenv
