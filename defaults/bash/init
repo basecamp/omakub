@@ -2,6 +2,7 @@ if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
 else
   echo "You're missing mise (replacement for rbenv + nodenv). Run 'omakub install', then select mise.sh"
+  echo "Then run 'mise use --global node@lts' and 'mise use --global ruby' to bring back node + ruby"
 fi
 
 eval "$(zoxide init bash)"
