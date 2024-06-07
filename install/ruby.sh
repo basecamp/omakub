@@ -1,5 +1,5 @@
 # FIXME: Change to use whatever latest release is
-DEFAULT_RUBY_VERSION="3.3.1"
+DEFAULT_RUBY_VERSION=$(curl -s https://api.github.com/repos/ruby/ruby/tags | jq -r '[.[].name | select(test("preview|rc") | not)] | .[0]')
 
 sudo apt install -y rbenv
 
