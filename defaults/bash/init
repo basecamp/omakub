@@ -1,3 +1,8 @@
-eval "$(mise activate bash)"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+else
+  echo "You're missing mise. Run 'omakub install', then select mise.sh"
+fi
+
 eval "$(zoxide init bash)"
 source /usr/share/doc/fzf/examples/key-bindings.bash
