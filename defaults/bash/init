@@ -1,7 +1,7 @@
 if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
 else
-  echo "You're missing mise. Run 'omakub install', then select mise.sh"
+  echo "You're missing mise (replacement for rbenv + nodenv). Run 'omakub install', then select mise.sh"
 fi
 
 eval "$(zoxide init bash)"
