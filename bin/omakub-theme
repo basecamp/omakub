@@ -1,25 +1,28 @@
+# Pick a preconfigured theme
 THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
 
 THEME=$(gum choose "${THEME_NAMES[@]}" --header "Choose your theme" --height 9 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ -z "$THEME" ] && exit 0
 
+# Install theme in Gnome, Terminal, and both default editors
 source "$OMAKUB_PATH/themes/gnome/$THEME.sh"
 cp "$OMAKUB_PATH/themes/alacritty/$THEME.toml" ~/.config/alacritty/theme.toml
 cp "$OMAKUB_PATH/themes/neovim/$THEME.lua" ~/.config/nvim/lua/plugins/theme.lua
 sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 
-declare -A VSC_THEMES=(
-  ["gruvbox"]="Gruvbox Dark Medium jdinhlife.gruvbox"
-  ["catppuccin"]="Catppuccin Macchiato Catppuccin.catppuccin-vsc"
-  ["tokyo-night"]="Tokyo Night enkia.tokyo-night"
-  ["everforest"]="Everforest Dark sainnhe.everforest"
-  ["rose-pine"]="Rosé Pine Dawn mvllow.rose-pine"
-  ["nord"]="Nord arcticicestudio.nord-visual-studio-code"
-  ["kanagawa"]="Kanagawa qufiwefefwoyn.kanagawa"
-)
+# Translate to specific VSC theme name
+case "$THEME" in
+  "gruvbox") VSC_THEME="Gruvbox Dark Medium jdinhlife.gruvbox" ;;
+  "catppuccin") VSC_THEME="Catppuccin Macchiato Catppuccin.catppuccin-vsc" ;;
+  "tokyo-night") VSC_THEME="Tokyo Night enkia.tokyo-night" ;;
+  "everforest") VSC_THEME="Everforest Dark sainnhe.everforest" ;;
+  "rose-pine") VSC_THEME="Rosé Pine Dawn mvllow.rose-pine" ;;
+  "nord") VSC_THEME="Nord arcticicestudio.nord-visual-studio-code" ;;
+  "kanagawa") VSC_THEME="Kanagawa qufiwefefwoyn.kanagawa" ;;
+  *) exit 1 ;;
+esac
 
-VSC_THEME=${VSC_THEMES[$THEME]}
 code --install-extension "${VSC_THEME##* }" > /dev/null
 sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"${VSC_THEME% *}\"/g" ~/.config/Code/User/settings.json
 
