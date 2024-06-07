@@ -33,7 +33,7 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 
 | Hotkey              | Function                    |
 | ------------------- | --------------------------- |
-| Ctrl + P N          | New vertical pane           |
+| Ctrl + P R          | New vertical pane           |
 | Ctrl + P D          | New horizontal pane         |
 | Alt + Arrow         | Navigate panes (and tabs)   |
 | Alt + =             | Expand pane                 |
