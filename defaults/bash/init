@@ -1,5 +1,4 @@
 eval "$(rbenv init - bash)"
 eval "$(nodenv init -)"
 eval "$(zoxide init bash)"
-eval "$(zellij setup --generate-auto-start bash)"
 source /usr/share/doc/fzf/examples/key-bindings.bash
