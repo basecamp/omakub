@@ -1,4 +1,3 @@
-eval "$(rbenv init - bash)"
-eval "$(nodenv init -)"
+eval "$(mise activate bash)"
 eval "$(zoxide init bash)"
 source /usr/share/doc/fzf/examples/key-bindings.bash
