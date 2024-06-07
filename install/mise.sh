@@ -6,6 +6,6 @@ echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] http
 sudo apt update
 sudo apt install -y mise
 
-# Install developer setups
-mise use --global ruby@latest
-mise use --global node@latest
+# Install default languages
+mise use --global ruby@3.3
+mise use --global node@lts
