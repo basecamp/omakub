@@ -7,8 +7,10 @@ gnome-extensions disable ubuntu-appindicators@ubuntu.com
 gnome-extensions disable ubuntu-dock@ubuntu.com
 gnome-extensions disable ding@rastersoft.com
 
+# Pause to assure user is ready to accept confirmations
+gum confirm "To install Gnome extensions, you need to accept four confirmations. Are you ready?"
+
 # Install new extensions
-# FIXME: Install these manually to avoid needing the pop-up confirmation during the installation process
 gext install tactile@lundal.io
 gext install just-perfection-desktop@just-perfection
 gext install blur-my-shell@aunetx
@@ -22,7 +24,6 @@ sudo cp ~/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gn
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 # Configure Tactile
-gsettings set org.gnome.shell.extensions.tactile col-0 1
 gsettings set org.gnome.shell.extensions.tactile col-0 1
 gsettings set org.gnome.shell.extensions.tactile col-1 2
 gsettings set org.gnome.shell.extensions.tactile col-2 1
