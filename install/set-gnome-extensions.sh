@@ -8,11 +8,10 @@ gnome-extensions disable ubuntu-dock@ubuntu.com
 gnome-extensions disable ding@rastersoft.com
 
 # Install new extensions
-# FIXME: Install these manually to avoid needing the pop-up confirmation during the installation process
-gext install tactile@lundal.io
-gext install just-perfection-desktop@just-perfection
-gext install blur-my-shell@aunetx
-gext install space-bar@luchrioh
+gext --filesystem install tactile@lundal.io
+gext --filesystem install just-perfection-desktop@just-perfection
+gext --filesystem install blur-my-shell@aunetx
+gext --filesystem install space-bar@luchrioh
 
 # Compile gsettings schemas in order to be able to set them
 sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
