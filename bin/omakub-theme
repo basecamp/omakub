@@ -1,6 +1,5 @@
 # Pick a preconfigured theme
 THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
-
 THEME=$(gum choose "${THEME_NAMES[@]}" --header "Choose your theme" --height 9 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 [ -z "$THEME" ] && exit 0
@@ -24,6 +23,6 @@ case "$THEME" in
 esac
 
 code --install-extension "${VSC_THEME##* }" > /dev/null
-sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"${VSC_THEME% *}\"/g" ~/.config/Code/User/settings.json
+sed -i "/\"workbench.colorTheme\"/s/: \".*\"/: \"$VSC_THEME_NAME\"/" ~/.config/Code/User/settings.json
 
 echo "Restart your terminal for a full theme change (Super + W, then start again with Alt + 2)"
