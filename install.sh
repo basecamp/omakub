@@ -17,5 +17,5 @@ gsettings set org.gnome.desktop.session idle-delay 300
 # Upgrade everything that might ask for a reboot last
 sudo apt upgrade -y
 
-# Logout to pickup changes
-gnome-session-quit --logout --no-prompt
+# Reboot to pickup changes
+gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
