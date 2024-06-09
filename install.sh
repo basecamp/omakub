@@ -16,7 +16,7 @@ for script in ~/.local/share/omakub/install/*.sh; do source $script; done
 sudo apt upgrade -y
 
 # Revert to normal idle and lock settings
-gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.screensaver lock-enabled true
 gsettings set org.gnome.desktop.session idle-delay 300
 
 # Logout to pickup changes
