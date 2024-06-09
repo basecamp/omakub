@@ -1,4 +1,4 @@
-source ~/.local/share/omakub/defaults/bash/rc
+source "$OMAKUB_PATH/defaults/bash/rc"
 
 # Editor used by CLI
 export EDITOR="nvim"

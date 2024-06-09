@@ -1,0 +1,19 @@
+# Pick a preconfigured prompt
+PROMT_NAMES=("Default" "Avatar")
+PROMPT=$(gum choose "${PROMT_NAMES[@]}" --header "Choose your prompt" --height 9 | tr '[:upper:]' '[:lower:]' | sed 's/ /_/g')
+
+# Exit if a prompt is not selected
+[ ! -n "$PROMPT" ] && exit 0
+
+# Reset current prompts
+unset PROMPT_COMMAND
+unset PS1
+unset PS2
+
+# Configure new prompt files
+PROMPT_FILE="$OMAKUB_PATH/prompts/$PROMPT.sh"
+OMAKUB_PROMPT_FILE="$OMAKUB_PATH/defaults/bash/prompt"
+
+cp $PROMPT_FILE $OMAKUB_PROMPT_FILE
+
+source $OMAKUB_PATH/configs/bashrc
