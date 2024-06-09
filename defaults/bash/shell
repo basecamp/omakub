@@ -12,3 +12,7 @@ export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:/usr/local/sbi
 set +h
 
 export OMAKUB_PATH="/home/$USER/.local/share/omakub"
+
+# Deno
+export DENO_INSTALL="/home/viktor/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
