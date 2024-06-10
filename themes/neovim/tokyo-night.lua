@@ -13,6 +13,7 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 			},
+		config = require('plugins.commons').set_transparent_bg()
 		},
 	},
 }

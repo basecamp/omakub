@@ -5,5 +5,6 @@ return {
 		opts = {
 			colorscheme = "kanagawa",
 		},
+		config = require('plugins.commons').set_transparent_bg()
 	},
 }

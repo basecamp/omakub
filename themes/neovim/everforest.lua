@@ -6,5 +6,6 @@ return {
 			colorscheme = "everforest",
 			background = "soft",
 		},
+		config = require('plugins.commons').set_transparent_bg()
 	},
 }
