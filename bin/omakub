@@ -3,7 +3,7 @@
 source $OMAKUB_PATH/ascii.sh
 
 if [ $# -eq 0 ]; then
-	SUB=$(gum choose "Help" "Theme" "Font" "Install" "Update" --height 8 --header "" | tr '[:upper:]' '[:lower:]')
+	SUB=$(gum choose "Help" "Theme" "Font" "Install" "Uninstall" "Update" --height 9 --header "" | tr '[:upper:]' '[:lower:]')
 else
 	SUB=$1
 fi
