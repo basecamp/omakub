@@ -13,10 +13,10 @@ sudo apt install -y curl git jq unzip
 
 # Run installers
 for script in ~/.local/share/omakub/install/cfg-*.sh; do source $script; done
-for script in ~/.local/share/omakub/install/app*-*.sh; do source $script; done
 for script in ~/.local/share/omakub/install/dev-*.sh; do source $script; done
-for script in ~/.local/share/omakub/install/set-cfg-*.sh; do source $script; done
+for script in ~/.local/share/omakub/install/app*-*.sh; do source $script; done
 #for script in ~/.local/share/omakub/install/gui-*.sh; do source $script; done
+for script in ~/.local/share/omakub/install/set-cfg-*.sh; do source $script; done
 #for script in ~/.local/share/omakub/install/set-gui-*.sh; do source $script; done
 
 # Revert to normal idle settings
