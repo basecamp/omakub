@@ -1,5 +1,4 @@
 sudo apt install -y docker.io docker-buildx
-sudo groupadd docker
 sudo usermod -aG docker ${USER}
 
 # Limit log size to avoid running out of disk
