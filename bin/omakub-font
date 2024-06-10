@@ -1,18 +1,51 @@
-# Pick a preconfigured theme
-FONT=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" --header "Choose your programming font:" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+is_font_installed() {
+  local font_name=$1
+  fc-list | grep -i "$font_name" &> /dev/null
+}
 
-[ ! -n "$FONT" ] && exit 0
+download_and_install_font() {
+  local font_name=$1
+  local url=$2
+  local temp_dir=$3
+  local file_type=$4
+  local nerd_font=$5
 
-if [ "$FONT" == "cascadia-mono" ]; then
-	NERD_FONT="CaskaydiaMono Nerd Font"
-elif [ "$FONT" == "fira-mono" ]; then
-	NERD_FONT="FiraMono Nerd Font"
-elif [ "$FONT" == "jetbrains-mono" ]; then
-	NERD_FONT="JetBrainsMono NFM"
-elif [ "$FONT" == "meslo" ]; then
-	NERD_FONT="MesloLGLDZ Nerd Font"
-fi
+  if ! is_font_installed "$nerd_font"; then
+    wget "$url" -O "$font_name.zip"
+    unzip "$font_name.zip" -d "$temp_dir"
+    cp "$temp_dir"/*."$file_type" ~/.local/share/fonts
+    rm -rf "$font_name.zip" "$temp_dir"
+    fc-cache -fv
+  fi
 
-gsettings set org.gnome.desktop.interface monospace-font-name "$NERD_FONT 10"
-cp $OMAKUB_PATH/fonts/alacritty/$FONT.toml ~/.config/alacritty/font.toml
-sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$NERD_FONT\"/g" ~/.config/Code/User/settings.json
+  gsettings set org.gnome.desktop.interface monospace-font-name "$nerd_font 10"
+  cp "$OMAKUB_PATH/fonts/alacritty/$font_name.toml" ~/.config/alacritty/font.toml
+  sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$nerd_font\"/g" ~/.config/Code/User/settings.json
+}
+
+font_menu() {
+  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "Exit")
+  case $choice in
+    "Cascadia Mono")
+      download_and_install_font "CascadiaMono" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip" "CascadiaFont" "ttf" "CaskaydiaMono Nerd Font"
+      ;;
+    "Fira Mono")
+      download_and_install_font "FiraMono" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.zip" "FiraMono" "otf" "FiraMono Nerd Font"
+      ;;
+    "JetBrains Mono")
+      download_and_install_font "JetBrainsMono" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" "JetBrainsMono" "ttf" "JetBrainsMono Nerd Font"
+      ;;
+    "Meslo")
+      download_and_install_font "Meslo" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip" "Meslo" "ttf" "MesloLGS Nerd Font"
+      ;;
+    "Exit")
+      echo "Exiting..."
+      exit 0
+      ;;
+    *)
+      echo "Invalid choice. Please select a valid option."
+      ;;
+  esac
+}
+
+font_menu
