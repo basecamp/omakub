@@ -6,7 +6,7 @@ set -e
 
 # Needed for all installers
 sudo apt update -y
-sudo apt install -y curl git unzip
+sudo apt install -y nala curl git unzip
 
 # Ensure computer doesn't go to sleep or lock while installing
 gsettings set org.gnome.desktop.screensaver lock-enabled false
