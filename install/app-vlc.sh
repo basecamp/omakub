@@ -1,1 +1,1 @@
-sudo apt install -y vlc
+sudo nala install -y vlc
