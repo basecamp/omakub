@@ -1,4 +1,4 @@
-sudo apt install -y docker.io docker-buildx
+sudo nala install -y docker.io docker-buildx
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
 
