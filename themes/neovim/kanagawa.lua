@@ -1,7 +1,7 @@
 return {
 	{ "rebelot/kanagawa.nvim" },
 	{
-		"lazyvim/lazyvim",
+		"LazyVim/LazyVim",
 		opts = {
 			colorscheme = "kanagawa",
 		},

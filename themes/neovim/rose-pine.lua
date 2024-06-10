@@ -1,7 +1,7 @@
 return {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
-		"lazyvim/lazyvim",
+		"LazyVim/LazyVim",
 		opts = {
 			colorscheme = "rose-pine-dawn",
 		},
