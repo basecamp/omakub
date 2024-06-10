@@ -5,6 +5,5 @@ return {
 		opts = {
 			colorscheme = "gruvbox",
 		},
-		config = require('plugins.commons').set_transparent_bg()
 	},
 }

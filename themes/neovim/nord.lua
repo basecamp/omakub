@@ -5,6 +5,5 @@ return {
 		opts = {
 			colorscheme = "nord",
 		},
-		config = require('plugins.commons').set_transparent_bg()
 	},
 }
