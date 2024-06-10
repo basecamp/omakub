@@ -11,7 +11,7 @@ just using the two-way default Gnome tiling. Super+<arrow left> and Super+<arrow
 Gnome window tiler, putting the active application on either the left or the right. Super+<arrow up> will 
 maximize the application. And, finally, F11 takes an application full screen.
 
-But when you are on that big scren, use Tactile with Super+T to bring up the tiling overview. Then press W+S 
+But when you are on that big screen, use Tactile with Super+T to bring up the tiling overview. Then press W+S 
 to make the application take up the two center slots. You can also do Super+Q+Q to take up just the Q slot in 
 the upper left slot. Or even Super+Q+S to take up the four slots on the left of the screen.
 
