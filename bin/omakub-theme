@@ -7,6 +7,12 @@ THEME=$(gum choose "${THEME_NAMES[@]}" --header "Choose your theme" --height 9 |
 # Install theme in Gnome, Terminal, and both default editors
 source $OMAKUB_PATH/themes/gnome/$THEME.sh
 cp $OMAKUB_PATH/themes/alacritty/$THEME.toml ~/.config/alacritty/theme.toml
+
+if [ ! -f ~/.config/nvim/plugin/after/transparency.lua ]; then
+    mkdir -p ~/.config/nvim/plugin/after
+    cp $OMAKUB_PATH/configs/neovim/transparency.lua ~/.config/nvim/plugin/after/transparency.lua
+fi
+
 cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
 sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 
