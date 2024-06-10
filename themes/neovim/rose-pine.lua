@@ -5,5 +5,6 @@ return {
 		opts = {
 			colorscheme = "rose-pine-dawn",
 		},
+		config = require('plugins.commons').set_transparent_bg()
 	},
 }
