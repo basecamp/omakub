@@ -4,5 +4,17 @@ if [[ $ARCH == "amd64" ]]; then
   sudo apt update
   sudo apt install -y spotify-client
 elif [[ $ARCH == "arm64" ]]; then
-  echo "Spotify for arm64 is not officially supported yet."
+cat <<EOF > ~/.local/share/applications/Spotify.desktop
+[Desktop Entry]
+Version=1.0
+Name=Spotify
+Comment=Spotify onlilne music player
+Exec=xdg-open  --app=https://open.spotify.com/ --name=Spotify
+Terminal=false
+Type=Application
+Icon=/home/$USER/.local/share/omakub/web-apps/icons/Spotify.png
+Categories=GTK,Network,Music;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupNotify=true
+EOF
 fi
