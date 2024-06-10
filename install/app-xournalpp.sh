@@ -1,1 +1,1 @@
-sudo apt install -y xournalpp
+sudo nala install -y xournalpp
