@@ -9,5 +9,5 @@ elif [[ $ARCH == "amd64" ]]; then
 fi
 tar -xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
-rm lazygit.tar.gz
+rm lazygit.tar.gz lazygit
 cd -

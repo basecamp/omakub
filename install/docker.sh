@@ -1,5 +1,9 @@
 sudo apt install -y docker.io docker-buildx
+sudo groupadd docker
 sudo usermod -aG docker ${USER}
+
+# Limit log size to avoid running out of disk
+echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
 
 DOCKER_COMPOSE_VERSION="2.27.0"
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -11,6 +15,6 @@ elif [[ $ARCH == "arm64" ]]; then
 fi
 chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 
-# FIXME: Add postgresql as a default configured DB as well
-sudo docker create --restart unless-stopped -p 3306:3306 --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8
-sudo docker create --restart unless-stopped -p 6379:6379 --name=redis redis
+sudo docker create --restart unless-stopped -p "127.0.0.1:3306:3306" --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8.4
+sudo docker create --restart unless-stopped -p "127.0.0.1:6379:6379" --name=redis redis:7
+sudo docker create --restart unless-stopped -p "127.0.0.1:5432:5432" --name=postgres16 -e POSTGRES_HOST_AUTH_METHOD=trust postgres:16

@@ -9,5 +9,5 @@ elif [[ $ARCH == "amd64" ]]; then
 fi
 tar -xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
-rm lazydocker.tar.gz
+rm lazydocker.tar.gz lazydocker
 cd -

@@ -6,7 +6,7 @@ elif [[ $ARCH == "arm64" ]]; then
 fi
 tar -xf zellij.tar.gz zellij
 sudo install zellij /usr/local/bin
-rm zellij.tar.gz
+rm zellij.tar.gz zellij
 cd -
 
 mkdir -p ~/.config/zellij/
