@@ -1,6 +1,7 @@
 force_color_prompt=yes
 color_prompt=yes
 
+# Colors
 RED="$(tput setaf 1)"
 GREEN="$(tput setaf 2)"
 YELLOW="$(tput setaf 3)"
@@ -16,16 +17,18 @@ NOCOLOR="$(tput sgr0)"
 
 # Symbols
 PROMPT_SYMBOL="❯"
-PROMPT_CLEAN_SYMBOL="☀ "
-PROMPT_DIRTY_SYMBOL="☂ "
-PROMPT_VENV_SYMBOL="☁ "
 
-case $(id -u) in
-	0) USER_COLOR="$RED" ;;
-	*) USER_COLOR="$GREEN" ;;
-esac
+# If the last subprocess exited with an error, show red colored
+PROMPT="\`if [ \$? = 0 ]; then echo \[\$BLUE\]; else echo \[\$RED\]; fi\`\$PROMPT_SYMBOL\[\$NOCOLOR\]"
 
-PROMPT_LINE="\`if [ \$? = 0 ]; then echo \[\$CYAN\]; else echo \[\$RED\]; fi\`\$PROMPT_SYMBOL\[\$NOCOLOR\] "
+# Support for Git
+export GIT_PS1_SHOWDIRTYSTATE=1
+PROMPT="\[\$YELLOW\]\$(__git_ps1)\[\$NOCOLOR\] $PROMPT"
 
-PS1="\[\e]0;\w\a\]$PROMPT_LINE"
-PS1="\[\e]0;\w\a\]$PS1"
+# Include workspace
+export PROMPT_DIRTRIM=2
+PROMPT="\[\$CYAN\]\w\[\$NOCOLOR\]$PROMPT"
+
+# Set PS1
+PS1="$PROMPT "
+PS1="\[\e]0;\u@\h\a\]$PS1"
