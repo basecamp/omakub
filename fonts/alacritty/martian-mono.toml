@@ -1,0 +1,4 @@
+[font]
+normal = { family = "Martian Mono", style = "Regular" }
+bold = { family = "Martian Mono", style = "Bold" }
+italic = { family = "Martian Mono", style = "Italic" }
