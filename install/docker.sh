@@ -1,8 +1,8 @@
 sudo apt install -y docker.io docker-buildx
 sudo usermod -aG docker ${USER}
 
-# Limit log size to avoid running out of disk
-echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
+# Use local logging driver - it's more efficient and uses compression by default.
+echo '{"log-driver":"local","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
 
 DOCKER_COMPOSE_VERSION="2.27.0"
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
