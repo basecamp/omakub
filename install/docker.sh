@@ -11,8 +11,8 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 # Give this user privileged Docker access
 sudo usermod -aG docker ${USER}
 
-# Limit log size to avoid running out of disk
-echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json > /dev/null
+# Use local logging driver - it's more efficient and uses compression by default.
+echo '{"log-driver":"local","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
 
 DOCKER_COMPOSE_VERSION="2.27.0"
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
