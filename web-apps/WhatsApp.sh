@@ -3,7 +3,7 @@ cat <<EOF > ~/.local/share/applications/WhatsApp.desktop
 Version=1.0
 Name=WhatsApp
 Comment=WhatsApp Messenger
-Exec=google-chrome --app="https://web.whatsapp.com" --name=WhatsApp
+Exec=xdg-open --app="https://web.whatsapp.com" --name=WhatsApp
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/omakub/web-apps/icons/WhatsApp.png

@@ -3,7 +3,7 @@ cat <<EOF > ~/.local/share/applications/Basecamp.desktop
 Version=1.0
 Name=Basecamp
 Comment=Basecamp Project Management
-Exec=google-chrome --app="https://launchpad.37signals.com" --name=Basecamp
+Exec=xdg-open --app="https://launchpad.37signals.com" --name=Basecamp
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/omakub/web-apps/icons/Basecamp.png

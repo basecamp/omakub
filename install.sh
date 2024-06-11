@@ -1,3 +1,7 @@
+# Determine architecture
+ARCH=$(dpkg --print-architecture)
+export ARCH
+
 # Be fancy
 source ~/.local/share/omakub/ascii.sh
 
@@ -17,6 +21,7 @@ for script in ~/.local/share/omakub/install/*.sh; do source $script; done
 
 # Upgrade everything that might ask for a reboot last
 sudo apt upgrade -y
+
 
 # Revert to normal idle and lock settings
 gsettings set org.gnome.desktop.screensaver lock-enabled true

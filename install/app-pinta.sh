@@ -1,2 +1,3 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+sudo add-apt-repository -y ppa:pinta-maintainers/pinta-stable
+sudo apt-get update
+sudo apt-get install -y pinta
