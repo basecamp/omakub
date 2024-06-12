@@ -4,7 +4,7 @@ if [[ $ARCH == "amd64" ]]; then
   sudo apt update
   sudo apt install -y spotify-client
 elif [[ $ARCH == "arm64" ]]; then
-cat <<EOF > ~/.local/share/applications/Spotify.desktop
+  cat <<EOF > ~/.local/share/applications/Spotify.desktop
 [Desktop Entry]
 Version=1.0
 Name=Spotify
