@@ -12,3 +12,6 @@ export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:/usr/local/sbi
 set +h
 
 export OMAKUB_PATH="/home/$USER/.local/share/omakub"
+
+# Specifies the number of spaces to print between an icon and its file name.
+export EZA_ICON_SPACING=2
