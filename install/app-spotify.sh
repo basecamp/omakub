@@ -9,7 +9,7 @@ elif [[ $ARCH == "arm64" ]]; then
 Version=1.0
 Name=Spotify
 Comment=Spotify online music player
-Exec=xdg-open  --app=https://open.spotify.com/ --name=Spotify
+Exec=xdg-open --app=https://open.spotify.com/ --name=Spotify
 Terminal=false
 Type=Application
 Icon=/home/$USER/.local/share/omakub/web-apps/icons/Spotify.png
