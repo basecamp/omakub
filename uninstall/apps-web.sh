@@ -1,3 +1,5 @@
-rm ~/.local/share/applications/WhatsApp.desktop
-rm ~/.local/share/applications/Basecamp.desktop
-rm ~/.local/share/applications/HEY.desktop
+#!/usr/bin/env bash
+
+rm "$HOME/.local/share/applications/WhatsApp.desktop"
+rm "$HOME/.local/share/applications/Basecamp.desktop"
+rm "$HOME/.local/share/applications/HEY.desktop"

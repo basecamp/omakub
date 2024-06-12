@@ -1,2 +1,4 @@
+#!/usr/bin/env bash
+
 sudo apt remove typora
-rm ~/.config/Typora
+rm "$HOME/.config/Typora"

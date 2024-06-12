@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Install mise for managing multiple versions of languages. See https://mise.jdx.dev/
 sudo apt update -y && sudo apt install -y gpg sudo wget curl
 sudo install -dm 755 /etc/apt/keyrings

@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
+
 # Install default programming languages
+# shellcheck disable=SC2140
 languages=$(gum choose "Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Java" --no-limit --selected "Ruby on Rails","Node.js" --height 9 --header "Select programming languages")
 
 for language in $languages; do
@@ -35,6 +38,7 @@ for language in $languages; do
 done
 
 # Install default databases
+# shellcheck disable=SC2140
 dbs=$(gum choose "MySQL" "Redis" "PostgreSQL" --no-limit --selected "MySQL","Redis" --height 5 --header "Select databases (runs in Docker)")
 
 for db in $dbs; do

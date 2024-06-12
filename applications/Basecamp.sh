@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
+
 cat <<EOF >~/.local/share/applications/Basecamp.desktop
+
 [Desktop Entry]
 Version=1.0
 Name=Basecamp
