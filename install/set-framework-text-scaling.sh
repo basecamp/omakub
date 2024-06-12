@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
+
 COMPUTER_MAKER=$(sudo dmidecode -t system | grep 'Manufacturer:' | awk '{print $2}')
+# shellcheck disable=SC2063
 SCREEN_RESOLUTION=$(xrandr | grep '*+' | awk '{print $1}')
 
 if [ "$COMPUTER_MAKER" == "Framework" ] && [ "$SCREEN_RESOLUTION" == "2256x1504" ]; then

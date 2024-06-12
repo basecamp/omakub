@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
+
 mkdir -p ~/.local/share/fonts
 
-cd ~/Downloads
+cd ~/Downloads || exit
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip
 unzip CascadiaMono.zip -d CascadiaFont
 cp CascadiaFont/*.ttf ~/.local/share/fonts
@@ -18,16 +20,16 @@ rm -rf JetBrainsMono.zip JetBrainsMono
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
 unzip Meslo.zip -d Meslo
-cp Meslo/*.ttf ~/.local/share/fonts
+cp Meslo/*.ttf "$HOME/.local/share/fonts"
 rm -rf Meslo.zip Meslo
 
 wget https://github.com/iaolo/iA-Fonts/archive/refs/heads/master.zip
 unzip master.zip -d iaFonts
-cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/share/fonts
+cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf "$HOME/.local/share/fonts"
 rm -rf master.zip iaFonts
 
 fc-cache
-cd -
+cd - || exit
 
 # Set Cascadia Mono as the default
 gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'

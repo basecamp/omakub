@@ -1,2 +1,5 @@
+#!/usr/bin/env bash
+
 # Setup default theme
-source ~/.local/share/omakub/themes/gnome/tokyo-night.sh
+# shellcheck disable=SC1091
+source "$HOME/.local/share/omakub/themes/gnome/tokyo-night.sh"
