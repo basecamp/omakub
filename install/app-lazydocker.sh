@@ -1,7 +1,7 @@
 cd ~/Downloads
 LAZYDOCKER_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 
-if [[ "$ARCH" == "arm64" ]]; then
+if [[ "$ARCH" == "amd64" ]]; then
   LAZYDOCKER_ARCH="x86_64"
 else
   LAZYDOCKER_ARCH="$ARCH"  

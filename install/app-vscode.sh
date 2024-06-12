@@ -1,9 +1,11 @@
 cd ~/Downloads
-if [[ $ARCH == "amd64" ]]; then
-    wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
-elif [[ $ARCH == "arm64" ]]; then
-    wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64'
+if [[ "$ARCH" == "amd64" ]]; then
+  VSCODE_ARCH="x64"
+else
+  VSCODE_ARCH="$ARCH"  
 fi
+
+wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-${VSCODE_ARCH}"
 sudo apt install -y ./code.deb
 
 rm code.deb
