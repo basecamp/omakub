@@ -8,7 +8,7 @@ elif [[ $ARCH == "arm64" ]]; then
 [Desktop Entry]
 Version=1.0
 Name=Spotify
-Comment=Spotify onlilne music player
+Comment=Spotify online music player
 Exec=xdg-open  --app=https://open.spotify.com/ --name=Spotify
 Terminal=false
 Type=Application
