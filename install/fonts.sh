@@ -13,6 +13,3 @@ rm -rf iafonts.zip iaFonts
 
 fc-cache
 cd -
-
-# Set Cascadia Mono as the default
-gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
