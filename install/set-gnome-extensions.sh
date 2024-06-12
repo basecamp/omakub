@@ -60,3 +60,6 @@ gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-name
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-move-to-workspace-shortcuts true
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
+
+# Configure tweaks
+gsettings set org.gnome.mutter center-new-windows true
