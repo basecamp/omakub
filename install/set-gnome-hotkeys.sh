@@ -4,6 +4,9 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 # Make it easy to maximize like you can fill left/right
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
 
+# Make it easy to resize undecorated windows
+gsettings set org.gnome.desktop.wm.keybindings begin-resize "['<Super>BackSpace']"
+
 # For keyboards that only have a start/stop button for music, like Logitech MX Keys Mini
 gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Shift>AudioPlay']"
 
