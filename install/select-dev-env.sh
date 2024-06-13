@@ -1,5 +1,5 @@
 # Install default programming languages
-languages=$(gum choose "Ruby on Rails" "Node.js" "Go" "Python" "Java" --no-limit --selected "Ruby on Rails","Node.js" --height 7 --header "Select programming languages")
+languages=$(gum choose "Ruby on Rails" "Node.js" "Go" "Python" "Java" "Elixir" --no-limit --selected "Ruby on Rails","Node.js" --height 8 --header "Select programming languages")
 
 for language in $languages; do
 	case $language in
@@ -18,6 +18,10 @@ for language in $languages; do
 		;;
 	Python)
 		mise use --global python@latest
+		;;
+	Elixir)
+		mise use --global erlang@latest
+		mise use --global elixir@latest
 		;;
 	esac
 done
