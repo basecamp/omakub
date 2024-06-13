@@ -1,6 +1,6 @@
 # Commands
 
-Omakub installs a host of modern commands that improve on the Linux stables. You should eventually read up on all eza, fzf, zoxide, bat has to offer.But here are the most important ways. 
+Omakub installs a host of modern commands that improve on the Linux stables. You should eventually read up on all eza, fzf, zoxide, bat has to offer.But here are the most important ways.
 
 | Command                   | Function                                    |
 | ------------------------- | ------------------------------------------- |

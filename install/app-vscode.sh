@@ -1,6 +1,6 @@
-cd ~/Downloads
+cd /tmp
 wget -O code.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
-sudo apt install ./code.deb
+sudo apt install -y ./code.deb
 rm code.deb
 cd -
 
@@ -9,3 +9,6 @@ cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
 
 # Install default supported themes
 code --install-extension enkia.tokyo-night
+
+# Install default language extensions
+code --install-extension golang.go

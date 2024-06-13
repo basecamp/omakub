@@ -1,5 +1,9 @@
-eval "$(rbenv init - bash)"
-eval "$(nodenv init -)"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+else
+  gum confirm "You're missing mise (replacement for rbenv + nodenv). Install now?" && \
+    source $OMAKUB_PATH/install/mise.sh
+fi
+
 eval "$(zoxide init bash)"
-eval "$(zellij setup --generate-auto-start bash)"
 source /usr/share/doc/fzf/examples/key-bindings.bash

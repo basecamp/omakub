@@ -1,18 +1,43 @@
-# Pick a preconfigured theme
-FONT=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" --header "Choose your programming font:" --height 6 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+set_font() {
+  local font_name=$1
+  local url=$2
+  local file_type=$3
+  local file_name="${font_name/ Nerd Font/}"
 
-[ ! -n "$FONT" ] && exit 0
+  if ! $(fc-list | grep -i "$font_name" > /dev/null); then
+    cd /tmp
+    wget -O "$file_name.zip" "$url"
+    unzip "$file_name.zip" -d "$file_name"
+    cp "$file_name"/*."$file_type" ~/.local/share/fonts
+    rm -rf "$file_name.zip" "$file_name"
+    fc-cache
+    cd -
+  fi
 
-if [ "$FONT" == "cascadia-mono" ]; then
-	NERD_FONT="CaskaydiaMono Nerd Font"
-elif [ "$FONT" == "fira-mono" ]; then
-	NERD_FONT="FiraMono Nerd Font"
-elif [ "$FONT" == "jetbrains-mono" ]; then
-	NERD_FONT="JetBrainsMono NFM"
-elif [ "$FONT" == "meslo" ]; then
-	NERD_FONT="MesloLGLDZ Nerd Font"
+  gsettings set org.gnome.desktop.interface monospace-font-name "$font_name 10"
+  cp "$OMAKUB_PATH/fonts/alacritty/$file_name.toml" ~/.config/alacritty/font.toml
+  sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$font_name\"/g" ~/.config/Code/User/settings.json
+}
+
+if [ "$#" -gt 1 ]; then
+  choice=${!#}
+else
+  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "<< Back" --height 7 --header "Choose your programming font")
 fi
 
-gsettings set org.gnome.desktop.interface monospace-font-name "$NERD_FONT 10"
-cp $OMAKUB_PATH/fonts/alacritty/$FONT.toml ~/.config/alacritty/font.toml
-sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$NERD_FONT\"/g" ~/.config/Code/User/settings.json
+case $choice in
+  "Cascadia Mono")
+    set_font "CaskaydiaMono Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CascadiaMono.zip" "ttf"
+    ;;
+  "Fira Mono")
+    set_font "FiraMono Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.zip" "otf"
+    ;;
+  "JetBrains Mono")
+    set_font "JetBrainsMono Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" "ttf"
+    ;;
+  "Meslo")
+    set_font "MesloLGS Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip" "Meslo" "ttf"
+    ;;
+esac
+
+source $OMAKUB_PATH/bin/omakub-menu
