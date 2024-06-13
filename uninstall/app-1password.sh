@@ -1,1 +1,1 @@
-sudo apt remove -y 1password
+sudo apt remove -y 1password 1password-cli
