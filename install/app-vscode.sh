@@ -5,7 +5,7 @@ rm code.deb
 cd -
 
 mkdir -p ~/.config/Code/User
-cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
+cp ~/.local/share/omakora/configs/vscode.json ~/.config/Code/User/settings.json
 
 # Install default supported themes
 code --install-extension enkia.tokyo-night

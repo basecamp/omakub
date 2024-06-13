@@ -1,2 +1,2 @@
-# Leave this file as-is to allow omakub to swap fonts system wide
-import = [ "~/.local/share/omakub/fonts/alacritty/cascadia-mono.toml" ]
+# Leave this file as-is to allow omakora to swap fonts system wide
+import = [ "~/.local/share/omakora/fonts/alacritty/cascadia-mono.toml" ]

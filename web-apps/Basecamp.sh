@@ -6,7 +6,7 @@ Comment=Basecamp Project Management
 Exec=google-chrome --app="https://launchpad.37signals.com" --name=Basecamp
 Terminal=false
 Type=Application
-Icon=/home/$USER/.local/share/omakub/web-apps/icons/Basecamp.png
+Icon=/home/$USER/.local/share/omakora/web-apps/icons/Basecamp.png
 Categories=GTK;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupNotify=true

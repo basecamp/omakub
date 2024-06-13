@@ -1,1 +1,1 @@
-for script in ~/.local/share/omakub/web-apps/*.sh; do source $script; done
+for script in ~/.local/share/omakora/web-apps/*.sh; do source $script; done

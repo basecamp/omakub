@@ -10,7 +10,7 @@ gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # Run installers
-for script in ~/.local/share/omakub/install/*.sh; do source $script; done
+for script in ~/.local/share/omakora/install/*.sh; do source $script; done
 
 # Upgrade everything that might ask for a reboot last
 sudo apt upgrade -y

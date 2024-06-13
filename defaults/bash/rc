@@ -1,4 +1,4 @@
-source ~/.local/share/omakub/defaults/bash/shell
-source ~/.local/share/omakub/defaults/bash/aliases
-source ~/.local/share/omakub/defaults/bash/prompt
-source ~/.local/share/omakub/defaults/bash/init
+source ~/.local/share/omakora/defaults/bash/shell
+source ~/.local/share/omakora/defaults/bash/aliases
+source ~/.local/share/omakora/defaults/bash/prompt
+source ~/.local/share/omakora/defaults/bash/init
