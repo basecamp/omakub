@@ -5,7 +5,7 @@ for language in $languages; do
 	case $language in
 	Ruby)
 		mise use --global ruby@3.3
-		gem install rails --no-document
+		mise x ruby -- gem install rails --no-document
 		;;
 	Node.js)
 		mise use --global node@lts
