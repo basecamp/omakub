@@ -3,3 +3,4 @@ mkdir -p ~/.config/alacritty
 cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 cp ~/.local/share/omakub/configs/alacritty/theme.toml ~/.config/alacritty/theme.toml
 cp ~/.local/share/omakub/configs/alacritty/font.toml ~/.config/alacritty/font.toml
+echo 1 | sudo update-alternatives --config x-terminal-emulator
