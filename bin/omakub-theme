@@ -12,6 +12,13 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
       cp $OMAKUB_PATH/configs/neovim/transparency.lua ~/.config/nvim/plugin/after/transparency.lua
   fi
 
+  # Chrome theme update
+  if gum confirm "Do you want to update Chrome theme? If yes, Chrome will be restarted!"; then
+    pkill -9 chrome
+    source $OMAKUB_PATH/themes/chrome/$THEME.sh
+    google-chrome > /dev/null 2>&1 &
+  fi
+
   cp $OMAKUB_PATH/themes/neovim/$THEME.lua ~/.config/nvim/lua/plugins/theme.lua
   sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 
