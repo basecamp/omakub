@@ -8,4 +8,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
 
 	# Enable default extras
 	cp ~/.local/share/omakub/configs/neovim/lazyvim.json ~/.config/nvim/lazyvim.json
+
+	# Disable plugin update notifications
+	sed -i '/enabled = true,/a\    notify = false,' ~/.config/nvim/lua/config/lazy.lua
 fi
