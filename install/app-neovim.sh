@@ -12,3 +12,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
 	# Disable plugin update notifications
 	sed -i '/enabled = true,/a\    notify = false,' ~/.config/nvim/lua/config/lazy.lua
 fi
+
+if ! grep -q "notify" ~/.config/nvim/lua/config/lazy.lua; then
+	sed -i '/enabled = true,/a\    notify = false,' ~/.config/nvim/lua/config/lazy.lua
+fi
