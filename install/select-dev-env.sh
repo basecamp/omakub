@@ -1,10 +1,11 @@
 # Install default programming languages
-languages=$(gum choose "Ruby" "Node.js" "Go" "Python" "Java" --no-limit --selected "Ruby","Node.js" --height 7 --header "Select programming languages")
+languages=$(gum choose "Ruby on Rails" "Node.js" "Go" "Python" "Java" --no-limit --selected "Ruby on Rails","Node.js" --height 7 --header "Select programming languages")
 
 for language in $languages; do
 	case $language in
 	Ruby)
 		mise use --global ruby@3.3
+		gem install rails --no-document
 		;;
 	Node.js)
 		mise use --global node@lts

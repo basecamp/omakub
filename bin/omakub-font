@@ -22,7 +22,7 @@ set_font() {
 if [ "$#" -gt 1 ]; then
   choice=${!#}
 else
-  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" --height 6)
+  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "<< Back" --height 7 --header "Choose your programming font")
 fi
 
 case $choice in
@@ -38,7 +38,6 @@ case $choice in
   "Meslo")
     set_font "MesloLGS Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip" "Meslo" "ttf"
     ;;
-  * )
-    exit 0
-    ;;
 esac
+
+source $OMAKUB_PATH/bin/omakub-menu

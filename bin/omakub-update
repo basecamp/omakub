@@ -1,3 +1,6 @@
 cd $OMAKUB_PATH
 git pull
 cd -
+gum spin --spinner globe --title "Update has completed!" -- sleep 3
+clear
+source $OMAKUB_PATH/bin/omakub
