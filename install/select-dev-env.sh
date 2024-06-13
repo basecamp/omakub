@@ -12,6 +12,7 @@ for language in $languages; do
 		;;
 	Go)
 		mise use --global go@latest
+		code --install-extension golang.go
 		;;
 	Java)
 		mise use --global java@latest
