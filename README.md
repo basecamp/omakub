@@ -6,7 +6,7 @@ Watch the introduction video and read more at [omakora.org](https://omakora.org)
 
 ## Contributing to the documentation
 
-Please help us improve Omakora's documentation on the [basecamp/omakora-site repository](https://github.com/basecamp/omakora-site).
+Please help us improve Omakora's documentation on the [crmne/omakora-site repository](https://github.com/crmne/omakora-site).
 
 ## License
 
