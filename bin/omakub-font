@@ -22,7 +22,7 @@ set_font() {
 if [ "$#" -gt 1 ]; then
   choice=${!#}
 else
-  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "<< Back" --height 7)
+  choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "<< Back" --height 7 --header "Choose your programming font")
 fi
 
 case $choice in
