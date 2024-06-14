@@ -10,6 +10,7 @@ apps=(
 	"Zoom.desktop"
 	"pinta_pinta.desktop"
 	"com.github.xournalpp.xournalpp.desktop"
+	"steam.desktop"
 	"1password.desktop"
 	"org.gnome.Settings.desktop"
 	"org.gnome.Nautilus.desktop"
