@@ -1,8 +1,5 @@
 if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
-else
-  gum confirm "You're missing mise (replacement for rbenv + nodenv). Install now?" && \
-    source $OMAKUB_PATH/install/mise.sh
 fi
 
 eval "$(zoxide init bash)"
