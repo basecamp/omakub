@@ -15,4 +15,4 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
 sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
 # Install 1Password & 1password-cli
-sudo apt install -y 1password 1password-cli
+sudo apt update && sudo apt install -y 1password 1password-cli
