@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cat <<EOF >~/.local/share/applications/Omakub.desktop
 [Desktop Entry]
 Version=1.0
