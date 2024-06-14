@@ -25,3 +25,4 @@ the upper left slot. Or even Super+Q+S to take up the four slots on the left of 
 | Super+T+E+D   | Fill right vertical  |
 | Super+T+Q+Q   | Fill upper left      |
 | Super+T+A+A   | Fill lower left      |
+| Super+T+1-4   | Switch Layout 1-4    |
