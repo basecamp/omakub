@@ -1,5 +1,23 @@
+#!/usr/bin/bash
+
 cd $OMAKUB_PATH
+last_updated=$(git log -1 --format=%cd --date=unix)
 git pull
+currently_updated=$(git log -1 --format=%cd --date=unix)
+
+if [ $last_updated -lt $currently_updated ]; then
+  for file in $OMAKUB_PATH/migrations/*.sh; do
+    # Extract the timestamp from the file name
+    filename=$(basename "$file")
+    timestamp="${filename%.sh}"
+
+    # Run the migration script if the timestamp is before the current Git revision
+    if [ $timestamp -lt $currently_updated ]; then
+      source $file
+    fi
+  done
+fi
+
 cd -
 gum spin --spinner globe --title "Update has completed!" -- sleep 3
 clear
