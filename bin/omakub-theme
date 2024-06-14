@@ -14,7 +14,9 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
 
   # Chrome theme update
   if gum confirm "Do you want to update Chrome theme? If yes, Chrome will be restarted!"; then
-    pkill -9 chrome
+    pkill -f chrome
+    wait
+
     source $OMAKUB_PATH/themes/chrome/$THEME.sh
     google-chrome > /dev/null 2>&1 &
   fi
