@@ -2,5 +2,10 @@ if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
 fi
 
-eval "$(zoxide init bash)"
-source /usr/share/doc/fzf/examples/key-bindings.bash
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init bash)"
+fi
+
+if command -v fzf &> /dev/null; then
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
