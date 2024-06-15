@@ -20,8 +20,9 @@ the upper left slot. Or even Super+Q+S to take up the four slots on the left of 
 | Hotkey        | Function             |
 | ------------- | -------------------- |
 | Super+T       | Tiling overlay       |
-| Super+W+S     | Fill center vertical |
-| Super+Q+A     | Fill left vertical   |
-| Super+E+D     | Fill right vertical  |
-| Super+Q+Q     | Fill upper left      |
-| Super+A+A     | Fill lower left      |
+| Super+T+W+S   | Fill center vertical |
+| Super+T+Q+A   | Fill left vertical   |
+| Super+T+E+D   | Fill right vertical  |
+| Super+T+Q+Q   | Fill upper left      |
+| Super+T+A+A   | Fill lower left      |
+| Super+T+1-4   | Switch Layout 1-4    |
