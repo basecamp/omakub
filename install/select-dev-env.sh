@@ -23,6 +23,7 @@ for language in $languages; do
 	Elixir)
 		mise use --global erlang@latest
 		mise use --global elixir@latest
+		mise x elixir -- mix local.hex --force
 		;;
 	PHP)
 		sudo add-apt-repository -y ppa:ondrej/php
