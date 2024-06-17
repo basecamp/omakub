@@ -1,17 +1,17 @@
 {
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "Martian Mono",
-  "editor.fontSize": 12,
+  "editor.fontSize": 11,
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": "off",
-  "editor.quickSuggestions": {
-    "comments": false,
-    "other": false,
-    "strings": false
-  },
+  // "editor.quickSuggestions": {
+  //   "comments": false,
+  //   "other": false,
+  //   "strings": false
+  // },
   "editor.rulers": [120],
   "editor.selectionHighlight": false,
-  "editor.suggestOnTriggerCharacters": false,
+  // "editor.suggestOnTriggerCharacters": false,
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
@@ -22,8 +22,8 @@
   "git.confirmSync": false,
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "always",
-  "security.workspace.trust.untrustedFiles": "open",
-  "window.menuBarVisibility": "compact",
+  // "security.workspace.trust.untrustedFiles": "open",
+  // "window.menuBarVisibility": "compact",
   "window.titleBarStyle": "custom",
   "workbench.colorTheme": "Visual Studio Dark",
   "workbench.iconTheme": "material-icon-theme"
