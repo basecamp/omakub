@@ -79,8 +79,8 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | CapsLock M S | 😀 | smile      |
 | CapsLock M C | 😂 | cry        |
 | CapsLock M L | 😍 | love       |
-| CapsLock M V | ✌️" | victory    |
-| CapsLock M H | ❤️" | heart      |
+| CapsLock M V | ✌️ | victory    |
+| CapsLock M H | ❤️ | heart      |
 | CapsLock M Y | 👍 | yes        |
 | CapsLock M N | 👎 | no         |
 | CapsLock M F | 🖕 | fuck       |
