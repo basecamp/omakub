@@ -6,3 +6,5 @@ if [ "$COMPUTER_MAKER" == "Framework" ] && [ "$SCREEN_RESOLUTION" == "2256x1504"
 	gsettings set org.gnome.desktop.interface cursor-size 16
 	sed -i "s/size = 9/size = 7/g" ~/.config/alacritty/alacritty.toml
 fi
+
+// Should update this for the Lenovo Yoga. There is a small scaling issue on the laptop screen.
