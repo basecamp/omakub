@@ -1,4 +1,0 @@
-import = [ "~/.config/alacritty/theme.toml", "~/.config/alacritty/font.toml", "~/.local/share/omakub/defaults/alacritty.toml" ]
-
-[font]
-size = 9

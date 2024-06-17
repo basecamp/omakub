@@ -1,6 +1,6 @@
 [ -f "~/.bashrc" ] && mv ~/.bashrc ~/.bashrc.bak
-cp ~/.local/share/omakub/configs/bashrc ~/.bashrc
-source ~/.local/share/omakub/defaults/bash/shell
+cp ~/.local/share/omakub-wsl/configs/bashrc ~/.bashrc
+source ~/.local/share/omakub-wsl/defaults/bash/shell
 
 [ -f "~/.inputrc" ] && mv ~/.inputrc ~/.inputrc.bak
-cp ~/.local/share/omakub/configs/inputrc ~/.inputrc
+cp ~/.local/share/omakub-wsl/configs/inputrc ~/.inputrc
