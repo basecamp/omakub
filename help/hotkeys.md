@@ -93,3 +93,8 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | CapsLock M X | 🎉 | xellebrate |
 | CapsLock M 1 | 💯 | 100%       |
 | CapsLock M T | 🥂 | toast      |
+
+## CopyQ
+| Hotkey     | Function               |
+|------------|------------------------|
+| Ctrl+Alt+H | Show CopyQ main window |
