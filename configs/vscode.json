@@ -22,5 +22,7 @@
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "workbench.colorTheme": "Tokyo Night",
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "files.insertFinalNewline": true,
+  "editor.scrollBeyondLastLine": false
 }
