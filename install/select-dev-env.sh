@@ -9,6 +9,9 @@ for language in $languages; do
 		;;
 	Node.js)
 		mise use --global node@lts
+
+		# Enable the extras plugins in NeoVim
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.typescript"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
 		;;
 	Go)
 		mise use --global go@latest
