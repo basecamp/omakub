@@ -13,6 +13,11 @@ for language in $languages; do
 	Go)
 		mise use --global go@latest
 		code --install-extension golang.go
+
+		# Enable the extras plugins in NeoVim
+		cd /tmp/
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.go"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
+		cd -
 		;;
 	Java)
 		mise use --global java@latest
