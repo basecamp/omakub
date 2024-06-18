@@ -36,6 +36,16 @@ for language in $languages; do
 		php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 		php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 		rm composer-setup.php
+
+		# Enable the extras plugins in NeoVim
+		cd /tmp/
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.php"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
+
+		# Configure PHP's LSP to use intelephense instead of phpactor (default)
+		if ! grep -q 'php_lsp' ~/.config/nvim/lua/config/options.lua; then
+			echo 'vim.g.lazyvim_php_lsp = "intelephense"' >>~/.config/nvim/lua/config/options.lua
+		fi
+		cd -
 		;;
 	esac
 done
