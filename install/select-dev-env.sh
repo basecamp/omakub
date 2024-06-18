@@ -9,10 +9,16 @@ for language in $languages; do
 		;;
 	Node.js)
 		mise use --global node@lts
+
+		# Enable the extras plugins in NeoVim
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.typescript"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
 		;;
 	Go)
 		mise use --global go@latest
 		code --install-extension golang.go
+
+		# Enable the extras plugins in NeoVim
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.go"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
 		;;
 	Java)
 		mise use --global java@latest
@@ -31,6 +37,14 @@ for language in $languages; do
 		php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 		php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 		rm composer-setup.php
+
+		# Enable the extras plugins in NeoVim
+		jq '.extras |= (. + ["lazyvim.plugins.extras.lang.php"] | unique)' ~/.config/nvim/lazyvim.json >tmp.json && mv tmp.json ~/.config/nvim/lazyvim.json
+
+		# Configure PHP's LSP to use intelephense instead of phpactor (default)
+		if ! grep -q 'php_lsp' ~/.config/nvim/lua/config/options.lua; then
+			echo 'vim.g.lazyvim_php_lsp = "intelephense"' >>~/.config/nvim/lua/config/options.lua
+		fi
 		;;
 	esac
 done
