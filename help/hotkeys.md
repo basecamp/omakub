@@ -16,13 +16,14 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 ## Tiling
 
 | Hotkey              | Function                    |
-| ------------------- | --------------------------- |
+|---------------------|-----------------------------|
 | F11                 | Go full screen              |
 | Shift + F11         | Go full screen w/ title bar |
 | Super + Left arrow  | Fill left half              |
 | Super + Right arrow | Fill right half             |
 | Super + Up arrow    | Fill full screen            |
 | Super + T           | Tiling overlay              |
+| Super + Shift + T   | Tiling settings             |
 | Super + T W S       | Fill center vertical        |
 | Super + T Q A       | Fill left vertical          |
 | Super + T E D       | Fill right vertical         |
