@@ -24,6 +24,7 @@ alias lzd='lazydocker'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+alias gst='git status'
 
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
