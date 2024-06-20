@@ -4,6 +4,18 @@ Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern 
 
 ** Edited by Louis to include the things required for my specific setup. **
 
+## Installation
+```
+echo "Installing git..."
+sudo apt-get update > /dev/null
+sudo apt-get install -y git > /dev/null
+
+echo "Cloning stable OMAKUB..."
+git clone -b stable https://github.com/LouisWhit/omakub.git ~/.local/share/omakub > /dev/null
+
+source ~/.local/share/omakub/install.sh
+```
+
 Watch the introduction video and read more at [omakub.org](https://omakub.org).
 
 ## Contributing to the documentation
