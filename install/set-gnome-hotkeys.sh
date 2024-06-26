@@ -4,7 +4,7 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 # Make it easy to maximize like you can fill left/right
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
 
-# Toggle Maximized
+# Toggle maximized
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>F']"
 
 # Make it easy to resize undecorated windows
