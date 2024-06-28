@@ -29,7 +29,7 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | Super + T Q Q       | Fill upper left             |
 | Super + T A A       | Fill lower left             |
 
-## Terminal
+## Terminal (These are Zellij hotkeys)
 
 | Hotkey              | Function                    |
 | ------------------- | --------------------------- |
@@ -77,10 +77,10 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | Hotkey       | EM | Clue       |
 | ------------ | -- | ---------- |
 | CapsLock M S | 😀 | smile      |
-| CapsLock M C | 😂 | cry        |
+| CapsLock M C | 😢 | cry        |
 | CapsLock M L | 😍 | love       |
-| CapsLock M V | ✌️" | victory    |
-| CapsLock M H | ❤️" | heart      |
+| CapsLock M V | ✌️ | victory    |
+| CapsLock M H | ❤️ | heart      |
 | CapsLock M Y | 👍 | yes        |
 | CapsLock M N | 👎 | no         |
 | CapsLock M F | 🖕 | fuck       |
@@ -88,7 +88,7 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | CapsLock M R | 🤘 | rock       |
 | CapsLock M K | 😘 | kiss       |
 | CapsLock M E | 🙄 | eyeroll    |
-| CapsLock M D | 🤤 | droll      |
+| CapsLock M D | 🤤 | drool      |
 | CapsLock M M | 💰 | money      |
 | CapsLock M X | 🎉 | xellebrate |
 | CapsLock M 1 | 💯 | 100%       |
