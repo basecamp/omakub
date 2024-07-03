@@ -17,3 +17,4 @@ include "%L"
 <Multi_key> <m> <x> : "🎉" # xellebrate
 <Multi_key> <m> <1> : "💯" # 100%
 <Multi_key> <m> <t> : "🥂" # toast
+<Multi_key> <m> <p> : "🙏" # pray

@@ -1,0 +1,1 @@
+rustup self uninstall -y

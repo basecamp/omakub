@@ -1,2 +1,0 @@
-INSTALLER=$(gum file $OMAKUB_PATH/install)
-[ -n "$INSTALLER" ] && gum confirm "Run installer?" && source $INSTALLER

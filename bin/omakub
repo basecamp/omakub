@@ -1,11 +1,7 @@
 #!/bin/bash
 
 source $OMAKUB_PATH/ascii.sh
-
-if [ $# -eq 0 ]; then
-	SUB=$(gum choose "Help" "Theme" "Font" "Install" "Uninstall" "Update" --height 9 --header "" | tr '[:upper:]' '[:lower:]')
-else
-	SUB=$1
-fi
-
-[ -n "$SUB" ] && source $OMAKUB_PATH/bin/omakub-$SUB
+echo "" # Add spacing
+echo "                                 $(cat $OMAKUB_PATH/version)"
+echo "" # Add spacing
+source $OMAKUB_PATH/bin/omakub-sub/menu.sh

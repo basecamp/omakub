@@ -1,3 +1,0 @@
-cd $OMAKUB_PATH
-git pull
-cd -
