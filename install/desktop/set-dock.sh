@@ -2,18 +2,22 @@
 apps=(
 	"google-chrome.desktop"
 	"Alacritty.desktop"
+	"Neovim.desktop"
 	"code.desktop"
 	"WhatsApp.desktop"
 	"signal-desktop.desktop"
-	"spotify.desktop"
-	"typora.desktop"
 	"Zoom.desktop"
-	"pinta_pinta.desktop"
-	"com.github.xournalpp.xournalpp.desktop"
+	"spotify.desktop"
 	"steam.desktop"
+	"pinta_pinta.desktop"
+	"md.obsidian.Obsidian.desktop"
+	"Activity.desktop"
+	"Docker.desktop"
+	"Omakub.desktop"
 	"1password.desktop"
 	"org.gnome.Settings.desktop"
 	"org.gnome.Nautilus.desktop"
+	"localsend_app.desktop"
 )
 
 # Array to hold installed favorite apps
@@ -21,6 +25,7 @@ installed_apps=()
 
 # Directory where .desktop files are typically stored
 desktop_dirs=(
+	"/var/lib/flatpak/exports/share/applications"
 	"/usr/share/applications"
 	"/usr/local/share/applications"
 	"$HOME/.local/share/applications"

@@ -5,6 +5,6 @@ sudo install zellij /usr/local/bin
 rm zellij.tar.gz zellij
 cd -
 
-mkdir -p ~/.config/zellij/
+mkdir -p ~/.config/zellij/themes
 [ ! -f "$HOME/.config/zellij/config.kdl" ] && cp ~/.local/share/omakub/configs/zellij.kdl ~/.config/zellij/config.kdl
-[ ! -L "$HOME/.config/zellij/themes" ] && ln -s ~/.local/share/omakub/themes/zellij ~/.config/zellij/themes
+cp ~/.local/share/omakub/themes/tokyo-night/zellij.kdl ~/.config/zellij/themes/tokyo-night.kdl
