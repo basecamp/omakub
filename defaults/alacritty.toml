@@ -8,7 +8,7 @@ program = "zellij"
 padding.x = 16
 padding.y = 14
 decorations = "None"
-opacity = 0.97
+opacity = 0.98
 
 [keyboard]
 bindings = [
