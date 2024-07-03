@@ -1,2 +1,0 @@
-# Leave this file as-is to allow omakub to swap themes system wide
-import = [ "~/.local/share/omakub/themes/alacritty/tokyo-night.toml" ]

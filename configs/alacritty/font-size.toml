@@ -1,0 +1,3 @@
+# Leave this file in place for omakub to rely on a shared font size for all terminal apps
+[font]
+size = 9
