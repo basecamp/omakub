@@ -1,3 +1,3 @@
 HELP=$(gum choose "Hotkeys" "Commands" "Tactile" --header "What do you need help with?" --height 5 | tr '[:upper:]' '[:lower:]')
 [ -n "$HELP" ] && gum pager --soft-wrap <$OMAKUB_PATH/help/$HELP.md
-source $OMAKUB_PATH/bin/omakub-menu
+source $OMAKUB_PATH/bin/omakub-sub/menu.sh
