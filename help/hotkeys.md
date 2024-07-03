@@ -7,6 +7,7 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | Hotkey                  | Function              |
 | ----------------------- | --------------------- |
 | Super + Space           | Type app to launch    |
+| Super + A               | See all apps          |
 | Super + W               | Close app             |
 | Super + 1/2/3/4         | Jump to workspace     |
 | Shift + Super + 1/2/3/4 | Move app to workspace |
@@ -43,6 +44,14 @@ The joy of Linux flows from the keyboard. Training yourself to navigate and comm
 | Ctrl + O D          | Suspend session             |
 | Ctrl + S            | Scroll mode (use pgup/down) |
 | Ctrl + R            | Reveal command history      |
+
+## File Manager
+
+| Hotkey              | Function                       |
+| ------------------- | ------------------------------ |
+| Ctrl + L            | Go to path                     |
+| Space               | Preview file (arrows navigate) |
+| Alt + Arrow Up      | Go back one folder             |
 
 ## Neovim (w/ lazyvim)
 

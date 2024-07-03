@@ -14,3 +14,4 @@ Omakub installs a host of modern commands that improve on the Linux stables. You
 | g                         | Git                                         |
 | compress <file/dir>       | Compress named file/dir as tar.gz           |
 | decompress <file>         | Decompress tar.gz file                      |
+| <command> **<TAB>         | Run command on file picked by fuzzy find    |
