@@ -1,5 +1,5 @@
 # Exit immediately if a command exits with a non-zero status
-# set -e
+set -e
 
 # Desktop software and tweaks will only be installed if we're running Gnome
 RUNNING_GNOME=$([[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] && echo true || echo false)
