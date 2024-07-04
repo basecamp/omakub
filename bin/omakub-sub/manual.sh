@@ -1,2 +1,2 @@
-google-chrome "https://manual.omakub.org" >/dev/null
+xdg-open "https://manual.omakub.org" >/dev/null
 source $OMAKUB_PATH/bin/omakub-sub/menu.sh
