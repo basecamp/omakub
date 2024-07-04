@@ -15,9 +15,12 @@ echo -e "\nBegin installation (or abort with ctrl+c)..."
 sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
-echo "Cloning stable Omakub..."
+echo "Cloning Omakub..."
 rm -rf ~/.local/share/omakub
-git clone -b stable https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
+git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
+cd ~/.local/share/omakub
+git fetch origin "${OMAKUB_REF:-stable}" && git checkout FETCH_HEAD
+cd -
 
 echo "Installation starting..."
 source ~/.local/share/omakub/install.sh
