@@ -2,7 +2,7 @@
 if [[ -v OMAKUB_FIRST_RUN_LANGUAGES ]]; then
 	languages=$OMAKUB_FIRST_RUN_LANGUAGES
 else
-	AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
+	AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java" "dotnet")
 	languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
 fi
 
@@ -39,6 +39,9 @@ if [[ -n "$languages" ]]; then
 			;;
 		Java)
 			mise use --global java@latest
+			;;
+		dotnet)
+			sudo apt-get install -y dotnet-sdk-8.0
 			;;
 		esac
 	done
