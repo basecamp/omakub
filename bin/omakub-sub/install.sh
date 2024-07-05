@@ -3,6 +3,7 @@ CHOICES=(
 	"Dev Database  Install development database in Docker"
 	"1password     Manage your passwords securely across devices"
 	"Brave         Chrome-based browser with built-in ad blocking"
+	"Doom Emacs    Emacs framework with curated list of packages"
 	"Dropbox       Sync files across computers with ease"
 	"OBS Studio    Record screencasts with inputs from both display + webcam"
 	"Audacity      Record and edit audio"
