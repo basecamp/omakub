@@ -65,5 +65,8 @@ gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
 # Configure tweaks
 gsettings set org.gnome.mutter center-new-windows true
 
+# Configure weekday extension
+dconf write /org/gnome/shell/extensions/weeks-start-on-monday/start-day 0
+
 # Set Cascadia Mono as the default monospace font
 gsettings set org.gnome.desktop.interface monospace-font-name 'CaskaydiaMono Nerd Font 10'
