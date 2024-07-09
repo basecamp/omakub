@@ -1,6 +1,4 @@
-echo $1
-
-if [ -n "$1" ]; then
+if [ -n "$1" ] && [ $1 != "theme" ]; then
     THEME=$(echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 else
     THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
@@ -21,4 +19,8 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
 	# source $OMAKUB_PATH/themes/$THEME/chrome.sh
 fi
 
-source $OMAKUB_PATH/bin/omakub-sub/menu.sh
+if [ -n "$1" ] && [ $1 != "theme" ]; then
+	exit 0
+else
+	source $OMAKUB_PATH/bin/omakub-sub/menu.sh
+fi
