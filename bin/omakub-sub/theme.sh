@@ -1,5 +1,11 @@
-THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
-THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --height 10 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+echo $1
+
+if [ -n "$1" ]; then
+    THEME=$(echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+else
+    THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
+    THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --height 10 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+fi
 
 if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
 	cp $OMAKUB_PATH/themes/$THEME/alacritty.toml ~/.config/alacritty/theme.toml
