@@ -9,7 +9,7 @@ fi
 enable_lazyvim_extras() {
   local temp_file=$(mktemp /tmp/omakub.XXXXX)
   local extras=("$@")
-  local jq_extras=$(printf '%s,' "\"${extras[@]}\"")
+  local jq_extras=$(printf '"%s",' "${extras[@]}")
   jq_extras="[${jq_extras%,}]"
 
   jq --argjson extras "$jq_extras" '.extras |= (. + $extras | unique)' ~/.config/nvim/lazyvim.json >"$temp_file" &&
@@ -40,8 +40,7 @@ if [[ -n "$languages" ]]; then
       php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
       rm composer-setup.php
 
-      enable_lazyvim_extras "lazyvim.plugins.extras.lang.php"
-      enable_lazyvim_extras "lazyvim.plugins.extras.lang.typescript"
+      enable_lazyvim_extras "lazyvim.plugins.extras.lang.php" "lazyvim.plugins.extras.lang.typescript"
 
       # Configure PHP's LSP to use intelephense instead of phpactor (default)
       if ! grep -q 'php_lsp' ~/.config/nvim/lua/config/options.lua; then
