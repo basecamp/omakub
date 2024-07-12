@@ -21,9 +21,7 @@ check_ubuntu_version() {
     fi
 }
 
-if check_ubuntu_version; then
-    echo "Script is running on Ubuntu 24.04 or higher. Continuing execution..."
-else
+if ! check_ubuntu_version; then
     echo "Script execution failed due to system requirements not being met." >&2
     exit 1
 fi
