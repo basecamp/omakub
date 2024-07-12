@@ -8,6 +8,7 @@ CHOICES=(
 	"Audacity      Record and edit audio"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"
 	"RubyMine      IntelliJ's commercial Ruby editor"
+	"Zed           Fast all-purpose editor"
 	"Spotify       Stream music from the world's most popular service"
 	"Steam         Play games from Valve's store"
 	"Zoom          Attend and host video chat meetings"
@@ -16,7 +17,7 @@ CHOICES=(
 	"<< Back       "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 17 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 18 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
 	# Don't install anything
