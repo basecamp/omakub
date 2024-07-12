@@ -2,21 +2,23 @@ CHOICES=(
 	"Dev Language  Install programming language environment"
 	"Dev Database  Install development database in Docker"
 	"1password     Manage your passwords securely across devices"
+	"Audacity      Record and edit audio"
 	"Brave         Chrome-based browser with built-in ad blocking"
+	"Doom Emacs    Emacs framework with curated list of packages"
 	"Dropbox       Sync files across computers with ease"
 	"OBS Studio    Record screencasts with inputs from both display + webcam"
-	"Audacity      Record and edit audio"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"
 	"RubyMine      IntelliJ's commercial Ruby editor"
 	"Spotify       Stream music from the world's most popular service"
 	"Steam         Play games from Valve's store"
-	"Zoom          Attend and host video chat meetings"
 	"VirtualBox    Virtual machines to run Windows/Linux"
+	"Zed           Fast all-purpose editor"
+	"Zoom          Attend and host video chat meetings"
 	"> All         Re-run any of the default installers"
 	"<< Back       "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 17 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 19 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
 	# Don't install anything
