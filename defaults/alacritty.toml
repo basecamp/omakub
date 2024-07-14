@@ -1,5 +1,6 @@
 [env]
 TERM = "xterm-256color"
+EDITOR = "nvim"
 
 [shell]
 program = "zellij"
