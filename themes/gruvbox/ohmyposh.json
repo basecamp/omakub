@@ -1,0 +1,209 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "primary": "#d4be98",
+    "secondary": "#282828",
+    "active": "#c0ac8a"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "root"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "{{.Icon}} ",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "os"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "\uf489 {{ .Name }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "shell"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "\uea83 {{ .Path }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "path"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:active{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:secondary{{ end }}",
+            "{{ if gt .Ahead 0 }}p:secondary{{ end }}",
+            "{{ if gt .Behind 0 }}p:secondary{{ end }}"
+          ],
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "diamond",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "git"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue235{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "python"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue626{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "go"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "diamond",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "node"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue791{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "ruby"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue738{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "java"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "\ue624{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "julia"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}p:active{{end}}",
+            "{{if eq \"Discharging\" .State.String}}p:active{{end}}",
+            "{{if eq \"Full\" .State.String}}p:secondary{{end}}"
+          ],
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "charged_icon": " ",
+            "charging_icon": "\u21e1 ",
+            "discharging_icon": "\u21e3 "
+          },
+          "style": "diamond",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "battery"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "time_format": "3:04 PM"
+          },
+          "style": "diamond",
+          "template": "\uf43a {{ .CurrentDate | date .Format }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "time"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "{{ if gt .Code 0 }}\udb85\udea2 \uf00d{{ else }}\udb85\udf1a \uf00c{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "p:primary",
+          "foreground": "p:secondary",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "\u276f",
+          "trailing_diamond": "\ue0b4",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

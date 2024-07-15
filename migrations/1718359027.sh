@@ -42,6 +42,7 @@ source $OMAKUB_PATH/install/desktop/app-localsend.sh
 source $OMAKUB_PATH/install/desktop/app-obsidian.sh
 source $OMAKUB_PATH/install/terminal/app-fastfetch.sh
 source $OMAKUB_PATH/install/terminal/apps-terminal.sh
+source $OMAKUB_PATH/install/terminal/app-ohmyposh.sh
 
 # Add new desktop applications icons
 source $OMAKUB_PATH/applications/Omakub.sh

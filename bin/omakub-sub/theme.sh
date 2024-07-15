@@ -6,7 +6,7 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
 	cp $OMAKUB_PATH/themes/$THEME/zellij.kdl ~/.config/zellij/themes/$THEME.kdl
 	sed -i "s/theme \".*\"/theme \"$THEME\"/g" ~/.config/zellij/config.kdl
 	cp $OMAKUB_PATH/themes/$THEME/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
-
+	cp $OMAKUB_PATH/themes/$THEME/ohmyposh.json ~/.config/oh-my-posh/themes/theme.json
 	source $OMAKUB_PATH/themes/$THEME/gnome.sh
 	source $OMAKUB_PATH/themes/$THEME/vscode.sh
 
