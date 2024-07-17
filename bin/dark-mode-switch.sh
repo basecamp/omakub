@@ -9,7 +9,7 @@ dark_mode_on() {
 
 # Function to execute when light mode is enabled
 light_mode_on() {
-	echo "Light mode enabled, setting \"Red Pine\" theme"
+	echo "Light mode enabled, setting \"Rose Pine\" theme"
 	export DESIRED_THEME="rose-pine"
 	set_theme
 }
