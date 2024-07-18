@@ -15,6 +15,9 @@ declare -A arch_config=(
     ["localsend.aarch64"]="arm-64"
     ["lazygit.aarch64"]="arm64"
     ["lazydocker.aarch64"]="arm64"
+    ["vscode.x86_64"]="x64"
+    ["vscode.aarch64"]="arm64"
+    ["neovim.x86_64"]="x64"
 )
 
 #a getter func to lookup into above assos array. Unfound keys/default value is what is returned from lscpu
