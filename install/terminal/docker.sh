@@ -1,3 +1,6 @@
+source ~/.local/share/omakub/get_arch.sh
+ARCH=$(get_arch "dockercompose")
+
 # Add the official Docker repo
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo wget -qO /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
@@ -6,10 +9,17 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt update
 
 # Install Docker engine and standard plugins
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras docker.io docker-buildx
 
 # Give this user privileged Docker access
 sudo usermod -aG docker ${USER}
 
 # Limit log size to avoid running out of disk
 echo '{"log-driver":"json-file","log-opts":{"max-size":"10m","max-file":"5"}}' | sudo tee /etc/docker/daemon.json
+
+DOCKER_COMPOSE_VERSION="2.27.0"
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+if curl -sSL "https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-linux-${ARCH}" -o "$DOCKER_CONFIG/cli-plugins/docker-compose"; then
+    chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+fi
