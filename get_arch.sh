@@ -2,6 +2,8 @@
 set -e;
 
 declare -A arch_config=(
+    ["gum.x86_64"]="amd64"
+    ["gum.aarch64"]="arm64"
     ["chrome.x86_64"]="amd64"
     ["chrome.aarch64"]="arm64"
     ["signal.x86_64"]="amd64"
