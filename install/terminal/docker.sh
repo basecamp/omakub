@@ -1,4 +1,6 @@
-source ~/.local/share/omakub/get_arch.sh
+if [[ -z $UTILS_SOURCED ]]; then
+    source ~/.local/share/omakub/utils.sh
+fi
 ARCH=$(get_arch "dockercompose")
 
 # Add the official Docker repo
@@ -22,4 +24,6 @@ DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
 mkdir -p $DOCKER_CONFIG/cli-plugins
 if curl -sSL "https://github.com/docker/compose/releases/download/v$DOCKER_COMPOSE_VERSION/docker-compose-linux-${ARCH}" -o "$DOCKER_CONFIG/cli-plugins/docker-compose"; then
     chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+else 
+    false
 fi

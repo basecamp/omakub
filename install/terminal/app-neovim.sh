@@ -1,5 +1,7 @@
 cd /tmp
-source ~/.local/share/omakub/get_arch.sh
+if [[ -z $UTILS_SOURCED ]]; then
+    source ~/.local/share/omakub/utils.sh
+fi
 ARCH=$(get_arch "neovim")
 NEOVIM_SUCCESS=false
 if [[ "${ARCH}" == "aarch64" ]]; then 
@@ -45,4 +47,6 @@ if "${NEOVIM_SUCCESS}"; then
 		sudo rm -rf /usr/share/applications/nvim.desktop
 		source ~/.local/share/omakub/applications/Neovim.sh
 	fi
+else
+	false
 fi

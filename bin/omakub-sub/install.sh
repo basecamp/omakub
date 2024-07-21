@@ -1,3 +1,8 @@
+#source the utils if not sourced already
+if [[ -z $UTILS_SOURCED ]]; then
+    source ~/.local/share/omakub/utils.sh
+fi
+
 CHOICES=(
 	"Dev Language  Install programming language environment"
 	"Dev Database  Install development database in Docker"
@@ -40,7 +45,10 @@ else
 	*) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
 	esac
 
-	source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3
+	trap "handle_omakub_source_error $INSTALLER_FILE" ERR
+	source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3 \
+	&& handle_omakub_source_success "$INSTALLER_FILE"
+	trap - ERR
 fi
 
 clear
