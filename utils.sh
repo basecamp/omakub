@@ -57,12 +57,12 @@ omakub_installation_success=()
 omakub_installation_failed=()
 
 handle_omakub_source_error() {
-    local installer = "$1"
+    local installer="$1"
     omakub_installation_failed+=("$installer")
 }
 
 handle_omakub_source_success() {
-    local installer = "$1"
+    local installer="$1"
     omakub_installation_success+=("$installer")
 }
 
