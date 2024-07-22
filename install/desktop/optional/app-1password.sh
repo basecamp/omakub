@@ -9,12 +9,16 @@ case "$ARCH" in
         curl -sSO https://downloads.1password.com/linux/tar/stable/aarch64/1password-latest.tar.gz.sig
         gpg --keyserver keyserver.ubuntu.com --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
         gpg --verify 1password-latest.tar.gz.sig 1password-latest.tar.gz
-        [ $? -eq 0 ] || { cd - && false; }
-        sudo tar -xf 1password-latest.tar.gz
-        sudo mkdir -p /opt/1Password
-        sudo mv 1password-*/* /opt/1Password
-        sudo /opt/1Password/after-install.sh
-        cd -
+        if [[ $? -eq 0  ]]; then
+            sudo tar -xf 1password-latest.tar.gz
+            sudo mkdir -p /opt/1Password
+            sudo mv 1password-*/* /opt/1Password
+            sudo /opt/1Password/after-install.sh
+            cd -
+        else
+            cd -
+            false
+        fi
     ;;
     *)
         # Install 1password and 1password-cli single script
