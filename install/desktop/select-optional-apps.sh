@@ -8,10 +8,11 @@ if [[ -v OMAKUB_FIRST_RUN_OPTIONAL_APPS ]]; then
 
 	if [[ -n "$apps" ]]; then
 		for app in $apps; do
-			trap "handle_omakub_source_error $app" ERR
-			source "$OMAKUB_PATH/install/desktop/optional/app-${app,,}.sh" \
-			&& handle_omakub_source_success "$app"
-    		trap - ERR
+			if source "$OMAKUB_PATH/install/desktop/optional/app-${app,,}.sh"; then
+				handle_omakub_source_success "$app"
+			else 
+				handle_omakub_source_error "$app"
+			fi
 		done
 	fi
 fi
