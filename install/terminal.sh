@@ -10,7 +10,9 @@ fi
 
 # Run terminal installers
 for installer in ~/.local/share/omakub/install/terminal/*.sh; do
-    trap "handle_omakub_source_error $installer" ERR
-    source "$installer" && handle_omakub_source_success "$installer"
-    trap - ERR
+    if source "$installer"; then
+        handle_omakub_source_success "$installer"
+    else
+        handle_omakub_source_error "$installer"
+    fi
 done

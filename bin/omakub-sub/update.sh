@@ -28,10 +28,12 @@ else
 	*) INSTALLER_FILE="$OMAKUB_PATH/install/terminal/app-$INSTALLER.sh" ;;
 	esac
 
-	trap "handle_omakub_source_error $INSTALLER_FILE" ERR
-	source $INSTALLER_FILE && gum spin --spinner globe --title "Update completed!" -- sleep 3 \
-	&& handle_omakub_source_success "$INSTALLER_FILE"
-	trap - ERR
+	if source $INSTALLER_FILE; then
+		gum spin --spinner globe --title "Update completed!" -- sleep 3
+		handle_omakub_source_success "$INSTALLER_FILE"
+	else
+		handle_omakub_source_error "$INSTALLER_FILE"
+	fi
 fi
 
 clear

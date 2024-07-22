@@ -3,7 +3,7 @@ if [[ -z $UTILS_SOURCED ]]; then
 fi
 ARCH=$(get_arch)
 case "$ARCH" in
-    --aarch64)
+    aarch64)
         cd /tmp
         curl -sSO https://downloads.1password.com/linux/tar/stable/aarch64/1password-latest.tar.gz
         curl -sSO https://downloads.1password.com/linux/tar/stable/aarch64/1password-latest.tar.gz.sig
@@ -16,7 +16,7 @@ case "$ARCH" in
         sudo /opt/1Password/after-install.sh
         cd -
     ;;
-    --*)
+    *)
         # Install 1password and 1password-cli single script
         curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
         sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg

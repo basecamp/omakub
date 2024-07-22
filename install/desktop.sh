@@ -9,9 +9,11 @@ fi
 
 # Run desktop installers
 for installer in ~/.local/share/omakub/install/desktop/*.sh; do 
-    trap "handle_omakub_source_error $installer" ERR
-    source "$installer" && handle_omakub_source_success "$installer"
-    trap - ERR
+    if source "$installer"; then
+        handle_omakub_source_success "$installer"
+    else 
+        handle_omakub_source_error "$installer"
+    fi
 done
 
 # Revert to normal idle and lock settings
