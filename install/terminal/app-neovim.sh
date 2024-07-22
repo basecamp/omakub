@@ -9,7 +9,9 @@ if [[ "${ARCH}" == "aarch64" ]]; then
         sudo apt update
         sudo apt install -y snapd
     fi
-	sudo snap install --classic nvim && NEOVIM_SUCCESS=true
+	sudo snap install --classic nvim \
+	&& sudo ln -sf /snap/bin/nvim /usr/local/bin/nvim \
+	&& NEOVIM_SUCCESS=true
 else 
 	if wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/latest/download/nvim-linu${ARCH}.tar.gz"; then 
 		tar -xf nvim.tar.gz
