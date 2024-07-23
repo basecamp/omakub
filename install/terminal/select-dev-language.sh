@@ -40,6 +40,9 @@ if [[ -n "$languages" ]]; then
 		Java)
 			mise use --global java@latest
 			;;
+		Flutter)
+			source ~/.local/share/omakub/install/terminal/flutter.sh
+			;;
 		esac
 	done
 fi
