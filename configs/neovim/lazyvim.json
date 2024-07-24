@@ -1,4 +1,15 @@
 {
   "extras": [ "lazyvim.plugins.extras.lang.go" ],
-  "version": 6
+  "version": 6,
+  "plugins": [
+    {
+      "name": "akinsho/flutter-tools.nvim",
+      "lazy": false,
+      "dependencies": [
+        "nvim-lua/plenary.nvim",
+        "stevearc/dressing.nvim"
+      ],
+      "config": true
+    }
+  ]
 }
