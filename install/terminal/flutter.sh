@@ -6,14 +6,15 @@ sudo chown -R $USER:$USER /opt/flutter
 git config --global --add safe.directory /opt/flutter
 
 DIR=$(pwd)
-
 cd /opt/flutter
 git checkout stable
 ./bin/flutter --version
 
 cd $DIR
-
 echo "export PATH=\$PATH:/opt/flutter/bin" >> ~/.bashrc
 source ~/.bashrc
-
 flutter doctor
+
+# Install VS Code extensions
+code --install-extension dart-code.dart-code --force
+code --install-extension dart-code.flutter --force
