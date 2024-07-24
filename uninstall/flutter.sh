@@ -1,9 +1,7 @@
 #!/bin/bash
 
-sudo rm -rf /opt/flutter
-
+sudo snap remove flutter
 sed -i '/\/opt\/flutter\/bin/d' ~/.bashrc
-
 source ~/.bashrc
 
 # Uninstall VS Code extensions
