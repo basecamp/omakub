@@ -5,7 +5,7 @@ set -e
 RUNNING_GNOME=$([[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] && echo true || echo false)
 
 # Check the distribution name and version and abort if incompatible
-source ~/.local/share/omakub/check-version.sh
+source ~/.local/share/omakub/install/check-version.sh
 
 if $RUNNING_GNOME; then
   # Ensure computer doesn't go to sleep or lock while installing
