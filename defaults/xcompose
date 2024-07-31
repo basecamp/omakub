@@ -1,6 +1,6 @@
 include "%L"
 
-<Multi_key> <m> <s> : "😀" # smile
+<Multi_key> <m> <s> : "😄" # smile
 <Multi_key> <m> <c> : "😂" # cry
 <Multi_key> <m> <l> : "😍" # love
 <Multi_key> <m> <v> : "✌️"  # victory
