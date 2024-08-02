@@ -20,7 +20,7 @@ rm -rf ~/.local/share/omakub
 git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
 if [[ $OMAKUB_REF != "master" ]]; then
 	cd ~/.local/share/omakub
-	git fetch origin "${OMAKUB_REF:-stable}" && git checkout FETCH_HEAD
+	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
 	cd -
 fi
 
