@@ -19,13 +19,6 @@ gext install undecorate@sun.wxg@gmail.com
 gext install Vitals@CoreCoding.com
 gext install AlphabeticalAppGrid@stuarthayhurst
 
-# Manually install Pano (until released version is Gnome 46 compatible)
-wget -O /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/download/v23-alpha2/pano@elhan.io.zip
-mkdir -p ~/.local/share/gnome-shell/extensions/
-unzip /tmp/pano.zip -d ~/.local/share/gnome-shell/extensions/pano@elhan.io
-rm /tmp/pano.zip
-sudo apt install -y gir1.2-gda-5.0 gir1.2-gsound-1.0
-
 # Compile gsettings schemas in order to be able to set them
 sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
 sudo cp ~/.local/share/gnome-shell/extensions/just-perfection-desktop\@just-perfection/schemas/org.gnome.shell.extensions.just-perfection.gschema.xml /usr/share/glib-2.0/schemas/
@@ -70,13 +63,6 @@ gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-name
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-move-to-workspace-shortcuts true
 gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
-
-# Configure Pano
-gsettings set org.gnome.shell.extensions.pano play-audio-on-copy false
-gsettings set org.gnome.shell.extensions.pano send-notification-on-copy false
-gsettings set org.gnome.shell.extensions.pano window-position 2
-gsettings set org.gnome.shell.extensions.pano history-length 30
-gsettings set org.gnome.shell.extensions.pano.text-item body-bg-color 'rgb(153,193,241)'
 
 # Configure Vitals
 gsettings set org.gnome.shell.extensions.vitals hide-icons true
