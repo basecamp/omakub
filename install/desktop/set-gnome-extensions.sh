@@ -56,9 +56,7 @@ gsettings set org.gnome.shell.extensions.blur-my-shell.appfolder blur false
 gsettings set org.gnome.shell.extensions.blur-my-shell.lockscreen blur false
 gsettings set org.gnome.shell.extensions.blur-my-shell.screenshot blur false
 gsettings set org.gnome.shell.extensions.blur-my-shell.window-list blur false
-gsettings set org.gnome.shell.extensions.blur-my-shell.panel brightness 0.6
-gsettings set org.gnome.shell.extensions.blur-my-shell.panel sigma 30
-gsettings set org.gnome.shell.extensions.blur-my-shell.panel pipeline 'pipeline_default'
+gsettings set org.gnome.shell.extensions.blur-my-shell.panel blur false
 gsettings set org.gnome.shell.extensions.blur-my-shell.overview blur true
 gsettings set org.gnome.shell.extensions.blur-my-shell.overview pipeline 'pipeline_default'
 gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock blur true
