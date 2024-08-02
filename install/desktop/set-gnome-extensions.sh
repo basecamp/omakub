@@ -70,5 +70,10 @@ gsettings set org.gnome.shell.extensions.vitals hot-sensors "['__network-rx_max_
 gsettings set org.gnome.shell.extensions.vitals icon-style 0
 gsettings set org.gnome.shell.extensions.vitals network-speed-format 1
 
+# Unfortunately Vitals seems to maxout CPU on Intel, so let's turn it off by default there
+if grep -q "Intel" /proc/cpuinfo; then
+  gnome-extensions disable Vitals@CoreCoding.com
+fi
+
 # Configure AlphabeticalAppGrid
 gsettings set org.gnome.shell.extensions.alphabetical-app-grid folder-order-position 'end'
