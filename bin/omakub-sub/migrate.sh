@@ -1,5 +1,6 @@
 cd $OMAKUB_PATH
 last_updated_at=$(git log -1 --format=%cd --date=unix)
+git checkout stable
 git pull
 
 for file in $OMAKUB_PATH/migrations/*.sh; do
