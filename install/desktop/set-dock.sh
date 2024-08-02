@@ -47,3 +47,6 @@ favorites_list="[${favorites_list%,}]"
 
 # Set the favorite apps
 gsettings set org.gnome.shell favorite-apps "$favorites_list"
+
+# Define the behavior of the app-hotkey binding
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'focus-minimize-or-previews'
