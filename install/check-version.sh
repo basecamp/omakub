@@ -1,27 +1,21 @@
 #!/bin/bash
 
-# Function to check if running on Ubuntu 24.04 or higher
-check_ubuntu_version() {
-  if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    if [ "$ID" = "ubuntu" ]; then
-      if awk -v ver="$VERSION_ID" 'BEGIN {exit !(ver >= 24.04)}'; then
-        return 0
-      else
-        echo "Error: Ubuntu version must be 24.04 or higher. Current version: $VERSION_ID" >&2
-        return 1
-      fi
-    else
-      echo "Error: This script must be run on Ubuntu. Current OS: $ID" >&2
-      return 1
-    fi
-  else
-    echo "Error: Unable to determine OS. /etc/os-release file not found." >&2
-    return 1
-  fi
-}
+if [ ! -f /etc/os-release ]; then
+    echo "$(tput setaf 1)Error: Unable to determine OS. /etc/os-release file not found."
+    echo "Installation stopped."
+    exit 1
+fi
 
-if ! check_ubuntu_version; then
-  echo "Script execution failed due to system requirements not being met." >&2
-  exit 1
+. /etc/os-release
+
+# returns 1 if true and returns 0 if false
+correct_version=$(echo "$VERSION_ID >= 24.04" | bc)
+
+# Check if running on Ubuntu 24.04 or higher
+if [ "$ID" != "ubuntu" ] || [ $correct_version != 1 ]; then
+    echo "$(tput setaf 1)Error: OS requirement not met"
+    echo "You are currently running: $ID $VERSION_ID"
+    echo "OS required: ubuntu 24.04 or higher"
+    echo "Installation stopped."
+    exit 1
 fi
