@@ -3,6 +3,9 @@ if [ -n "$(gnome-extensions list | grep Vitals@CoreCoding.com)" ]; then
   gnome-extensions uninstall Vitals@CoreCoding.com
 fi
 
+# Install Tophat libraries
+sudo apt install -y gir1.2-gtop-2.0 gir1.2-clutter-1.0
+
 # Install TopHat
 gext install tophat@fflewddur.github.io
 
@@ -23,3 +26,6 @@ THEME=$(gum choose "${THEME_NAMES[@]}" "Default" --header "Choose your theme" --
 if [ -n "$THEME" ] && [ "$THEME" != "default" ]; then
   source $OMAKUB_PATH/themes/$THEME/tophat.sh
 fi
+
+# Logout
+gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
