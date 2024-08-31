@@ -10,3 +10,11 @@ if command -v fzf &> /dev/null; then
   source /usr/share/bash-completion/completions/fzf
   source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
+
+if command -v atuin &> /dev/null; then
+  export ATUIN_NOBIND="true"
+  eval "$(atuin init bash)"
+
+  # bind to ctrl-r, add any other bindings you want here too
+  bind -x '"\C-r": __atuin_history'
+fi
