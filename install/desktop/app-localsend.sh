@@ -1,1 +1,1 @@
-flatpak install flathub org.localsend.localsend_app
+sudo flatpak install flathub org.localsend.localsend_app
