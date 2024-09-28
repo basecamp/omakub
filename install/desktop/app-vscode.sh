@@ -1,5 +1,4 @@
 cd /tmp
-<<<<<<< HEAD
 
 if [[ -z $UTILS_SOURCED ]]; then
     source ~/.local/share/omakub/utils.sh
@@ -35,4 +34,3 @@ else
     cd -
     false
 fi
-
