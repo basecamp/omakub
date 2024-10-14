@@ -1,6 +1,14 @@
 # Make video calls using https://zoom.us/
 cd /tmp
-wget https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install -y ./zoom_amd64.deb
-rm zoom_amd64.deb
-cd -
+if [[ -z $UTILS_SOURCED ]]; then
+    source ~/.local/share/omakub/utils.sh
+fi
+ARCH=$(get_arch "zoom")
+if wget "https://zoom.us/client/latest/zoom_${ARCH}.deb"; then
+  sudo apt install -y "./zoom_${ARCH}.deb"
+  rm "zoom_${ARCH}.deb"
+  cd -
+else
+  cd -
+  false
+fi
