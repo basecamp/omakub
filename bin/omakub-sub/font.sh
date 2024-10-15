@@ -8,6 +8,7 @@ set_font() {
 		cd /tmp
 		wget -O "$file_name.zip" "$url"
 		unzip "$file_name.zip" -d "$file_name"
+		mkdir -p ~/.local/share/fonts
 		cp "$file_name"/*."$file_type" ~/.local/share/fonts
 		rm -rf "$file_name.zip" "$file_name"
 		fc-cache
