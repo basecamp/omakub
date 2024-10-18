@@ -22,8 +22,6 @@ if [ ! -d "$HOME/.config/nvim" ]; then
 	# Default to Tokyo Night theme
 	cp ~/.local/share/omakub/themes/tokyo-night/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
 
-	# Enable default extras
-	cp ~/.local/share/omakub/configs/neovim/lazyvim.json ~/.config/nvim/lazyvim.json
 fi
 
 # Replace desktop launcher with one running inside Alacritty
