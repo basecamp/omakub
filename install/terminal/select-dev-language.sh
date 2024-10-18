@@ -25,6 +25,11 @@ if [[ -n "$languages" ]]; then
 			php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 			rm composer-setup.php
+
+			# Configure PHP's LSP to use intelephense instead of phpactor (default)
+			if ! grep -q 'php_lsp' ~/.config/nvim/lua/config/options.lua; then
+				echo 'vim.g.lazyvim_php_lsp = "intelephense"' >>~/.config/nvim/lua/config/options.lua
+			fi
 			;;
 		Python)
 			mise use --global python@latest
