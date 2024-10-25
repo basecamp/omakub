@@ -9,7 +9,9 @@ if $RUNNING_GNOME; then
   gsettings set org.gnome.desktop.screensaver lock-enabled false
   gsettings set org.gnome.desktop.session idle-delay 0
 
-  echo "Get ready to make a few choices..."
+  sudo apt-get update >/dev/null
+  sudo apt-get install -y git curl >/dev/null
+
   source ~/.local/share/omakub/install/terminal/required/app-gum.sh >/dev/null
 
   echo "Installing desktop tools..."
