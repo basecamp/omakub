@@ -40,7 +40,7 @@ if [[ -n "$languages" ]]; then
 			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 			rm composer-setup.php
 
-			enable_lazyvim_extras "lazyvim.plugins.extras.lang.php" "lazyvim.plugins.extras.lang.typescript"
+			enable_lazyvim_extras "lazyvim.plugins.extras.lang.php"
 			;;
 		Python)
 			mise use --global python@latest
