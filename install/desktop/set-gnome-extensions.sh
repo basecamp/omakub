@@ -1,5 +1,7 @@
 sudo apt install -y gnome-shell-extension-manager pipx
-pipx install gnome-extensions-cli --system-site-packages
+pipx install gnome-extensions-cli --system-site-packages --force
+pipx ensurepath
+source ~/.bashrc
 
 # Turn off default Ubuntu extensions
 gnome-extensions disable ding@rastersoft.com
@@ -8,10 +10,10 @@ gnome-extensions disable ding@rastersoft.com
 gum confirm "To install Gnome extensions, you need to accept some confirmations. Are you ready?"
 
 # Install new extensions
-gnome-extensions install tactile@lundal.io
-gnome-extensions install blur-my-shell@aunetx
-gnome-extensions install space-bar@luchrioh
-gnome-extensions install AlphabeticalAppGrid@stuarthayhurst
+gext install tactile@lundal.io
+gext install blur-my-shell@aunetx
+gext install space-bar@luchrioh
+gext install AlphabeticalAppGrid@stuarthayhurst
 
 # Compile gsettings schemas in order to be able to set them
 sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
