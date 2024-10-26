@@ -7,12 +7,10 @@ gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt-get update >/dev/null
 sudo apt-get install -y git curl >/dev/null
 
-source ~/.local/share/omakub/install/terminal/required/app-gum.sh >/dev/null
-
 echo "Installing desktop tools..."
 
 # Install desktop tools and tweaks
-source ~/.local/share/omakub/install/desktop.sh
+for installer in ./components/*.sh; do source $installer; done
 
 # Revert to normal idle and lock settings
 gsettings set org.gnome.desktop.screensaver lock-enabled true

@@ -6,6 +6,7 @@ source ~/.bashrc
 # Turn off default Ubuntu extensions
 gnome-extensions disable tiling-assistant@ubuntu.com
 gnome-extensions disable ding@rastersoft.com
+gnome-extensions disable ubuntu-dock@ubuntu.com
 
 # Pause to assure user is ready to accept confirmations
 gum confirm "To install Gnome extensions, you need to accept some confirmations. Are you ready?"
@@ -23,7 +24,7 @@ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 gsettings set org.gnome.shell.extensions.tactile col-0 2
 gsettings set org.gnome.shell.extensions.tactile col-1 1
 gsettings set org.gnome.shell.extensions.tactile col-2 1
-gsettings set org.gnome.shell.extensions.tactile col-3 1
+gsettings set org.gnome.shell.extensions.tactile col-3 0
 gsettings set org.gnome.shell.extensions.tactile row-0 1
 gsettings set org.gnome.shell.extensions.tactile row-1 1
 gsettings set org.gnome.shell.extensions.tactile gap-size 10
