@@ -19,6 +19,11 @@ set_font() {
 	gsettings set org.gnome.desktop.interface monospace-font-name "$font_name 10"
 	cp "$OMAKUB_PATH/configs/alacritty/fonts/$file_name.toml" ~/.config/alacritty/font.toml
 	sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$font_name\"/g" ~/.config/Code/User/settings.json
+	if command -v zed &>/dev/null; then
+		ZED_SETTINGS_PATH="$HOME/.config/zed/settings.json"
+		# strip c/c++ like comments from settings.json and set new font
+		cpp -P -E $ZED_SETTINGS_PATH | jq ".buffer_font_family = \"$font_name\"" > temp.json && mv temp.json $ZED_SETTINGS_PATH
+	fi
 }
 
 if [ "$#" -gt 1 ]; then
