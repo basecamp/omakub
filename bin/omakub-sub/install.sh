@@ -4,7 +4,6 @@ CHOICES=(
 	"1password     Manage your passwords securely across devices"
 	"Audacity      Record and edit audio"
 	"Brave         Chrome-based browser with built-in ad blocking"
-  	"Cursor        The AI Code Editor"
 	"Doom Emacs    Emacs framework with curated list of packages"
 	"Dropbox       Sync files across computers with ease"
 	"OBS Studio    Record screencasts with inputs from both display + webcam"
