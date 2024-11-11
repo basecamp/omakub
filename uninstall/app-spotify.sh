@@ -1,1 +1,1 @@
-sudo apt remove -y spotify-client
+sudo flatpak uninstall -y flathub com.spotify.Client

@@ -1,1 +1,1 @@
-sudo apt remove -y xournalpp
+sudo dnf remove -y xournalpp

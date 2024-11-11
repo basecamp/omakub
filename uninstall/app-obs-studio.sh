@@ -1,1 +1,1 @@
-sudo apt remove -y obs-studio
+sudo dnf remove -y obs-studio
