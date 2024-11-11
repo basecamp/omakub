@@ -9,20 +9,20 @@ ascii_art='________                  __        ___.
 '
 
 echo -e "$ascii_art"
-echo "=> Omakub is for fresh Ubuntu 24.04 installations only!"
+echo "=> omakfed is for fresh Fedora 41 installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-sudo apt-get update >/dev/null
-sudo apt-get install -y git >/dev/null
+sudo dnf update -y >/dev/null
+sudo dnf install -y git >/dev/null
 
-echo "Cloning Omakub..."
-rm -rf ~/.local/share/omakub
-git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
-if [[ $OMAKUB_REF != "master" ]]; then
-	cd ~/.local/share/omakub
-	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
+echo "Cloning omakfed..."
+rm -rf ~/.local/share/omakfed
+git clone https://github.com/basecamp/omakfed.git ~/.local/share/omakfed >/dev/null
+if [[ $omakfed_REF != "master" ]]; then
+	cd ~/.local/share/omakfed
+	git fetch origin "${omakfed_REF:-stable}" && git checkout "${omakfed_REF:-stable}"
 	cd -
 fi
 
 echo "Installation starting..."
-source ~/.local/share/omakub/install.sh
+source ~/.local/share/omakfed/install.sh

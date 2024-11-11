@@ -1,3 +1,5 @@
+sudo dnf install -y cascadia-fonts-all
+
 mkdir -p ~/.local/share/fonts
 
 cd /tmp

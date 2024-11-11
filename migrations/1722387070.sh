@@ -1,1 +1,1 @@
-source $OMAKUB_PATH/install/desktop/app-wl-clipboard.sh
+source $omakfed_PATH/install/desktop/app-wl-clipboard.sh
