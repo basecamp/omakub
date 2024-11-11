@@ -1,5 +1,10 @@
 # Stream music using https://spotify.com
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb [signed-by=/etc/apt/trusted.gpg.d/spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update -y
-sudo apt install -y spotify-client
+
+# Install Flatpak if not already installed
+sudo dnf install -y flatpak
+
+# Add Flathub repository if not already added
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install Spotify via Flatpak
+sudo flatpak install -y flathub com.spotify.Client

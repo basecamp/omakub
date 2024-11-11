@@ -20,8 +20,7 @@ if [[ -n "$languages" ]]; then
 			mise use --global go@latest
 			;;
 		PHP)
-			sudo add-apt-repository -y ppa:ondrej/php
-			sudo apt -y install php8.3 php8.3-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
+			sudo dnf install -y php php-curl php-apcu php-intl php-mbstring php-opcache php-pgsql php-mysqlnd php-sqlite3 php-redis php-xml php-zip
 			php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 			rm composer-setup.php
