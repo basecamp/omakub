@@ -1,6 +1,6 @@
 # Install default programming languages
-if [[ -v OMAKUB_FIRST_RUN_LANGUAGES ]]; then
-	languages=$OMAKUB_FIRST_RUN_LANGUAGES
+if [[ -v omakfed_FIRST_RUN_LANGUAGES ]]; then
+	languages=$omakfed_FIRST_RUN_LANGUAGES
 else
 	AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
 	languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
@@ -20,8 +20,7 @@ if [[ -n "$languages" ]]; then
 			mise use --global go@latest
 			;;
 		PHP)
-			sudo add-apt-repository -y ppa:ondrej/php
-			sudo apt -y install php8.3 php8.3-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
+			sudo dnf install -y php php-curl php-apcu php-intl php-mbstring php-opcache php-pgsql php-mysqlnd php-sqlite3 php-redis php-xml php-zip
 			php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 			rm composer-setup.php

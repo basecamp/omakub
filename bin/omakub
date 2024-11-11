@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source $OMAKUB_PATH/ascii.sh
+source $omakfed_PATH/ascii.sh
 echo "" # Add spacing
-echo "                                 $(cat $OMAKUB_PATH/version)"
+echo "                                 $(cat $omakfed_PATH/version)"
 echo "" # Add spacing
-source $OMAKUB_PATH/bin/omakub-sub/menu.sh
+source $omakfed_PATH/bin/omakfed-sub/menu.sh

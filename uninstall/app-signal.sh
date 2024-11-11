@@ -1,1 +1,1 @@
-sudo apt remove --purge -y signal-desktop
+sudo flatpak uninstall -y flathub org.signal.Signal

@@ -24,7 +24,7 @@ THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa"
 THEME=$(gum choose "${THEME_NAMES[@]}" "Default" --header "Choose your theme" --height 10 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != "default" ]; then
-  source $OMAKUB_PATH/themes/$THEME/tophat.sh
+  source $omakfed_PATH/themes/$THEME/tophat.sh
 fi
 
 # Logout

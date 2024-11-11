@@ -1,4 +1,4 @@
-import = [ "~/.local/share/omakub/defaults/alacritty/pane.toml" ]
+import = [ "~/.local/share/omakfed/defaults/alacritty/pane.toml" ]
 
 [window]
 dimensions.columns = 90

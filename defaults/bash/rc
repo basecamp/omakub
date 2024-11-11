@@ -1,4 +1,4 @@
-source ~/.local/share/omakub/defaults/bash/shell
-source ~/.local/share/omakub/defaults/bash/aliases
-source ~/.local/share/omakub/defaults/bash/prompt
-source ~/.local/share/omakub/defaults/bash/init
+source ~/.local/share/omakfed/defaults/bash/shell
+source ~/.local/share/omakfed/defaults/bash/aliases
+source ~/.local/share/omakfed/defaults/bash/prompt
+source ~/.local/share/omakfed/defaults/bash/init
