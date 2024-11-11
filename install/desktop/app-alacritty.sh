@@ -1,5 +1,5 @@
 # Alacritty is a GPU-powered and highly extensible terminal. See https://alacritty.org/
-sudo apt install -y alacritty
+sudo dnf install -y alacritty
 mkdir -p ~/.config/alacritty
 cp ~/.local/share/omakfed/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 cp ~/.local/share/omakfed/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml

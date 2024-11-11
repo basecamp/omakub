@@ -1,1 +1,1 @@
-sudo apt install -y xournalpp
+sudo dnf install -y xournalpp

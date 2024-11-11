@@ -1,16 +1,7 @@
-sudo apt install -y gnome-shell-extension-manager pipx
-pipx install gnome-extensions-cli --system-site-packages
+sudo dnf install -y gnome-extensions-app python3-pip
+pip install --user gnome-extensions-cli
 
-## Turn off default Ubuntu extensions
-#gnome-extensions disable tiling-assistant@ubuntu.com
-#gnome-extensions disable ubuntu-appindicators@ubuntu.com
-#gnome-extensions disable ubuntu-dock@ubuntu.com
-#gnome-extensions disable ding@rastersoft.com
-
-# Pause to assure user is ready to accept confirmations
-gum confirm "To install Gnome extensions, you need to accept some confirmations. Are you ready?"
-
-# Install new extensions
+# Instalar extensões
 gext install tactile@lundal.io
 gext install just-perfection-desktop@just-perfection
 gext install blur-my-shell@aunetx
