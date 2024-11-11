@@ -1,19 +1,17 @@
 # omakfed
 
-Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern web development system by running a single command. That's the one-line pitch for omakfed. No need to write bespoke configs for every essential tool just to get started or to be up on all the latest command-line tools. omakfed is an opinionated take on what Linux can be at its best.
+Transforme uma instalação nova do Fedora em um sistema de desenvolvimento web totalmente configurado, bonito e moderno executando um único comando. Essa é a proposta do omakfed em uma linha. Não há necessidade de escrever configurações específicas para cada ferramenta essencial apenas para começar ou estar atualizado com as ferramentas de linha de comando mais recentes. omakfed é uma visão opinativa sobre como o Linux pode ser no seu melhor.
 
-Watch the introduction video and read more at [omakfed.org](https://omakfed.org).
+Assista ao vídeo de introdução e leia mais em [omakfed.org](https://omakfed.org).
 
-## Contributing to the documentation
+## Instalação Rápida
 
-Please help us improve omakfed's documentation on the [basecamp/omakfed-site repository](https://github.com/basecamp/omakfed-site).
+Para instalar o omakfed, execute o seguinte comando no terminal:
 
-## License
+```bash
+curl -fsSL https://raw.githubusercontent.com/amarqs182/omakfed/refs/heads/0.0.1/boot.sh | bash
+```
 
-omakfed is released under the [MIT License](https://opensource.org/licenses/MIT).
+## Contribuindo com a documentação
 
-## Extras
-
-While omakfed is purposed to be an opinionated take, the open source community offers alternative customization, add-ons, extras, that you can use to adjust, replace or enrich your experience.
-
-[⇒ Browse the omakfed extensions.](EXTENSIONS.md)
+Por favor, nos ajude a melhorar a documentação 
