@@ -18,12 +18,12 @@ sudo dnf install -y git >/dev/null
 
 echo "Cloning omakfed..."
 rm -rf ~/.local/share/omakfed
-git clone https://github.com/basecamp/omakfed.git ~/.local/share/omakfed >/dev/null
-if [[ $omakfed_REF != "master" ]]; then
-	cd ~/.local/share/omakfed
-	git fetch origin "${omakfed_REF:-stable}" && git checkout "${omakfed_REF:-stable}"
-	cd -
-fi
+git clone https://github.com/amarqs182/omakfed.git ~/.local/share/omakfed >/dev/null
+# if [[ $omakfed_REF != "master" ]]; then
+#     cd ~/.local/share/omakfed
+#     git fetch origin "${omakfed_REF:-stable}" && git checkout "${omakfed_REF:-stable}"
+#     cd -
+# fi
 
 echo "Installation starting..."
 source ~/.local/share/omakfed/install.sh
