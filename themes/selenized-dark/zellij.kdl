@@ -1,0 +1,15 @@
+themes {
+    selenized-dark {
+        fg "#9faeae"
+        bg "#61777c"
+        black "#163945"
+        red "#f13c3e"
+        green "#69ad21"
+        yellow "#d1a416"
+        blue "#3a82f8"
+        magenta "#e75bb3"
+        cyan "#42bdaa"
+        white "#61777c"
+        orange "#e26f35"
+    }
+}

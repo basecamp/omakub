@@ -1,0 +1,33 @@
+[colors]
+ansi = [
+    '#163945',
+    '#f13c3e',
+    '#69ad21',
+    '#d1a416',
+    '#3a82f8',
+    '#e75bb3',
+    '#42bdaa',
+    '#61777c',
+]
+background = '#112e38'
+brights = [
+    '#254a57',
+    '#ff4b49',
+    '#78be2e',
+    '#e4b424',
+    '#4a91ff',
+    '#fb69c4',
+    '#50cfba',
+    '#bfd0d0',
+]
+cursor_bg = '#bfd0d0'
+cursor_border = '#bfd0d0'
+cursor_fg = '#112e38'
+foreground = '#9faeae'
+selection_bg = '#254a57'
+
+[colors.indexed]
+
+[metadata]
+name = 'Selenized Dark'
+origin_url = 'https://github.com/jan-warchol/selenized'

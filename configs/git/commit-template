@@ -1,0 +1,38 @@
+# <type>(<scope>): (If applied, this commit will...) <subject> (Max 50 char)
+# |<----  Try to Limit to a Max of 50 char  ---->|
+
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# Provide links or keys to any relevant tickets, articles or other resources
+# Example: Github issue #23, BREAKING CHANGE: <description>, Ref: 5119ae
+
+# --- COMMIT END ---
+# Type can be
+#   build:    changes that affect the build system or external dependencies
+#   chore:    updating grunt tasks; no production code change
+#   ci:       changes to our ci configuration files and scripts
+#   docs:     changes to documentation
+#   feat:     new feature, correlates with MINOR
+#   fix:      bug fix, correlates with PATCH
+#   perf:     a code change that improves performance
+#   refactor: refactoring production code; neither fixes a bug nor adds a feature
+#   revert:   for reverts, revert: <old subject>; state reverted hash in body
+#   style:    formatting, missing semi colons, etc; no code meaning change
+#   test:     adding or refactoring tests; no production code change
+#
+# Scope refers to the file, directory, or system that is being modified.
+#
+# Follow the type(scope) with an '!' to indicate a breaking change.
+# Example: refactor(api)!: remove the accident-prone delete_all button
+# --------------------
+# Remember to
+#    Use the imperative mood in the subject line
+#    Do not end the subject line with a period
+#    Separate subject from body with a blank line
+#    Use the body to explain what and why vs. how
+#    Can use multiple lines with "-" for bullet points in body
+#    BREAKING CHANGE: to correlate with MAJOR
+#
+# See: https://www.conventionalcommits.org/en/v1.0.0/
