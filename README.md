@@ -1,19 +1,23 @@
-# Omakub
+<h1 align="center">
+    🍣<br>
+    omakase-bluefin
+</h1>
+<div align="center">
+    <strong>An opinionated Bluefin Setup</strong>
+</div>
+<br>
+<div align="center">
+  <a href="https://github.com/lukehsiao/omakase-bluefin/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/badge/license-BlueOak--1.0.0-whitesmoke" alt="License">
+  </a>
+</div>
+<br>
 
-Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern web development system by running a single command. That's the one-line pitch for Omakub. No need to write bespoke configs for every essential tool just to get started or to be up on all the latest command-line tools. Omakub is an opinionated take on what Linux can be at its best.
+Turn a fresh [Project Bluefin](https://projectbluefin.io/) installation into my version of a fully-configured development system by running a single command.
+`omakase-bluefin` is an opinionated take on and already opinionated Linux workstation.
+Inspired by [Omakub](https://omakub.org/).
 
-Watch the introduction video and read more at [omakub.org](https://omakub.org).
+## Overview
 
-## Contributing to the documentation
-
-Please help us improve Omakub's documentation on the [basecamp/omakub-site repository](https://github.com/basecamp/omakub-site).
-
-## License
-
-Omakub is released under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Extras
-
-While omakub is purposed to be an opinionated take, the open source community offers alternative customization, add-ons, extras, that you can use to adjust, replace or enrich your experience.
-
-[⇒ Browse the omakub extensions.](EXTENSIONS.md)
+These scripts install a set of useful GUI applications as Flatpaks, as well as a single distrobox dev container with all my favorite core tools.
+This dev-toolbox is the default terminal experience, and shared access to `$HOME`, so it feels like you are working directly on the host.
