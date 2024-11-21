@@ -1,0 +1,9 @@
+# just manual: https://github.com/casey/just
+set fallback
+
+_list:
+    @just --list
+
+# Build the container image locally with podman
+build tag="local-dev":
+    podman build --file Containerfile.fedora --tag omakase-toolbox:{{tag}} {{parent_directory(justfile_directory())}}
