@@ -2,7 +2,7 @@ FROM registry.fedoraproject.org/fedora-toolbox:41 AS fedora-toolbox
 
 LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
-      summary="Luke's personal terminal experience powered by Fedora" \
+      summary="omakase-bluefun terminal experience powered by Fedora" \
       maintainer="Luke Hsiao <luke@hsiao.dev>"
 
 COPY ./toolbox/packages.fedora /tmp/toolbox-packages
