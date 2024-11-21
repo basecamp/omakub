@@ -1,0 +1,47 @@
+[Unit]
+Description=omakase-bluefin Fedora Toolbox for distrobox
+
+[Container]
+Annotation=run.oci.keep_original_groups=1
+AutoUpdate=registry
+ContainerName=omakase-toolbox
+Environment=SHELL=%s
+Environment=HOME=%h
+Environment=container=podman
+Exec=--verbose --name %u --user %U --group %G --home %h --init "0" --nvidia "1" -- " "
+Image=ghcr.io/lukehsiao/omakase-toolbox:latest
+HostName=omakase-toolbox.%l
+Label=manager=distrobox
+Network=host
+PodmanArgs=--entrypoint /usr/bin/entrypoint
+PodmanArgs=--ipc host
+PodmanArgs=--pid host
+PodmanArgs=--privileged
+PodmanArgs=--security-opt label=disable
+PodmanArgs=--security-opt apparmor=unconfined
+Ulimit=host
+User=root:root
+UserNS=keep-id
+Volume=/:/run/host:rslave
+Volume=/tmp:/tmp:rslave
+Volume=/usr/bin/distrobox-init:/usr/bin/entrypoint:ro
+Volume=/usr/bin/distrobox-export:/usr/bin/distrobox-export:ro
+Volume=/usr/bin/distrobox-host-exec:/usr/bin/distrobox-host-exec:ro
+Volume=/usr/share/ublue-os:/usr/share/ublue-os:ro
+Volume=/home/linuxbrew/.linuxbrew/Cellar:/home/linuxbrew/.linuxbrew/Cellar:ro
+Volume=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:ro
+Volume=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/sbin:ro
+Volume=%h:%h:shared
+Volume=/dev:/dev:rslave
+Volume=/sys:/sys:rslave
+Volume=/dev/pts
+Volume=/dev/null:/dev/ptmx
+Volume=/sys/fs/selinux
+Volume=/var/log/journal
+Volume=/var/home/%u:/var/home/%u:shared
+Volume=%t:%t:rslave
+Volume=/etc/hosts:/etc/hosts:ro
+Volume=/etc/resolv.conf:/etc/resolv.conf:ro
+
+[Install]
+WantedBy=default.target

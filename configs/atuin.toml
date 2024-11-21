@@ -1,0 +1,34 @@
+history_filter = [
+  "^aws-mfa",
+  "^b3sum",
+  "^brew",
+  "^cargo install-update",
+  "^cat",
+  "^cd",
+  "^chezmoi",
+  "^choose",
+  "^cp",
+  "dnf upgrade",
+  "^fg",
+  "^git",
+  "^hx",
+  "^just",
+  "^la",
+  "^ls",
+  "^mosh",
+  "^mv",
+  "^pass",
+  "^poetry",
+  "^rg",
+  "^rm",
+  "^rustup self",
+  "^rustup update",
+  "^tree",
+  "^units",
+  "^zellij",
+]
+
+enter_accept = true
+
+[sync]
+records = true

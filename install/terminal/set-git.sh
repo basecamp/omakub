@@ -1,6 +1,7 @@
-# Set common git aliases
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global pull.rebase true
+# Only attempt to set configuration if none is present
+if [ ! -d "$HOME/.config/git" ]; then
+  mkdir -p ~/.config/git
+  cp ~/.local/share/omakase-bluefin/configs/git/config ~/.config/git/config
+  cp ~/.local/share/omakase-bluefin/configs/git/attributes ~/.config/git/attributes
+  cp ~/.local/share/omakase-bluefin/configs/git/commit-template ~/.config/git/commit-template
+fi

@@ -1,1 +1,1 @@
-sudo apt install -y xournalpp
+flatpak install -y flathub com.github.xournalpp.xournalpp

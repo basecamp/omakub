@@ -1,0 +1,135 @@
+"attribute" = { fg = "violet" }
+"keyword" = { fg = "green" }
+"keyword.directive" = { fg = "orange" }
+"namespace" = { fg = "violet" }
+"operator" = { fg = "green" }
+"special" = { fg = "orange" }
+"variable.builtin" = { fg = "cyan", modifiers = ["bold"] }
+"variable.function" = { fg = "blue" }
+"type" = { fg = "yellow" }
+"type.builtin" = { fg = "yellow", modifiers = ["bold"] }
+"constructor" = { fg = "blue" }
+"function" = { fg = "blue" }
+"function.macro" = { fg = "magenta" }
+"function.builtin" = { fg = "blue", modifiers = ["bold"] }
+"function.special" = { fg = "magenta" }
+"comment" = { fg = "dim_0" }
+"string" = { fg = "cyan" }
+"constant" = { fg = "cyan" }
+"constant.builtin" = { fg = "cyan", modifiers = ["bold"] }
+"constant.character.escape" = { fg = "red", modifiers = ["bold"] }
+"label" = { fg = "green" }
+"module" = { fg = "violet" }
+"tag" = { fg = "magenta" }
+
+# TODO
+"markup.heading" = "blue"
+"markup.list" = "red"
+"markup.bold" = { fg = "yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "magenta", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "yellow", modifiers = ["underlined"] }
+"markup.link.text" = "red"
+"markup.quote" = "cyan"
+"markup.raw" = "green"
+
+"diff.plus" = { fg = "green" }
+"diff.delta" = { fg = "orange" }
+"diff.minus" = { fg = "red" }
+
+# 背景
+"ui.background" = {}
+
+"ui.virtual.whitespace" = { fg = "dim_0" }
+
+# 行号栏
+"ui.linenr" = { fg = "dim_0", bg = {} }
+# 当前行号栏
+"ui.linenr.selected" = { fg = "blue", modifiers = ["bold"] }
+#cursorline
+"ui.cursorline" = { bg = {} }
+
+# 状态栏
+"ui.statusline" = { fg = "bg_0", bg = "dim_0" }
+"ui.statusline.normal" = { bg = "blue" }
+"ui.statusline.insert" = { bg = "green" }
+"ui.statusline.select" = { bg = "yellow" }
+
+# 非活动状态栏
+"ui.statusline.inactive" = { fg = "fg_0", bg = "dim_0" }
+
+# 补全窗口, preview窗口
+"ui.popup" = { bg = {} }
+# 影响 补全选中 cmd弹出信息选中
+"ui.menu.selected" = { fg = "bg_0", bg = "fg_1"}
+"ui.menu" = { fg = "dim_0", bg = {} }
+# ??
+"ui.window" = { fg = "fg_1" }
+# 命令行 补全的帮助信息
+"ui.help" = { modifiers = ["reversed"] }
+
+# 快捷键窗口
+"ui.popup.info" = {fg = "bg_0", bg = "fg_0", modifiers = ["bold"]}
+# 快捷键字体
+"ui.text.info" = {fg = "bg_0", modifiers = ["bold"]}
+
+# 普通ui的字体样式
+"ui.text" = { fg = "fg_0" }
+# 影响 picker列表选中, 快捷键帮助窗口文本
+"ui.text.focus" = { fg = "blue", modifiers = ["bold"]}
+# file picker中， 预览的当前选中项
+"ui.highlight" = { fg = "red", modifiers = ["bold", "italic", "underlined"] }
+
+# 主光标/selectio
+"ui.cursor.primary" = { fg = "bg_0", bg = "fg_0" }
+"ui.cursor.select" = { fg = "bg_0", bg = "cyan" }
+"ui.cursorline.primary" = { bg = {} }
+"ui.cursorline.secondary" = { bg = "bg_05" }
+
+"ui.selection" = { bg = "bg_1" }
+"ui.selection.primary" = { bg = "bg_2" }
+
+"ui.virtual.indent-guide" = { fg = "bg_0" }
+"ui.virtual.ruler" = { fg = "red" }
+
+# normal模式的光标
+"ui.cursor" = {fg = "bg_0", bg = "cyan"}
+"ui.cursor.insert" = {fg = "bg_0", bg = "fg_1"}
+# 当前光标匹配的标点符号
+"ui.cursor.match" = { fg = "bg_0", bg = "bg_2" }
+
+"warning" =  { fg = "orange", modifiers= ["bold", "underlined"] }
+"error" = { fg = "red", modifiers= ["bold", "underlined"] }
+"info" = { fg = "blue", modifiers= ["bold", "underlined"] }
+"hint" = { fg = "dim_0", modifiers= ["bold", "underlined"] }
+
+"diagnostic.warning" = { underline = { style = "curl", color = "orange" } }
+"diagnostic.error" = { underline = { style = "curl", color = "red" } }
+"diagnostic.info" = { underline = { style = "curl", color = "blue" } }
+"diagnostic.hint" = { underline = { style = "curl", color = "dim_0" } }
+
+[palette]
+# Using AppleRGB
+# Ref: https://github.com/jan-warchol/selenized/blob/master/the-values.md
+bg_0       = "#112e38"
+bg_1       = "#163945"
+bg_2       = "#254a57"
+dim_0      = "#61777c"
+fg_0       = "#9faeae"
+fg_1       = "#bfd0d0"
+red        = "#f13c3e"
+green      = "#69ad21"
+yellow     = "#d1a416"
+blue       = "#3a82f8"
+magenta    = "#e75bb3"
+cyan       = "#42bdaa"
+orange     = "#e26f35"
+violet     = "#9b72e9"
+br_red     = "#ff4b49"
+br_green   = "#78be2e"
+br_yellow  = "#e4b424"
+br_blue    = "#4a91ff"
+br_magenta = "#fb69c4"
+br_cyan    = "#50cfba"
+br_orange  = "#f67e41"
+br_violet  = "#ab80fc"

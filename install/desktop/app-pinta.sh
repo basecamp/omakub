@@ -1,2 +1,1 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+flatpak install -y flathub com.github.PintaProject.Pinta

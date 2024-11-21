@@ -1,0 +1,60 @@
+[[language]]
+name = "email"
+scope = "text.email"
+roots = []
+file-types = ["eml", "email"]
+rulers = [72]
+language-servers = [ "ltex-ls" ]
+text-width = 72
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "ltex-ls" ]
+formatter = { command = "sed", args = ["s/[ \t]*$//"] }
+auto-format = true
+
+[[language]]
+name = "latex"
+language-servers = [ "texlab", "ltex-ls" ]
+
+[[language]]
+name = "git-commit"
+language-servers = [ "ltex-ls" ]
+formatter = { command = "sed", args = ["s/[ \t]*$//"] }
+auto-format = true
+
+[[language]]
+name = "scss"
+indent = { tab-width = 2, unit = " " }
+
+[[language]]
+name = "just"
+indent = { tab-width = 4, unit = " " }
+
+[[language]]
+name = "rust"
+
+[language-server.rust-analyzer]
+config = { procMacro = { ignored = { leptos_macro = [
+	# Optional:
+	# "component",
+	"server"
+] } } }
+
+[language-server.tinymist]
+command = "tinymist"
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+rulers = [100]
+text-width = 100
+language-servers = ["ruff"]
+auto-format = true

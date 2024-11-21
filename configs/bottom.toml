@@ -1,0 +1,3 @@
+[flags]
+process_memory_as_value = true
+enable_gpu = true

@@ -1,0 +1,105 @@
+[core]
+    editor = hx
+    attributesfile = ~/.config/git/attributes
+    commitGraph = true
+    abbrev = 12
+    pager = delta
+
+[rerere]
+    enabled = true
+
+[diff]
+    colorMoved = default
+    algorithm = histogram
+
+[pretty]
+    fixes = Fixes: %Cred%h%Creset (\"%s\")
+
+[delta]
+    line-numbers = true
+    navigate = true
+    syntax-theme = Solarized (dark)
+    tabs = 4
+    hyperlinks = true
+    dark = true
+
+[branch]
+    sort = -committerdate
+
+[init]
+    defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[commit]
+    gpgsign = false
+    template = ~/.config/git/commit-template
+
+[alias]
+    bdone = "!f() { DEFAULT=$(git default); git switch ${1-$DEFAULT} && git up && git brebased ${1-$DEFAULT}; }; f"
+    bmerged = "!f() { DEFAULT=$(git default); git branch --merged ${1-DEFAULT} | grep -v \"${1-DEFAULT}$\" | xargs -r git branch -d; }; f"
+    brebased = "!f() { DEFAULT=$(git default); for b in $(git branch --format=\"%(refname:short)\" | grep -vE \"(${1-DEFAULT}|$DEFAULT)\"); do if [ -z \"$(git cherry ${1-$DEFAULT} $b | grep \"^+\")\" ]; then git branch -D $b; fi; done; }; f"
+    clog = log --pretty=%C(yellow)%s%n%Creset%n%b%n---
+    ddfind = log --decorate --stat --date=auto:human-local --format=fuller --patch --grep
+    ddlog = log --decorate --stat --date=auto:human-local --format=fuller -p
+    default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+    dfind = log --decorate --stat --date=auto:human-local --format=fuller --name-status --grep
+    dic = diff --color-words=.
+    di = diff --color-words
+    dlog = log --decorate --stat --date=auto:human-local --format=fuller
+    dt = "!f() { cd ${GIT_PREFIX:-.}; GIT_EXTERNAL_DIFF='difft --display=inline' git diff $@; }; f"
+    dtlog = "!f() { cd ${GIT_PREFIX:-.}; GIT_EXTERNAL_DIFF='difft --display=inline' git ddlog --ext-diff $@; }; f"
+    ec = config --global -e
+    files = diff --name-only
+    find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+    fix-head = remote set-head origin --auto
+    flog = log --pretty=fixes
+    format-patch-repo = !git format-patch --subject-prefix=\"PATCH $(basename $(git rev-parse --show-toplevel))\"
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ch) %C(bold blue)<%aN>%Creset'
+    hist = log --follow --decorate --stat --date=auto:human-local --format=fuller -p
+    ignore = update-index --skip-worktree
+    no-ignore = update-index --no-skip-worktree
+    pf = push --force-with-lease
+    plog = log -1 --pretty=%B
+    rba = "!f() { DEFAULT=$(git default); git rebase -i --autosquash ${1-$DEFAULT}; }; f"
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    sba = "!f() { git subtree add --prefix $1 $2 master --squash; }; f"
+    sbp = "!f() { git subtree push --prefix $1 $2 $3; }; f"
+    sbu = "!f() { git subtree pull --prefix $1 $2 master --squash; }; f"
+    sc = switch -c
+    send-email-repo = !git send-email --subject-prefix=\"PATCH $(basename $(git rev-parse --show-toplevel))\"
+    slog = shortlog -e --no-merges
+    tlog = tag --sort=-v:refname -l --format='%(color:red)%(refname:strip=2)%(color:reset) - %(color:yellow)%(contents:subject)%(color:reset) by %(taggername) on %(taggerdate:human)\n\n%(contents:body)'
+    undo = reset HEAD~1 --mixed
+    up = "!f() { git pull --rebase --prune $@ && git submodule update --init --recursive; }; f"
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    wip = !git add -u && git commit -m "WIP"
+    wt = worktree
+
+[log]
+    mailmap = true
+
+[gc]
+    writeCommitGraph = true
+
+[merge]
+    ff = only
+    conflictstyle = zdiff3
+
+[push]
+    default = simple
+    followTags = true
+    autoSetupRemote = true
+
+[credential]
+    helper = cache --timeout=7200
+
+[rebase]
+    autostash = true
+    autosquash = true
+
+[color "status"]
+    added = green
+    changed = yellow bold
+    untracked = red bold

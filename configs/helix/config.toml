@@ -1,0 +1,22 @@
+theme = "selenized_dark"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal.g]
+q = ":reflow"
+"\"" = ":pipe sd \"’\" \"'\" | sd '(“|”)' '\"'"
+
+[keys.normal.space]
+x = ":toggle whitespace.render all none"
