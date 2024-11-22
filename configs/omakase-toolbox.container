@@ -5,7 +5,7 @@ Description=omakase-bluefin Fedora Toolbox for distrobox
 Annotation=run.oci.keep_original_groups=1
 AutoUpdate=registry
 ContainerName=omakase-toolbox
-Environment=SHELL=%s
+Environment=SHELL=/usr/bin/fish
 Environment=HOME=%h
 Environment=container=podman
 Exec=--verbose --name %u --user %U --group %G --home %h --init "0" --nvidia "1" -- " "
