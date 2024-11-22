@@ -17,6 +17,10 @@ Turn a fresh [Project Bluefin](https://projectbluefin.io/) installation into my 
 `omakase-bluefin` is an opinionated take on and already opinionated Linux workstation.
 Inspired by [Omakub](https://omakub.org/).
 
+```
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/lukehsiao/omakase-bluefin/main/entry.sh | sh
+```
+
 ## Overview
 
 These scripts install a set of useful GUI applications as Flatpaks, as well as a single distrobox dev container with all my favorite core tools.
