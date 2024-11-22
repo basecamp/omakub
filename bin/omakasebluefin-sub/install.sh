@@ -2,8 +2,10 @@ CHOICES=(
 	"Dev Language  Install programming language environment"
 	"Dev Database  Install development database in Docker"
 	"Audacity      Record and edit audio"
+	"Slack         Business communication"
 	"Spotify       Stream music from the world's most popular service"
 	"Zoom          Attend and host video chat meetings"
+	"Zulip         Zulip Desktop Client for Linux"
 	"> All         Re-run any of the default installers"
 	"<< Back       "
 )
