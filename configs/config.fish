@@ -6,11 +6,14 @@ set -gx EDITOR hx
 set -gx COLORTERM 24bit
 set -gx GRAB_HOME ~/repos
 set -gx CARGO_INSTALL_OPTS --locked
+set -gx OMAKASEBLUEFIN_PATH "/home/$USER/.local/share/omakase-bluefin"
 
 # Path updates
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.poetry/bin
+fish_add_path $HOME/.poetry/bin
+fish_add_path $OMAKASEBLUEFIN_PATH
 
 # Configurations
 if status --is-interactive
