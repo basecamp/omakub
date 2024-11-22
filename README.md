@@ -14,7 +14,7 @@
 <br>
 
 Turn a fresh [Project Bluefin](https://projectbluefin.io/) installation into my version of a fully-configured development system by running a single command.
-`omakase-bluefin` is an opinionated take on and already opinionated Linux workstation.
+`omakase-bluefin` is an opinionated take on an already opinionated Linux workstation.
 Inspired by [Omakub](https://omakub.org/).
 
 ```
