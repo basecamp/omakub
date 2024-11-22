@@ -4,4 +4,3 @@ mkdir -p ~/.config/containers/systemd
 cp ~/.local/share/omakase-bluefin/configs/omakase-toolbox.container ~/.config/containers/systemd/omakase-toolbox.container
 systemctl --user daemon-reload
 systemctl --user start omakase-toolbox.service
-systemctl --user status omakase-toolbox.service
