@@ -25,3 +25,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/lukehsiao
 
 These scripts install a set of useful GUI applications as Flatpaks, as well as a single distrobox dev container with all my favorite core tools.
 This dev-toolbox is the default terminal experience, and shared access to `$HOME`, so it feels like you are working directly on the host.
+
+## WARNING, THIS IS WIP
+
+Known issues:
+
+- flameshot is broken
