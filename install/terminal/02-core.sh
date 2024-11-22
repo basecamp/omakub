@@ -108,6 +108,8 @@ distrobox-enter omakase-toolbox -- bash <<EOF
     cargo install --git https://github.com/lukehsiao/tool.git --locked
     cargo install --git https://github.com/Myriad-Dreamin/tinymist --locked tinymist
     cargo install --git https://github.com/tectonic-typesetting/tectonic.git --locked tectonic
+
+    chsh -s /usr/bin/fish
 EOF
 
 echo "Installed all core rust tooling."
