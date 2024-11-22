@@ -95,6 +95,7 @@ protobuf-compiler
 protobuf-devel
 python3-neovim
 readline-devel
+redis
 rr
 rsync
 shadow-utils
