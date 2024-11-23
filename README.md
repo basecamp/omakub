@@ -29,3 +29,11 @@ This dev-toolbox is the default terminal experience, and shared access to `$HOME
 ## Known Issues
 
 - you cannot run `omakasebluefin` from within the toolbox (since we do not set up bash)
+
+## License
+
+This repository is distributed under the terms of the Blue Oak license.
+Any contributions are licensed under the same license, and acknowledge via the [Developer Certificate of Origin](https://developercertificate.org/).
+[Omakub](https://omakub.org/), which this repository is derived from, is distributed under the [MIT License](https://opensource.org/license/MIT).
+
+See [LICENSE](LICENSE) for details.
