@@ -4,7 +4,7 @@ chmod +x WezTerm-20240203-110809-5046fc22-Ubuntu20.04.AppImage
 mv WezTerm-20240203-110809-5046fc22-Ubuntu20.04.AppImage ~/.local/bin/wezterm
 if [ ! -d "$HOME/.config/wezterm/wezterm.lua" ]; then
   mkdir -p ~/.config/wezterm
-  cp ~/.local/share/omakase-bluefin/configs/wezterm.lua ~/.config/wezterm/wezterm.lue
+  cp ~/.local/share/omakase-bluefin/configs/wezterm.lua ~/.config/wezterm/wezterm.lua
 fi
 if [ ! -d "$HOME/.config/wezterm/colors" ]; then
   mkdir -p ~/.config/wezterm/colors
