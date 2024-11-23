@@ -9,4 +9,4 @@ gext install paperwm@paperwm.github.com
 
 # TODO: make it optional to install Thinkpad Battery Threshold for those who want it.
 # Sometimes this is required on old Thinkpads to get the battery to charge.
-# gext install TODO
+# gext install thinkpad-battery-threshold@marcosdalvarez.org
