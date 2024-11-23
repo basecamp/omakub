@@ -28,5 +28,4 @@ This dev-toolbox is the default terminal experience, and shared access to `$HOME
 
 ## Known Issues
 
-- flameshot is broken
 - you cannot run `omakasebluefin` from within the toolbox (since we do not set up bash)
