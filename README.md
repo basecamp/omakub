@@ -29,6 +29,7 @@ This dev-toolbox is the default terminal experience, and shared access to `$HOME
 ## Known Issues
 
 - you cannot run `omakasebluefin` from within the toolbox (since we do not set up bash)
+- uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
 
 ## License
 
