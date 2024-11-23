@@ -8,7 +8,7 @@ HISTFILESIZE="${HISTSIZE}"
 source /usr/share/bash-completion/bash_completion
 
 # Set complete path
-export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakase-bluefin/bin:$PATH"
+export PATH="./bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/omakase-bluefin/bin:$PATH"
 set +h
 
 export OMAKASEBLUEFIN_PATH="/home/$USER/.local/share/omakase-bluefin"
