@@ -22,7 +22,7 @@ config.window_frame = {
 }
 config.color_scheme = "Selenized Dark"
 config.font = wezterm.font_with_fallback {
-    "Berkeley Mono",
+    -- "Berkeley Mono",
     "Iosevka Term",
     "Fira Code"
 }
