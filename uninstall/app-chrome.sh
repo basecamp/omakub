@@ -1,1 +1,1 @@
-flatpak uninstall -y ---delete-data flathub com.google.Chrome
+flatpak uninstall -y --delete-data flathub com.google.Chrome
