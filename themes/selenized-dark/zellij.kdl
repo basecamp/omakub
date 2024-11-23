@@ -2,7 +2,7 @@ themes {
     selenized-dark {
         fg "#9faeae"
         bg "#61777c"
-        black "#163945"
+        black "#112e38"
         red "#f13c3e"
         green "#69ad21"
         yellow "#d1a416"
