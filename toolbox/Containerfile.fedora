@@ -40,8 +40,5 @@ RUN dnf install -y \
     dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld && \
     dnf clean all
 
-# Install chezmoi
-RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b usr/local/bin
-
 # Cleanup
 RUN rm -rf /tmp/*
