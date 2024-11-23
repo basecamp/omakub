@@ -11,6 +11,8 @@ if $RUNNING_GNOME; then
   # Ensure computer doesn't go to sleep or lock while installing
   gsettings set org.gnome.desktop.screensaver lock-enabled false
   gsettings set org.gnome.desktop.session idle-delay 0
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 
   echo "Get ready to make a few choices..."
   source ~/.local/share/omakase-bluefin/install/terminal/required/app-gum.sh >/dev/null
@@ -31,4 +33,6 @@ if $RUNNING_GNOME; then
   # Revert to normal idle and lock settings
   gsettings set org.gnome.desktop.screensaver lock-enabled true
   gsettings set org.gnome.desktop.session idle-delay 300
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'
+  gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
 fi
