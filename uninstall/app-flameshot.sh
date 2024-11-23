@@ -1,2 +1,1 @@
-rm ~/.local/bin/flameshot
-rm ~/.local/share/applications/Flameshot.desktop
+flatpak uninstall -y --delete-data org.flameshot.Flameshot

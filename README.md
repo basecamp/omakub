@@ -26,8 +26,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://luke.hsiao.dev/omakase-bluefin.sh |
 These scripts install a set of useful GUI applications as Flatpaks, as well as a single distrobox dev container with all my favorite core tools.
 This dev-toolbox is the default terminal experience, and shared access to `$HOME`, so it feels like you are working directly on the host.
 
-## WARNING, THIS IS WIP
-
-Known issues:
+## Known Issues
 
 - flameshot is broken
+- you cannot run `omakasebluefin` from within the toolbox (since we do not set up bash)
