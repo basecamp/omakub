@@ -18,7 +18,7 @@ Turn a fresh [Project Bluefin](https://projectbluefin.io/) installation into my 
 Inspired by [Omakub](https://omakub.org/).
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/lukehsiao/omakase-bluefin/main/entry.sh | sh
+curl --proto '=https' --tlsv1.2 -sSf https://luke.hsiao.dev/omakase-bluefin.sh | sh
 ```
 
 ## Overview
