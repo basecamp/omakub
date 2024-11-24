@@ -1,0 +1,86 @@
+# git-cliff ~ configuration file
+# https://git-cliff.org/docs/configuration
+
+[changelog]
+# changelog header
+header = """
+# Changelog\n
+All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.\n
+"""
+# template for the changelog body
+# https://keats.github.io/tera/docs/#introduction
+body = """
+---
+{% if version %}\
+    {% if previous.version %}\
+        ## [{{ version | trim_start_matches(pat="v") }}]($REPO/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% else %}\
+        ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% endif %}\
+{% else %}\
+    ## [unreleased]
+{% endif %}\
+{% for group, commits in commits | group_by(attribute="group") %}
+    ### {{ group | striptags | trim | upper_first }}
+    {% for commit in commits
+    | filter(attribute="scope")
+    | sort(attribute="scope") %}
+        - **({{commit.scope}})**{% if commit.breaking %} [**breaking**]{% endif %} \
+            {{ commit.message }} - ([{{ commit.id | truncate(length=7, end="") }}]($REPO/commit/{{ commit.id }})) - {{ commit.author.name }}
+    {%- endfor -%}
+    {% raw %}\n{% endraw %}\
+    {%- for commit in commits %}
+        {%- if commit.scope -%}
+        {% else -%}
+            - {% if commit.breaking %} [**breaking**] {% endif %}\
+                {{ commit.message }} - ([{{ commit.id | truncate(length=7, end="") }}]($REPO/commit/{{ commit.id }})) - {{ commit.author.name }}
+        {% endif -%}
+    {% endfor -%}
+{% endfor %}\n
+"""
+# template for the changelog footer
+footer = """
+"""
+# remove the leading and trailing whitespace from the templates
+trim = true
+# postprocessors
+postprocessors = [
+    { pattern = '\$REPO', replace = "https://github.com/lukehsiao/omakase-bluefin" }, # replace repository URL
+]
+
+[git]
+# parse the commits based on https://www.conventionalcommits.org
+conventional_commits = true
+# filter out the commits that are not conventional
+filter_unconventional = true
+# regex for parsing and grouping commits
+commit_parsers = [
+    { body = ".*security", group = "<!-- 0 -->Security"},
+    { message = "^feat", group = "<!-- 1 -->Features"},
+    { message = "^fix", group = "<!-- 2 -->Bug Fixes"},
+    { message = "^perf", group = "<!-- 3 -->Performance"},
+    { message = "^doc", group = "<!-- 4 -->Documentation"},
+    { message = "^refactor", group = "<!-- 5 -->Refactor"},
+    { message = "^build", group = "<!-- 6 -->Build and Dependencies" },
+    { message = "^test", group = "Testing", skip = true},
+    { message = "^style", group = "Styling", skip = true},
+    { message = "^ci", group = "CI/CD", skip = true},
+    { message = "^chore\\(release\\): bump", skip = true},
+    { message = "^chore", group = "Miscellaneous Tasks", skip = true},
+]
+# filter out the commits that are not matched by commit parsers
+filter_commits = false
+# glob pattern for matching git tags
+tag_pattern = "v[0-9]*"
+# regex for skipping tags
+skip_tags = "v0.1.0-beta.1"
+# regex for ignoring tags
+# ignore_tags = "python-v[0-9]*"
+# sort the tags chronologically
+date_order = true
+# sort the commits inside sections by oldest/newest order
+sort_commits = "oldest"
+link_parsers = [
+    { pattern = "#(\\d+)", href = "https://github.com/lukehsiao/omakase-bluefin/issues/$1"},
+    { pattern = "RFC(\\d+)", text = "ietf-rfc$1", href = "https://datatracker.ietf.org/doc/html/rfc$1"},
+]
