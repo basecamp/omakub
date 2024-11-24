@@ -21,7 +21,7 @@ _update_changelog version:
 
 # Increment the version
 _incr_version version: (_update_changelog version)
-	echo {{version}} > version
+	echo {{version}} | sd 'v' '' > version
 	git commit version -m "chore(release): bump version to {{version}}"
 
 # Get the changelog and git stats for the release
