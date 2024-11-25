@@ -56,7 +56,7 @@
     fix-head = remote set-head origin --auto
     flog = log --pretty=fixes
     format-patch-repo = !git format-patch --subject-prefix=\"PATCH $(basename $(git rev-parse --show-toplevel))\"
-    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ch) %C(bold blue)<%aN>%Creset'
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%aN>%Creset'
     hist = log --follow --decorate --stat --date=auto:human-local --format=fuller -p
     ignore = update-index --skip-worktree
     no-ignore = update-index --no-skip-worktree
