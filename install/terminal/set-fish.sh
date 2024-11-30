@@ -6,3 +6,8 @@ if [ ! -d "$HOME/.config/fish/functions/fish_command_not_found.fish" ]; then
   cp ~/.local/share/omakase-bluefin/configs/fish/fish_command_not_found.fish ~/.config/fish/functions/fish_command_not_found.fish
 fi
 
+# Set up completions
+if [ ! -d "$HOME/.config/fish/completions" ]; then
+  mkdir -p ~/.config/fish/completions
+  cp -r ~/.local/share/omakase-bluefin/configs/fish/completions/*.fish ~/.config/fish/completions/
+fi
