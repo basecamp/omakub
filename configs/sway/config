@@ -68,10 +68,10 @@ gaps inner 8
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input "type:pointer" {
-    accel_profile flat
-    pointer_accel -0.9
-}
+# input "type:pointer" {
+#     accel_profile flat
+#     pointer_accel -0.9
+# }
 
 input "type:keyboard" {
     xkb_options caps:ctrl_modifier
