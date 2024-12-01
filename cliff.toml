@@ -45,7 +45,7 @@ footer = """
 trim = true
 # postprocessors
 postprocessors = [
-    { pattern = '\$REPO', replace = "https://github.com/lukehsiao/omakase-bluefin" }, # replace repository URL
+    { pattern = '\$REPO', replace = "https://github.com/lukehsiao/omakase-blue" }, # replace repository URL
 ]
 
 [git]
@@ -81,6 +81,6 @@ date_order = true
 # sort the commits inside sections by oldest/newest order
 sort_commits = "oldest"
 link_parsers = [
-    { pattern = "#(\\d+)", href = "https://github.com/lukehsiao/omakase-bluefin/issues/$1"},
+    { pattern = "#(\\d+)", href = "https://github.com/lukehsiao/omakase-blue/issues/$1"},
     { pattern = "RFC(\\d+)", text = "ietf-rfc$1", href = "https://datatracker.ietf.org/doc/html/rfc$1"},
 ]

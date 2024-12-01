@@ -16,7 +16,7 @@ if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
 	# Don't install anything
 	echo ""
 elif [[ "$CHOICE" == "> All"* ]]; then
-	INSTALLER_FILE=$(gum file $OMAKASEBLUEFIN_PATH/install)
+	INSTALLER_FILE=$(gum file $OMAKASEBLUE_PATH/install)
 
 	[[ -n "$INSTALLER_FILE" ]] &&
 		gum confirm "Run installer?" &&
@@ -26,13 +26,13 @@ else
 	INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 	case "$INSTALLER" in
-	"dev-language") INSTALLER_FILE="$OMAKASEBLUEFIN_PATH/install/terminal/select-dev-language.sh" ;;
-	"dev-database") INSTALLER_FILE="$OMAKASEBLUEFIN_PATH/install/terminal/select-dev-storage.sh" ;;
-	*) INSTALLER_FILE="$OMAKASEBLUEFIN_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
+	"dev-language") INSTALLER_FILE="$OMAKASEBLUE_PATH/install/terminal/select-dev-language.sh" ;;
+	"dev-database") INSTALLER_FILE="$OMAKASEBLUE_PATH/install/terminal/select-dev-storage.sh" ;;
+	*) INSTALLER_FILE="$OMAKASEBLUE_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
 	esac
 
 	source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3
 fi
 
 clear
-source $OMAKASEBLUEFIN_PATH/bin/omakasebluefin
+source $OMAKASEBLUE_PATH/bin/omakaseblue

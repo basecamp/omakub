@@ -5,7 +5,7 @@ set -e
 RUNNING_GNOME=$([[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] && echo true || echo false)
 
 # Check the distribution name and version and abort if incompatible
-source ~/.local/share/omakase-bluefin/install/check-version.sh
+source ~/.local/share/omakase-blue/install/check-version.sh
 
 if $RUNNING_GNOME; then
   # Ensure computer doesn't go to sleep or lock while installing
@@ -15,8 +15,8 @@ if $RUNNING_GNOME; then
   gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 
   echo "Get ready to make a few choices..."
-  source ~/.local/share/omakase-bluefin/install/terminal/required/app-gum.sh >/dev/null
-  source ~/.local/share/omakase-bluefin/install/first-run-choices.sh
+  source ~/.local/share/omakase-blue/install/terminal/required/app-gum.sh >/dev/null
+  source ~/.local/share/omakase-blue/install/first-run-choices.sh
 
   echo "Installing terminal and desktop tools..."
 else
@@ -24,11 +24,11 @@ else
 fi
 
 # Install terminal tools
-source ~/.local/share/omakase-bluefin/install/terminal.sh
+source ~/.local/share/omakase-blue/install/terminal.sh
 
 if $RUNNING_GNOME; then
   # Install desktop tools and tweaks
-  source ~/.local/share/omakase-bluefin/install/desktop.sh
+  source ~/.local/share/omakase-blue/install/desktop.sh
 
   # Revert to normal idle and lock settings
   gsettings set org.gnome.desktop.screensaver lock-enabled true

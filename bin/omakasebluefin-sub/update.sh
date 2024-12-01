@@ -1,5 +1,5 @@
 CHOICES=(
-	"self        Update omakase-bluefin itself and run any migrations"
+	"self        Update omakase-blue itself and run any migrations"
 	"<< Back       "
 )
 
@@ -12,11 +12,11 @@ else
 	INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 	case "$INSTALLER" in
-	"omakase-bluefin") INSTALLER_FILE="$OMAKASEBLUEFIN_PATH/bin/omakasebluefin-sub/migrate.sh" ;;
+	"omakase-blue") INSTALLER_FILE="$OMAKASEBLUE_PATH/bin/omakaseblue-sub/migrate.sh" ;;
 	esac
 
 	source $INSTALLER_FILE && gum spin --spinner globe --title "Update completed!" -- sleep 3
 fi
 
 clear
-source $OMAKASEBLUEFIN_PATH/bin/omakasebluefin
+source $OMAKASEBLUE_PATH/bin/omakaseblue

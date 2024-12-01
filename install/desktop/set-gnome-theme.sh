@@ -1,1 +1,1 @@
-source ~/.local/share/omakase-bluefin/themes/selenized-dark/gnome.sh
+source ~/.local/share/omakase-blue/themes/selenized-dark/gnome.sh

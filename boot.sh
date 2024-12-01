@@ -9,12 +9,12 @@ EOF
 )
 
 echo -e "$ascii_art"
-echo "=> omakase-bluefin is for fresh bluefin-stable installations only!"
+echo "=> omakase-blue is for fresh blue-stable installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-echo "Cloning omakase-bluefin..."
-rm -rf ~/.local/share/omakase-bluefin
-git clone https://github.com/lukehsiao/omakase-bluefin.git ~/.local/share/omakase-bluefin>/dev/null
+echo "Cloning omakase-blue..."
+rm -rf ~/.local/share/omakase-blue
+git clone https://github.com/lukehsiao/omakase-blue.git ~/.local/share/omakase-blue>/dev/null
 
 echo "Installation starting..."
-source ~/.local/share/omakase-bluefin/install.sh
+source ~/.local/share/omakase-blue/install.sh

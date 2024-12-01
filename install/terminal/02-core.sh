@@ -20,13 +20,13 @@ distrobox-enter omakase-toolbox -- bash <<EOF
     # Set up cargo config
     if [ ! -d "$HOME/.cargo/config.toml" ]; then
       mkdir -p ~/.cargo
-      cp ~/.local/share/omakase-bluefin/configs/cargo.toml ~/.cargo/config.toml
+      cp ~/.local/share/omakase-blue/configs/cargo.toml ~/.cargo/config.toml
     fi
 
     # Set up rustfmt config
     if [ ! -d "$HOME/.config/rustfmt/rustfmt.toml" ]; then
       mkdir -p ~/.config/rustfmt
-      cp ~/.local/share/omakase-bluefin/configs/rustfmt.toml ~/.config/rustfmt/rustfmt.toml
+      cp ~/.local/share/omakase-blue/configs/rustfmt.toml ~/.config/rustfmt/rustfmt.toml
     fi
 
     # Install binstall first

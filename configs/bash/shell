@@ -9,7 +9,7 @@ source /usr/share/bash-completion/bash_completion
 
 # Set complete path
 mkdir -p $HOME/.local/bin
-export PATH="./bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/omakase-bluefin/bin:$PATH"
+export PATH="./bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/omakase-blue/bin:$PATH"
 set +h
 
-export OMAKASEBLUEFIN_PATH="/home/$USER/.local/share/omakase-bluefin"
+export OMAKASEBLUE_PATH="/home/$USER/.local/share/omakase-blue"

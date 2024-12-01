@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source $OMAKASEBLUEFIN_PATH/ascii.sh
+source $OMAKASEBLUE_PATH/ascii.sh
 echo "" # Add spacing
-echo "                                 $(cat $OMAKASEBLUEFIN_PATH/version)"
+echo "                                 $(cat $OMAKASEBLUE_PATH/version)"
 echo "" # Add spacing
-source $OMAKASEBLUEFIN_PATH/bin/omakasebluefin-sub/menu.sh
+source $OMAKASEBLUE_PATH/bin/omakaseblue-sub/menu.sh

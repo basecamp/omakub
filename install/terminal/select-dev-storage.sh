@@ -1,6 +1,6 @@
 # Install default databases
-if [[ -v OMAKASEBLUEFIN_FIRST_RUN_DBS ]]; then
-	dbs=$OMAKASEBLUEFIN_FIRST_RUN_DBS
+if [[ -v OMAKASEBLUE_FIRST_RUN_DBS ]]; then
+	dbs=$OMAKASEBLUE_FIRST_RUN_DBS
 else
 	AVAILABLE_DBS=("MySQL" "Redis" "PostgreSQL")
 	dbs=$(gum choose "${AVAILABLE_DBS[@]}" --no-limit --height 5 --header "Select databases (runs in Docker)")
@@ -20,7 +20,7 @@ if [[ -n "$dbs" ]]; then
 			podman run -d --restart unless-stopped -p "127.0.0.1:5432:5432" --name=postgres16 -e POSTGRES_HOST_AUTH_METHOD=trust docker.io/library/postgres:16
 			# Only attempt to set configuration if none is present
 			if [ ! -f "$HOME/.psqlrc" ]; then
-			  cp ~/.local/share/omakase-bluefin/configs/psqlrc ~/.psqlrc
+			  cp ~/.local/share/omakase-blue/configs/psqlrc ~/.psqlrc
 			fi
 			;;
 		esac

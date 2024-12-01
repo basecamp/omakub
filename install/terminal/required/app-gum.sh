@@ -1,2 +1,2 @@
-# Gum is used for the omakase-bluefin commands for tailoring omakase-bluefin after the initial install
+# Gum is used for the omakase-blue commands for tailoring omakase-blue after the initial install
 brew install gum

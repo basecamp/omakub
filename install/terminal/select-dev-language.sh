@@ -1,6 +1,6 @@
 # Install default programming languages
-if [[ -v OMAKASEBLUEFIN_FIRST_RUN_LANGUAGES ]]; then
-	languages=$OMAKASEBLUEFIN_FIRST_RUN_LANGUAGES
+if [[ -v OMAKASEBLUE_FIRST_RUN_LANGUAGES ]]; then
+	languages=$OMAKASEBLUE_FIRST_RUN_LANGUAGES
 else
 	AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "Python" "Elixir" "Rust" "Java")
 	languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
@@ -28,7 +28,7 @@ if [[ -n "$languages" ]]; then
 			# Only attempt to set configuration if none is present
 			if [ ! -f "$HOME/.config/pypoetry/config.toml" ]; then
 			  mkdir -p ~/.config/pypoetry
-			  cp ~/.local/share/omakase-bluefin/configs/poetry.toml ~/.config/pypoetry/config.toml
+			  cp ~/.local/share/omakase-blue/configs/poetry.toml ~/.config/pypoetry/config.toml
 			fi
 			;;
 		Elixir)

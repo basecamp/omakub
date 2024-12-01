@@ -1,24 +1,24 @@
 <h1 align="center">
     🍣<br>
-    omakase-bluefin
+    omakase-blue
 </h1>
 <div align="center">
     <strong>An opinionated Bluefin Setup</strong>
 </div>
 <br>
 <div align="center">
-  <a href="https://github.com/lukehsiao/omakase-bluefin/blob/main/LICENSE.md">
+  <a href="https://github.com/lukehsiao/omakase-blue/blob/main/LICENSE.md">
     <img src="https://img.shields.io/badge/license-BlueOak--1.0.0-whitesmoke" alt="License">
   </a>
 </div>
 <br>
 
-Turn a fresh [Project Bluefin](https://projectbluefin.io/) installation into my version of a fully-configured development system by running a single command.
-`omakase-bluefin` is an opinionated take on an already opinionated Linux workstation.
+Turn a fresh [Project Bluefin](https://projectblue.io/) installation into my version of a fully-configured development system by running a single command.
+`omakase-blue` is an opinionated take on an already opinionated Linux workstation.
 Inspired by [Omakub](https://omakub.org/).
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://luke.hsiao.dev/omakase-bluefin.sh | sh
+curl --proto '=https' --tlsv1.2 -sSf https://luke.hsiao.dev/omakase-blue.sh | sh
 ```
 
 ## Overview
@@ -28,7 +28,7 @@ This dev-toolbox is the default terminal experience, and shared access to `$HOME
 
 ## Known Issues
 
-- you cannot run `omakasebluefin` from within the toolbox (since we do not set up bash)
+- you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
 
 ## License

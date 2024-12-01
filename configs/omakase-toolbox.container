@@ -1,5 +1,5 @@
 [Unit]
-Description=omakase-bluefin Fedora Toolbox for distrobox
+Description=omakase-blue Fedora Toolbox for distrobox
 
 [Container]
 Annotation=run.oci.keep_original_groups=1

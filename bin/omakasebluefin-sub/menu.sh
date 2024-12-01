@@ -4,4 +4,4 @@ else
 	SUB=$1
 fi
 
-[ -n "$SUB" ] && [ "$SUB" != "quit" ] && source $OMAKASEBLUEFIN_PATH/bin/omakasebluefin-sub/$SUB.sh
+[ -n "$SUB" ] && [ "$SUB" != "quit" ] && source $OMAKASEBLUE_PATH/bin/omakaseblue-sub/$SUB.sh
