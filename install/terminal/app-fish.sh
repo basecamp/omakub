@@ -1,2 +1,4 @@
 # Layer fish so we don't deal with $PATH issues for wezterm
-rpm-ostree install fish
+if ! which fish > /dev/null; then
+  rpm-ostree install fish
+fi
