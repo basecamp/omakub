@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [0.2.4](https://github.com/lukehsiao/omakase-blue/compare/v0.2.3..v0.2.4) - 2024-12-02
+
+### Bug Fixes
+
+- **(install/desktop)** only sudo rm if necessary - ([1e5c8f8](https://github.com/lukehsiao/omakase-blue/commit/1e5c8f80efff6fbb8237114950e658f4853ab5cb)) - Luke Hsiao
+- **(install/desktop)** fix conditional syntax - ([9631837](https://github.com/lukehsiao/omakase-blue/commit/9631837f267ce3f983f3f92388e7dc5dea1f538b)) - Luke Hsiao
+- **(install/terminal)** only chsh if necessary - ([e9dbf25](https://github.com/lukehsiao/omakase-blue/commit/e9dbf25676a41eb5182304e956ff104ba8b899d4)) - Luke Hsiao
+- **(install/terminal)** sway atomic doesn't have these - ([93a622b](https://github.com/lukehsiao/omakase-blue/commit/93a622b6258391bc57a2d4df428df09242b2c577)) - Luke Hsiao
+
+### Refactor
+
+- **(install)** don't use systemd-inhibit - ([591b7e3](https://github.com/lukehsiao/omakase-blue/commit/591b7e3d4856579f6ab0d4bd3681179735e6547b)) - Luke Hsiao
+- don't repeat install if not necessary - ([b3045b7](https://github.com/lukehsiao/omakase-blue/commit/b3045b72b6693f1244a54f1a47965f95ea55d306)) - Luke Hsiao
+
+---
 ## [0.2.3](https://github.com/lukehsiao/omakase-blue/compare/v0.2.2..v0.2.3) - 2024-12-02
 
 ### Bug Fixes
