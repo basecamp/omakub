@@ -3,7 +3,7 @@
     omakase-blue
 </h1>
 <div align="center">
-    <strong>An opinionated Bluefin Setup</strong>
+    <strong>An opinionated Atomic Fedora Sway Setup</strong>
 </div>
 <br>
 <div align="center">
@@ -13,7 +13,7 @@
 </div>
 <br>
 
-Turn a fresh [Project Bluefin](https://projectblue.io/) installation into my version of a fully-configured development system by running a single command.
+Turn a fresh [Wayblue Sway](https://github.com/wayblueorg/wayblue) installation into my version of a fully-configured development system by running a single command.
 `omakase-blue` is an opinionated take on an already opinionated Linux workstation.
 Inspired by [Omakub](https://omakub.org/).
 
