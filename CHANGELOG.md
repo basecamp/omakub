@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [0.2.0](https://github.com/lukehsiao/omakase-blue/compare/v0.1.1..v0.2.0) - 2024-12-02
+
+This is a HUGE switch from being based on Project Bluefin, to instead being based on wayblue sway.
+
+### Features
+
+- **(fish)** add shell completions - ([012b71b](https://github.com/lukehsiao/omakase-blue/commit/012b71bad04f7dd0722cb76b9a9fa60ab34ae17a)) - Luke Hsiao
+- add setup for sway - ([424a980](https://github.com/lukehsiao/omakase-blue/commit/424a980b460a0b8c8ae16dadd1ba4d3432e16c0a)) - Luke Hsiao
+- add tailscale layering - ([b5711e6](https://github.com/lukehsiao/omakase-blue/commit/b5711e6bbeac83b022df9d9708c33828ef914bdb)) - Luke Hsiao
+
+### Bug Fixes
+
+- **(configs/sway)** use correct xkb_options syntax - ([b7d12cc](https://github.com/lukehsiao/omakase-blue/commit/b7d12cca75d9c5b1a3252b4053645f64ab2f480e)) - Luke Hsiao
+- **(fish)** install fish via layering on the host - ([e81049b](https://github.com/lukehsiao/omakase-blue/commit/e81049bf7ddd5314f72b7e909e4ddc3c98e9949a)) - Luke Hsiao
+- **(install)** wayblue sway is fedora - ([d5b0256](https://github.com/lukehsiao/omakase-blue/commit/d5b0256de44306153aebe4bf6b4d3a686d81dbba)) - Luke Hsiao
+- **(install)** fix inhibit call and ignore toolboxes - ([9bdbaf6](https://github.com/lukehsiao/omakase-blue/commit/9bdbaf679fdb1411fb4042a06a0aa7deb65c21f8)) - Luke Hsiao
+- catch final references to old name - ([80295f6](https://github.com/lukehsiao/omakase-blue/commit/80295f61adf291b457f015037880be1e92bc9008)) - Luke Hsiao
+
+### Documentation
+
+- **(README)** update readme to point at wayblue - ([7316423](https://github.com/lukehsiao/omakase-blue/commit/7316423d24ee1d0d6de9176a20938cb2014e3755)) - Luke Hsiao
+
+### Build and Dependencies
+
+- **(Justfile)** add semver release helpers - ([3c9204b](https://github.com/lukehsiao/omakase-blue/commit/3c9204b6576d0e09a63eaf769f0dec16d667957e)) - Luke Hsiao
+- exclude `v` from version file - ([06216cb](https://github.com/lukehsiao/omakase-blue/commit/06216cb3df1c75d966e56d7e32697eb3a921591a)) - Luke Hsiao
+
+---
 ## [0.1.1](https://github.com/lukehsiao/omakase-blue/compare/v0.1.0..v0.1.1) - 2024-11-24
 
 ### Features
