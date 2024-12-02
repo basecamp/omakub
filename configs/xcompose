@@ -7,7 +7,6 @@ include "%L"
 <Multi_key> <m> <h> : "❤️"  # heart
 <Multi_key> <m> <y> : "👍" # yes
 <Multi_key> <m> <n> : "👎" # no
-<Multi_key> <m> <f> : "🖕" # fuck
 <Multi_key> <m> <w> : "🤞" # wish
 <Multi_key> <m> <r> : "🤘" # rock
 <Multi_key> <m> <k> : "😘" # kiss
