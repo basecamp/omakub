@@ -9,7 +9,7 @@ EOF
 )
 
 echo -e "$ascii_art"
-echo "=> omakase-blue is for fresh blue-stable installations only!"
+echo "=> omakase-blue is for fresh wayblue-sway installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 echo "Cloning omakase-blue..."
