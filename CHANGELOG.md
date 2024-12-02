@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [0.2.2](https://github.com/lukehsiao/omakase-blue/compare/v0.2.1..v0.2.2) - 2024-12-02
+
+### Bug Fixes
+
+- **(install/desktop)** don't use ibus in sway - ([d8c8839](https://github.com/lukehsiao/omakase-blue/commit/d8c883988df08456c4af3351d767e13e1245573b)) - Luke Hsiao
+- **(install/terminal)** fix zellij theme path - ([282f3d2](https://github.com/lukehsiao/omakase-blue/commit/282f3d26069050d2e4ee246992d9a62860510b87)) - Luke Hsiao
+- **(install/terminal)** eliminate user prompt on rm - ([81653b3](https://github.com/lukehsiao/omakase-blue/commit/81653b34b5e876aa8d38be0247572655f4f33b63)) - Luke Hsiao
+- remove unused gnome settings - ([858b3b1](https://github.com/lukehsiao/omakase-blue/commit/858b3b129d82649fe32a1fd368eed042e7c1d5df)) - Luke Hsiao
+
+### Documentation
+
+- **(README)** add general install instructions - ([33f8f1c](https://github.com/lukehsiao/omakase-blue/commit/33f8f1c6031bbc88a9ff87b69039b5dd30f63496)) - Luke Hsiao
+
+---
 ## [0.2.1](https://github.com/lukehsiao/omakase-blue/compare/v0.2.0..v0.2.1) - 2024-12-02
 
 ### Bug Fixes
