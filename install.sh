@@ -5,7 +5,7 @@ set -e
 source ~/.local/share/omakase-blue/install/check-version.sh
 
 # TODO: Ensure computer doesn't go to sleep or lock while installing
-systemd-inhibit --what=idle:sleep:suspend --who="OmakaseBlue" --why="Long-running Script" --mode=block \
+systemd-inhibit --what=idle:sleep --who="OmakaseBlue" --why="Long-running Script" --mode=block \
 bash -c '
   # Desktop software and tweaks will only be installed if we're running Gnome
   RUNNING_SWAY=$([[ "$XDG_CURRENT_DESKTOP" == *"SWAY"* ]] && echo true || echo false)

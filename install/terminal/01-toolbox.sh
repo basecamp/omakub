@@ -6,4 +6,4 @@ systemctl --user daemon-reload
 systemctl --user start omakase-toolbox.service
 
 # Disable built-in ephemeral containers
-systemctl disable --now --user ubuntu-toolbox.target fedora-toolbox.target
+systemctl disable --now --user ubuntu-toolbox.target fedora-toolbox.target || true
