@@ -8,7 +8,7 @@ source ~/.local/share/omakase-blue/install/check-version.sh
 systemd-inhibit --what=idle:sleep --who="OmakaseBlue" --why="Long-running Script" --mode=block \
 bash -c '
   # Desktop software and tweaks will only be installed if we're running Gnome
-  RUNNING_SWAY=$([[ "$XDG_CURRENT_DESKTOP" == *"SWAY"* ]] && echo true || echo false)
+  RUNNING_SWAY=$([[ "$XDG_CURRENT_DESKTOP" == *"sway"* ]] && echo true || echo false)
 
   if $RUNNING_SWAY; then
 
