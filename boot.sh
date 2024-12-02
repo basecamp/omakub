@@ -1,4 +1,5 @@
-set -e
+#!/usr/bin/env bash
+set -euxo pipefail
 
 ascii_art=$(cat <<'EOF'
                  _                    _    _          

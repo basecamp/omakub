@@ -11,7 +11,6 @@ unzip iafonts.zip -d iaFonts
 cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/share/fonts
 rm -rf iafonts.zip iaFonts
 
-set -euxo pipefail
 curl -s https://api.github.com/repos/be5invis/Iosevka/releases/latest | rg -N "browser_download_url" | rg -N --color never "SuperTTC-Iosevka-\d+\.\d+\.\d+\.zip" | sd '"' "'" | choose 1 | xargs -I % xh -F -o iosevka.zip GET %
 unzip -o iosevka.zip -d iosevka
 cp iosevka/*.ttc ~/.local/share/fonts

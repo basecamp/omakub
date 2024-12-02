@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-set -euxo pipefail
-
 # Installs all terminal apps that are meant to be shared between host and
 # container. Install from inside the devcontainer, because that has the
 # libraries needed to compile.

@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # Exit immediately if a command exits with a non-zero status
-set -e
+set -euxo pipefail
 
 # Check the distribution name and version and abort if incompatible
 source ~/.local/share/omakase-blue/install/check-version.sh
