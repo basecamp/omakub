@@ -74,8 +74,7 @@ gaps inner 8
 # }
 
 input "type:keyboard" {
-    xkb_options caps:ctrl_modifier
-    xkb_options compose:ralt
+    xkb_options ctrl:nocaps,compose:ralt
 }
 
 ### Key bindings
