@@ -31,7 +31,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg ~/.local/share/omakase-blue/themes/selenized-dark/background.jpg fill
+output * bg $HOME/.local/share/backgrounds/selenized-dark-background.jpg fill
 #
 # Example configuration:
 #
@@ -75,6 +75,7 @@ gaps inner 8
 
 input "type:keyboard" {
     xkb_options caps:ctrl_modifier
+    xkb_options compose:ralt
 }
 
 ### Key bindings
