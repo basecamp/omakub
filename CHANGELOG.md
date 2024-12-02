@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [0.2.3](https://github.com/lukehsiao/omakase-blue/compare/v0.2.2..v0.2.3) - 2024-12-02
+
+### Bug Fixes
+
+- **(sway)** launch toolbox terminal on $mod+Return - ([965ee77](https://github.com/lukehsiao/omakase-blue/commit/965ee77b3a0ff9289122be9b6ee964f0802eec07)) - Luke Hsiao
+
+---
 ## [0.2.2](https://github.com/lukehsiao/omakase-blue/compare/v0.2.1..v0.2.2) - 2024-12-02
 
 ### Bug Fixes
