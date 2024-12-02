@@ -26,6 +26,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://luke.hsiao.dev/omakase-blue.sh | sh
 These scripts install a set of useful GUI applications as Flatpaks, as well as a single distrobox dev container with all my favorite core tools.
 This dev-toolbox is the default terminal experience, and shared access to `$HOME`, so it feels like you are working directly on the host.
 
+## Installation
+
+The easiest way to install wayblue sway right now is likely to install [Fedora Sway Atomic](https://fedoraproject.org/atomic-desktops/sway/) the normal way.
+Then, follow the [Wayblue Sway instructions](https://github.com/wayblueorg/wayblue?tab=readme-ov-file#rebasing) to rebase your install on wayblue.
+
+Then run the script.
+
 ## Known Issues
 
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
