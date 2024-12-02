@@ -11,3 +11,6 @@ if [ ! -d "$HOME/.config/fish/completions" ]; then
   mkdir -p ~/.config/fish/completions
   cp -r ~/.local/share/omakase-bluefin/configs/fish/completions/*.fish ~/.config/fish/completions/
 fi
+
+# Set as default shell
+chsh --shell /usr/bin/fish
