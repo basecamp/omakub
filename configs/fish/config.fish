@@ -8,6 +8,9 @@ set -gx GRAB_HOME ~/repos
 set -gx CARGO_INSTALL_OPTS --locked
 set -gx OMAKASEBLUE_PATH "/home/$USER/.local/share/omakase-blue"
 
+# clear fish greeting
+set -g fish_greeting
+
 # Path updates
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
