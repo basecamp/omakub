@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [0.2.1](https://github.com/lukehsiao/omakase-blue/compare/v0.2.0..v0.2.1) - 2024-12-02
+
+### Bug Fixes
+
+- **(install)** detect sway correctly - ([24345ad](https://github.com/lukehsiao/omakase-blue/commit/24345adedc3bd906641f0fdd142832ebc95d45c3)) - Luke Hsiao
+- another bad bluefin reference - ([64d6d0c](https://github.com/lukehsiao/omakase-blue/commit/64d6d0cb3e697120f7850c1829911090089f83ac)) - Luke Hsiao
+
+---
 ## [0.2.0](https://github.com/lukehsiao/omakase-blue/compare/v0.1.1..v0.2.0) - 2024-12-02
 
 This is a HUGE switch from being based on Project Bluefin, to instead being based on wayblue sway.
