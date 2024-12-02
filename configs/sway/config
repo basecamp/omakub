@@ -217,10 +217,8 @@ bindsym $mod+r mode "resize"
 
 # Screenshots:
 # Super+P: Select area, window, or output
-# Super+Shift+p: screen
 
-bindsym Mod4+p       exec grimshot savecopy anything
-bindsym Mod4+Shift+p exec grimshot savecopy screen
+bindsym Mod4+p       exec sh -c -- "flatpak run org.flameshot.Flameshot gui"
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
