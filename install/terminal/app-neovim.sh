@@ -11,9 +11,8 @@ cd -
 if [ ! -d "$HOME/.config/nvim" ]; then
 	# Use LazyVim
 	git clone https://github.com/LazyVim/starter ~/.config/nvim
-
-	# Disable update notification popup in starter config
-	sed -i 's/checker = { enabled = true }/checker = { enabled = true, notify = false }/g' ~/.config/nvim/lua/config/lazy.lua
+	# Remove the .git folder, so you can add it to your own repo later
+	rm -rf ~/.config/nvim/.git
 
 	# Make everything match the terminal transparency
 	mkdir -p ~/.config/nvim/plugin/after
