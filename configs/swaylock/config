@@ -3,5 +3,5 @@
 #
 # Image path supports environment variables and shell expansions,
 # e.g. image=$HOME/Pictures/default.png
-image=$HOME/.local/share/backgrounds/selenized-dark-background.jpg
+image=$HOME/.local/share/backgrounds/selenized-dark-background.png
 scaling=fill
