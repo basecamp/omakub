@@ -1,5 +1,8 @@
 theme = "selenized_dark"
 
+[editor]
+completion-timeout = 25
+
 [editor.soft-wrap]
 enable = true
 
