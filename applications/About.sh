@@ -1,3 +1,4 @@
+mkdir -p ~/.local/share/applications
 cat <<EOF >~/.local/share/applications/About.desktop
 [Desktop Entry]
 Version=1.0
