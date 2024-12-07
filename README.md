@@ -48,6 +48,17 @@ systemctl reboot
 
 Then, you can run the script.
 
+## Tailscale
+
+If you want to use tailscale for ssh/mosh, you probable need to
+
+```
+sudo systemctl enable --now sshd
+sudo firewall-cmd --add-interface=tailscale0 --zone=trusted --permanent
+```
+
+on the host.
+
 ## Known Issues
 
 - homebrew is missing from the base image
