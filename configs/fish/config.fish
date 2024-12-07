@@ -15,8 +15,9 @@ set -g fish_greeting
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.poetry/bin
-fish_add_path $HOME/.poetry/bin
 fish_add_path $OMAKASEBLUE_PATH/bin
+fish_add_path /home/linuxbrew/.linuxbrew/bin
+fish_add_path /home/linuxbrew/.linuxbrew/sbin
 
 # Configurations
 if status --is-interactive
