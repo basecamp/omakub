@@ -21,6 +21,10 @@ fish_add_path /home/linuxbrew/.linuxbrew/sbin
 
 # Configurations
 if status --is-interactive
+    set -x GPG_TTY (tty)
+    set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+
     fzf --fish | source
     starship init fish | source
     zoxide init --cmd cd fish | source
