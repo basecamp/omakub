@@ -28,17 +28,32 @@ This dev-toolbox is the default terminal experience, and shared access to `$HOME
 
 ## Installation
 
-The easiest way to install wayblue sway right now is likely to install [Fedora Sway Atomic](https://fedoraproject.org/atomic-desktops/sway/) the normal way.
+The easiest way to install wayblue sway right now is likely to install [Project Bluefin](https://projectbluefin.io/) the normal way.
 Then, follow the [Wayblue Sway instructions](https://github.com/wayblueorg/wayblue?tab=readme-ov-file#rebasing) to rebase your install on wayblue.
 
-Then run the script.
+```
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/wayblueorg/$IMAGE_NAME:latest
+systemctl reboot
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/wayblueorg/$IMAGE_NAME:latest
+systemctl reboot
+```
+
+Then, currently due to the known issues, you need to first install two things:
+
+```
+ujust install-brew
+rpm-ostree install fish
+systemctl reboot
+```
+
+Then, you can run the script.
 
 ## Known Issues
 
+- homebrew is missing from the base image
+- fish requires a reboot in the middle of the install
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
-- fish requires a reboot in the middle of the install
-- homebrew is missing from the base image
 
 ## License
 
