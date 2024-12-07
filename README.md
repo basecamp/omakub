@@ -63,6 +63,7 @@ on the host.
 
 - homebrew is missing from the base image
 - fish requires a reboot in the middle of the install
+- yubikey gpg-agent as an ssh-agent seems unreliable (frequently asking to reinsert the key)
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
 
