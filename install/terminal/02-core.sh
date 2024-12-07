@@ -108,3 +108,5 @@ distrobox-enter omakase-toolbox -- bash <<EOF
 EOF
 
 echo "Installed all core rust tooling."
+
+brew install make
