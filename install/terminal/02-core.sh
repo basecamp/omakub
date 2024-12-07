@@ -110,3 +110,5 @@ EOF
 echo "Installed all core rust tooling."
 
 brew install make
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
