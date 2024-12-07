@@ -1,5 +1,5 @@
 # Only attempt to set configuration if none is present
-if [ ! -d "$HOME/.config/helix" ]; then
+if [ ! -f "$HOME/.config/helix/config.toml" ]; then
   mkdir -p ~/.config/helix
   cp ~/.local/share/omakase-blue/configs/helix/config.toml ~/.config/helix/config.toml
   cp ~/.local/share/omakase-blue/configs/helix/languages.toml ~/.config/helix/languages.toml
