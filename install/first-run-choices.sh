@@ -1,5 +1,5 @@
-OPTIONAL_APPS=("Spotify" "Zoom" "Audacity" "Slack" "Zulip" "Inkscape" "DrawIO")
-DEFAULT_OPTIONAL_APPS='Audacity,Slack,Inkscape,DrawIO'
+OPTIONAL_APPS=("Spotify" "Zoom" "Audacity" "Slack" "Zulip" "Inkscape" "DrawIO" "Signal")
+DEFAULT_OPTIONAL_APPS='Audacity,Slack,Zulip,Signal,Inkscape,DrawIO,Zoom'
 export OMAKASEBLUE_FIRST_RUN_OPTIONAL_APPS=$(gum choose "${OPTIONAL_APPS[@]}" --no-limit --selected $DEFAULT_OPTIONAL_APPS --height 10 --header "Select optional apps" | tr ' ' '-')
 
 AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
