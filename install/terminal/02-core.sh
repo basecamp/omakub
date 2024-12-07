@@ -112,3 +112,6 @@ echo "Installed all core rust tooling."
 brew install make
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# For git grab
+mkdir ~/repos
