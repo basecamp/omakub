@@ -37,6 +37,7 @@ Then run the script.
 
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
+- fish requires a reboot in the middle of the install
 
 ## License
 
