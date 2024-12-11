@@ -66,6 +66,7 @@ on the host.
 - yubikey gpg-agent as an ssh-agent seems unreliable (frequently asking to reinsert the key)
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
+- everything should be idempotent, and it is not right now (e.g., redis/postgres/mysql will fail if there is already a container)
 
 ## License
 
