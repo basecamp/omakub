@@ -93,6 +93,8 @@ postgresql-devel
 procps-ng
 protobuf-compiler
 protobuf-devel
+python3-cairo
+python3-gobject
 python3-neovim
 readline-devel
 redis

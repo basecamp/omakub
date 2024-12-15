@@ -64,7 +64,6 @@ on the host.
 - homebrew is missing from the base image
 - fish requires a reboot in the middle of the install
 - yubikey gpg-agent as an ssh-agent seems unreliable (frequently asking to reinsert the key)
-- mat2 cli is not working in Fedora 41 (missing cairo dependency)
 - you cannot run `omakaseblue` from within the toolbox (since we do not set up bash)
 - uninstall and update paths are not well tested (e.g., we know uninstall does NOT uninstall everything we installed)
 - everything should be idempotent, and it is not right now (e.g., redis/postgres/mysql will fail if there is already a container)
