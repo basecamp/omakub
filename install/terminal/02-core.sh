@@ -105,6 +105,12 @@ distrobox-enter omakase-toolbox -- bash <<EOF
     cargo install --git https://github.com/lukehsiao/tool.git --locked
     cargo install --git https://github.com/Myriad-Dreamin/tinymist --locked tinymist
     cargo install --git https://github.com/tectonic-typesetting/tectonic.git --locked tectonic
+
+    # Install tooling for leptos
+    rustup target add wasm32-unknown-unknown
+
+    # Install rust-analyzer
+    rustup component add rust-analyzer
 EOF
 
 echo "Installed all core rust tooling."
