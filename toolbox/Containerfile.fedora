@@ -9,6 +9,7 @@ COPY ./toolbox/packages.fedora /tmp/toolbox-packages
 
 RUN dnf -y upgrade && \
     dnf -y install $(<tmp/toolbox-packages) && \
+    dnf -y group install multimedia && \
     dnf clean all
 
 # Set up dependencies
