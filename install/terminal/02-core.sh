@@ -94,6 +94,7 @@ distrobox-enter omakase-toolbox -- bash <<EOF
         toml-fmt \
         trippy \
         typeracer \
+        typos-cli \
         typst-cli \
         wasm-bindgen-cli \
         watchexec-cli \
