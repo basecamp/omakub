@@ -1,2 +1,2 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+# Pinta is a free, open source program for drawing and image editing. See https://www.pinta-project.com/
+flatpak install -y flathub com.github.PintaProject.Pinta
