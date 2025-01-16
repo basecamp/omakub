@@ -32,6 +32,7 @@ distrobox-enter omakase-toolbox -- bash <<EOF
     cargo binstall -y --locked \
         atuin \
         b3sum \
+        bacon \
         bat \
         bottom \
         bunyan \
@@ -43,7 +44,6 @@ distrobox-enter omakase-toolbox -- bash <<EOF
         cargo-nextest \
         cargo-semver-checks \
         cargo-update \
-        cargo-watch \
         choose \
         difftastic \
         dircnt \
