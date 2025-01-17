@@ -63,6 +63,7 @@
     pf = push --force-with-lease
     plog = log -1 --pretty=%B
     rba = "!f() { DEFAULT=$(git default); git rebase -i --autosquash ${1-$DEFAULT}; }; f"
+    rlog = reflog --date=auto:human-local
     save = !git add -A && git commit -m 'SAVEPOINT'
     sba = "!f() { git subtree add --prefix $1 $2 master --squash; }; f"
     sbp = "!f() { git subtree push --prefix $1 $2 $3; }; f"
