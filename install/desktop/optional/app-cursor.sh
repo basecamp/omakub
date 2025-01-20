@@ -1,9 +1,9 @@
 cd /tmp
-curl -L o cursor.appimage https://downloader.cursor.sh/linux/appImage/x64
+curl -L --output cursor.appimage https://downloader.cursor.sh/linux/x64
 sudo mv cursor.appimage /opt/cursor.appimage
 sudo chmod +x /opt/cursor.appimage
 sudo apt install -y fuse3
-sudo apt install libfuse2t64
+sudo apt install -y libfuse2t64
 
 DESKTOP_FILE="/usr/share/applications/cursor.desktop"
 
@@ -22,3 +22,4 @@ if [ -f "$DESKTOP_FILE" ]; then
 else
   echo "Failed to create cursor.desktop"
 fi
+
