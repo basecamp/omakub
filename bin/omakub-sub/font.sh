@@ -24,7 +24,7 @@ set_font() {
 if [ "$#" -gt 1 ]; then
 	choice=${!#}
 else
-	choice=$(gum choose "Cascadia Mono" "Fira Mono" "JetBrains Mono" "Meslo" "> Change size" "<< Back" --height 8 --header "Choose your programming font")
+	choice=$(gum choose "Cascadia Mono" "Fira Mono" "Iosevka" "JetBrains Mono" "Meslo" "> Change size" "<< Back" --height 9 --header "Choose your programming font")
 fi
 
 case $choice in
@@ -34,6 +34,9 @@ case $choice in
 "Fira Mono")
 	set_font "FiraMono Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.zip" "otf"
 	;;
+"Iosevka")
+  set_font "Iosevka Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Iosevka.zip" "ttf"
+  ;;
 "JetBrains Mono")
 	set_font "JetBrainsMono Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" "ttf"
 	;;
