@@ -1,10 +1,28 @@
+[language-server.rust-analyzer]
+config = { procMacro = { ignored = { leptos_macro = [
+	# Optional:
+	# "component",
+	"server"
+] } } }
+
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.typos]
+command = "typos-lsp"
+config.diagnosticSeverity = "Info"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
 [[language]]
 name = "email"
 scope = "text.email"
 roots = []
 file-types = ["eml", "email"]
 rulers = [72]
-language-servers = [ "ltex-ls" ]
+language-servers = [ "ltex-ls", "typos" ]
 text-width = 72
 
 [[language]]
@@ -15,11 +33,11 @@ auto-format = true
 
 [[language]]
 name = "latex"
-language-servers = [ "texlab", "ltex-ls" ]
+language-servers = [ "texlab", "ltex-ls", "typos" ]
 
 [[language]]
 name = "git-commit"
-language-servers = [ "ltex-ls" ]
+language-servers = [ "ltex-ls", "typos" ]
 formatter = { command = "sed", args = ["s/[ \t]*$//"] }
 auto-format = true
 
@@ -34,27 +52,13 @@ indent = { tab-width = 4, unit = " " }
 [[language]]
 name = "rust"
 
-[language-server.rust-analyzer]
-config = { procMacro = { ignored = { leptos_macro = [
-	# Optional:
-	# "component",
-	"server"
-] } } }
-
-[language-server.tinymist]
-command = "tinymist"
-
 [[language]]
 name = "typst"
-language-servers = ["tinymist"]
-
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
+language-servers = ["tinymist", "typos"]
 
 [[language]]
 name = "python"
 rulers = [100]
 text-width = 100
-language-servers = ["ruff"]
+language-servers = ["ruff", "typos"]
 auto-format = true
