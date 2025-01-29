@@ -1,5 +1,5 @@
 cd /tmp
-wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
+wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz"
 tar -xf nvim.tar.gz
 sudo install nvim-linux64/bin/nvim /usr/local/bin/nvim
 sudo cp -R nvim-linux64/lib /usr/local/
