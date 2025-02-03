@@ -10,7 +10,7 @@ if [[ -n "$languages" ]]; then
 	for language in $languages; do
 		case $language in
 		Ruby)
-			mise use --global ruby@3.3
+			mise use --global ruby@3.4
 			mise x ruby -- gem install rails --no-document
 			;;
 		Node.js)
