@@ -18,7 +18,7 @@ source ~/.local/share/omakub/install/terminal/required/app-gum.sh >/dev/null
 source ~/.local/share/omakub/install/first-run-choices.sh
 
 if $RUNNING_GNOME; then
-  echo "Installing terminal and desktop tools.."
+  echo "Installing terminal and desktop tools..."
 else
   echo "Only installing terminal tools..."
 fi
