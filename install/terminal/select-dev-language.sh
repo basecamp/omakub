@@ -10,7 +10,7 @@ if [[ -n "$languages" ]]; then
 	for language in $languages; do
 		case $language in
 		Ruby)
-			mise use --global ruby@3.3
+			mise use --global ruby@3.4
 			mise x ruby -- gem install rails --no-document
 			;;
 		Node.js)
@@ -21,7 +21,7 @@ if [[ -n "$languages" ]]; then
 			;;
 		PHP)
 			sudo add-apt-repository -y ppa:ondrej/php
-			sudo apt -y install php8.3 php8.3-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
+			sudo apt -y install php8.4 php8.4-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
 			php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 			php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
 			rm composer-setup.php
