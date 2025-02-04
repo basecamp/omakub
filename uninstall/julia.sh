@@ -1,1 +1,0 @@
-juliaup self uninstall
