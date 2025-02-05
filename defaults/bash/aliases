@@ -39,7 +39,7 @@ webm2mp4() {
 
 # Allow brightness controls if ASDControl is installed
 if [ -f "/usr/local/bin/asdcontrol" ]; then
-  export APPLE_DISPLAY_DEV=$(asdcontrol --detect /dev/usb/hiddev* | sed -n 's|^\(/dev/usb/hiddev[0-9]*\):.*|\1|p')
+  export APPLE_DISPLAY_DEV=$(asdcontrol --detect /dev/usb/hiddev* 2>/dev/null | sed -n 's|^\(/dev/usb/hiddev[0-9]*\):.*|\1|p')
 
   alias brup="asdcontrol $APPLE_DISPLAY_DEV -- +10000"
   alias brdown="asdcontrol $APPLE_DISPLAY_DEV -- -10000"
