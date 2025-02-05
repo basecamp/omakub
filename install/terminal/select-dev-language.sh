@@ -10,15 +10,12 @@ enable_lazyvim_extras() {
     local config_file="$HOME/.config/nvim/lazyvim.json"
     local extras=("$@")
 
-    local tmp_file
-    tmp_file=$(mktemp /tmp/omakub.XXXXX)
-
     local extras_json
     extras_json=$(printf '"%s",' "${extras[@]}")
     extras_json="[${extras_json%,}]"
 
-    jq --argjson extras "$extras_json" '.extras |= (. + $extras | unique)' "$config_file" >"$tmp_file"
-    mv "$tmp_file" "$config_file"
+    # This is cheating to mimic an in-place editing of files (without a tmp file)...
+    { rm "$config_file" && jq --argjson extras "$extras_json" '.extras |= (. + $extras | unique)' >"$config_file" } <"$config_file"
 }
 
 if [[ -n "$languages" ]]; then
