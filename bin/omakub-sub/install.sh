@@ -23,26 +23,26 @@ CHOICES=(
 CHOICE=$(gum choose "${CHOICES[@]}" --height 20 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
-	# Don't install anything
-	echo ""
+  # Don't install anything
+  echo ""
 elif [[ "$CHOICE" == "> All"* ]]; then
-	INSTALLER_FILE=$(gum file $OMAKUB_PATH/install)
+  INSTALLER_FILE=$(gum file $OMAKUB_PATH/install)
 
-	[[ -n "$INSTALLER_FILE" ]] &&
-		gum confirm "Run installer?" &&
-		source $INSTALLER_FILE &&
-		gum spin --spinner globe --title "Install completed!" -- sleep 3
+  [[ -n "$INSTALLER_FILE" ]] &&
+    gum confirm "Run installer?" &&
+    source $INSTALLER_FILE &&
+    gum spin --spinner globe --title "Install completed!" -- sleep 3
 else
-	INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+  INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
-	case "$INSTALLER" in
-	"dev-language") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-language.sh" ;;
-	"dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
-	"ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
-	*) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
-	esac
+  case "$INSTALLER" in
+  "dev-language") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-language.sh" ;;
+  "dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
+  "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
+  *) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
+  esac
 
-	source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3
+  source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3
 fi
 
 clear
