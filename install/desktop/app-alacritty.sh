@@ -5,3 +5,4 @@ cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.to
 cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
 cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
+sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
