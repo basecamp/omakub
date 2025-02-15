@@ -22,7 +22,7 @@ q = ":reflow"
 # Replace smart quotes with normal
 "\"" = ":pipe sd \"’\" \"'\" | sd '(“|”)' '\"'"
 # Replace with em dash and en dash
-"-" = ":pipe sd '---' '—' | sd '--' '–'"
+"-" = ":pipe sd -- '---' '—' | sd -- '--' '–'"
 
 [keys.normal.space]
 x = ":toggle whitespace.render all none"
