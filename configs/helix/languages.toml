@@ -27,7 +27,7 @@ text-width = 72
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "ltex-ls" ]
+language-servers = [ "marksman", "ltex-ls", "typos" ]
 formatter = { command = "sed", args = ["s/[ \t]*$//"] }
 auto-format = true
 
@@ -51,6 +51,7 @@ indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "rust"
+language-servers = [ "rust-analyzer", "typos" ]
 
 [[language]]
 name = "typst"
