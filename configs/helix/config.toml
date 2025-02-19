@@ -2,6 +2,7 @@ theme = "selenized_dark"
 
 [editor]
 completion-timeout = 25
+end-of-line-diagnostics = "hint"
 
 [editor.soft-wrap]
 enable = true
@@ -16,6 +17,9 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [keys.normal.g]
 q = ":reflow"
