@@ -12,8 +12,10 @@ echo -e "$ascii_art"
 echo "=> Omakub is for fresh Ubuntu 24.04+ installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-sudo apt update >/dev/null
-sudo apt install -y git >/dev/null
+sudo apt update > /dev/null
+sudo apt upgrade -y > /dev/null
+sudo apt install -y curl git unzip >/dev/null
+
 
 echo "Cloning Omakub..."
 rm -rf ~/.local/share/omakub
