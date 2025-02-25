@@ -1,16 +1,23 @@
 [core]
     editor = hx
     attributesfile = ~/.config/git/attributes
+    excludesfile = ~/.config/git/ignore
     commitGraph = true
     abbrev = 12
     pager = delta
 
+[column]
+    ui = auto
+
 [rerere]
     enabled = true
+    autoupdate = true
 
 [diff]
     colorMoved = default
     algorithm = histogram
+    mneumonicPrefix = true
+    renames = true
 
 [pretty]
     fixes = Fixes: %Cred%h%Creset (\"%s\")
@@ -26,6 +33,12 @@
 [branch]
     sort = -committerdate
 
+[tag]
+    sort = version:refname
+
+[pull]
+    rebase = true
+
 [init]
     defaultBranch = main
 
@@ -35,6 +48,43 @@
 [commit]
     gpgsign = false
     template = ~/.config/git/commit-template
+    verbose = true
+
+[log]
+    mailmap = true
+
+[gc]
+    writeCommitGraph = true
+
+[merge]
+    ff = only
+    conflictstyle = zdiff3
+
+[push]
+    default = simple
+    followTags = true
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[help]
+    autocorrect = prompt
+
+[credential]
+    helper = cache --timeout=7200
+
+[rebase]
+    autostash = true
+    autosquash = true
+    updateRefs = true
+
+[color "status"]
+    added = green
+    changed = yellow bold
+    untracked = red bold
 
 [alias]
     bdone = "!f() { DEFAULT=$(git default); git switch ${1-$DEFAULT} && git up && git brebased ${1-$DEFAULT}; }; f"
@@ -77,30 +127,3 @@
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
     wip = !git add -u && git commit -m "WIP"
     wt = worktree
-
-[log]
-    mailmap = true
-
-[gc]
-    writeCommitGraph = true
-
-[merge]
-    ff = only
-    conflictstyle = zdiff3
-
-[push]
-    default = simple
-    followTags = true
-    autoSetupRemote = true
-
-[credential]
-    helper = cache --timeout=7200
-
-[rebase]
-    autostash = true
-    autosquash = true
-
-[color "status"]
-    added = green
-    changed = yellow bold
-    untracked = red bold
