@@ -20,7 +20,7 @@ CHOICES=(
   "<< Back       "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 20 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 21 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
