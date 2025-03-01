@@ -53,7 +53,7 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
 
         item = Nautilus.MenuItem(
             name="NautilusPython::openterminal_file_item",
-            label="Open Alacritty",
+            label="Open in Alacritty",
             tip="Open Alacritty In %s" % file.get_name(),
         )
         item.connect("activate", self.menu_activate_cb, file)
@@ -68,7 +68,7 @@ class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
     ) -> List[Nautilus.MenuItem]:
         item = Nautilus.MenuItem(
             name="NautilusPython::openterminal_file_item2",
-            label="Open Alacritty",
+            label="Open in Alacritty",
             tip="Open Alacritty In %s" % current_folder.get_name(),
         )
         item.connect("activate", self.menu_background_activate_cb, current_folder)
