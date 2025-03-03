@@ -20,7 +20,7 @@ enable_lazyvim_extras() {
   { rm "$config_file" && jq --argjson extras "$extras_json" '.extras |= (. + $extras | unique)' >"$config_file"; } <"$config_file"
 }
 
-if [[ -n $languages ]]; then
+if [[ -n "$languages" ]]; then
   for language in $languages; do
     case $language in
     Ruby)
