@@ -50,7 +50,6 @@ if [[ -n "$languages" ]]; then
       mise use --global erlang@latest
       mise use --global elixir@latest
       mise x elixir -- mix local.hex --force
-      $install_extras && enable_lazyvim_extras "lazyvim.plugins.extras.lang.elixir" "lazyvim.plugins.extras.lang.erlang"
       ;;
     Rust)
       bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y

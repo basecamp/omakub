@@ -45,7 +45,6 @@ if [[ -n $languages ]]; then
     Elixir)
       mise uninstall elixir@latest
       mise uninstall erlang@latest
-      disable_lazyvim_extras "lazyvim.plugins.extras.lang.elixir" "lazyvim.plugins.extras.lang.erlang"
       ;;
     Rust)
       rustup self uninstall -y
