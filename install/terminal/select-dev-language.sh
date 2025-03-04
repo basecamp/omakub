@@ -6,6 +6,20 @@ else
   languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
 fi
 
+install_extras=$(gum confirm "Would you like to enable the LazyVIM extras plugins (if available) too?" && echo true || echo false)
+
+enable_lazyvim_extras() {
+  local config_file="$HOME/.config/nvim/lazyvim.json"
+  local extras=("$@")
+
+  local extras_json
+  extras_json=$(printf '"%s",' "${extras[@]}")
+  extras_json="[${extras_json%,}]"
+
+  # This is cheating to mimic an in-place editing of files (without a tmp file)...
+  { rm "$config_file" && jq --argjson extras "$extras_json" '.extras |= (. + $extras | unique)' >"$config_file"; } <"$config_file"
+}
+
 if [[ -n "$languages" ]]; then
   for language in $languages; do
     case $language in
@@ -15,9 +29,11 @@ if [[ -n "$languages" ]]; then
       ;;
     Node.js)
       mise use --global node@lts
+      $install_extras && enable_lazyvim_extras "lazyvim.plugins.extras.lang.typescript"
       ;;
     Go)
       mise use --global go@latest
+      $install_extras && enable_lazyvim_extras "lazyvim.plugins.extras.lang.go"
       ;;
     PHP)
       sudo add-apt-repository -y ppa:ondrej/php
@@ -25,6 +41,7 @@ if [[ -n "$languages" ]]; then
       php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
       php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
       rm composer-setup.php
+      $install_extras && enable_lazyvim_extras "lazyvim.plugins.extras.lang.php"
       ;;
     Python)
       mise use --global python@latest
@@ -36,6 +53,7 @@ if [[ -n "$languages" ]]; then
       ;;
     Rust)
       bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
+      $install_extras && enable_lazyvim_extras "lazyvim.plugins.extras.lang.rust"
       ;;
     Java)
       mise use --global java@latest
