@@ -1,7 +1,3 @@
-name: ShellCheck
-
-on: [push, pull_request]
-
 jobs:
   shellcheck:
     runs-on: ubuntu-latest
@@ -13,11 +9,5 @@ jobs:
     - name: Install ShellCheck
       run: sudo apt-get install -y shellcheck
 
-    - name: Check for modified shell files and run ShellCheck
-      run: |
-        MODIFIED_FILES=$(git diff --name-only origin/master HEAD | grep -E '\.sh$' || true)
-        if [ -n "$MODIFIED_FILES" ]; then
-          echo "$MODIFIED_FILES" | xargs shellcheck
-        else
-          echo "No modified shell files to check."
-        fi
+    - name: Run ShellCheck
+      run: shellcheck $(awk -F'=' '/^source=/{print $2}' .shellcheckrc)
