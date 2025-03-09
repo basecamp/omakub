@@ -16,5 +16,3 @@ if [ -n "$MODIFIED_FILES" ]; then
 else
   echo "No modified shell files to check."
 fi
-
-chmod +x .git/hooks/pre-push
