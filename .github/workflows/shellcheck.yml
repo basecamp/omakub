@@ -15,7 +15,7 @@ jobs:
 
     - name: Check for modified shell files and run ShellCheck
       run: |
-        MODIFIED_FILES=$(git diff --name-only origin/main HEAD | grep -E '\.sh$' || true)
+        MODIFIED_FILES=$(git diff --name-only origin/master HEAD | grep -E '\.sh$' || true)
         if [ -n "$MODIFIED_FILES" ]; then
           echo "$MODIFIED_FILES" | xargs shellcheck
         else
