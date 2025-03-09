@@ -2,7 +2,6 @@ theme "tokyo-night"
 default_layout "compact"
 on_force_close "quit"
 
-# Configure locked mode
 default_mode "locked"
 keybinds clear-defaults=true {
     locked {
