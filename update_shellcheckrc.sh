@@ -11,8 +11,8 @@ if [ -n "$MODIFIED_FILES" ]; then
   done
 
   # Add .shellcheckrc to the staging
+  echo "Adding .shellcheck to the staging."
   git add .shellcheckrc
-  git commit -m "Add modified shell files to the shellcheck action"
 else
   echo "No modified shell files to check."
 fi
