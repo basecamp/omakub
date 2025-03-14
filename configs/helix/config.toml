@@ -27,6 +27,9 @@ q = ":reflow"
 "\"" = ":pipe sd \"’\" \"'\" | sd '(“|”)' '\"'"
 # Replace with em dash and en dash
 "-" = ":pipe sd -- '---' '—' | sd -- '--' '–'"
+# Git blame in the editor (requires nightly, atm)
+# Ref: https://github.com/helix-editor/helix/discussions/6421#discussioncomment-12486943
+B = ":sh git log -n 5 --no-patch --pretty=format:'%%h -%%d %%s (%%cr) <%%aN>' -L%{cursor_line},+1:%{buffer_name}"
 
 [keys.normal.space]
 x = ":toggle whitespace.render all none"
