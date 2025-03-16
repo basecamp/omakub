@@ -17,7 +17,7 @@ if [ "$ID" != "ubuntu" ] || [ $(echo "$VERSION_ID >= 24.04" | bc) != 1 ]; then
   exit 1
 fi
 
-# Check architecture using uname -m
+# Check if running on x86
 ARCH=$(uname -m)
 if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ]; then
   echo "$(tput setaf 1)Error: Unsupported architecture detected"
