@@ -4,4 +4,6 @@ curl -sLo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/late
 tar -xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 rm lazygit.tar.gz lazygit
+mkdir -p ~/.config/lazygit/
+touch ~/.config/lazygit/config.yml
 cd -
