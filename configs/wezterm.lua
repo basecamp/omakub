@@ -22,13 +22,12 @@ config.window_frame = {
 }
 config.color_scheme = "Selenized Dark"
 config.font = wezterm.font_with_fallback {
-    -- "Berkeley Mono",
+    -- "Berkeley Mono SemiCondensed",
     "Iosevka Term",
     "Fira Code"
 }
 config.font_size = 12.0
 config.line_height = 0.9
-config.cell_width = 0.9
 config.check_for_updates = true
 config.window_padding = {
     left = 0,
