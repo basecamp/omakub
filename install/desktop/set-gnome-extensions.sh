@@ -1,4 +1,9 @@
-sudo apt install -y gnome-shell-extension-manager pipx
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  sudo apt install -y gnome-shell-extension-manager pipx
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  sudo dnf install -y gnome-extensions pipx
+fi
+
 pipx install gnome-extensions-cli --system-site-packages
 
 # Turn off default Ubuntu extensions
