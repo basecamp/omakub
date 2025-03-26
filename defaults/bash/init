@@ -7,6 +7,13 @@ if command -v zoxide &> /dev/null; then
 fi
 
 if command -v fzf &> /dev/null; then
+
+  if [ "$OMAKUB_OS" = "fedora" ]; then
+    sudo mkdir -p /usr/share/bash-completion/completions /usr/share/doc/fzf/examples
+    sudo curl -o /usr/share/bash-completion/completions/fzf https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash
+    sudo curl -o /usr/share/doc/fzf/examples/key-bindings.bash https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash
+  fi
+
   source /usr/share/bash-completion/completions/fzf
   source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
