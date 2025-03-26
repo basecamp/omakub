@@ -2,8 +2,13 @@ cd /tmp
 curl -L --output cursor.appimage https://downloader.cursor.sh/linux/x64
 sudo mv cursor.appimage /opt/cursor.appimage
 sudo chmod +x /opt/cursor.appimage
-sudo apt install -y fuse3
-sudo apt install -y libfuse2t64
+
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  sudo apt install -y fuse3
+	sudo apt install -y libfuse2t64
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  sudo dnf install -y fuse3
+fi
 
 DESKTOP_FILE="/usr/share/applications/cursor.desktop"
 

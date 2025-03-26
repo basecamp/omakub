@@ -1,3 +1,7 @@
+# Alt + Tab without stacked app
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['Disabled']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+
 # Alt+F4 is very cumbersome
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 
