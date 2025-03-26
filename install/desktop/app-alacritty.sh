@@ -11,8 +11,15 @@ cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/t
 cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
-# Make alacritty default terminal emulator
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  # Make alacritty default terminal emulator
+  sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  # Make alacritty default terminal emulator
+  cd /usr/bin
+  sudo cp ptyxis ptyxis.NOPE
+  sudo ln -sfv alacritty ptyxis
+fi
 
 # Adding alacritty to nautilus contextual menu requires the python wrapper for the libraries
 

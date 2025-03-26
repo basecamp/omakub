@@ -9,11 +9,18 @@ ascii_art='________                  __        ___.
 '
 
 echo -e "$ascii_art"
-echo "=> Omakub is for fresh Ubuntu 24.04+ installations only!"
+echo "=> Omakub is for fresh Ubuntu 24.04+ and Fedora 41+ installations!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-sudo apt-get update >/dev/null
-sudo apt-get install -y git >/dev/null
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  # Update system and install Git
+	sudo apt-get update >/dev/null
+	sudo apt-get install -y git >/dev/null
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  # Update system and install Git
+	sudo dnf update -y >/dev/null
+	sudo dnf install -y git >/dev/null
+fi
 
 echo "Cloning Omakub..."
 rm -rf ~/.local/share/omakub
