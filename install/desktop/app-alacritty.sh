@@ -1,16 +1,34 @@
 # Alacritty is a GPU-powered and highly extensible terminal. See https://alacritty.org/
-sudo apt install -y alacritty
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  sudo apt install -y alacritty
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  sudo dnf install -y alacritty
+fi
+
 mkdir -p ~/.config/alacritty
 cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
 cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
-# Make alacritty default terminal emulator
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  # Make alacritty default terminal emulator
+  sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  # Make alacritty default terminal emulator
+  cd /usr/bin
+  sudo cp ptyxis ptyxis.NOPE
+  sudo ln -sfv alacritty ptyxis
+fi
 
 # Adding alacritty to nautilus contextual menu requires the python wrapper for the libraries
-sudo apt install -y python3-nautilus
+
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  sudo apt install -y python3-nautilus
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  sudo dnf install -y nautilus-python
+fi
+
 mkdir -p ~/.local/share/nautilus-python/extensions/
 
 cat > ~/.local/share/nautilus-python/extensions/open-alacritty.py <<TECHNICALLYNOTACONFIGSOHEREDOCCEDITIS

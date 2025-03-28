@@ -1,7 +1,12 @@
-# Display system information in the terminal
-sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
-sudo apt update -y
-sudo apt install -y fastfetch
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  # Display system information in the terminal
+  sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
+  sudo apt update -y
+  sudo apt install -y fastfetch
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  # Display system information in the terminal
+  sudo dnf install -y fastfetch
+fi
 
 # Only attempt to set configuration if fastfetch is not already set
 if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then

@@ -1,7 +1,12 @@
-sudo add-apt-repository universe -y
-sudo add-apt-repository ppa:agornostal/ulauncher -y
-sudo apt update -y
-sudo apt install -y ulauncher
+if [ "$OMAKUB_OS" = "ubuntu" ]; then
+  sudo add-apt-repository universe -y
+  sudo add-apt-repository ppa:agornostal/ulauncher -y
+  sudo apt update -y
+  sudo apt install -y ulauncher
+elif [ "$OMAKUB_OS" = "fedora" ]; then
+  sudo dnf update -y
+  sudo dnf install -y ulauncher
+fi
 
 # Start ulauncher to have it populate config before we overwrite
 mkdir -p ~/.config/autostart/
