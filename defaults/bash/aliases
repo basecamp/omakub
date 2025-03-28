@@ -38,7 +38,7 @@ webm2mp4() {
 }
 
 # Ensure that external keyboards that use an fn key has the F keys as the default
-alias force_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
+alias fix_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
 
 # Spotify window is too large on many displays, so fix this by zooming it down
-alias scale_spotify_window_size="sudo sed -i 's|^Exec=.*|Exec=spotify --force-device-scale-factor=1.5 %U|' /usr/local/share/applications/spotify.desktop"
+alias fix_spotify_window_size="sudo sed -i 's|^Exec=.*|Exec=spotify --force-device-scale-factor=1.5 %U|' /usr/local/share/applications/spotify.desktop"
