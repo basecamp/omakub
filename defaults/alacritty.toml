@@ -2,7 +2,8 @@
 TERM = "xterm-256color"
 
 [shell]
-program = "zellij"
+program = "/bin/bash"
+args = ["-c", "zellij; exec bash"]
 
 [window]
 padding.x = 16
