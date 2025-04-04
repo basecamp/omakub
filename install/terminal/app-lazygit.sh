@@ -5,4 +5,6 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 CONFIG_DIR="$HOME/.config/lazygit" lazygit
 rm lazygit.tar.gz lazygit
+mkdir -p ~/.config/lazygit/
+touch ~/.config/lazygit/config.yml
 cd -
