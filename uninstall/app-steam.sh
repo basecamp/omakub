@@ -1,1 +1,1 @@
-sudo apt remove -y steam steam-launcher
+sudo dnf remove -y steam steam-launcher

@@ -1,1 +1,1 @@
-sudo apt remove -y spotify-client
+sudo dnf remove -y spotify-client

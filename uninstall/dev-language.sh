@@ -20,8 +20,8 @@ if [[ -n $languages ]]; then
       mise uninstall go@latest
       ;;
     PHP)
-      sudo apt -y purge php8.4 php8.4-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
-      sudo add-apt-repository -y --remove ppa:ondrej/php
+      sudo dnf -y purge php8.4 php8.4-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
+      sudo add-dnf-repository -y --remove ppa:ondrej/php
       sudo rm /usr/local/bin/composer
       ;;
     Python)

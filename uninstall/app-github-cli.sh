@@ -1,1 +1,1 @@
-sudo apt remove -y gh
+sudo dnf remove -y gh

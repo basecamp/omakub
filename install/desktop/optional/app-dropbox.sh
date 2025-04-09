@@ -1,2 +1,2 @@
 # Sync files across machines using https://dropbox.com
-sudo apt install -y nautilus-dropbox >/dev/null
+sudo dnf install -y nautilus-dropbox >/dev/null

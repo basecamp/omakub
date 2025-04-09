@@ -1,7 +1,7 @@
-wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
-sudo add-apt-repository -y 'deb https://typora.io/linux ./'
-sudo apt update -y
-sudo apt install -y typora
+wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/dnf/trusted.gpg.d/typora.asc
+sudo add-dnf-repository -y 'deb https://typora.io/linux ./'
+sudo dnf update -y
+sudo dnf install -y typora
 
 # Add iA Typora theme
 mkdir -p ~/.config/Typora/themes

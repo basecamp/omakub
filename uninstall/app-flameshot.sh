@@ -1,1 +1,1 @@
-sudo apt remove -y flameshot
+sudo dnf remove -y flameshot

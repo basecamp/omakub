@@ -1,1 +1,1 @@
-sudo apt remove -y fastfetch
+sudo dnf remove -y fastfetch

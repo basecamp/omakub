@@ -1,3 +1,3 @@
-sudo add-apt-repository ppa:cappelikan/ppa
-sudo apt update -y
-sudo apt install -y mainline
+sudo add-dnf-repository ppa:cappelikan/ppa
+sudo dnf update -y
+sudo dnf install -y mainline

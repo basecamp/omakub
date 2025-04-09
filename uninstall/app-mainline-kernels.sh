@@ -1,1 +1,1 @@
-sudo apt remove -y mainline
+sudo dnf remove -y mainline

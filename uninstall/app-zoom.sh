@@ -1,1 +1,1 @@
-sudo apt remove -y zoom
+sudo dnf remove -y zoom
