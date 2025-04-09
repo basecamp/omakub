@@ -1,10 +1,25 @@
 # Alacritty is a GPU-powered and highly extensible terminal. See https://alacritty.org/
 sudo apt install -y alacritty
 mkdir -p ~/.config/alacritty
-cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
-cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
-cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
-cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
+
+ALACRITTY_VERSION=$(alacritty --version | sed 's/alacritty //')
+
+if [[ "$ALACRITTY_VERSION" < "0.15.1" ]]; then
+    echo "Alacritty version $ALACRITTY_VERSION is less than 0.15.1."
+    cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
+    cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
+    cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
+    cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
+else
+  echo "Alacritty version is $ALACRITTY_VERSION."
+  cp ~/.local/share/omakub/configs/alacritty_0_15.toml ~/.config/alacritty/alacritty.toml
+  cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
+  cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
+  cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
+  alacritty migrate
+fi
+
+
 
 # Make alacritty default terminal emulator
 sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
