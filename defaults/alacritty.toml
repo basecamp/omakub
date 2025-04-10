@@ -1,7 +1,7 @@
 [env]
 TERM = "xterm-256color"
 
-[shell]
+[terminal.shell]
 program = "zellij"
 
 [window]
@@ -14,3 +14,5 @@ opacity = 0.98
 bindings = [
 { key = "F11", action = "ToggleFullscreen" }
 ]
+
+[terminal]

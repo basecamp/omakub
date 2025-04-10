@@ -7,10 +7,11 @@ cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/al
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
 # Make alacritty default terminal emulator
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
+# gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-e"
 
 # Adding alacritty to nautilus contextual menu requires the python wrapper for the libraries
-sudo dnf install -y python3-nautilus
+sudo dnf install -y nautilus-python
 mkdir -p ~/.local/share/nautilus-python/extensions/
 
 cat > ~/.local/share/nautilus-python/extensions/open-alacritty.py <<TECHNICALLYNOTACONFIGSOHEREDOCCEDITIS
