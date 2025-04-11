@@ -4,6 +4,10 @@ Transform a fresh Fedora installation into a fully-configured, beautiful, and mo
 
 For more details and the original inspiration, please visit [omakub.org](https://omakub.org).
 
+## Contributing
+
+Contribue to the original Omakub here: [basecamp/omakub-site repository](https://github.com/basecamp/omakub-site).
+
 ## License
 
 Fedomakub is released under the [MIT License](https://opensource.org/licenses/MIT).
