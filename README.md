@@ -1,19 +1,9 @@
-# Omakub
+# Fedomakub
 
-Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern web development system by running a single command. That's the one-line pitch for Omakub. No need to write bespoke configs for every essential tool just to get started or to be up on all the latest command-line tools. Omakub is an opinionated take on what Linux can be at its best.
+Transform a fresh Fedora installation into a fully-configured, beautiful, and modern web development environment by running a single command. Inspired by Omakub's vision for Ubuntu, Fedomakub brings the same streamlined setup to Fedora users. No need to craft custom configurations for each essential tool or keep up with the latest command-line utilities. This project aims to embody what Linux can be at its best on Fedora.
 
-Watch the introduction video and read more at [omakub.org](https://omakub.org).
-
-## Contributing to the documentation
-
-Please help us improve Omakub's documentation on the [basecamp/omakub-site repository](https://github.com/basecamp/omakub-site).
+For more details and the original inspiration, please visit [omakub.org](https://omakub.org).
 
 ## License
 
-Omakub is released under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Extras
-
-While omakub is purposed to be an opinionated take, the open source community offers alternative customization, add-ons, extras, that you can use to adjust, replace or enrich your experience.
-
-[⇒ Browse the omakub extensions.](EXTENSIONS.md)
+Fedomakub is released under the [MIT License](https://opensource.org/licenses/MIT).
