@@ -1,5 +1,3 @@
-sudo add-dnf-repository universe -y
-sudo add-dnf-repository ppa:agornostal/ulauncher -y
 sudo dnf update -y
 sudo dnf install -y ulauncher
 
