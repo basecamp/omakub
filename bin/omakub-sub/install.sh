@@ -4,7 +4,7 @@ CHOICES=(
   "Dev Database      Install development database in Docker"
   "1password         Manage your passwords securely across devices"
   "Audacity          Record and edit audio"
-  "ASDControl        Set brightness on Apple Studio and XDR displays via cli"
+  "ASDControl        Set brightness on Apple Studio and XDR displays"
   "Brave             Chrome-based browser with built-in ad blocking"
   "Dropbox           Sync files across computers with ease"
   "Mainline Kernels  Install newer Linux kernels than Ubuntu defaults"
