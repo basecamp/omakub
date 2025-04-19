@@ -3,7 +3,7 @@ cat <<EOF >~/.local/share/applications/Neovim.desktop
 Version=1.0
 Name=Neovim
 Comment=Edit text files
-Exec=alacritty --config-file /home/$USER/.local/share/omakub/defaults/alacritty/pane.toml --class=Neovim --title=Neovim -e nvim %F
+Exec=alacritty --config-file /home/$USER/.config/alacritty/pane.toml --class=Neovim --title=Neovim -e nvim %F
 Terminal=false
 Type=Application
 Icon=nvim

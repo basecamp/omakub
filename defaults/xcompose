@@ -1,5 +1,6 @@
 include "%L"
 
+# Emoji
 <Multi_key> <m> <s> : "😄" # smile
 <Multi_key> <m> <c> : "😂" # cry
 <Multi_key> <m> <l> : "😍" # love
@@ -23,3 +24,6 @@ include "%L"
 <Multi_key> <m> <g> : "👋" # greeting
 <Multi_key> <m> <a> : "💪" # arm
 <Multi_key> <m> <b> : "🤯" # blowing
+
+# Typography
+<Multi_key> <space> <space> : "—"
