@@ -10,8 +10,8 @@ cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/al
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
 # Migrate config format if needed
-alacritty migrate 2>/dev/null
-alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null
-alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null
+alacritty migrate 2>/dev/null || true
+alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null || true
+alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null || true
 
 source $OMAKUB_PATH/install/desktop/set-alacritty-default.sh
