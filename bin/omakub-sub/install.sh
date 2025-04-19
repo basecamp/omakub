@@ -11,7 +11,6 @@ CHOICES=(
   "OBS Studio        Record screencasts with inputs from both display + webcam"
   "Ollama            Run LLMs, like Meta's Llama3, locally"
   "Retroarch         Play retro games"
-  "Scrcpy            Android screen mirroring (requires dev mode / USB debug on!)"
   "Spotify           Stream music from the world's most popular service"
   "Steam             Play games from Valve's store"
   "VirtualBox        Virtual machines to run Windows/Linux"
@@ -20,7 +19,7 @@ CHOICES=(
   "<< Back           "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 21 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 20 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
