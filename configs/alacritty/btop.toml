@@ -9,4 +9,3 @@ dimensions.lines = 40
 [colors.primary]
 foreground = '#ffffff'
 background = '#000000'
-
