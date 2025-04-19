@@ -9,6 +9,6 @@ source $OMAKUB_PATH/applications/Neovim.sh
 source $OMAKUB_PATH/applications/Docker.sh
 source $OMAKUB_PATH/applications/Omakub.sh
 
-alacritty migrate 2>/dev/null
-alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null
-alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null
+alacritty migrate 2>/dev/null || true
+alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null || true
+alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null || true
