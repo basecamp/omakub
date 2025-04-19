@@ -9,4 +9,4 @@ cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/fo
 # Migrate config format if needed
 alacritty migrate 2>/dev/null
 
-source ./set-alacritty-default.sh
+source $OMAKUB_PATH/install/desktop/set-alacritty-default.sh
