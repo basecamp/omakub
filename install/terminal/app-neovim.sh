@@ -24,7 +24,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
   # Default to Tokyo Night theme
   cp ~/.local/share/omakub/themes/tokyo-night/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
 
-  # Turn off animationd scrolling
+  # Turn off animated scrolling
   cp ~/.local/share/omakub/configs/neovim/snacks-animated-scrolling-off.lua ~/.config/nvim/lua/plugins/
 
   # Turn off relative line numbers
