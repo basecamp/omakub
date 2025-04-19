@@ -1,6 +1,6 @@
 sudo add-apt-repository -y ppa:libretro/stable
 sudo apt update -y
-sudo apt install -y retroarch retroarch-assets-xmb
+sudo apt install -y retroarch
 
 cat <<EOF >~/.local/share/applications/Retroarch.desktop
 [Desktop Entry]
