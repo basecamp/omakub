@@ -10,7 +10,7 @@ CHOICES=(
   "Mainline Kernels  Install newer Linux kernels than Ubuntu defaults"
   "OBS Studio        Record screencasts with inputs from both display + webcam"
   "Ollama            Run LLMs, like Meta's Llama3, locally"
-  "Retroarch         Play retro games [Incompatible w/ 25.04]"
+  "Retroarch         Play retro games"
   "Spotify           Stream music from the world's most popular service"
   "Steam             Play games from Valve's store"
   "VirtualBox        Virtual machines to run Windows/Linux"
