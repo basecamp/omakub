@@ -5,6 +5,10 @@
 # First remove any conflicting virtualization options
 sudo apt remove --purge -y qemu-kvm libvirt-daemon virt-manager
 
+# Ensure kvm modprobes aren't still loaded
+sudo modprobe -r kvm_amd
+sudo modprobe -r kvm
+
 sudo apt update
 sudo apt install -y gcc-14 virtualbox virtualbox-ext-pack
 sudo usermod -aG vboxusers ${USER}
