@@ -14,4 +14,4 @@ alacritty migrate 2>/dev/null || true
 alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null || true
 alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null || true
 
-source $OMAKUB_PATH/install/desktop/set-alacritty-default.sh
+source ~/.local/share/omakub/install/desktop/set-alacritty-default.sh
