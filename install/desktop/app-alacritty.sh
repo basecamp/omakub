@@ -6,4 +6,7 @@ cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/t
 cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
+# Migrate config format if needed
+alacritty migrate 2>/dev/null
+
 source ./set-alacritty-default.sh
