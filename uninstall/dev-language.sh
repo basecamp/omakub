@@ -35,7 +35,7 @@ if [[ -n $languages ]]; then
       rustup self uninstall -y
       ;;
     Java)
-      mise uninnstall java@latest
+      mise uninstall java@latest
       ;;
     esac
   done
