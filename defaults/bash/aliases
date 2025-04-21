@@ -39,7 +39,7 @@ webm2mp4() {
 
 # Write iso file to sd card
 iso2sd() {
-  if [ $# -eq 0 ]; then
+  if [ $# -ne 2 ]; then
     echo "Usage: iso2sd <input_file> <output_device>"
     echo "Example: iso2sd ~/Downloads/ubuntu-25.04-desktop-amd64.iso /dev/sda"
     echo -e "\nAvailable SD cards:"
