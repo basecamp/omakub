@@ -37,6 +37,18 @@ webm2mp4() {
   ffmpeg -i "$input_file" -c:v libx264 -preset slow -crf 22 -c:a aac -b:a 192k "$output_file"
 }
 
+# Write iso file to sd card
+iso2sd() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: iso2sd <input_file> <output_device>"
+    echo "Example: iso2sd ~/Downloads/ubuntu-25.04-desktop-amd64.iso /dev/sda"
+    echo -e "\nAvailable SD cards:"
+    lsblk -d -o NAME | grep -E '^sd[a-z]' | awk '{print "/dev/"$1}'
+  else
+    sudo dd bs=4M status=progress oflag=sync if="$1" of="$2"
+  fi
+}
+
 # Ensure that external keyboards that use an fn key has the F keys as the default
 alias fix_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
 
