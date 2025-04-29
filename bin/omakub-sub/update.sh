@@ -18,7 +18,6 @@ else
 
 	case "$INSTALLER" in
 	"omakub") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/migrate.sh" ;;
-	"localsend") INSTALLER_FILE="$OMAKUB_PATH/install/desktop/app-localsend.sh" ;;
 	"ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
 	*) INSTALLER_FILE="$OMAKUB_PATH/install/terminal/app-$INSTALLER.sh" ;;
 	esac
