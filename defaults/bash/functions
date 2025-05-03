@@ -48,7 +48,7 @@ web2app() {
 Version=1.0
 Name=$APP_NAME
 Comment=$APP_NAME
-Exec=google-chrome --app="$APP_URL" --name=$APP_NAME --class=${APP_NAME} --window-size=800,600 --no-sandbox
+Exec=google-chrome --app="$APP_URL" --name="$APP_NAME" --class="$APP_NAME" --window-size=800,600 --no-sandbox
 Terminal=false
 Type=Application
 Icon=$ICON_PATH
