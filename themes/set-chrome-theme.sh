@@ -10,6 +10,6 @@ if gum confirm "Update Chrome theme? If yes, Chrome (and all Chrome-based apps) 
 	cd ~/.config/google-chrome/Default
 	jq '.extensions.theme += {"id": "user_color_theme_id", "system_theme": 0}' Preferences >tmp.json && mv tmp.json Preferences
 	jq ".browser.theme.color_scheme = $CHROME_COLOR_SCHEME | .browser.theme.color_variant = $CHROME_COLOR_VARIANT | .browser.theme.user_color = $CHROME_COLOR" Preferences >tmp.json && mv tmp.json Preferences
-	jq ".ntp += {\"custom_background_dict\":{\"background_url\": \"https://github.com/basecamp/omakub/blob/master/themes/$CHROME_BACKGROUND?raw=true\"}}" Preferences >tmp.json && mv tmp.json Preferences
+	jq ".ntp += {\"custom_background_dict\":{\"background_url\": \"https://github.com/TomLisankie/omakub/blob/master/themes/$CHROME_BACKGROUND?raw=true\"}}" Preferences >tmp.json && mv tmp.json Preferences
 	cd ~
 fi
