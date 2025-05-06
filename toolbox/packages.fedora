@@ -107,6 +107,7 @@ sqlite
 sqlite-libs
 sudo
 tcpdump
+texlive-scheme-full
 time
 traceroute
 tree
