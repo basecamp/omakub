@@ -36,6 +36,7 @@ config.window_padding = {
     bottom = 0,
 }
 config.enable_tab_bar = true
+config.adjust_window_size_when_changing_font_size = false
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
