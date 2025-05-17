@@ -80,19 +80,52 @@ web2app-remove() {
 app2folder() {
   if [ "$#" -ne 2 ]; then
     local FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children | tr -d "[],'")
-    echo "Usage: app2folder <folder_name> <desktop_file.desktop>"
+    echo "Usage: app2folder <desktop_file.desktop> <folder_name>"
     echo "Folders: $FOLDERS"
     return 1
   fi
 
-  local FOLDER="$1"
-  local DESKTOP_FILE="$2"
+  local DESKTOP_FILE="$1"
+  local FOLDER="$2"
   local SCHEMA="org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/$FOLDER/"
   local CURRENT_APPS=$(gsettings get "$SCHEMA" apps)
 
   if [[ "$CURRENT_APPS" != *"$DESKTOP_FILE"* ]]; then
     local TRIMMED=$(echo "$CURRENT_APPS" | sed "s/^\[//;s/\]$//")
     gsettings set "$SCHEMA" apps "[$TRIMMED, '$DESKTOP_FILE']"
+  fi
+}
+
+# Rewmove desktop app from folder
+app2folder-remove() {
+  if [ "$#" -ne 2 ]; then
+    local FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children | tr -d "[],'")
+    echo "Usage: app2folder-remove <desktop_file.desktop> <folder_name>"
+    echo "Folders: $FOLDERS"
+    return 1
+  fi
+
+  local DESKTOP_FILE="$1"
+  local FOLDER="$2"
+  local SCHEMA="org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/$FOLDER/"
+  local CURRENT_APPS=$(gsettings get "$SCHEMA" apps)
+
+  if [[ "$CURRENT_APPS" == *"$DESKTOP_FILE"* ]]; then
+    local RAW_LIST=$(echo "$CURRENT_APPS" | tr -d "[]'")
+    IFS=',' read -ra APPS_ARRAY <<< "$RAW_LIST"
+
+    # Filter out the app to be removed
+    local NEW_APPS=()
+    for app in "${APPS_ARRAY[@]}"; do
+      app=$(echo "$app" | xargs) # trim spaces
+      if [[ "$app" != "$DESKTOP_FILE" && -n "$app" ]]; then
+        NEW_APPS+=("'$app'")
+      fi
+    done
+
+    # Join list again
+    local NEW_LIST=$(IFS=, ; echo "${NEW_APPS[*]}")
+    gsettings set "$SCHEMA" apps "[$NEW_LIST]"
   fi
 }
 
