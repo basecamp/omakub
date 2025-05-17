@@ -102,6 +102,7 @@ rr
 rsync
 shadow-utils
 ShellCheck
+slurp
 speedtest-cli
 sqlite
 sqlite-libs
@@ -122,6 +123,7 @@ vulkan
 wget
 which
 whois
+wl-mirror
 words
 xorg-x11-xauth
 xz
