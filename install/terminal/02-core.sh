@@ -120,4 +120,4 @@ brew install make
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # For git grab
-mkdir ~/repos
+mkdir -p ~/repos
