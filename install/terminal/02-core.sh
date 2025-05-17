@@ -48,7 +48,6 @@ distrobox-enter omakase-toolbox -- bash <<EOF
         difftastic \
         dircnt \
         du-dust \
-        eva \
         eza \
         fd-find \
         ffsend \
@@ -74,7 +73,7 @@ distrobox-enter omakase-toolbox -- bash <<EOF
         oxipng \
         pastel \
         pgen \
-        poetry-udeps \
+        presenterm \
         ren-find \
         rep-grep \
         rimage \
