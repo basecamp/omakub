@@ -75,9 +75,13 @@ web2app-remove() {
   rm "$ICON_PATH"
 }
 
+# Move a reference to a .desktop file, like Spotify.desktop, to a named folder, like Xtra.
+# Don't use full path for the .desktop file.
 app2folder() {
   if [ "$#" -ne 2 ]; then
+    local FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children | tr -d "[],'")
     echo "Usage: app2folder <folder_name> <desktop_file.desktop>"
+    echo "Folders: $FOLDERS"
     return 1
   fi
 
