@@ -75,6 +75,23 @@ web2app-remove() {
   rm "$ICON_PATH"
 }
 
+app2folder() {
+  if [ "$#" -ne 2 ]; then
+    echo "Usage: app2folder <folder_name> <desktop_file.desktop>"
+    return 1
+  fi
+
+  local FOLDER="$1"
+  local DESKTOP_FILE="$2"
+  local SCHEMA="org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/$FOLDER/"
+  local CURRENT_APPS=$(gsettings get "$SCHEMA" apps)
+
+  if [[ "$CURRENT_APPS" != *"$DESKTOP_FILE"* ]]; then
+    local TRIMMED=$(echo "$CURRENT_APPS" | sed "s/^\[//;s/\]$//")
+    gsettings set "$SCHEMA" apps "[$TRIMMED, '$DESKTOP_FILE']"
+  fi
+}
+
 # Ensure that external keyboards that use an fn key has the F keys as the default
 alias fix_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
 
