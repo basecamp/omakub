@@ -125,6 +125,7 @@ app2folder-remove() {
 
     # Join list again
     local NEW_LIST=$(IFS=, ; echo "${NEW_APPS[*]}")
+
     gsettings set "$SCHEMA" apps "[$NEW_LIST]"
   fi
 }
