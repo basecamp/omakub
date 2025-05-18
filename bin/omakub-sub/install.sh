@@ -13,6 +13,7 @@ CHOICES=(
   "Retroarch         Play retro games"
   "Spotify           Stream music from the world's most popular service"
   "Steam             Play games from Valve's store"
+  "Tailscale         Mesh VPN based on WireGuard and with Magic DNS"
   "VirtualBox        Virtual machines to run Windows/Linux"
   "Zoom              Attend and host video chat meetings"
   "Web Apps          Install web apps with their own icon and shell"
@@ -20,7 +21,7 @@ CHOICES=(
   "<< Back           "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 21 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 22 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
@@ -41,6 +42,7 @@ else
   "dev-language") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-language.sh" ;;
   "dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
   "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
+  "tailscale") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-tailscale.sh" ;;
   *) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
   esac
 
