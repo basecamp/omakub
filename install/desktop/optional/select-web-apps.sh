@@ -1,12 +1,7 @@
 source $OMAKUB_PATH/defaults/bash/functions
 
-# Install default web apps
-if [[ -v OMAKUB_FIRST_RUN_WEB_APPS ]]; then
-  apps=$OMAKUB_FIRST_RUN_WEB_APPS
-else
-  AVAILABLE_WEB_APPS=("Chat GPT" "Google Photos" "Google Contacts" "Tailscale")
-  apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 7 --header "Select web apps")
-fi
+AVAILABLE_WEB_APPS=("Chat GPT" "Google Photos" "Google Contacts" "Tailscale")
+apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 7 --header "Select web apps")
 
 if [[ -n "$apps" ]]; then
   for app in $apps; do
