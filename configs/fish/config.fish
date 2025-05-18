@@ -5,7 +5,6 @@ set -gx BAT_THEME "Solarized (dark)"
 set -gx EDITOR hx
 set -gx COLORTERM 24bit
 set -gx GRAB_HOME ~/repos
-set -gx CARGO_INSTALL_OPTS --locked
 set -gx OMAKASEBLUE_PATH "/home/$USER/.local/share/omakase-blue"
 
 # clear fish greeting
@@ -38,7 +37,6 @@ if status --is-interactive
 
     bind \cE edit_command_buffer
 end
-
 
 # Aliases
 function ea
