@@ -6,5 +6,5 @@ git config --global alias.st status
 git config --global pull.rebase true
 
 # Set identification from install inputs
-git config --global user.name $OMAKUB_GIT_NAME
-git config --global user.email $OMAKUB_GIT_EMAIL
+git config --global user.name $OMAKUB_USER_NAME
+git config --global user.email $OMAKUB_USER_EMAIL
