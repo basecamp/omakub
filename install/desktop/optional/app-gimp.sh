@@ -1,1 +1,1 @@
-sudo apt install -y gimp
+sudo flatpak install -y org.gimp.GIMP

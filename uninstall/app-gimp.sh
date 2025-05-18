@@ -1,1 +1,1 @@
-sudo apt remove -y gimp
+sudo flatpak remove -y org.gimp.GIMP
