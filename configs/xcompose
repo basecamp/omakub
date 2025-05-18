@@ -1,1 +1,5 @@
 include "%H/.local/share/omakub/defaults/xcompose"
+
+# Identification
+<Multi_key> <space> <n> : "$OMAKUB_USER_NAME"
+<Multi_key> <space> <e> : "$OMAKUB_USER_EMAIL"
