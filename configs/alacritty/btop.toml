@@ -4,8 +4,3 @@ import = [ "~/.config/alacritty/pane.toml" ]
 [window]
 dimensions.columns = 121
 dimensions.lines = 40
-
-[colors]
-[colors.primary]
-foreground = '#ffffff'
-background = '#000000'
