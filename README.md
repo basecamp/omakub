@@ -55,6 +55,8 @@ If you want to use tailscale for ssh/mosh, you probable need to
 ```
 sudo systemctl enable --now sshd
 sudo firewall-cmd --add-interface=tailscale0 --zone=trusted --permanent
+sudo firewall-cmd --add-service=mosh --permanent
+sudo firewall-cmd --add-service=mosh --zone=trusted --permanent
 ```
 
 on the host.
