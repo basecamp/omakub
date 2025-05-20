@@ -3,7 +3,7 @@ cp ~/.local/share/omakub/configs/alacritty/btop.toml ~/.config/alacritty/btop.to
 # Only attempt to set configuration if btop is not already set
 if [ ! -f "$HOME/.config/btop/btop.conf" ]; then
   # Use Omakub btop config
-  mkdir -p ~/.config/btop
+  mkdir -p ~/.config/btop/themes
   cp ~/.local/share/omakub/configs/btop.conf ~/.config/btop/btop.conf
 fi
 
@@ -19,3 +19,4 @@ if [ -n "$THEME" ] && [ "$THEME" != ">>-skip" ]; then
     sed -i "s/color_theme = \".*\"/color_theme = \"Default\"/g" ~/.config/btop/btop.conf
   fi
 fi
+
