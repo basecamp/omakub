@@ -19,6 +19,7 @@ CHOICES=(
   "VirtualBox        Virtual machines to run Windows/Linux"
   "Zoom              Attend and host video chat meetings"
   "Web Apps          Install web apps with their own icon and shell"
+  "Optional Apps     Install optional applications"
   "> All             Re-run any of the default installers"
   "<< Back           "
 )
@@ -45,6 +46,7 @@ else
   "dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
   "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
   "tailscale") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-tailscale.sh" ;;
+  "optional-apps") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/install-optional-apps.sh" ;;
   *) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
   esac
 

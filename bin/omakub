@@ -1,4 +1,16 @@
 #!/bin/bash
 
+OMAKUB_ROOT="${HOME}/.local/share/omakub"
+HELPERS_PATH="${OMAKUB_ROOT}/shared/helpers.sh"
+
+# Source helper functions
+if [ -f "$HELPERS_PATH" ]; then
+  source "$HELPERS_PATH"
+else
+  echo "Error: Helper functions not found at $HELPERS_PATH"
+  echo "Please ensure the shared directory is properly set up."
+  sleep 5
+fi
+
 source $OMAKUB_PATH/bin/omakub-sub/header.sh
 source $OMAKUB_PATH/bin/omakub-sub/menu.sh
