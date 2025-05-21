@@ -28,7 +28,7 @@ while IFS= read -r line; do
 done < "$MIGRATIONS_FILE"
 
 # Update the local repository with the latest changes from the remote repository
-git pull
+git pull > /dev/null
 
 # Iterate through all shell script files in the migrations directory
 for file in $OMAKUB_PATH/migrations/*.sh; do
