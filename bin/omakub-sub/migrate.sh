@@ -64,7 +64,7 @@ for file in $OMAKUB_PATH/migrations/*.sh; do
 
   # Skip this migration if we shouldn't run it
   if ! $should_run; then
-    echo "Migration $migrate_at skipped: $migration_reason"
+    # echo "Migration $migrate_at skipped: $migration_reason"
     continue
   fi
 
