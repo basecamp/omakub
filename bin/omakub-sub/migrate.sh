@@ -1,3 +1,5 @@
+cd $OMAKUB_PATH
+
 # Path to the local migrations tracking file
 MIGRATIONS_FILE=~/.config/omakub/migrations.txt
 
@@ -78,3 +80,6 @@ for file in $OMAKUB_PATH/migrations/*.sh; do
     echo "Migration $migrate_at failed. Not recording as executed."
   fi
 done
+
+cd -
+# End of script
