@@ -81,5 +81,8 @@ for file in $OMAKUB_PATH/migrations/*.sh; do
   fi
 done
 
+# Clear the shell messages (clear the terminal)
+clear
+
 cd -
 # End of script
