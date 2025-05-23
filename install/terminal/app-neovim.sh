@@ -34,5 +34,6 @@ fi
 # Replace desktop launcher with one running inside Alacritty
 if [[ -d ~/.local/share/applications ]]; then
   sudo rm -rf /usr/share/applications/nvim.desktop
+  sudo rm -rf /usr/local/share/applications/nvim.desktop
   source ~/.local/share/omakub/applications/Neovim.sh
 fi
