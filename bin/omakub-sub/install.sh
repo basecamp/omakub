@@ -8,6 +8,7 @@ CHOICES=(
   "Brave             Chrome-based browser with built-in ad blocking"
   "Dropbox           Sync files across computers with ease"
   "Gimp              Image manipulation tool ala Photoshop"
+  "Geekbench         CPU benchmaking tool"
   "Mainline Kernels  Install newer Linux kernels than Ubuntu defaults"
   "Minecraft         Everyone's favorite blocky building game"
   "OBS Studio        Record screencasts with inputs from both display + webcam"
@@ -24,7 +25,7 @@ CHOICES=(
   "<< Back           "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 24 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 25 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
@@ -46,7 +47,7 @@ else
   "dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
   "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
   "tailscale") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-tailscale.sh" ;;
-  "optional-apps") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/install-optional-apps.sh" ;;
+  "geekbench") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-geekbench.sh" ;;
   *) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
   esac
 
