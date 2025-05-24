@@ -1,3 +1,4 @@
 cp ~/.local/share/omakub/configs/xcompose ~/.XCompose
 ibus restart
-gsettings set org.gnome.desktop.input-sources xkb-options "['compose:caps']"
+# If you want to enable emojis: `gsettings set org.gnome.desktop.input-sources xkb-options "['compose:caps']"`
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
