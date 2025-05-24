@@ -26,6 +26,8 @@ history_filter = [
   "^tree",
   "^units",
   "^zellij",
+  "^systemctl poweroff$",
+  "^systemctl reboot$",
 ]
 
 enter_accept = true
