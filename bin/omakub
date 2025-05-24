@@ -1,7 +1,6 @@
 #!/bin/bash
 
-OMAKUB_ROOT="${HOME}/.local/share/omakub"
-HELPERS_PATH="${OMAKUB_ROOT}/shared/helpers.sh"
+HELPERS_PATH="${OMAKUB_PATH}/shared/helpers.sh"
 
 # Source helper functions
 if [ -f "$HELPERS_PATH" ]; then
