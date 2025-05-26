@@ -27,6 +27,7 @@ if status --is-interactive
     fzf --fish | source
     starship init fish | source
     zoxide init --cmd cd fish | source
+    mise activate fish | source
 
     set -gx ATUIN_NOBIND true
     atuin init fish | source
