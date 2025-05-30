@@ -20,6 +20,7 @@ CHOICES=(
   "VirtualBox        Virtual machines to run Windows/Linux"
   "Zoom              Attend and host video chat meetings"
   "Web Apps          Install web apps with their own icon and shell"
+  "Browsers          Install additional browsers"
   "> All             Re-run any of the default installers"
   "<< Back           "
 )
@@ -42,6 +43,7 @@ else
   case "$INSTALLER" in
   "dev-editor") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/install-dev-editor.sh" ;;
   "web-apps") INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/select-web-apps.sh" ;;
+  "browsers") INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/select-browsers.sh" ;;
   "dev-language") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-language.sh" ;;
   "dev-database") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/select-dev-storage.sh" ;;
   "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
