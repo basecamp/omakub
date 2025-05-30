@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 # Install Brave Browser Stable
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OMAKUB_ROOT="/home/joel/.local/share/omakub"
-HELPERS_PATH="${OMAKUB_ROOT}/shared/helpers.sh"
-
-if [ -f "$HELPERS_PATH" ]; then
-  source "$HELPERS_PATH"
-else
-  echo "Error: Helper functions not found at $HELPERS_PATH"
-  exit 1
-fi
+HELPERS_PATH="${OMAKUB_PATH}/shared/helpers.sh"
 
 APP_NAME="brave-browser"
 TEMP_DIR=$(create_temp_dir)

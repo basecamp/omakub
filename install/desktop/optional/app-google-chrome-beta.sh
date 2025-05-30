@@ -5,9 +5,7 @@
 # See https://www.google.com/chrome/beta/
 
 # Source shared helpers
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
-source "$ROOT_DIR/../shared/helpers.sh"
+HELPERS_PATH="${OMAKUB_PATH}/shared/helpers.sh"
 
 app_name="chrome-beta"
 log_file="$(setup_log "$app_name")"
