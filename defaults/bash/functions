@@ -135,3 +135,27 @@ alias fix_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
 
 # Spotify window is too large on many displays, so fix this by zooming it down
 alias fix_spotify_window_size="sudo sed -i 's|^Exec=.*|Exec=spotify --force-device-scale-factor=1.5 %U|' /usr/local/share/applications/spotify.desktop"
+
+# Normalize menu entry to aplication name
+# [✔ Brave Browser Nightly    Brave Browser Nightly] becomes [brave-browser-nightly]
+normalize() {
+  echo "$1" | sed 's/^✖ *//;s/^✔ *//;s/  \{2,\}.*$//' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g'
+}
+
+# Helper to show it the application is installed or not
+# Usage: icon_status "Brave Browser Nightly   Brave Browser Nightly" 
+# NOTE: You need more than 2 spaces between the name and the description for this to work correctly.
+# Output:
+# [✔ Brave Browser Nightly    Brave Browser Nightly] 
+# [✖ Google Chrome Canary     Google Chrome Canary Channel]
+icon_status() {
+  local item="$1"
+
+  app_name=$(normalize "$item")
+
+  if command -v "$app_name" &> /dev/null; then
+    echo "✔ $item"
+  else
+    echo "✖ $item"
+  fi
+}
