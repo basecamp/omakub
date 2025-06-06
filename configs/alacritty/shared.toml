@@ -9,6 +9,7 @@ padding.x = 16
 padding.y = 14
 decorations = "None"
 opacity = 0.98
+startup_mode = "Fullscreen"
 
 [keyboard]
 bindings = [
