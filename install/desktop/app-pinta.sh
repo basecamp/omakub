@@ -1,2 +1,2 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+# Program for drawing and image editing
+flatpak install -y flathub com.github.PintaProject.Pinta
