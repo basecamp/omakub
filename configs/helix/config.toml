@@ -3,6 +3,10 @@ theme = "selenized_dark"
 [editor]
 completion-timeout = 25
 end-of-line-diagnostics = "hint"
+color-modes = true
+
+[editor.indent-guides]
+render = true
 
 [editor.soft-wrap]
 enable = true
