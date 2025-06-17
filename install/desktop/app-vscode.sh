@@ -7,9 +7,15 @@ cd -
 
 sudo apt update -y
 sudo apt install -y code
+# Installing vscode creates a new vscode.sources file in the
+# /etc/apt/sources.list.d, which conflicts with the vscode.list file we created
+# to do the installation. We can remove it now.
+rm -f /etc/apt/sources.list.d/vscode.list 
+rm -f /etc/apt/keyrings/packages.microsoft.gpg
 
 mkdir -p ~/.config/Code/User
 cp "$BTR_OMAKUB_ROOT/configs/vscode.json" ~/.config/Code/User/settings.json
 
 # Install default supported themes
 code --install-extension enkia.tokyo-night
+
