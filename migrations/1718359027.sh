@@ -51,8 +51,6 @@ source $OMAKUB_PATH/applications/Docker.sh
 
 # Update icons of apps still installed
 [ -f ~/.local/share/applications/Basecamp.desktop ] && source $OMAKUB_PATH/applications/Basecamp.sh
-[ -f ~/.local/share/applications/HEY.desktop ] && source $OMAKUB_PATH/applications/HEY.sh
-[ -f ~/.local/share/applications/WhatsApp.desktop ] && source $OMAKUB_PATH/applications/WhatsApp.sh
 
 # Set new app grid
 source $OMAKUB_PATH/install/desktop/set-app-grid.sh
