@@ -5,7 +5,7 @@ set -e
 trap 'echo "BTR Omakub installation failed! You can retry by running: source $BTR_OMAKUB_ROOT/install.sh"' ERR
 
 # Check the distribution name and version and abort if incompatible
-source "$BTR_OMAKUB_ROOT/check-version.sh"
+source "$BTR_OMAKUB_ROOT/install/check-version.sh"
 
 # Ask for app choices
 echo "Get ready to make a few choices..."
