@@ -20,7 +20,7 @@ export BTR_OMAKUB_ROOT=$HOME/.local/share/omakub
 echo "Cloning BTR Omakub..."
 rm -rf "$BTR_OMAKUB_ROOT"
 git clone https://github.com/rki-mf1/btr-omakub.git "$BTR_OMAKUB_ROOT" >/dev/null
-if [[ $OMAKUB_REF != "master" ]]; then
+if [[ $OMAKUB_REF != "main" ]]; then
 	cd "$BTR_OMAKUB_ROOT"
 	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
 	cd -
