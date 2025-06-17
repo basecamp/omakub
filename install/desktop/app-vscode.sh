@@ -5,6 +5,7 @@ echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft
 rm -f packages.microsoft.gpg
 cd -
 
+sudo rm -f /etc/apt/sources.list.d/vscode.sources
 sudo apt update -y
 sudo apt install -y code
 # Installing vscode creates a new vscode.sources file in the
