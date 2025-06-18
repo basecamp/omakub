@@ -90,7 +90,7 @@
     bdone = "!f() { DEFAULT=$(git default); git switch ${1-$DEFAULT} && git up && git brebased ${1-$DEFAULT}; }; f"
     bmerged = "!f() { DEFAULT=$(git default); git branch --merged ${1-DEFAULT} | grep -v \"${1-DEFAULT}$\" | xargs -r git branch -d; }; f"
     brebased = "!f() { DEFAULT=$(git default); for b in $(git branch --format=\"%(refname:short)\" | grep -vE \"(${1-DEFAULT}|$DEFAULT)\"); do if [ -z \"$(git cherry ${1-$DEFAULT} $b | grep \"^+\")\" ]; then git branch -D $b; fi; done; }; f"
-    clog = log --pretty=%C(yellow)%s%n%Creset%n%b%n---
+    clog = log --reverse --pretty=%C(yellow)%s%n%Creset%n%b%n---
     ddfind = log --decorate --stat --date=auto:human-local --format=fuller --patch --grep
     ddlog = log --decorate --stat --date=auto:human-local --format=fuller -p
     default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
