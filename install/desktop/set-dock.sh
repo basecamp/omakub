@@ -2,15 +2,15 @@
 apps=(
 	"Alacritty.desktop"
 	"google-chrome.desktop"
-  "firefox_firefox.desktop"
-  "element-desktop.desktop"
-  "webex.desktop"
+	"firefox_firefox.desktop"
+	"element-desktop.desktop"
+	"webex.desktop"
 	"code.desktop"
-  "rstudio.desktop"
-  "org.zotero.Zotero.desktop"
+	"rstudio.desktop"
+	"org.zotero.Zotero.desktop"
 	"md.obsidian.Obsidian.desktop"
 	"org.gnome.Nautilus.desktop"
-  # Password managers. Should just skip the ones we don't have installed
+	# Password managers. Should just skip the ones we don't have installed
 	"1password.desktop"
 	#"bitwarden.desktop"  # Not installed yet
 	"org.keepassxc.KeePassXC.desktop"
