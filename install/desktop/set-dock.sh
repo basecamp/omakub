@@ -1,19 +1,19 @@
 # Favorite apps for dock
 apps=(
-	"google-chrome.desktop"
 	"Alacritty.desktop"
-	"Neovim.desktop"
+	"google-chrome.desktop"
+  "firefox_firefox.desktop"
+  "element-desktop.desktop"
+  "webex.desktop"
 	"code.desktop"
-	"signal-desktop.desktop"
-	"pinta_pinta.desktop"
+  "rstudio.desktop"
+  "org.zotero.Zotero.desktop"
 	"md.obsidian.Obsidian.desktop"
-	"Activity.desktop"
-	"Docker.desktop"
-	"Omakub.desktop"
-	"1password.desktop"
-	"org.gnome.Settings.desktop"
 	"org.gnome.Nautilus.desktop"
-	"localsend_app.desktop"
+  # Password managers. Should just skip the ones we don't have installed
+	"1password.desktop"
+	#"bitwarden.desktop"  # Not installed yet
+	"org.keepassxc.KeePassXC.desktop"
 )
 
 # Array to hold installed favorite apps
@@ -21,6 +21,7 @@ installed_apps=()
 
 # Directory where .desktop files are typically stored
 desktop_dirs=(
+	"/var/lib/snapd/desktop/applications"
 	"/var/lib/flatpak/exports/share/applications"
 	"/usr/share/applications"
 	"/usr/local/share/applications"
