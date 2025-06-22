@@ -53,6 +53,12 @@
 [log]
     mailmap = true
 
+[remote "origin"]
+    fetch = +refs/notes/*:refs/notes/*
+
+[notes]
+    displayRef = refs/notes/*
+
 [gc]
     writeCommitGraph = true
 
