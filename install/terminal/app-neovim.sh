@@ -22,7 +22,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
   cp ~/.local/share/omakub/configs/neovim/transparency.lua ~/.config/nvim/plugin/after/
 
   # Default to Tokyo Night theme
-  cp ~/.local/share/omakub/themes/tokyo-night/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
+  #cp ~/.local/share/omakub/themes/tokyo-night/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
 
   # Turn off animated scrolling
   cp ~/.local/share/omakub/configs/neovim/snacks-animated-scrolling-off.lua ~/.config/nvim/lua/plugins/
