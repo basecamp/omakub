@@ -5,7 +5,7 @@ cp ~/.local/share/omakub/configs/alacritty.toml ~/.config/alacritty/alacritty.to
 cp ~/.local/share/omakub/configs/alacritty/shared.toml ~/.config/alacritty/shared.toml
 cp ~/.local/share/omakub/configs/alacritty/pane.toml ~/.config/alacritty/pane.toml
 cp ~/.local/share/omakub/configs/alacritty/btop.toml ~/.config/alacritty/btop.toml
-cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
+#cp ~/.local/share/omakub/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
 cp ~/.local/share/omakub/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 cp ~/.local/share/omakub/configs/alacritty/font-size.toml ~/.config/alacritty/font-size.toml
 
