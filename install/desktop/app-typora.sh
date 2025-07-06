@@ -1,12 +1,18 @@
-wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc >/dev/null || true
+# Temporarily switch away from using Typora repo which is broken.
+#
+# wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc >/dev/null || true
+#
+# sudo add-apt-repository -y 'deb https://typora.io/linux ./'
+# sudo add-apt-repository -y 'deb https://typora.io/linux ./'
+# sudo apt update -y
+# sudo apt install -y typora
 
-if sudo add-apt-repository -y 'deb https://typora.io/linux ./'; then
-  sudo add-apt-repository -y 'deb https://typora.io/linux ./'
-  sudo apt update -y
-  sudo apt install -y typora
-else
-  echo "Warning: Failed to install Typora. Continuing without."
-fi
+# Install with db
+cd /tmp
+wget -O typora.deb "https://download.typora.io/linux/typora_1.8.9_amd64.deb"
+sudo apt install -y typora.deb
+rm typora.deb
+cd -
 
 # Add iA Typora theme
 mkdir -p ~/.config/Typora/themes
