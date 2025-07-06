@@ -9,7 +9,7 @@
 
 # Install with db
 cd /tmp
-wget -O typora.deb "https://download.typora.io/linux/typora_1.8.9_amd64.deb"
+wget -O typora.deb "https://downloads.typora.io/linux/typora_1.10.8_amd64.deb"
 sudo apt install -y typora.deb
 rm typora.deb
 cd -
