@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if pgrep -x wofi > /dev/null; then
+  exit 0
+fi
+
+exec /usr/bin/wofi --show drun --sort-order=alphabetical --style="$HOME/.local/share/omakub/default/wofi/search.css"
