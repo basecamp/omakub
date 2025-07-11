@@ -11,4 +11,4 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
 
 # Add minimize and maximize buttons (on the right side)
-gsettings set org.gnome.desktop.wm.preferences button-layout ":close,minimize,maximize"
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
