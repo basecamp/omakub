@@ -1,4 +1,5 @@
 @define-color selected-text  #8caaee;
 @define-color text  #c6d0f5;
 @define-color base  #24273a;
+@define-color base-rgba  rgba(36, 39, 58, 0.95);
 @define-color border  #c6d0f5;

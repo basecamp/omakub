@@ -1,7 +1,9 @@
 # Remove ulauncher
-sudo apt remove --purge -y ulauncher
-rm -rf ~/.config/ulauncher
-rm -rf ~/.local/share/ulauncher
+if command -v ulauncher &> /dev/null; then
+  sudo apt remove --purge -y ulauncher
+  rm -rf ~/.config/ulauncher
+  rm -rf ~/.local/share/ulauncher
+fi
 
 # Install wofi
 sudo apt install -y wofi
