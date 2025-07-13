@@ -43,7 +43,8 @@ multipass shell omakub-test
 3. Install
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/Aaronontheweb/ardbegian/refs/heads/master/install.sh | bash
+git clone https://github.com/Aaronontheweb/ardbegian.git && cd
+./install.sh
 ```
 
 4. Clean up
