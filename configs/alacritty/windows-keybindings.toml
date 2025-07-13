@@ -1,0 +1,34 @@
+# ── ~/.config/alacritty/keybindings-windows.toml ──
+# Copy/Paste with plain Ctrl like Windows consoles
+[[keyboard.bindings]]
+key   = "C"
+mods  = "Control"
+action = "Copy"          # Only fires when text is selected, so ^C still
+                         # reaches programs when there’s no selection.
+
+[[keyboard.bindings]]
+key   = "V"
+mods  = "Control"
+action = "Paste"
+
+# Optional: Ctrl + A for “select all” (PowerShell behaviour)
+[[keyboard.bindings]]
+key   = "A"
+mods  = "Control"
+action = "SelectAll"
+
+# ── Mouse: QuickEdit-style ─────────────────────────
+# Right-click pastes (nothing selected)
+[[mouse.bindings]]
+mouse   = "Right"
+action  = "Paste"
+
+# Shift + Right-click copies the current selection
+[[mouse.bindings]]
+mouse   = "Right"
+mods    = "Shift"
+action  = "CopySelection"
+
+# Selecting text automatically goes to the clipboard, just like Windows
+[selection]
+save_to_clipboard = true
