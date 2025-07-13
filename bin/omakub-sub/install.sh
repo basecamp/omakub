@@ -5,7 +5,6 @@ CHOICES=(
   "1password         Manage your passwords securely across devices"
   "Audacity          Record and edit audio"
   "ASDControl        Set brightness on Apple Studio and XDR displays"
-  "Brave             Chrome-based browser with built-in ad blocking"
   "Dropbox           Sync files across computers with ease"
   "Gimp              Image manipulation tool ala Photoshop"
   "Geekbench         CPU benchmaking tool"
