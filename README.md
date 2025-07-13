@@ -17,3 +17,38 @@ Omakub is released under the [MIT License](https://opensource.org/licenses/MIT).
 While omakub is purposed to be an opinionated take, the open source community offers alternative customization, add-ons, extras, that you can use to adjust, replace or enrich your experience.
 
 [⇒ Browse the omakub extensions.](EXTENSIONS.md)
+
+## Local Testing 
+
+We use [`canonical/multipass`](https://github.com/canonical/multipass) to test setups locally.
+
+1. Launch a new VM
+
+
+```bash
+# Launch Ubuntu 24.04 with enough room for packages
+multipass launch 24.04 \
+  --name omakub-test \
+  --disk 25G \
+  --mem 8G
+```
+
+
+2. Shell into it
+
+```bash
+multipass shell omakub-test
+```
+
+3. Install
+
+```bash
+wget -qO- https://raw.githubusercontent.com/Aaronontheweb/ardbegian/refs/heads/master/install.sh | bash
+```
+
+4. Clean up
+
+```bash
+multipass delete omakub-test
+multipass purge   # actually frees disk space
+```
