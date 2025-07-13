@@ -30,7 +30,7 @@ We use [`canonical/multipass`](https://github.com/canonical/multipass) to test s
 multipass launch 24.04 \
   --name omakub-test \
   --disk 25G \
-  --mem 8G
+  --memory 8G
 ```
 
 
