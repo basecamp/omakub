@@ -43,6 +43,7 @@ if [[ -n "$languages" ]]; then
       ;;
     .NET)
       sudo apt-get install -y dotnet-sdk-9.0
+      ;;
     esac
   done
 fi

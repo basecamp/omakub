@@ -22,34 +22,39 @@ While omakub is purposed to be an opinionated take, the open source community of
 
 We use [`canonical/multipass`](https://github.com/canonical/multipass) to test setups locally.
 
-1. Launch a new VM
-
-
-```bash
-# Launch Ubuntu 24.04 with enough room for packages
-multipass launch 24.04 \
-  --name omakub-test \
-  --disk 25G \
-  --memory 8G
-```
-
-
-2. Shell into it
+Run `./test/test-omakub.sh`:
 
 ```bash
-multipass shell omakub-test
+./test/test-omakub.sh  \
+  --vm     omakub-test \
+  --passwd omakub        # password for “ubuntu” over RDP
 ```
 
-3. Install
+Then wait until the VM finishes bootstrapping:
 
 ```bash
-git clone https://github.com/Aaronontheweb/ardbegian.git && cd
-./install.sh
+multipass shell omakub-test   # open a CLI in the VM
+cloud-init status --wait      # blocks until cloud-init is done
+exit
 ```
 
-4. Clean up
+Get the VM's address:
+
+```bash
+multipass info omakub-test
+```
+
+And then connect over RDP to view the desktop. Run the `./install.sh` script after you connect to test the installation.
+
+```bash
+sudo snap install remmina # if remmina is not already installed
+```
+
+### Cleanup
+
+To cleanup the VM, do the following:
 
 ```bash
 multipass delete omakub-test
-multipass purge   # actually frees disk space
+multipass purge        # frees disk space
 ```
