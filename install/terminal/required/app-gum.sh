@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Gum is used for the Omakub commands for tailoring Omakub after the initial install
 cd /tmp
 GUM_VERSION="0.14.3" # Use known good version

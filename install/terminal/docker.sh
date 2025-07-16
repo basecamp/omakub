@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Add the official Docker repo
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo wget -qO /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg

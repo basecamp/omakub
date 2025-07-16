@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install default programming languages
 if [[ -v OMAKUB_FIRST_RUN_LANGUAGES ]]; then
   languages=$OMAKUB_FIRST_RUN_LANGUAGES

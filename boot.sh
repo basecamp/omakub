@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 ascii_art='________                  __        ___.

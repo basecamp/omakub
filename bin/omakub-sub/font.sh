@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set_font() {
 	local font_name=$1
 	local url=$2

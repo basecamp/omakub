@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install default databases
 if [[ -v OMAKUB_FIRST_RUN_DBS ]]; then
 	dbs=$OMAKUB_FIRST_RUN_DBS

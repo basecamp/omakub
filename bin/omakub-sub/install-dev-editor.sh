@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CHOICES=(
   "Cursor            AI Code Editor"
   "Doom Emacs        Emacs framework with curated list of packages"

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CHOICES=(
 	"Omakub        Update Omakub itself and run any migrations"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"

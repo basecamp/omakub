@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo echo "Running upgrade migration..."
 
 # Add rustc and pgsql client libs

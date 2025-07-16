@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install asdcontrol
 git clone https://github.com/nikosdion/asdcontrol.git /tmp/asdcontrol
 cd /tmp/asdcontrol
