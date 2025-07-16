@@ -45,6 +45,7 @@ distrobox-enter omakase-toolbox -- bash <<EOF
         cargo-semver-checks \
         cargo-update \
         choose \
+        codebook-lsp \
         difftastic \
         dircnt \
         du-dust \

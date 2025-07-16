@@ -16,28 +16,32 @@ config.diagnosticSeverity = "Info"
 command = "ruff"
 args = ["server"]
 
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
 [[language]]
 name = "email"
 scope = "text.email"
 roots = []
 file-types = ["eml", "email"]
 rulers = [72]
-language-servers = [ "ltex-ls", "typos" ]
+language-servers = [ "ltex-ls", "typos", "codebook" ]
 text-width = 72
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "ltex-ls", "typos" ]
+language-servers = [ "marksman", "ltex-ls", "typos", "codebook" ]
 formatter = { command = "sed", args = ["s/[ \t]*$//"] }
 auto-format = true
 
 [[language]]
 name = "latex"
-language-servers = [ "texlab", "ltex-ls", "typos" ]
+language-servers = [ "texlab", "ltex-ls", "typos", "codebook" ]
 
 [[language]]
 name = "git-commit"
-language-servers = [ "ltex-ls", "typos" ]
+language-servers = [ "ltex-ls", "typos", "codebook" ]
 formatter = { command = "sed", args = ["s/[ \t]*$//"] }
 auto-format = true
 
@@ -51,15 +55,15 @@ indent = { tab-width = 4, unit = " " }
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "typos" ]
+language-servers = [ "rust-analyzer", "typos", "codebook" ]
 
 [[language]]
 name = "typst"
-language-servers = ["tinymist", "typos"]
+language-servers = [ "tinymist", "typos" ]
 
 [[language]]
 name = "python"
 rulers = [100]
 text-width = 100
-language-servers = ["ruff", "typos"]
+language-servers = [ "ruff", "typos", "codebook" ]
 auto-format = true
