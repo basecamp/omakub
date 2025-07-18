@@ -39,7 +39,7 @@ output * bg $HOME/.local/share/backgrounds/selenized-dark-background.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-gaps inner 8
+gaps inner 4
 
 ### Idle configuration
 #
