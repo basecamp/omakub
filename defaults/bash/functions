@@ -131,7 +131,13 @@ app2folder-remove() {
 }
 
 # Ensure that external keyboards that use an fn key has the F keys as the default
-alias fix_fkeys='echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode'
+function fix_fkeys {
+  echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+}
+
+# Ensure that external keyboards that use an fn key has the F keys as the default
+alias fix_fkeys='fix_fkeys'
+alias fix_fkeys_permanently='fix_fkeys && echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf && sudo update-initramfs -u'
 
 # Spotify window is too large on many displays, so fix this by zooming it down
 alias fix_spotify_window_size="sudo sed -i 's|^Exec=.*|Exec=spotify --force-device-scale-factor=1.5 %U|' /usr/local/share/applications/spotify.desktop"
