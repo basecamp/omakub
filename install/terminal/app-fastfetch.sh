@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Display system information in the terminal
 sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
 sudo apt update -y

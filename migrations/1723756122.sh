@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Uninstall Vitals
 if [ -n "$(gnome-extensions list | grep Vitals@CoreCoding.com)" ]; then
   gnome-extensions uninstall Vitals@CoreCoding.com

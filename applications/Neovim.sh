@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat <<EOF >~/.local/share/applications/Neovim.desktop
 [Desktop Entry]
 Version=1.0

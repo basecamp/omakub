@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Catch 1.0.0 up to 1.1.0
 
 sudo echo "Running upgrade migration..."

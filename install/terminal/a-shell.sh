@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Configure the bash shell using Omakub defaults
 [ -f "~/.bashrc" ] && mv ~/.bashrc ~/.bashrc.bak
 cp ~/.local/share/omakub/configs/bashrc ~/.bashrc

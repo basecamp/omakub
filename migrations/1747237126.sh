@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cp ~/.local/share/omakub/configs/alacritty/btop.toml ~/.config/alacritty/btop.toml
 
 # Only attempt to set configuration if btop is not already set

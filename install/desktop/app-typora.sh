@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Temporarily switch away from using Typora repo which is broken.
 #
 # wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc >/dev/null || true

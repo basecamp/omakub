@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CHOICES=(
   "Dev Editor        Install alternative programming editors"
   "Dev Language      Install programming language environment"

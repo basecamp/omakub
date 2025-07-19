@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat <<EOF >~/.local/share/applications/About.desktop
 [Desktop Entry]
 Version=1.0

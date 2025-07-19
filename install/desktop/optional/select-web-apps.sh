@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source $OMAKUB_PATH/defaults/bash/functions
 
 AVAILABLE_WEB_APPS=("Chat GPT" "Google Photos" "Google Contacts" "Tailscale")
