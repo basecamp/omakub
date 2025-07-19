@@ -14,6 +14,11 @@ echo -e "$ascii_art"
 echo "=> Omakub is for fresh Ubuntu 24.04+ installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
+if [[ ! "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then
+    echo "GNOME is NOT the current Desktop. This might be not a fresh Ubuntu installation!!!"
+    read -p "Press Enter to continue anyway, or Ctrl+C to exit."
+fi
+
 sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
