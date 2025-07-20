@@ -6,4 +6,4 @@ _list:
 
 # Build the container image locally with podman
 build tag="local-dev":
-    podman build --file Containerfile.fedora --tag omakase-toolbox:{{tag}} {{parent_directory(justfile_directory())}}
+    podman build --file Containerfile.arch --tag omakase-toolbox:{{tag}} {{parent_directory(justfile_directory())}}

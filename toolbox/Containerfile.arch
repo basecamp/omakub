@@ -1,0 +1,97 @@
+# Ref: https://github.com/ublue-os/toolboxes/blob/main/toolboxes/arch-toolbox/Containerfile.arch
+# 
+FROM quay.io/toolbx/arch-toolbox@sha256:f40c4285bb18d56faecab866cc3dba6f416f39105e5c20c308ecdc041eb6ffde AS arch-toolbox
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="omakase-blue terminal experience powered by Arch" \
+      maintainer="Luke Hsiao <luke@hsiao.dev>"
+      
+COPY ./toolbox/packages.arch /tmp/toolbox-packages
+
+# Pacman Initialization
+# Create build user
+RUN sed -i 's/#Color/Color/g' /etc/pacman.conf && \
+    printf "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" | tee -a /etc/pacman.conf && \
+    sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/g' /etc/makepkg.conf && \
+    pacman-key --init && pacman-key --populate && \
+    pacman -Syu --noconfirm && \
+    useradd -m --shell=/bin/bash build && usermod -L build && \
+    echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    pacman -S --clean --clean
+
+# Distrobox Integration
+RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/distrobox && \
+    cp /tmp/distrobox/distrobox-host-exec /usr/bin/distrobox-host-exec && \
+    ln -s /usr/bin/distrobox-host-exec /usr/bin/flatpak && \
+    wget https://github.com/1player/host-spawn/releases/download/$(cat /tmp/distrobox/distrobox-host-exec | grep host_spawn_version= | cut -d "\"" -f 2)/host-spawn-$(uname -m) -O /usr/bin/host-spawn && \
+    chmod +x /usr/bin/host-spawn && \
+    rm -drf /tmp/distrobox
+
+RUN pacman -S \
+      adw-gtk-theme \
+      bash-completion \
+      bc \
+      curl \
+      diffutils \
+      findutils \
+      glibc \
+      gnupg \
+      inetutils \
+      keyutils \
+      less \
+      lsof \
+      man-db \
+      man-pages \
+      mesa \
+      mlocate \
+      mtr \
+      ncurses \
+      nss-mdns \
+      opengl-driver \
+      openssh \
+      pigz \
+      pinentry \
+      procps-ng \
+      rsync \
+      shadow \
+      sudo \
+      tcpdump \
+      time \
+      traceroute \
+      tree \
+      tzdata \
+      unzip \
+      util-linux \
+      util-linux-libs \
+      vte-common \
+      vulkan-intel \
+      vulkan-radeon \
+      wget \
+      words \
+      xorg-xauth \
+      zip \
+      --noconfirm && \
+    rm -rf /var/cache/pacman/pkg/*
+
+# Add paru and install AUR packages
+USER build
+WORKDIR /home/build
+RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch && \
+    cd paru-bin && \
+    makepkg -si --noconfirm && \
+    cd .. && \
+    rm -drf paru-bin && \
+    paru -S --noconfirm --needed $(grep -vE '^\s*#' /tmp/toolbox-packages)
+
+USER root
+WORKDIR /
+
+# Cleanup
+RUN sed -i 's@#en_US.UTF-8@en_US.UTF-8@g' /etc/locale.gen && \
+    userdel -r build && \
+    rm -drf /home/build && \
+    sed -i '/build ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers && \
+    sed -i '/root ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers && \
+    rm -rf /tmp/*
