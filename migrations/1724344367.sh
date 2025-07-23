@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if fastfetch config.jsonc is already set
 if [ -f "$HOME/.config/fastfetch/config.jsonc" ]; then
   gum confirm "It appears that a fastfetch configuration is already set. Do you want to overwrite it?" && rm "$HOME/.config/fastfetch/config.jsonc"

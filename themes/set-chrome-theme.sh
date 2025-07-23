@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Updating the Chrome settings require that we first quit the application, since settings aren't picked up live,
 # and they're overwritten on exit.
 if gum confirm "Update Chrome theme? If yes, Chrome (and all Chrome-based apps) will closed!"; then

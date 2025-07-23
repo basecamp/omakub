@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Remove service
 sudo systemctl stop ollama
 sudo systemctl disable ollama

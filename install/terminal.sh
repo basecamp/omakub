@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Needed for all installers
 sudo apt update -y
 sudo apt upgrade -y
