@@ -29,7 +29,8 @@ fi
 
 # Check if the current desktop environment is GNOME
 if [[ ! "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then
-  echo "GNOME is NOT the current desktop environment. This might not be a fresh Ubuntu installation!!!"
+  echo "GNOME is NOT the current desktop environment!"
+  echo "A modified version without GNOME WILL NOT WORK!"
   echo "Press Enter to continue anyway, or Ctrl+C to exit."
   read -r _ </dev/tty
 fi
