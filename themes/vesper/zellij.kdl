@@ -1,0 +1,26 @@
+themes {
+    vesper {
+        fg 255 255 255
+        bg 16 16 16
+        black 126 126 126
+        red 255 128 128
+        green 153 255 228
+        yellow 255 199 153
+        blue 172 161 207
+        magenta 226 154 202
+        cyan 234 131 165
+        white 255 255 255
+        orange 255 199 153
+    }
+}
+
+theme "vesper"
+
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name false
+    }
+}
+
+simplified_ui true
