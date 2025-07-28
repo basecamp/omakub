@@ -96,7 +96,7 @@ app2folder() {
   fi
 }
 
-# Rewmove desktop app from folder
+# Remove desktop app from folder
 app2folder-remove() {
   if [ "$#" -ne 2 ]; then
     local FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children | tr -d "[],'")
