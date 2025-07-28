@@ -10,7 +10,7 @@
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabCompletion": "on",
   "editor.quickSuggestions": {
-    "other": false,
+    "other": true,
     "comments": false,
     "strings": false
   },
