@@ -31,6 +31,9 @@ if [ ! -d "$HOME/.config/nvim" ]; then
 
   # Turn off relative line numbers
   echo "vim.opt.relativenumber = false" >>~/.config/nvim/lua/config/options.lua
+
+  # Ensure editor.neo-tree is used by default
+  cp ~/.local/share/omakub/configs/neovim/lazyvim.json ~/.config/nvim/
 fi
 
 # Replace desktop launcher with one running inside Alacritty
