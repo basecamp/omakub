@@ -26,3 +26,11 @@ if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ]; then
   echo "Installation stopped."
   exit 1
 fi
+
+# Check if the current desktop environment is GNOME
+if [[ ! "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then
+  echo "GNOME is NOT the current desktop environment!"
+  echo "A modified version without GNOME WILL NOT WORK!"
+  echo "Press Enter to continue anyway, or Ctrl+C to exit."
+  read -r _ </dev/tty
+fi
