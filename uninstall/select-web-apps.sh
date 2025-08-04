@@ -2,8 +2,8 @@
 
 source $OMAKUB_PATH/defaults/bash/functions
 
-AVAILABLE_WEB_APPS=("Chat GPT" "Google Photos" "Google Contacts" "Tailscale")
-apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 6 --header "Select web apps to uninstall")
+AVAILABLE_WEB_APPS=("Chat GPT" "Google Photos" "Google Contacts" "Tailscale" "Youtube Music")
+apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 7 --header "Select web apps to uninstall")
 
 if [[ -n "$apps" ]]; then
   IFS=$'\n'
@@ -24,6 +24,10 @@ if [[ -n "$apps" ]]; then
     "Tailscale")
       web2app-remove 'Tailscale'
       app2folder-remove 'Tailscale.desktop' WebApps
+      ;;
+    "Youtube Music")
+      web2app-remove 'Youtube Music'
+      app2folder-remove 'Youtube Music.desktop' WebApps
       ;;
     esac
   done
