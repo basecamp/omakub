@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [[ -n "$1" ]]; then
+  INITIAL_THEME=$1
+else
+  INITIAL_THEME="tokyo-night"
+fi
+
 INITIAL_THEME="tokyo-night"
 
 # Setup theme links
