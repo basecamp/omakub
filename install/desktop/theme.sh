@@ -1,8 +1,12 @@
 #!/bin/bash
 
-INITIAL_THEME=tokyo-night
+INITIAL_THEME="tokyo-night"
 
 # Setup theme links
+if [ -d ~/.config/omakub/themes ]; then
+  rm -rf ~/.config/omakub/themes
+fi
+
 # Create themes folder into user config
 mkdir -p ~/.config/omakub/themes
 
