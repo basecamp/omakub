@@ -8,10 +8,12 @@ gsettings set org.gnome.desktop.interface accent-color "$OMAKUB_THEME_COLOR" 2>/
 
 BACKGROUND_DEST_DIR="$HOME/.config/omakub/current/background"
 
+BACKGROUND_FILENAME=$(basename "$OMAKUB_THEME_BACKGROUND")
+
 if [ ! -d "$BACKGROUND_DEST_DIR" ]; then mkdir -p "$BACKGROUND_DEST_DIR"; fi
 
-ln -snf $HOME/.config/omakub/themes/$OMAKUB_THEME_BACKGROUND $HOME/.config/omakub/current/background
+ln -snf $HOME/.config/omakub/current/theme/$BACKGROUND_FILENAME $BACKGROUND_DEST_DIR
 
-gsettings set org.gnome.desktop.background picture-uri $HOME/.config/omakub/current/background
-gsettings set org.gnome.desktop.background picture-uri-dark $HOME/.config/omakub/current/background
+gsettings set org.gnome.desktop.background picture-uri $BACKGROUND_DEST_DIR/$BACKGROUND_FILENAME
+gsettings set org.gnome.desktop.background picture-uri-dark $BACKGROUND_DEST_DIR/$BACKGROUND_FILENAME
 gsettings set org.gnome.desktop.background picture-options 'zoom'

@@ -6,8 +6,6 @@ else
   INITIAL_THEME="tokyo-night"
 fi
 
-INITIAL_THEME="tokyo-night"
-
 # Setup theme links
 if [ -d ~/.config/omakub/themes ]; then
   rm -rf ~/.config/omakub/themes
@@ -22,7 +20,6 @@ for f in ~/.local/share/omakub/themes/*; do ln -nfs "$f" ~/.config/omakub/themes
 # Set initial theme
 mkdir -p ~/.config/omakub/current
 ln -snf ~/.config/omakub/themes/$INITIAL_THEME ~/.config/omakub/current/theme
-ln -snf ~/.config/omakub/current/theme/background.jpg ~/.config/omakub/current/background
 
 # Set specific app links for current theme
 ln -snf ~/.config/omakub/current/theme/alacritty.toml ~/.config/alacritty/theme.toml
