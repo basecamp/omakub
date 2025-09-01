@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ "$1" == "-y" ]]; then
+  sudo cp ~/.local/share/omakub/default/plymouth/* /usr/share/plymouth/themes/omakub/
+  # Install the theme as an alternative
+  sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/omakub/omakub.plymouth 100
+  # Set it as the default
+  sudo update-alternatives --set default.plymouth /usr/share/plymouth/themes/omakub/omakub.plymouth
+fi

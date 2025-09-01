@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# omakub-theme-set: Set a theme, specified by its name.
+# Usage: omakub-theme-set <theme-name>
+
+if [[ -z "$1" && "$1" != "CNCLD" ]]; then
+  echo "Usage: omakub-theme-set <theme-name>" >&2
+  exit 1
+fi
+
+THEMES_DIR="$HOME/.config/omakub/themes/"
+CURRENT_THEME_DIR="$HOME/.config/omakub/current/theme"
+
+THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+THEME_PATH="$THEMES_DIR/$THEME_NAME"
+
+# Check if the theme entered exists
+if [[ ! -d "$THEME_PATH" ]]; then
+  echo "Theme '$THEME_NAME' does not exist in $THEMES_DIR" >&2
+  exit 2
+fi
+
+# Update theme symlinks
+ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
+
+# Apply GNOME themes
+source $HOME/.local/share/omakub/themes/$THEME_NAME/gnome.sh
+
+# Touch alacritty config to pickup the changed theme
+touch "$HOME/.config/alacritty/alacritty.toml"
+
+# Set new background
+"$HOME/.local/share/omakub/bin/omakub-theme-bg-next"
+
+# Change Chromium colors
+# TODO: Implement Chromium theme color changes
+
+# Trigger alacritty config reload
+touch "$HOME/.config/alacritty/alacritty.toml"
+
+# Restart components to apply new theme
+pkill -SIGUSR2 btop
+
+# Set new background
+omakub-theme-bg-next

@@ -1,0 +1,7 @@
+source ~/.local/share/omakub/default/bash/shell
+source ~/.local/share/omakub/default/bash/aliases
+source ~/.local/share/omakub/default/bash/functions
+source ~/.local/share/omakub/default/bash/prompt
+source ~/.local/share/omakub/default/bash/init
+source ~/.local/share/omakub/default/bash/envs
+[[ $- == *i* ]] && bind -f ~/.local/share/omakub/default/bash/inputrc

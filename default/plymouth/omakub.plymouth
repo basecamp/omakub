@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=Omakub
+Description=Omakub splash screen.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/omakub
+ScriptFile=/usr/share/plymouth/themes/omakub/omakub.script
+ConsoleLogBackgroundColor=0x1a1b26

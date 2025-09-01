@@ -1,0 +1,5 @@
+#!/bin/bash
+
+omakub-refresh-config wofi/config
+omakub-refresh-config wofi/style.css
+omakub-refresh-config wofi/search.css

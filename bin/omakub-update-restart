@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -f "$HOME/.local/state/omakub/reboot-required" ]; then
+  gum confirm "Updates require reboot. Ready?" && omakub-state clear re*-required && sudo reboot now
+fi
+
+for file in "$HOME"/.local/state/omakub/restart-*-required; do
+  if [ -f "$file" ]; then
+    filename=$(basename "$file")
+    service=$(echo "$filename" | sed 's/restart-\(.*\)-required/\1/')
+    echo "Restarting $service"
+    omakub-state clear "$filename"
+    omakub-restart-"$service"
+  fi
+done

@@ -1,6 +1,0 @@
-# Used by the Activity.desktop app
-import = [ "~/.config/alacritty/pane.toml" ]
-
-[window]
-dimensions.columns = 121
-dimensions.lines = 40

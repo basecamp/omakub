@@ -1,30 +1,33 @@
 #!/bin/bash
 
-set -e
+set -o pipefail
 
-ascii_art='________                  __        ___.
-\_____  \   _____ _____  |  | ____ _\_ |__
- /   |   \ /     \\__   \ |  |/ /  |  \ __ \
-/    |    \  Y Y  \/ __ \|    <|  |  / \_\ \
-\_______  /__|_|  (____  /__|_ \____/|___  /
-        \/      \/     \/     \/         \/
+ascii_art='
+ ██████  ███    ███  █████  ██   ██ ██    ██ ██████
+██    ██ ████  ████ ██   ██ ██  ██  ██    ██ ██   ██
+██    ██ ██ ████ ██ ███████ █████   ██    ██ ██████
+██    ██ ██  ██  ██ ██   ██ ██  ██  ██    ██ ██   ██
+ ██████  ██      ██ ██   ██ ██   ██  ██████  ██████
 '
-
-echo -e "$ascii_art"
-echo "=> Omakub is for fresh Ubuntu 24.04+ installations only!"
-echo -e "\nBegin installation (or abort with ctrl+c)..."
+clear
+echo -e "\n$ascii_art\n"
 
 sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
-echo "Cloning Omakub..."
+# Use custom repo if specified, otherwise use default
+OMAKUB_REPO="${OMAKUB_REPO:-basecamp/omakub}"
+
+echo -e "\e[32m\nCloning Omakub...\e[0m"
 rm -rf ~/.local/share/omakub
-git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
-if [[ $OMAKUB_REF != "master" ]]; then
+git clone https://github.com/$OMAKUB_REPO.git ~/.local/share/omakub >/dev/null
+
+if [[ -n "$OMAKUB_REF" ]]; then
+  echo -e "\e[32mUsing branch: $OMAKUB_REF\e[0m"
 	cd ~/.local/share/omakub
-	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
+	git fetch origin "${OMAKUB_REF}" && git checkout "${OMAKUB_REF}"
 	cd -
 fi
 
-echo "Installation starting..."
+echo -e "\nInstallation starting..."
 source ~/.local/share/omakub/install.sh

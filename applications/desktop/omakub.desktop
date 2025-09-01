@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Omakub
+Comment=Omakub Controls
+Exec=omakub-menu
+Terminal=false
+Type=Application
+Icon=Omakub
+Categories=GTK;
+StartupNotify=false

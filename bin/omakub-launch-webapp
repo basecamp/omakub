@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# omakub-launch-webapp: Launch a web application as a standalone window.
+# Usage: omakub-launch-webapp <app-url> <app-name>
+if [[ -z "$1" || -z "$2" ]]; then
+  echo "Usage: omakub-launch-webapp <app-url> <app-name>" >&2
+  exit 1
+fi
+
+APP_URL="$1"
+APP_NAME="$2"
+# This prevents data loss and force to open in a separate profile
+OMAKUB_DATA_DIR="$HOME/.config/omakub/webapp"
+WEBAPP_DATA_DIR="$OMAKUB_DATA_DIR/$(echo "$APP_NAME" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')"
+
+browser=$(xdg-settings get default-web-browser)
+
+case $browser in
+google-chrome* | brave-browser* | microsoft-edge* | opera* | vivaldi*) ;;
+*) browser="chromium.desktop" ;;
+esac
+
+if [ ! -d "$WEBAPP_DATA_DIR" ]; then
+  mkdir -p "$WEBAPP_DATA_DIR"
+fi
+
+exec $(sed -n 's/^Exec=\([^ ]*\).*/\1/p' {~/.local,~/.nix-profile,/usr}/share/applications/$browser 2>/dev/null | head -1) --user-data-dir="$WEBAPP_DATA_DIR" --window-size=800,600 --app="$APP_URL" --name="$APP_NAME" --class="$APP_NAME"

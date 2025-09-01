@@ -1,0 +1,185 @@
+#!/bin/bash
+
+export PATH="$HOME/.local/share/omakub/bin:$PATH"
+
+menu() {
+  local prompt="$1"
+  local options="$2"
+  local extra="$3"
+  local preselect="$4"
+
+  read -r -a args <<<"$extra"
+
+  if [[ -n "$preselect" ]]; then
+    options=$(echo -e "$options" | sed "s|^$preselect$|<i>$preselect</i>|")
+  fi
+
+  # Show Wofi menu (with markup support)
+  selection=$(echo -e "$options" | omakub-wofi \
+    --show dmenu \
+    --allow-markup \
+    --prompt "$prompt..." \
+    "${args[@]}" \
+    "$wofi_options" 2>>/tmp/omakub.log)
+
+  echo -e "$selection"
+}
+
+terminal() {
+  alacritty --class Omakub -e "$@"
+}
+
+present_terminal() {
+  omakub-launch-terminal-with-presentation "$@"
+}
+
+edit_in_nvim() {
+  notify-send "Editing config file" "$1"
+  alacritty -e nvim "$1"
+}
+
+app_install() {
+  present_terminal "echo 'Installing $1...'; omakub-app-install $1"
+}
+
+app_remove() {
+  present_terminal "echo 'Removing $1...'; omakub-app-remove $1"
+}
+
+show_learn_menu() {
+  case $(menu "Learn" "  Keybindings\n  Omakub\n  Ubuntu\n  Neovim\n󱆃  Bash" "--width 250 --height 300") in
+  *Keybindings*) omakub-launch-webapp "https://learn.omacom.io/1/read/29/hotkeys" ;;
+  *Omakub*) omakub-launch-webapp "https://learn.omacom.io/1/read#leaf_40" ;;
+  *Ubuntu*) omakub-launch-webapp "https://help.ubuntu.com/" ;;
+  *Bash*) omakub-launch-webapp "https://devhints.io/bash" ;;
+  *Neovim*) omakub-launch-webapp "https://www.lazyvim.org/keymaps" ;;
+  *) show_main_menu ;;
+  esac
+}
+
+# TODO: missing font-size
+show_style_menu() {
+  case $(menu "Style" "󰸌  Theme\n  Font\n  Background" "--width 250 --height 250") in
+  *Theme*) show_theme_menu ;;
+  *Font*) show_font_menu ;;
+  *Background*) omakub-theme-bg-next ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_theme_menu() {
+  theme=$(menu "Theme" "$(omakub-theme-list)" "--width 250 --height 400 -O alphabetical" "$(omakub-theme-current)")
+  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+    show_main_menu
+  else
+    omakub-theme-set "$theme"
+  fi
+}
+
+show_font_menu() {
+  font=$(menu "Font" "$(omakub-font-list)" "--width 350" "$(omakub-font-current)")
+  if [[ "$font" == "CNCLD" || -z "$font" ]]; then
+    show_main_menu
+  else
+    omakub-font-set "$font"
+  fi
+}
+
+show_setup_menu() {
+  case $(menu "Setup" "  Starship\n󰌧  Wofi" "--width 250 --height 300") in
+  *Starship*) edit_in_nvim ~/.config/starship.toml ;;
+  *Wofi*) edit_in_nvim ~/.config/wofi/config ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_install_menu() {
+  case $(menu "Install" "  Web App\n  TUI\n󰀻  App\n  Style" "--width 250 --height 300") in
+  *Web*) present_terminal omakub-webapp-install ;;
+  *TUI*) present_terminal omakub-tui-install ;;
+  *App*) show_install_app_menu ;;
+  *Style*) show_install_style_menu ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_install_app_menu() {
+  app=$(menu "App" "$(omakub-app-install-list)" "--width 350")
+  if [[ "$app" == "CNCLD" || -z "$app" ]]; then
+    show_main_menu
+  else
+    app_install "$app"
+  fi
+}
+
+# TODO: Add font installation
+show_install_style_menu() {
+  case $(menu "Install" "󰸌  Theme\n  Background" "--width 350") in
+  *Theme*) present_terminal omakub-theme-install ;;
+  *Background*) nautilus ~/.config/omakub/current/theme/backgrounds ;;
+  *) show_install_menu ;;
+  esac
+}
+
+show_remove_menu() {
+  case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme" "--width 250 --height 300") in
+  *Web*) present_terminal omakub-webapp-remove ;;
+  *TUI*) present_terminal omakub-tui-remove ;;
+  *App*) show_remove_app_menu ;;
+  *Theme*) present_terminal omakub-theme-remove ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_remove_app_menu() {
+  app=$(menu "App" "$(omakub-app-remove-list)" "--width 350")
+  if [[ "$app" == "CNCLD" || -z "$app" ]]; then
+    show_main_menu
+  else
+    app_remove "$app"
+  fi
+}
+
+show_update_menu() {
+  case $(menu "Update" "󰟢  Omakub\n󰇅  Firmware\n  Config\n󰸌  Themes" "--width 250 --height 300") in
+  *Omakub*) present_terminal omakub-update ;;
+  *Firmware*) present_terminal omakub-update-firmware ;;
+  *Config*) show_update_config_menu ;;
+  *Themes*) present_terminal omakub-theme-update ;;
+  *) show_main_menu ;;
+  esac
+}
+
+show_update_config_menu() {
+  case $(menu "Use default config" "  Starship\n󰍂  GDM\n󱣴  Plymouth\n󰌧  Wofi" "--width 350") in
+  *Starship*) present_terminal omakub-refresh-config starship.toml ;;
+  *GDM*) present_terminal omakub-refresh-gdm ;;
+  *Plymouth*) present_terminal omakub-refresh-plymouth ;;
+  *Wofi*) present_terminal omakub-refresh-wofi ;;
+  *) show_update_menu ;;
+  esac
+}
+
+show_main_menu() {
+  go_to_menu "$(menu "Go" "󰀻  Apps\n󰧑  Learn\n  Style\n  Setup\n󰉉  Install\n󰭌  Remove\n  Update\n  About" "--width 250 --height 400")"
+}
+
+go_to_menu() {
+  case "${1,,}" in
+  *apps*) omakub-apps ;;
+  *learn*) show_learn_menu ;;
+  *style*) show_style_menu ;;
+  *theme*) show_theme_menu ;;
+  *setup*) show_setup_menu ;;
+  *install*) show_install_menu ;;
+  *remove*) show_remove_menu ;;
+  *update*) show_update_menu ;;
+  *about*) alacritty --class Omakub -o font.size=9 -e bash -c -l 'fastfetch; read -n 1 -s' ;;
+  esac
+}
+
+if [[ -n "$1" ]]; then
+  go_to_menu "$1"
+else
+  show_main_menu
+fi

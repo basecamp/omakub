@@ -1,0 +1,24 @@
+import = [ "~/.config/omakub/current/theme/alacritty.toml" ]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+size = 9
+
+[window]
+padding.x = 14
+padding.y = 14
+decorations = "None"
+opacity = 0.98
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
+]

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# omakub-remove-app: Remove an app, specified by its name.
+# Usage: omakub-remove-app <app-name>
+
+if [[ -z "$1" ]]; then
+  echo "Usage: omakub-remove-app <app-name>" >&2
+  exit 1
+fi
+
+APP_NAME="$1"
+APP_REMOVE_DIR="$HOME/.local/share/omakub/applications/remove"
+
+# Check if the remove directory exists
+if [[ ! -d "$APP_REMOVE_DIR" ]]; then
+  echo "Error: Removing directory $APP_REMOVE_DIR does not exist." >&2
+  exit 1
+fi
+
+# If APP_REMOVE_PATH exists, source it to remove the app
+if [[ -f "$APP_REMOVE_DIR/$APP_NAME.sh" ]]; then
+  source "$APP_REMOVE_DIR/$APP_NAME.sh"
+else
+  echo "Error: App $APP_NAME is not recognized or not available for removal." >&2
+  exit 1
+fi

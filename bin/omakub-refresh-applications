@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Copy and sync icon files
+mkdir -p ~/.local/share/icons/hicolor/48x48/apps/
+cp ~/.local/share/omakub/applications/desktop/icons/*.png ~/.local/share/icons/hicolor/48x48/apps/
+gtk-update-icon-cache ~/.local/share/icons/hicolor &>/dev/null
+
+# Copy .desktop declarations
+mkdir -p ~/.local/share/applications
+cp ~/.local/share/omakub/applications/desktop/*.desktop ~/.local/share/applications/
+if [ -d ~/.local/share/omakub/applications/desktop/hidden ]; then
+  cp ~/.local/share/omakub/applications/desktop/hidden/*.desktop ~/.local/share/applications/
+fi
+
+update-desktop-database ~/.local/share/applications

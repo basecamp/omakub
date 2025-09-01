@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# This script sets the GDM background
+# If passed --theme, it will use the current theme's background
+# Otherwise, it will use the default gdm background
+
+# Secure wrapper function for GDM background operations
+gdm_wrapper() {
+    local file="$1"
+
+    # Validate input file
+    if [[ -z "$file" ]] || [[ ! -f "$file" ]]; then
+        echo "Error: Invalid or missing input file: $file" >&2
+        return 1
+    fi
+
+    # This is the default background - allow it
+    if [[ "$file" =~ \.local/share/omakub/default/gdm/background\.png$ ]]; then
+        :
+    else
+        echo "Error: File path not allowed: $file" >&2
+        return 1
+    fi
+
+    # Create directory
+    mkdir -p /usr/share/backgrounds/gdm || return 1
+
+    # Copy file
+    cp "$file" /usr/share/backgrounds/gdm/gdm-wallpaper || return 1
+
+    # Update GDM settings with background image
+    machinectl shell gdm@ /bin/bash -c "gsettings set com.ubuntu.login-screen background-picture-uri 'file:///usr/share/backgrounds/gdm/gdm-wallpaper'; gsettings set com.ubuntu.login-screen background-size 'cover'" 2>/dev/null || return 1
+
+    return 0
+}
+
+# Update GDM background using secure wrapper function
+defaultpath="$HOME/.local/share/omakub/default/gdm/background.png"
+if ! sudo bash -c "$(declare -f gdm_wrapper); gdm_wrapper \"$defaultpath\"" 2>/dev/null; then
+    echo "Failed to update GDM background"
+    exit 1
+fi

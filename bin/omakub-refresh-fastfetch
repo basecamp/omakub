@@ -1,0 +1,3 @@
+#!/bin/bash
+
+omakub-refresh-config fastfetch/config.jsonc

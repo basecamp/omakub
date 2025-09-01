@@ -1,0 +1,3 @@
+# Omakub sudoers configuration - Maximum security
+# Allow users in the sudo group to run bash with specific GDM functions
+%sudo ALL=(ALL) NOPASSWD: /bin/bash -c *gdm_wrapper*

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Base Packages
+packages=(
+  alacritty
+  apache2-utils
+  autoconf
+  bat
+  bison
+  btop
+  build-essential
+  clang
+  curl
+  eza
+  fd-find
+  flatpak
+  fzf
+  gir1.2-clutter-1.0
+  gir1.2-gtop-2.0
+  git
+  gnome-shell-extension-manager
+  gnome-software-plugin-flatpak
+  gnome-sushi
+  gnome-tweak-tool
+  imagemagick
+  libffi-dev
+  libgdbm-dev
+  libjemalloc2
+  libmagickwand-dev
+  libmysqlclient-dev
+  libncurses5-dev
+  libpq-dev
+  libreadline-dev
+  libreadline-dev
+  libsqlite3-0
+  libssl-dev
+  libvips
+  libyaml-dev
+  mupdf
+  mupdf-tools
+  pipx
+  pkg-config
+  plocate
+  postgresql-client
+  postgresql-client-common
+  python3-nautilus
+  redis-tools
+  ripgrep
+  rustc
+  sqlite3
+  tldr
+  unzip
+  wl-clipboard
+  wofi
+  zlib1g-dev
+  zoxide
+)
+
+# Install packages
+sudo apt install -y "${packages[@]}"

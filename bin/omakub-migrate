@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+# Where we store an empty file for each migration that has already been performed.
+STATE_DIR="$HOME/.local/state/omakub/migrations"
+mkdir -p "$STATE_DIR"
+
+# Run any pending migrations
+if [ -n "$(ls -A ~/.local/share/omakub/migrations/*.sh 2>/dev/null)" ]; then
+  for file in ~/.local/share/omakub/migrations/*.sh; do
+    filename=$(basename "$file")
+
+    if [[ ! -f "$STATE_DIR/$filename" ]]; then
+      echo -e "\e[32m\nRunning migration (${filename%.sh})\e[0m"
+      source $file
+      touch "$STATE_DIR/$filename"
+    fi
+  done
+fi

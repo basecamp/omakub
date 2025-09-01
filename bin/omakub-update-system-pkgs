@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -e "\e[32m\nUpdate system packages\e[0m"
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y dist-upgrade
+sudo apt -y autoremove
