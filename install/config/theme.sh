@@ -18,4 +18,5 @@ ln -snf ~/.config/omakub/current/theme/neovim.lua ~/.config/nvim/lua/plugins/the
 mkdir -p ~/.config/btop/themes
 ln -snf ~/.config/omakub/current/theme/btop.theme ~/.config/btop/themes/current.theme
 
-
+mkdir -p ~/.config/zellij/themes
+ln -snf ~/.config/omakub/current/theme/zellij.kdl ~/.config/zellij/themes/current.kdl

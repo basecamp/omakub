@@ -13,6 +13,14 @@ echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=$(dpkg --pr
 sudo apt update
 sudo apt install -y mise
 
+# Install Zellij
+cd /tmp
+wget -O zellij.tar.gz "https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz"
+tar -xf zellij.tar.gz zellij
+sudo install zellij /usr/local/bin
+rm zellij.tar.gz zellij
+cd -
+
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
