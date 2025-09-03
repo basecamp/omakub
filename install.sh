@@ -23,11 +23,15 @@ source $OMAKUB_INSTALL/preflight/trap-errors.sh
 source $OMAKUB_INSTALL/preflight/guard.sh
 source $OMAKUB_INSTALL/preflight/migrations.sh
 source $OMAKUB_INSTALL/preflight/presentation.sh
+
+# User Inputs
+show_logo
+show_subtext "Get ready to fill out some configuration... [1/4]"
 source $OMAKUB_INSTALL/preflight/identification.sh
 
 # Packaging
 show_logo
-show_subtext "Installing packages [1/3]"
+show_subtext "Installing packages [2/4]"
 source $OMAKUB_INSTALL/packages.sh
 source $OMAKUB_INSTALL/packaging/fonts.sh
 source $OMAKUB_INSTALL/packaging/nvim.sh
@@ -37,6 +41,8 @@ source $OMAKUB_INSTALL/packaging/webapps.sh
 source $OMAKUB_INSTALL/packaging/tuis.sh
 
 # Configuration
+show_logo
+show_subtext "Installing packages [3/4]"
 source $OMAKUB_INSTALL/config/config.sh
 source $OMAKUB_INSTALL/config/theme.sh
 source $OMAKUB_INSTALL/config/git.sh
@@ -53,6 +59,8 @@ source $OMAKUB_INSTALL/config/gnome/hotkeys.sh
 source $OMAKUB_INSTALL/config/gnome/settings.sh
 
 # Login
+show_logo
+show_subtext "Configuring login settings! [4/4]"
 source $OMAKUB_INSTALL/login/plymouth.sh
 source $OMAKUB_INSTALL/login/gdm3.sh
 source $OMAKUB_INSTALL/login/alt-bootloaders.sh
