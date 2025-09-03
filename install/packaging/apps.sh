@@ -16,8 +16,6 @@ apps=(
 	"Xournalpp"
 	"1password"
 	"Spotify"
-	"Zoom"
-	"Dropbox"
 )
 
 # Install optional apps
