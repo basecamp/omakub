@@ -3,6 +3,9 @@ import = [ "~/.config/omakub/current/theme/alacritty.toml" ]
 [env]
 TERM = "xterm-256color"
 
+[shell]
+program = "zellij"
+
 [font]
 normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
 bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
