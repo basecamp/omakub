@@ -24,18 +24,20 @@ fi
 ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
 
 # Apply GNOME themes
-source $HOME/.local/share/omakub/themes/$THEME_NAME/gnome.sh
+source ~/.config/omakub/current/theme/gnome.sh
+
+# Change VSCode colors
+if command -v code &>/dev/null; then
+  if [[ -f ~/.config/omakub/current/theme/vscode.sh ]]; then
+    source ~/.config/omakub/current/theme/vscode.sh
+    if [[ -n "$VSC_EXTENSION" && -n "$VSC_THEME" ]]; then
+      code --install-extension $VSC_EXTENSION >/dev/null
+      sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
+    fi
+  fi
+fi
 
 # Touch alacritty config to pickup the changed theme
-touch "$HOME/.config/alacritty/alacritty.toml"
-
-# Set new background
-"$HOME/.local/share/omakub/bin/omakub-theme-bg-next"
-
-# Change Chromium colors
-# TODO: Implement Chromium theme color changes
-
-# Trigger alacritty config reload
 touch "$HOME/.config/alacritty/alacritty.toml"
 
 # Restart components to apply new theme
