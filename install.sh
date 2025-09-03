@@ -45,7 +45,6 @@ source $OMAKUB_INSTALL/packaging/tuis.sh
 show_logo
 show_subtext "Installing packages [3/4]"
 source $OMAKUB_INSTALL/config/config.sh
-source $OMAKUB_INSTALL/config/theme.sh
 source $OMAKUB_INSTALL/config/git.sh
 source $OMAKUB_INSTALL/config/xcompose.sh
 source $OMAKUB_INSTALL/config/defaults.sh
@@ -58,6 +57,7 @@ source $OMAKUB_INSTALL/config/gnome/dock.sh
 source $OMAKUB_INSTALL/config/gnome/extensions.sh
 source $OMAKUB_INSTALL/config/gnome/hotkeys.sh
 source $OMAKUB_INSTALL/config/gnome/settings.sh
+source $OMAKUB_INSTALL/config/theme.sh
 
 # Login
 show_logo
