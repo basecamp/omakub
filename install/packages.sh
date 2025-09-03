@@ -22,6 +22,7 @@ packages=(
   gnome-software-plugin-flatpak
   gnome-sushi
   gnome-tweak-tool
+  gpg
   imagemagick
   libffi-dev
   libgdbm-dev
@@ -50,6 +51,7 @@ packages=(
   sqlite3
   tldr
   unzip
+  wget
   wl-clipboard
   wofi
   zlib1g-dev
