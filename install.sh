@@ -21,6 +21,7 @@ OMAKUB_INSTALL=~/.local/share/omakub/install
 # Preparation
 source $OMAKUB_INSTALL/preflight/trap-errors.sh
 source $OMAKUB_INSTALL/preflight/guard.sh
+source $OMAKUB_INSTALL/preflight/no-sleep.sh
 source $OMAKUB_INSTALL/preflight/migrations.sh
 source $OMAKUB_INSTALL/preflight/presentation.sh
 
@@ -65,8 +66,7 @@ source $OMAKUB_INSTALL/login/plymouth.sh
 source $OMAKUB_INSTALL/login/gdm3.sh
 source $OMAKUB_INSTALL/login/alt-bootloaders.sh
 
-# Reboot
+# Finishing
 show_logo
 show_subtext "You're done!"
-# Logout to pickup changes
-gum confirm "Ready to reboot for all settings to take effect?" && sudo reboot
+source $OMAKUB_INSTALL/reboot.sh
