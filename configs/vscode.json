@@ -5,7 +5,7 @@
   "editor.minimap.enabled": false,
   "git.ignoreMissingGitWarning": true,
   "editor.fontSize": 12,
-  "editor.occurrencesHighlight": "off",
+  "editor.occurrencesHighlight": false,
   "editor.selectionHighlight": false,
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabCompletion": "on",
