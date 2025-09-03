@@ -14,4 +14,4 @@ include "%H/.local/share/omakub/default/xcompose"
 EOF
 
 # Refresh XCompose
-omakub-refresh-xcompose
+omakub-restart-xcompose
