@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# omakub-app-folder-remove: Remove an app from a specified folder.
+# Usage: omakub-app-folder-remove <desktop_file.desktop> <folder_name>
+
+if [ "$#" -ne 2 ]; then
+  echo -e "\e[32mLet's remove an app from a folder in the app grid!\n\e[0m"
+  DESKTOP_FILE=$(gum input --prompt "Name> " --placeholder "A desktop file app (e.g., Spotify.desktop, no full path!)")
+  FOLDER_NAME=$(gum input --prompt "Folder> " --placeholder "The folder name (e.g., Utilities)")
+else
+  DESKTOP_FILE="$1"
+  FOLDER_NAME="$2"
+fi
+
+if [[ -z "$DESKTOP_FILE" || -z "$FOLDER_NAME" ]]; then
+  echo "You must set app name and folder name!"
+  exit 1
+fi
+
+if ! locate "$DESKTOP_FILE" &> /dev/null; then
+  echo "Desktop file '$DESKTOP_FILE' not found!"
+  exit 1
+fi
+
+FOLDER=$(echo "$FOLDER_NAME" | tr -d ' ' | tr '[:upper:]' '[:lower:]')
+SCHEMA="org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/$FOLDER/"
+
+# Check if folder exists
+CURRENT_FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children)
+if [[ "$CURRENT_FOLDERS" != *"'$FOLDER'"* ]]; then
+  echo "Folder '$FOLDER_NAME' does not exist!"
+  return 1
+fi
+
+CURRENT_APPS=$(gsettings get "$SCHEMA" apps)
+
+# Check if app exists in folder
+if [[ "$CURRENT_APPS" == *"$DESKTOP_FILE"* ]]; then
+  TRIMMED=$(echo "$CURRENT_APPS" | sed "s/^\[//;s/\]$//")
+
+  # Parse apps and filter out the one to remove
+  NEW_APPS=()
+  if [ -n "$TRIMMED" ]; then
+    # Split by comma and process each app
+    IFS=',' read -ra APPS_ARRAY <<< "$TRIMMED"
+    for app in "${APPS_ARRAY[@]}"; do
+      # Remove quotes and trim spaces
+      cleaned_app=$(echo "$app" | sed "s/^[[:space:]]*'//;s/'[[:space:]]*$//")
+      if [[ "$cleaned_app" != "$DESKTOP_FILE" && -n "$cleaned_app" ]]; then
+        NEW_APPS+=("'$cleaned_app'")
+      fi
+    done
+  fi
+
+  # Check if folder is empty after removal
+  if [[ ${#NEW_APPS[@]} -eq 0 ]]; then
+    # Remove the folder from folder-children
+    TRIMMED_FOLDERS=$(echo "$CURRENT_FOLDERS" | sed "s/^\[//;s/\]$//")
+
+    NEW_FOLDERS=()
+    if [ -n "$TRIMMED_FOLDERS" ]; then
+      IFS=',' read -ra FOLDERS_ARRAY <<< "$TRIMMED_FOLDERS"
+      for folder in "${FOLDERS_ARRAY[@]}"; do
+        # Remove quotes and trim spaces
+        cleaned_folder=$(echo "$folder" | sed "s/^[[:space:]]*'//;s/'[[:space:]]*$//")
+        if [[ "$cleaned_folder" != "$FOLDER" && -n "$cleaned_folder" ]]; then
+          NEW_FOLDERS+=("'$cleaned_folder'")
+        fi
+      done
+    fi
+
+    # Update folder-children list
+    if [[ ${#NEW_FOLDERS[@]} -eq 0 ]]; then
+      gsettings set org.gnome.desktop.app-folders folder-children "[]"
+    else
+      FOLDER_LIST=$(IFS=, ; echo "${NEW_FOLDERS[*]}")
+      gsettings set org.gnome.desktop.app-folders folder-children "[$FOLDER_LIST]"
+    fi
+
+    echo -e "Removed app '$DESKTOP_FILE' and deleted empty folder '$FOLDER_NAME'\n"
+  else
+    # Update apps list
+    NEW_LIST=$(IFS=, ; echo "${NEW_APPS[*]}")
+    gsettings set "$SCHEMA" apps "[$NEW_LIST]"
+    echo -e "Removed app '$DESKTOP_FILE' from folder '$FOLDER_NAME'\n"
+  fi
+else
+  echo "App '$DESKTOP_FILE' is not in folder '$FOLDER_NAME'"
+  return 1
+fi
+
+

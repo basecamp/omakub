@@ -1,0 +1,15 @@
+#!/bin/bash
+
+gum confirm "Do you want to refresh GNOME settings? You will lose your current settings." && {
+  # Backup current dconf (with timestamp) to avoid clobbering (Ex: omakub.dconf.bak.1753817951)
+  dconf dump / > "$HOME/gnome.dconf.bak.$(date +%s)"
+
+  # Execute installation GNOME Settings
+  source ~/.local/share/omakub/install/config/gnome/app-grid.sh
+  source ~/.local/share/omakub/install/config/gnome/dock.sh
+  source ~/.local/share/omakub/install/config/gnome/extensions.sh
+  source ~/.local/share/omakub/install/config/gnome/hotkeys.sh
+  source ~/.local/share/omakub/install/config/gnome/settings.sh
+
+  echo -e "GNOME settings refreshed successfully.\n"
+}

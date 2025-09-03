@@ -1,0 +1,95 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+  echo "Usage: omakub-install-dev-env <ruby|node|bun|go|php|python|elixir|phoenix|rust|java|ocaml|dotnet>" >&2
+  exit 1
+fi
+
+install_php() {
+  echo -e "Installing PHP...\n"
+  sudo apt -y install php php-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip} --no-install-recommends
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
+  rm composer-setup.php
+}
+
+install_node() {
+  echo -e "Installing Node.js...\n"
+  mise use --global node@lts
+}
+
+case "$1" in
+ruby)
+  echo -e "Installing Ruby on Rails...\n"
+  mise use --global ruby@latest
+  mise settings add idiomatic_version_file_enable_tools ruby
+  mise x ruby -- gem install rails --no-document
+  echo -e "\nYou can now run: rails new myproject"
+  ;;
+node)
+  install_node
+  ;;
+bun)
+  echo -e "Installing Bun...\n"
+  mise use -g bun@latest
+  ;;
+deno)
+  echo -e "Installing Deno...\n"
+  mise use -g deno@latest
+  ;;
+go)
+  echo -e "Installing Go...\n"
+  mise use --global go@latest
+  ;;
+php)
+  echo -e "Installing PHP...\n"
+  install_php
+  ;;
+python)
+  echo -e "Installing Python...\n"
+  mise use --global python@latest
+  echo -e "\nInstalling uv...\n"
+  curl -fsSL https://astral.sh/uv/install.sh | sh
+  ;;
+elixir)
+  echo -e "Installing Elixir...\n"
+  mise use --global erlang@latest
+  mise use --global elixir@latest
+  mise x elixir -- mix local.hex --force
+  ;;
+phoenix)
+  echo -e "Installing Phoenix Framework...\n"
+  # Ensure Erlang/Elixir first
+  mise use --global erlang@latest
+  mise use --global elixir@latest
+  # Hex & Rebar
+  mise x elixir -- mix local.hex --force
+  mise x elixir -- mix local.rebar --force
+  # Phoenix project (phx_new)
+  mise x elixir -- mix archive.install hex phx_new --force
+  echo -e "\nYou can now run: mix phx.new my_app"
+  ;;
+rust)
+  echo -e "Installing Rust...\n"
+  bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
+  ;;
+java)
+  echo -e "Installing Java...\n"
+  mise use --global java@latest
+  ;;
+zig)
+  echo -e "Installing Zig...\n"
+  mise use --global zig@latest
+  ;;
+ocaml)
+  echo -e "Installing OCaml...\n"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+  opam init --yes
+  eval "$(opam env)"
+  opam install ocaml-lsp-server odoc ocamlformat utop --yes
+  ;;
+dotnet)
+  echo -e "Installing .NET...\n"
+  mise use --global dotnet@latest
+  ;;
+esac

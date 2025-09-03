@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+  echo -e "\e[32mLet's customize your terminal font size.\n\e[0m"
+  FONT_SIZE=$(gum choose {7..14} --height 10 --header "Choose your terminal font size")
+else
+  FONT_SIZE="$1"
+fi
+
+if [[ $FONT_SIZE =~ ^[0-9]+$ ]]; then
+  sed -i "s/^size = .*$/size = $FONT_SIZE/g" ~/.config/alacritty/alacritty.toml
+else
+  echo "Font size must be a number."
+fi

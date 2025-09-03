@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# omakub-app-folder-add: Move a .desktop file to a specified app folder.
+# Usage: omakub-app-folder-add <desktop_file.desktop> <folder_name>
+
+if [ "$#" -ne 2 ]; then
+  echo -e "\e[32mLet's add an app to a folder in the app grid!\n\e[0m"
+  DESKTOP_FILE=$(gum input --prompt "Name> " --placeholder "A desktop file app (e.g., Spotify.desktop, no full path!)")
+  FOLDER_NAME=$(gum input --prompt "Folder> " --placeholder "The folder name (e.g., Utilities)")
+else
+  DESKTOP_FILE="$1"
+  FOLDER_NAME="$2"
+fi
+
+if [[ -z "$DESKTOP_FILE" || -z "$FOLDER_NAME" ]]; then
+  echo "You must set app name and folder name!"
+  exit 1
+fi
+
+if ! locate "$DESKTOP_FILE" &> /dev/null; then
+  echo "Desktop file '$DESKTOP_FILE' not found!"
+  exit 1
+fi
+
+# Convert to lowercase immediately for consistency
+FOLDER=$(echo "$FOLDER_NAME" | tr -d ' ' | tr '[:upper:]' '[:lower:]')
+SCHEMA="org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/$FOLDER/"
+CURRENT_FOLDERS=$(gsettings get org.gnome.desktop.app-folders folder-children)
+
+# Check if folder exists using the lowercase version
+if [[ "$CURRENT_FOLDERS" != *"'$FOLDER'"* ]]; then
+  # Create new folder
+  TRIMMED_FOLDERS=$(echo "$CURRENT_FOLDERS" | sed "s/^\[//;s/\]$//")
+
+  if [ -n "$TRIMMED_FOLDERS" ]; then
+    gsettings set org.gnome.desktop.app-folders folder-children "[$TRIMMED_FOLDERS, '$FOLDER']"
+  else
+    gsettings set org.gnome.desktop.app-folders folder-children "['$FOLDER']"
+  fi
+
+  gsettings set "$SCHEMA" name "$FOLDER_NAME"
+  gsettings set "$SCHEMA" apps "['$DESKTOP_FILE']"
+
+  echo -e "Created folder '$FOLDER_NAME' and added app '$DESKTOP_FILE' to it\n"
+else
+  # Add app to existing folder
+  CURRENT_APPS=$(gsettings get "$SCHEMA" apps)
+
+  if [[ "$CURRENT_APPS" != *"$DESKTOP_FILE"* ]]; then
+    TRIMMED=$(echo "$CURRENT_APPS" | sed "s/^\[//;s/\]$//")
+    if [ -n "$TRIMMED" ]; then
+      gsettings set "$SCHEMA" apps "[$TRIMMED, '$DESKTOP_FILE']"
+    else
+      gsettings set "$SCHEMA" apps "['$DESKTOP_FILE']"
+    fi
+
+    echo -e "App '$DESKTOP_FILE' has been added to folder '$FOLDER_NAME'\n"
+  else
+    echo -e "App '$DESKTOP_FILE' is already in folder '$FOLDER_NAME'\n"
+  fi
+fi
