@@ -6,4 +6,3 @@ omakub-update-git
 omakub-migrate
 omakub-update-system-pkgs
 omakub-update-restart
-omakub-restart-waybar # removes update-available icon
