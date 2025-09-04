@@ -48,12 +48,12 @@ app_remove() {
 
 show_learn_menu() {
   case $(menu "Learn" "  Keybindings\n  Omakub\n  Ubuntu\n  Neovim\n  Zellij\n󱆃  Bash" "--width 250 --height 300") in
-  *Keybindings*) omakub-launch-webapp "https://learn.omacom.io/1/read/29/hotkeys" ;;
-  *Omakub*) omakub-launch-webapp "https://learn.omacom.io/1/read#leaf_40" ;;
-  *Ubuntu*) omakub-launch-webapp "https://help.ubuntu.com/" ;;
-  *Bash*) omakub-launch-webapp "https://devhints.io/bash" ;;
-  *Neovim*) omakub-launch-webapp "https://www.lazyvim.org/keymaps" ;;
-  *Zellij*) omakub-launch-webapp "https://zellij.dev/documentation/keybindings.html" ;;
+  *Keybindings*) omakub-launch-webapp "https://learn.omacom.io/1/read/29/hotkeys" "Omakub Keybindings" ;;
+  *Omakub*) omakub-launch-webapp "https://learn.omacom.io/1/read#leaf_40" "Omakub" ;;
+  *Ubuntu*) omakub-launch-webapp "https://help.ubuntu.com/" "Ubuntu" ;;
+  *Bash*) omakub-launch-webapp "https://devhints.io/bash" "Bash" ;;
+  *Neovim*) omakub-launch-webapp "https://www.lazyvim.org/keymaps" "Neovim" ;;
+  *Zellij*) omakub-launch-webapp "https://zellij.dev/documentation/keybindings.html" "Zellij" ;;
   *) show_main_menu ;;
   esac
 }
