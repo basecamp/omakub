@@ -7,7 +7,7 @@ sudo apt -y dist-upgrade
 sudo apt -y autoremove
 
 # If Flatpak is installed, update Flatpak packages
-if ! command -v flatpak &> /dev/null; then
+if ! command -v "flatpak --version" &> /dev/null; then
   echo -e "\e[32m\nUpdate flatpak packages\e[0m"
   flatpak update -y
 fi
