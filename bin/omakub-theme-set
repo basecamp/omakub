@@ -23,10 +23,50 @@ fi
 # Update theme symlinks
 ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
 
-# Apply GNOME themes
-source ~/.config/omakub/current/theme/gnome.sh
+# Change gnome modes
+if [[ -f ~/.config/omakub/current/theme/gnome.theme ]]; then
+  OMAKUB_THEME_COLOR=$(<~/.config/omakub/current/theme/gnome.theme)
+else
+  OMAKUB_THEME_COLOR="blue"
+fi
 
-# Change VSCode colors
+if [[ -f ~/.config/omakub/current/theme/light.mode ]]; then
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+  gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$OMAKUB_THEME_COLOR"
+  gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$OMAKUB_THEME_COLOR"
+else
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$OMAKUB_THEME_COLOR-dark"
+  gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$OMAKUB_THEME_COLOR-dark"
+fi
+gsettings set org.gnome.desktop.interface accent-color "$OMAKUB_THEME_COLOR" 2>/dev/null || true
+
+# Change gnome cursor theme color
+if [[ -f ~/.config/omakub/current/theme/cursor.theme ]]; then
+  gsettings set org.gnome.desktop.interface cursor-theme "$(<~/.config/omakub/current/theme/cursor.theme)"
+else
+  gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
+fi
+
+# Change gnome icon theme color
+if [[ -f ~/.config/omakub/current/theme/icons.theme ]]; then
+  gsettings set org.gnome.desktop.interface icon-theme "$(<~/.config/omakub/current/theme/icons.theme)"
+else
+  gsettings set org.gnome.desktop.interface icon-theme "Yaru-$OMAKUB_THEME_COLOR"
+fi
+
+# Change gnome extensions theme
+if [[ -f ~/.config/omakub/current/theme/tophat.theme ]]; then
+  gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$(<~/.config/omakub/current/theme/tophat.theme)"
+else
+  if [[ -f ~/.config/omakub/current/theme/light.mode ]]; then
+    gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#e92020"
+  else
+    gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#33ccff"
+  fi
+fi
+
+# Change vscode colors
 if command -v code &>/dev/null; then
   if [[ -f ~/.config/omakub/current/theme/vscode.theme ]]; then
     declare -A vscode
