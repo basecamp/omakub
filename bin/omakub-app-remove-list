@@ -1,6 +1,0 @@
-#!/bin/bash
-
-find ~/.local/share/omakub/applications/remove -mindepth 1 -maxdepth 1 -type f -name "*.sh" | sort | while read -r path; do
-  filename=$(basename "$path" .sh)
-  echo "$(echo "$filename" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g')"
-done

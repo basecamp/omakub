@@ -1,27 +1,47 @@
 #!/bin/bash
 
-# omakub-app-install: Install an app, specified by its name.
-# Usage: omakub-app-install <app-name>
-
-if [[ -z "$1" ]]; then
-  echo "Usage: omakub-app-install <app-name>" >&2
-  exit 1
-fi
-
-APP_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 APP_DIR="$HOME/.local/share/omakub/applications/install"
 
-# Check if the application directory exists
-if [[ ! -d "$APP_DIR" ]]; then
-  echo "Error: Application directory $APP_DIR does not exist." >&2
+if [ "$#" -eq 0 ]; then
+  # Find all installable apps
+  APPS=()
+  while IFS= read -r path; do
+    filename=$(basename "$path" .sh)
+    APPS+=("$(echo "$filename" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g')")
+  done < <(find "$APP_DIR" -mindepth 1 -maxdepth 1 -type f -name "*.sh" | sort)
+
+  if ((${#APPS[@]})); then
+    IFS=$'\n' SORTED_APPS=($(sort <<<"${APPS[*]}"))
+    unset IFS
+    APP_NAMES_STRING=$(gum choose --no-limit --header "Select app to install..." --selected-prefix="✓ " "${SORTED_APPS[@]}")
+    # Convert newline-separated string to array
+    APP_NAMES=()
+    while IFS= read -r line; do
+      [[ -n "$line" ]] && APP_NAMES+=("$line")
+    done <<< "$APP_NAMES_STRING"
+  else
+    echo "No apps to install."
+    exit 1
+  fi
+else
+  # Use array to preserve spaces in app names
+  APP_NAMES=("$@")
+fi
+
+if [[ ${#APP_NAMES[@]} -eq 0 ]]; then
+  echo "You must provide app names."
   exit 1
 fi
 
-# If APP_DIR exists, source it to install the app
-if [[ -f "$APP_DIR/$APP_NAME.sh" ]]; then
-  source "$APP_DIR/$APP_NAME.sh"
-# If the app is not recognized, print an error message
-else
-  echo "Error: App $APP_NAME is not recognized or not available for installation." >&2
-  exit 1
-fi
+for APP_NAME in "${APP_NAMES[@]}"; do
+  APP_NAME=$(echo "$APP_NAME" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+
+  # If APP_NAME exists in $APP_DIR, source it to install the app
+  if [[ -f "$APP_DIR/$APP_NAME.sh" ]]; then
+    source "$APP_DIR/$APP_NAME.sh"
+  # If the app is not recognized, print an error message
+  else
+    echo "Error: App $APP_NAME is not recognized or not available for installation." >&2
+    exit 1
+  fi
+done

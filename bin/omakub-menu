@@ -238,19 +238,10 @@ show_remove_menu() {
   case $(menu "Remove" "  Web App\n  TUI\n󰀻  App\n󰸌  Theme" "--width 250 --height 300") in
   *Web*) present_terminal omakub-webapp-remove ;;
   *TUI*) present_terminal omakub-tui-remove ;;
-  *App*) show_remove_app_menu ;;
+  *App*) present_terminal omakub-app-remove ;;
   *Theme*) present_terminal omakub-theme-remove ;;
   *) show_main_menu ;;
   esac
-}
-
-show_remove_app_menu() {
-  app=$(menu "App" "$(omakub-app-remove-list)" "--width 350")
-  if [[ "$app" == "CNCLD" || -z "$app" ]]; then
-    show_main_menu
-  else
-    app_remove "$app"
-  fi
 }
 
 show_update_menu() {
