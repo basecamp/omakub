@@ -28,11 +28,25 @@ source ~/.config/omakub/current/theme/gnome.sh
 
 # Change VSCode colors
 if command -v code &>/dev/null; then
-  if [[ -f ~/.config/omakub/current/theme/vscode.sh ]]; then
-    source ~/.config/omakub/current/theme/vscode.sh
-    if [[ -n "$VSC_EXTENSION" && -n "$VSC_THEME" ]]; then
-      code --install-extension $VSC_EXTENSION >/dev/null
-      sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"$VSC_THEME\"/g" ~/.config/Code/User/settings.json
+  if [[ -f ~/.config/omakub/current/theme/vscode.theme ]]; then
+    declare -A vscode
+    source ~/.config/omakub/current/theme/vscode.theme
+
+    # Install extension if specified
+    if [[ -n "${vscode[extension]}" ]]; then
+      code --install-extension "${vscode[extension]}" --force
+    fi
+
+    # Set theme if specified
+    if [[ -n "${vscode[theme]}" ]]; then
+      sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"${vscode[theme]}\"/g" ~/.config/Code/User/settings.json
+    fi
+  # Fallback to default themes
+  else
+    if [[ -f ~/.config/omakub/current/theme/light.mode ]]; then
+      sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"Default Light+\"/g" ~/.config/Code/User/settings.json
+    else
+      sed -i "s/\"workbench.colorTheme\": \".*\"/\"workbench.colorTheme\": \"Default Dark+\"/g" ~/.config/Code/User/settings.json
     fi
   fi
 fi
