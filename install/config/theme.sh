@@ -16,12 +16,10 @@ ln -snf $(find "$HOME/.config/omakub/current/theme/backgrounds/" -type f | head 
 OMAKUB_THEME_COLOR=$(<~/.config/omakub/current/theme/gnome.theme)
 
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$OMAKUB_THEME_COLOR-dark"
-gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$OMAKUB_THEME_COLOR-dark"
-gsettings set org.gnome.desktop.interface accent-color "$OMAKUB_THEME_COLOR" 2>/dev/null || true
 gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
-
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$OMAKUB_THEME_COLOR-dark"
 gsettings set org.gnome.desktop.interface icon-theme "$(<~/.config/omakub/current/theme/icons.theme)"
+gsettings set org.gnome.desktop.interface accent-color "$OMAKUB_THEME_COLOR" 2>/dev/null || true
 
 # Change gnome extensions theme
 gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$(<~/.config/omakub/current/theme/tophat.theme)"
