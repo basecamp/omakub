@@ -12,6 +12,25 @@ mkdir -p ~/.config/omakub/current
 ln -snf ~/.config/omakub/themes/tokyo-night ~/.config/omakub/current/theme
 ln -snf $(find "$HOME/.config/omakub/current/theme/backgrounds/" -type f | head -n 1) "$HOME/.config/omakub/current/background"
 
+# Set gnome theme colors
+OMAKUB_THEME_COLOR=$(<~/.config/omakub/current/theme/gnome.theme)
+
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-$OMAKUB_THEME_COLOR-dark"
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$OMAKUB_THEME_COLOR-dark"
+gsettings set org.gnome.desktop.interface accent-color "$OMAKUB_THEME_COLOR" 2>/dev/null || true
+gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
+
+gsettings set org.gnome.desktop.interface icon-theme "$(<~/.config/omakub/current/theme/icons.theme)"
+
+# Change gnome extensions theme
+gsettings set org.gnome.shell.extensions.tophat meter-fg-color "$(<~/.config/omakub/current/theme/tophat.theme)"
+
+# Update GNOME background settings
+gsettings set org.gnome.desktop.background picture-uri "$HOME/.config/omakub/current/background"
+gsettings set org.gnome.desktop.background picture-uri-dark "$HOME/.config/omakub/current/background"
+gsettings set org.gnome.desktop.background picture-options 'zoom'
+
 # Set specific app links for current theme
 ln -snf ~/.config/omakub/current/theme/neovim.lua ~/.config/nvim/lua/plugins/theme.lua
 
