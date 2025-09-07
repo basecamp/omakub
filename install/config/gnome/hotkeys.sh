@@ -15,6 +15,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Shift>AudioP
 # Full-screen with title/navigation bar
 gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
 
+# Open File Manager (Nautilus) with Super+F (for File)
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
+
 # Use alt for pinned apps
 gsettings set org.gnome.shell.keybindings switch-to-application-1 "['<Alt>1']"
 gsettings set org.gnome.shell.keybindings switch-to-application-2 "['<Alt>2']"
