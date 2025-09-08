@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Refresh applications .desktop files
-source ~/.local/share/omakub/bin/omakub-refresh-applications || true
+omakub-refresh-applications
 update-desktop-database ~/.local/share/applications
 
 # Make alacritty default terminal emulator
