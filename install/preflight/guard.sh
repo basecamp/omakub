@@ -14,7 +14,7 @@ abort() {
 . /etc/os-release
 
 # Check if running on Ubuntu 24.04+
-[[ "$ID" == "ubuntu" ]] || abort "Ubuntu 24.04 or higher"
+[[ "$ID" != "ubuntu" ]] && abort "Ubuntu 24.04 or higher"
 [[ $(echo "$VERSION_ID >= 24.04" | bc) != 1 ]] && abort "Ubuntu 24.04 or higher"
 
 # Must be x86 only to fully work
