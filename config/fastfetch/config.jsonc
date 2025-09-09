@@ -62,7 +62,7 @@
       "type": "command",
       "key": "󰟢 OS",
       "keyColor": "blue",
-      "text": "version=$(omakub-version); echo \"omakub $version\""
+      "text": "version=$(omakub-version); echo \"Omakub $version\""
     },
     {
       "type": "command",
