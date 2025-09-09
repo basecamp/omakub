@@ -40,6 +40,20 @@ echo -e "\e[32m\nInstalling ufw...\e[0m"
 echo
 sudo apt install -y ufw
 
+# Install ffmpeg
+echo -e "\e[32m\nInstalling ffmpeg...\e[0m"
+echo
+sudo apt install -y ffmpeg
+
+# Remove ulauncher
+if command -v ulauncher &> /dev/null; then
+  echo -e "\e[32m\nRemoving ulauncher...\e[0m"
+  echo
+  sudo apt remove --purge -y ulauncher
+  rm -rf ~/.config/ulauncher
+  rm -rf ~/.local/share/ulauncher
+fi
+
 # Configs
 echo -e "\e[32m\nApplying new Omakub configurations...\e[0m"
 echo
@@ -115,4 +129,4 @@ source ~/.local/share/omakub/install/preflight/migrations.sh
 # Finish
 echo -e "\e[32m\nMigration completed! Please restart your computer to apply all changes.\e[0m"
 echo
-gum confirm "Restart now?" && systemctl reboot now
+gum confirm "Restart now?" && { sudo reboot now; } || { echo "Please remember to restart later."; exit 0; }
