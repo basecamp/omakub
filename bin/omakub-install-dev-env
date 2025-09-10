@@ -92,4 +92,9 @@ dotnet)
   echo -e "Installing .NET...\n"
   mise use --global dotnet@latest
   ;;
+clojure)
+  echo -e "Installing Clojure...\n"
+  sudo apt install -y rlwrap
+  mise use --global clojure@latest
+  ;;
 esac

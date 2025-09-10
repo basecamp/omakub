@@ -196,7 +196,7 @@ show_install_ai_menu() {
 }
 
 show_install_development_menu() {
-  case $(menu "Install" "  Docker\n󱘲  Databases\n  Github\n󰫏  Ruby on Rails\n  JavaScript\n  Go\n  PHP\n  Python\n  Elixir\n  Zig\n  Rust\n  Java\n  .NET\n  OCaml" "--width 250 --height 600") in
+  case $(menu "Install" "  Docker\n󱘲  Databases\n  Github\n󰫏  Ruby on Rails\n  JavaScript\n  Go\n  PHP\n  Python\n  Elixir\n  Zig\n  Rust\n  Java\n  .NET\n  OCaml\n  Clojure" "--width 250 --height 650") in
   *Docker*) app_install "docker" ;;
   *Databases*) present_terminal "omakub-install-docker-dbs" ;;
   *Github*) app_install "github-cli" ;;
@@ -211,6 +211,7 @@ show_install_development_menu() {
   *Java*) present_terminal "omakub-install-dev-env java" ;;
   *NET*) present_terminal "omakub-install-dev-env dotnet" ;;
   *OCaml*) present_terminal "omakub-install-dev-env ocaml" ;;
+  *Clojure*) present_terminal "omakub-install-dev-env clojure" ;;
   *) show_install_menu ;;
   esac
 }
