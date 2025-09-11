@@ -32,7 +32,7 @@ source $OMAKUB_INSTALL/preflight/identification.sh
 
 # Packaging
 show_logo
-show_subtext "Installing packages [2/4]"
+show_subtext "Installing packages... [2/4]"
 source $OMAKUB_INSTALL/packages.sh
 source $OMAKUB_INSTALL/packaging/fonts.sh
 source $OMAKUB_INSTALL/packaging/nvim.sh
@@ -43,7 +43,7 @@ source $OMAKUB_INSTALL/packaging/tuis.sh
 
 # Configuration
 show_logo
-show_subtext "Installing packages [3/4]"
+show_subtext "Apply Omakub configuration... [3/4]"
 source $OMAKUB_INSTALL/config/config.sh
 source $OMAKUB_INSTALL/config/git.sh
 source $OMAKUB_INSTALL/config/xcompose.sh
@@ -61,7 +61,7 @@ source $OMAKUB_INSTALL/config/theme.sh
 
 # Login
 show_logo
-show_subtext "Configuring login settings! [4/4]"
+show_subtext "Configuring login settings... [4/4]"
 source $OMAKUB_INSTALL/login/plymouth.sh
 source $OMAKUB_INSTALL/login/gdm3.sh
 source $OMAKUB_INSTALL/login/alt-bootloaders.sh
