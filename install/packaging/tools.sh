@@ -21,7 +21,7 @@ rm zellij.tar.gz zellij
 cd -
 
 # Install Starship
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+source ~/.local/share/omakub/applications/install/starship.sh
 
 # Install Docker
 source ~/.local/share/omakub/applications/install/docker.sh
