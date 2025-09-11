@@ -9,15 +9,18 @@ packages=(
   bison
   btop
   build-essential
+  cargo
   clang
+  cmake
   curl
   eza
   fd-find
+  ffmpeg
+  ffmpegthumbnailer
   flatpak
   fzf
   gir1.2-clutter-1.0
   gir1.2-gtop-2.0
-  git
   gnome-shell-extension-manager
   gnome-software-plugin-flatpak
   gnome-sushi
@@ -45,11 +48,13 @@ packages=(
   postgresql-client
   postgresql-client-common
   python3-nautilus
+  python3-pip
   redis-tools
   ripgrep
   rustc
   sqlite3
-  tldr
+  systemd-container
+  ufw
   unzip
   wget
   wl-clipboard
