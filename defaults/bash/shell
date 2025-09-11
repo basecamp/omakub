@@ -11,4 +11,4 @@ source /usr/share/bash-completion/bash_completion
 export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:$PATH"
 set +h
 
-export OMAKUB_PATH="/home/$USER/.local/share/omakub"
+export OMAKUB_PATH="$HOME/.local/share/omakub"
