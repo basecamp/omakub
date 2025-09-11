@@ -141,11 +141,10 @@ show_install_menu() {
 }
 
 show_install_tools_menu() {
-  case $(menu "Install" "  ASDControl\n  Flameshot\n  Mainline Kernels\n  Pinta\n  Starship\n  Virtualbox\n󰕼  VLC\n  Xournalpp" "--width 250 --height 500") in
+  case $(menu "Install" "  ASDControl\n  Flameshot\n  Pinta\n  Starship\n  Virtualbox\n󰕼  VLC\n  Xournalpp" "--width 250 --height 450") in
   *ASDControl*) app_install "asdcontrol" ;;
   *Flameshot*) app_install "flameshot" ;;
   *Pinta*) app_install "pinta" ;;
-  *Mainline*) app_install "mainline-kernels" ;;
   *Xournalpp*) app_install "xournalpp" ;;
   *Virtualbox*) app_install "virtualbox" ;;
   *Starship*) app_install "starship" ;;
@@ -196,10 +195,11 @@ show_install_ai_menu() {
 }
 
 show_install_development_menu() {
-  case $(menu "Install" "  Docker\n󱘲  Databases\n  Github\n󰫏  Ruby on Rails\n  JavaScript\n  Go\n  PHP\n  Python\n  Elixir\n  Zig\n  Rust\n  Java\n  .NET\n  OCaml\n  Clojure" "--width 250 --height 650") in
+  case $(menu "Install" "  Docker\n󱘲  Databases\n  Github\n  Gitlab\n󰫏  Ruby on Rails\n  JavaScript\n  Go\n  PHP\n  Python\n  Elixir\n  Zig\n  Rust\n  Java\n  .NET\n  OCaml\n  Clojure" "--width 250 --height 700") in
   *Docker*) app_install "docker" ;;
   *Databases*) present_terminal "omakub-install-docker-dbs" ;;
   *Github*) app_install "github-cli" ;;
+  *Gitlab*) app_install "gitlab-cli" ;;
   *Rails*) present_terminal "omakub-install-dev-env ruby" ;;
   *JavaScript*) show_install_javascript_menu ;;
   *Go*) present_terminal "omakub-install-dev-env go" ;;
