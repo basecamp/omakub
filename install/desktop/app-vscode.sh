@@ -9,7 +9,7 @@ if [ ! -f /etc/apt/keyrings/packages.microsoft.gpg ] || [ ! -f /usr/share/keyrin
   cd -
 fi
 
-sudo apt update -y
+sudo apt update
 sudo apt install -y code
 
 mkdir -p ~/.config/Code/User
