@@ -1,5 +1,5 @@
 themes {
-    gruvbox-dark {
+    gruvbox {
         text_unselected {
             base 251 241 199
             background 60 56 54

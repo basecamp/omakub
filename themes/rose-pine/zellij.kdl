@@ -1,5 +1,5 @@
 themes {
-		rose-pine {
+    rose-pine {
         text_unselected {
             base 87 82 121
             background 244 237 232
@@ -116,5 +116,5 @@ themes {
             player_9 0 0 0
             player_10 0 0 0
         }
-		}
+    }
 }
