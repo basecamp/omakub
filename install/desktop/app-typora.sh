@@ -1,20 +1,15 @@
 #!/bin/bash
 
-# Temporarily switch away from using Typora repo which is broken.
-#
-# wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc >/dev/null || true
-#
-# sudo add-apt-repository -y 'deb https://typora.io/linux ./'
-# sudo add-apt-repository -y 'deb https://typora.io/linux ./'
-# sudo apt update -y
-# sudo apt install -y typora
+# Typora is a markdown editor and reader. See https://typora.io/
+if [ ! -f /etc/apt/sources.list.d/typora.list ]; then
+  [ -f /etc/apt/keyrings/typora.gpg ] && sudo rm /etc/apt/keyrings/typora.gpg
+  sudo mkdir -p /etc/apt/keyrings
+  curl -fsSL https://downloads.typora.io/typora.gpg | sudo tee /etc/apt/keyrings/typora.gpg > /dev/null
+  echo "deb [signed-by=/etc/apt/keyrings/typora.gpg] https://downloads.typora.io/linux ./" | sudo tee /etc/apt/sources.list.d/typora.list
+fi
 
-# Install with db
-cd /tmp
-wget -O typora.deb "https://downloads.typora.io/linux/typora_1.10.8_amd64.deb"
-sudo apt install -y /tmp/typora.deb
-rm typora.deb
-cd -
+sudo apt update
+sudo apt install typora -y
 
 # Add iA Typora theme
 mkdir -p ~/.config/Typora/themes

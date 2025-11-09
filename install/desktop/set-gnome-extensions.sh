@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y gnome-shell-extension-manager pipx
+sudo apt install -y gnome-shell-extension-manager gir1.2-gtop-2.0 gir1.2-clutter-1.0
 pipx install gnome-extensions-cli --system-site-packages
 
 # Turn off default Ubuntu extensions
