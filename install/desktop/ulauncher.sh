@@ -1,7 +1,12 @@
 #!/bin/bash
 
-sudo add-apt-repository universe -y
-sudo add-apt-repository ppa:agornostal/ulauncher -y
+. /etc/os-release
+
+if [ "$ID" == "ubuntu" ]; then
+  sudo add-apt-repository universe -y
+  sudo add-apt-repository ppa:agornostal/ulauncher -y
+fi
+
 sudo apt update
 sudo apt install ulauncher -y
 
