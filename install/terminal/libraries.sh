@@ -11,11 +11,5 @@ sudo apt install -y \
 if [ "$ID" == "ubuntu" ]; then
   sudo apt install libmysqlclient-dev
 else
-  cd /tmp
-	wget -q "http://ftp.debian.org/debian/pool/main/m/mysql-8.0/libmysqlclient21_8.0.44-1_amd64.deb"
-	wget -q "http://ftp.debian.org/debian/pool/main/m/mysql-8.0/libmysqlclient-dev_8.0.44-1_amd64.deb"
-	sudo apt-get install -y --allow-downgrades ./libmysqlclient21_8.0.44-1_amd64.deb \
-		./libmysqlclient-dev_8.0.44-1_amd64.deb
-	rm libmysqlclient21_8.0.44-1_amd64.deb libmysqlclient-dev_8.0.44-1_amd64.deb
-	cd -
+  sudo apt install default-libmysqlclient-dev
 fi
