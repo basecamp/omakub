@@ -14,5 +14,5 @@ sudo apt install ulauncher -y
 mkdir -p ~/.config/autostart/
 cp ~/.local/share/omakub/configs/ulauncher.desktop ~/.config/autostart/ulauncher.desktop
 gtk-launch ulauncher.desktop >/dev/null 2>&1
-sleep 2 # ensure enough time for ulauncher to set defaults
+gum spin --title "Init Ulauncher..." -- sleep 10 # ensure enough time for ulauncher to set defaults
 cp ~/.local/share/omakub/configs/ulauncher.json ~/.config/ulauncher/settings.json
