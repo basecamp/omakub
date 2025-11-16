@@ -9,7 +9,7 @@ sudo apt install -y \
 . /etc/os-release
 
 if [ "$ID" == "ubuntu" ]; then
-  sudo apt install libmysqlclient-dev
+  sudo apt install -y libmysqlclient-dev
 else
   sudo apt install default-libmysqlclient-dev
 fi
