@@ -1,5 +1,11 @@
 #!/bin/bash
 
+. /etc/os-release
+if [ "$ID" == "debian" ]; then
+	MENU_ULAUNCHER="Ulauncher     Application launcher for Linux"
+fi
+
+
 CHOICES=(
 	"Omakub        Update Omakub itself and run any migrations"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"
@@ -7,7 +13,7 @@ CHOICES=(
 	"LazyDocker    TUI for Docker"
 	"Neovim        Text editor that runs in the terminal"
 	"Zellij        Adds panes, tabs, and sessions to the terminal"
-	"Ulauncher     Application launcher for Linux"
+	$MENU_ULAUNCHER
 	"<< Back       "
 )
 

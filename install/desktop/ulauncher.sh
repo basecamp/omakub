@@ -6,12 +6,12 @@ if [ "$ID" == "ubuntu" ]; then
   sudo add-apt-repository universe -y
   sudo add-apt-repository ppa:agornostal/ulauncher -y
 else
-  sudo apt update && sudo apt install -y gnupg
-  gpg --keyserver keyserver.ubuntu.com --recv 0xfaf1020699503176
-  gpg --export 0xfaf1020699503176 | sudo tee /usr/share/keyrings/ulauncher-archive-keyring.gpg > /dev/null
-  echo "deb [signed-by=/usr/share/keyrings/ulauncher-archive-keyring.gpg] \
-    http://ppa.launchpad.net/agornostal/ulauncher/ubuntu noble main" \
-    | sudo tee /etc/apt/sources.list.d/ulauncher-noble.list
+  cd /tmp
+  ULAUNCHER_VERSION=$(curl -s "https://api.github.com/repos/Ulauncher/Ulauncher/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
+  wget -qO ulauncher.deb "https://github.com/Ulauncher/Ulauncher/releases/latest/download/ulauncher_${ULAUNCHER_VERSION}_all.deb"
+  sudo apt install -y ./ulauncher.deb
+  rm ulauncher.deb
+  cd -
 fi
 
 sudo apt update
