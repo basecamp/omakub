@@ -1,7 +1,11 @@
 #!/bin/bash
 
-THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Ristretto" "Rose Pine" "Matte Black" "Osaka Jade")
-THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --height 12 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME_LIST=()
+while IFS= read -r path; do
+  THEME_LIST+=("$(basename "$path" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g')")
+done < <(find "$OMAKUB_PATH/themes/" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort)
+
+THEME=$(gum choose "${THEME_LIST[@]}" "<< Back" --header "Choose your theme" --height "$((${#THEME_LIST[@]} + 2))" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
   cp $OMAKUB_PATH/themes/$THEME/alacritty.toml ~/.config/alacritty/theme.toml
@@ -21,10 +25,6 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
   source $OMAKUB_PATH/themes/$THEME/gnome.sh
   source $OMAKUB_PATH/themes/$THEME/tophat.sh
   source $OMAKUB_PATH/themes/$THEME/vscode.sh
-
-  # Forgo setting the Chrome theme until we might find a less disruptive way of doing it.
-  # Having to quit Chrome, and all Chrome-based apps, is too much of an inposition.
-  # source $OMAKUB_PATH/themes/$THEME/chrome.sh
 fi
 
 source $OMAKUB_PATH/bin/omakub-sub/menu.sh
