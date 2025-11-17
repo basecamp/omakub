@@ -5,6 +5,8 @@
 if [ "$ID" == "ubuntu" ]; then
   sudo add-apt-repository universe -y
   sudo add-apt-repository ppa:agornostal/ulauncher -y
+  sudo apt update
+  sudo apt install ulauncher -y
 else
   cd /tmp
   ULAUNCHER_VERSION=$(curl -s "https://api.github.com/repos/Ulauncher/Ulauncher/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
@@ -13,9 +15,6 @@ else
   rm ulauncher.deb
   cd -
 fi
-
-sudo apt update
-sudo apt install ulauncher -y
 
 # Start ulauncher to have it populate config before we overwrite
 mkdir -p ~/.config/autostart/
