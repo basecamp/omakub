@@ -24,14 +24,15 @@ iso2sd() {
 
 # Create a desktop launcher for a web app
 web2app() {
-  if [ "$#" -ne 3 ]; then
-    echo "Usage: web2app <AppName> <AppURL> <IconURL> (IconURL must be in PNG -- use https://dashboardicons.com)"
+  if [ "$#" -lt 3 ] || [ "$#" -gt 4 ]; then
+    echo "Usage: web2app <AppName> <AppURL> <IconURL> <Profile (optional)> (IconURL must be in PNG -- use https://dashboardicons.com) (Profile should be one of Default, Profile 1, Profile 2, etc.)"
     return 1
   fi
 
   local APP_NAME="$1"
   local APP_URL="$2"
   local ICON_URL="$3"
+  local PROFILE="$4"
   local ICON_DIR="$HOME/.local/share/applications/icons"
   local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
   local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
@@ -43,12 +44,17 @@ web2app() {
     return 1
   fi
 
+  local CHROME_CMD="google-chrome --app=\"$APP_URL\" --name=\"$APP_NAME\" --class=\"$APP_NAME\" --window-size=800,600"
+  if [ -n "$PROFILE" ]; then
+    CHROME_CMD="$CHROME_CMD --profile-directory=\"$PROFILE\""
+  fi
+
   cat > "$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Version=1.0
 Name=$APP_NAME
 Comment=$APP_NAME
-Exec=google-chrome --app="$APP_URL" --name="$APP_NAME" --class="$APP_NAME" --window-size=800,600
+Exec=$CHROME_CMD
 Terminal=false
 Type=Application
 Icon=$ICON_PATH
