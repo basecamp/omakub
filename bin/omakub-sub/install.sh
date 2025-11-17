@@ -18,6 +18,7 @@ CHOICES=(
   "Ollama            Run LLMs, like Meta's Llama3, locally"
   "Retroarch         Play retro games"
   "Spotify           Stream music from the world's most popular service"
+  "Starship          Command line prompt for astronauts"
   "Steam             Play games from Valve's store"
   "Tailscale         Mesh VPN based on WireGuard and with Magic DNS"
   "VirtualBox        Virtual machines to run Windows/Linux"
@@ -27,7 +28,7 @@ CHOICES=(
   "<< Back           "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 26 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 27 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
@@ -50,6 +51,7 @@ else
   "ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
   "tailscale") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-tailscale.sh" ;;
   "geekbench") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-geekbench.sh" ;;
+  "starship") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/app-starship.sh" ;;
   *) INSTALLER_FILE="$OMAKUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
   esac
 
