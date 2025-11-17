@@ -2,7 +2,7 @@
 
 . /etc/os-release
 if [ "$ID" == "debian" ]; then
-  sudo apt install -y gnome-shell-extension-dashtodock
+  sudo apt install -y gnome-shell-extension-dashtodock yaru-theme-gtk yaru-theme-gnome-shell yaru-theme-icon yaru-theme-sound
 fi
 
 sudo apt install -y gnome-shell-extension-manager gir1.2-gtop-2.0 gir1.2-clutter-1.0
