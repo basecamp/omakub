@@ -22,7 +22,7 @@ ARCH=$(uname -m)
 if [ "$ARCH" != "x86_64" ]; then
   echo "$(tput setaf 1)Error: Unsupported architecture detected"
   echo "Current architecture: $ARCH"
-  echo "This installation is only supported on x86 architectures."
+  echo "This installation is only supported on x86_64 architectures."
   echo "Installation stopped."
   exit 1
 fi
