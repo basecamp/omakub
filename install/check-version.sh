@@ -17,12 +17,12 @@ if [ "$ID" != "ubuntu" ] || [ $(echo "$VERSION_ID >= 24.04" | bc) != 1 ]; then
   exit 1
 fi
 
-# Check if running on x86
+# Check if running on x86_64
 ARCH=$(uname -m)
-if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "i686" ]; then
+if [ "$ARCH" != "x86_64" ]; then
   echo "$(tput setaf 1)Error: Unsupported architecture detected"
   echo "Current architecture: $ARCH"
-  echo "This installation is only supported on x86 architectures (x86_64 or i686)."
+  echo "This installation is only supported on x86 architectures."
   echo "Installation stopped."
   exit 1
 fi
