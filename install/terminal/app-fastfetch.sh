@@ -5,9 +5,7 @@
 # Load OS release information
 . /etc/os-release
 if [ ! -f /etc/apt/sources.list.d/zhangsongcui3371-fastfetch.sources ]; then
-    sudo mkdir -p /etc/apt/keyrings
-    sudo rm -f /etc/apt/keyrings/zhangsongcui3371-fastfetch.asc
-
+    [ -f /etc/apt/keyrings/zhangsongcui3371-fastfetch.asc ] && sudo rm /etc/apt/keyrings/zhangsongcui3371-fastfetch.asc
     curl -fsSL \
         "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xeb65ee19d802f3eb1a13cfe47e2e5cb4d4865f21" \
         | sudo tee /etc/apt/keyrings/zhangsongcui3371-fastfetch.asc > /dev/null
