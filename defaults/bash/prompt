@@ -3,5 +3,10 @@ force_color_prompt=yes
 color_prompt=yes
 
 # Simple prompt with path in the window/pane title and caret for typing line
-PS1=$'\uf0a9 '
-PS1="\[\e]0;\w\a\]$PS1"
+if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
+	# Only change prompt if in graphical mode AND Nerd Font is available
+	if command -v fc-list >/dev/null 2>&1 && fc-list | grep -qi "Nerd Font"; then
+		PS1=$'\uf0a9 '
+		PS1="\[\e]0;\w\a\]$PS1"
+	fi
+fi
