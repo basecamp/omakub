@@ -11,4 +11,4 @@ source ~/.local/share/omakub/defaults/bash/shell
 # Configure the inputrc using Omakub defaults
 cp ~/.local/share/omakub/configs/inputrc ~/.inputrc
 
-cp ~/.local/share/omakub//config/starship.toml ~/.config/starship.toml
+cp ~/.local/share/omakub/config/starship.toml ~/.config/starship.toml
