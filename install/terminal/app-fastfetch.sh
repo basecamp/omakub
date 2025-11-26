@@ -2,7 +2,6 @@
 
 # Display system information in the terminal
 if [ ! -f /etc/apt/sources.list.d/zhangsongcui3371-fastfetch.sources ]; then
-	sudo apt install -y gnupg
 	[ -f /etc/apt/keyrings/zhangsongcui3371-fastfetch.gpg ] && sudo rm /etc/apt/keyrings/zhangsongcui3371-fastfetch.gpg
 	gpg --keyserver keyserver.ubuntu.com --recv 0x7e2e5cb4d4865f21
 	gpg --export 0x7e2e5cb4d4865f21 | sudo tee /usr/share/keyrings/zhangsongcui3371-fastfetch.gpg >/dev/null
