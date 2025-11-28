@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p ~/.config/qt5ct ~/.config/qt6ct
+mkdir -p ~/.config/qt6ct
 OMAKUB_THEME_PEFER=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 if [[ "$OMAKUB_THEME_PEFER" == "prefer-dark" ]]; then
     OMAKUB_THEME_SUFFIX="-Dark"
