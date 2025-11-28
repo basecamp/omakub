@@ -28,7 +28,7 @@ OMAKUB_THEME_FONTANDSIZE_MONO='"'$(gsettings get org.gnome.desktop.interface mon
 printf "%s\n" \
     "[Appearance]" \
     "custom_palette=false" \
-    "icon_theme=Yaru$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")" \
+    "icon_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")" \
     "standard_dialogs=gtk3" \
     "style=Adwaita${OMAKUB_THEME_SUFFIX}" \
     "" \
