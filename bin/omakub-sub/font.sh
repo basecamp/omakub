@@ -18,7 +18,11 @@ set_font() {
 		source $OMAKUB_PATH/ascii.sh
 	fi
 
-	gsettings set org.gnome.desktop.interface monospace-font-name "$font_name 10"
+	OMAKUB_CURRENT_FONT_SIZE=$(gsettings get org.gnome.desktop.interface font-name | tr -d "'" | awk '{print $NF}')
+	gsettings set org.gnome.desktop.interface font-name "$font_name $OMAKUB_CURRENT_FONT_SIZE"
+	gsettings set org.gnome.desktop.interface monospace-font-name "$font_name Mono $OMAKUB_CURRENT_FONT_SIZE"
+	source "$OMAKUB_PATH/themes/set-qt6-theme.sh"
+
 	cp "$OMAKUB_PATH/configs/alacritty/fonts/$file_name.toml" ~/.config/alacritty/font.toml
 	sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$font_name\"/g" ~/.config/Code/User/settings.json
 }
