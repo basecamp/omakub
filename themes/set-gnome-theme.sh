@@ -48,43 +48,6 @@ gsettings set org.gnome.desktop.interface icon-theme "Yaru${OMAKUB_THEME_STYLE}$
 GNOME_CURRENT_ACCENTS=$(omaku_get_accent "${OMAKUB_THEME_ACCENT[@]}")
 gsettings set org.gnome.desktop.interface accent-color "$GNOME_CURRENT_ACCENTS" 2>/dev/null || true
 
-mkdir -p ~/.config/qt6ct
-
-if [[ "$OMAKUB_THEME_PEFER" == "dark" ]]; then
-    OMAKUB_THEME_SUFFIX="-Dark"
-fi
-
-OMAKUB_THEME_FONTANDSIZE='"'$(gsettings get org.gnome.desktop.interface font-name | tr -d "'" | awk '{
-    size = $NF;
-    name = "";
-    for (i = 1; i < NF; i++) {
-        if (i > 1) name = name " ";
-        name = name $i;
-    }
-    print name "," size;
-}')'"'
-OMAKUB_THEME_FONTANDSIZE_MONO='"'$(gsettings get org.gnome.desktop.interface monospace-font-name | tr -d "'" | awk '{
-    size = $NF;
-    name = "";
-    for (i = 1; i < NF; i++) {
-        if (i > 1) name = name " ";
-        name = name $i;
-    }
-    print name "," size;
-}')'"'
-
-printf "%s\n" \
-    "[Appearance]" \
-    "custom_palette=false" \
-    "icon_theme=Yaru${OMAKUB_THEME_STYLE}${OMAKUB_THEME_SUFFIX}" \
-    "standard_dialogs=gtk3" \
-    "style=Adwaita${OMAKUB_THEME_SUFFIX}" \
-    "" \
-    "[Fonts]" \
-    "general=$OMAKUB_THEME_FONTANDSIZE" \
-    "fixed=$OMAKUB_THEME_FONTANDSIZE_MONO" \
-    "" |
-    tee ~/.config/qt6ct/qt6ct.conf >/dev/null
 
 BACKGROUND_ORG_PATH="$HOME/.local/share/omakub/themes/$OMAKUB_THEME_BACKGROUND"
 BACKGROUND_DEST_DIR="$HOME/.local/share/backgrounds"
