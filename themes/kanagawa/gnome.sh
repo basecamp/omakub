@@ -4,4 +4,4 @@ OMAKUB_THEME_PEFER="dark"
 OMAKUB_THEME_STYLE=""
 OMAKUB_THEME_ACCENT=("bark" "yellow")
 OMAKUB_THEME_BACKGROUND="kanagawa/background.jpg"
-source "$OMAKUB_PATH"/themes/set-gnome-theme.sh
+source "$OMAKUB_PATH/themes/set-gnome-theme.sh"
