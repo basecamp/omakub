@@ -25,6 +25,12 @@ if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
   # Forgo setting the Chrome theme until we might find a less disruptive way of doing it.
   # Having to quit Chrome, and all Chrome-based apps, is too much of an inposition.
   # source $OMAKUB_PATH/themes/$THEME/chrome.sh
+
+  # qBittorrent theme (only if qBittorrent is installed)
+  if [ -d "$HOME/.config/qBittorrent" ] && [ -f "$OMAKUB_PATH/themes/$THEME/qbittorrent.qbtheme" ]; then
+    mkdir -p ~/.config/qBittorrent/themes
+    cp $OMAKUB_PATH/themes/$THEME/qbittorrent.qbtheme ~/.config/qBittorrent/themes/theme.qbtheme
+  fi
 fi
 
 source $OMAKUB_PATH/bin/omakub-sub/menu.sh
