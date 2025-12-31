@@ -4,6 +4,11 @@ fi
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init bash)"
+  # Only alias cd to z if __zoxide_z function was properly initialized
+  # This prevents broken alias in non-interactive shells (e.g., Claude Code)
+  if declare -f __zoxide_z &> /dev/null; then
+    alias cd='z'
+  fi
 fi
 
 if command -v fzf &> /dev/null; then
