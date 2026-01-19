@@ -17,9 +17,11 @@ gum style --border double --padding "1 2" --border-foreground 212 \
   "" \
   "This will:" \
   "  - Backup current config" \
-  "  - Install $target_shell config" \
-  "  - Migrate your customizations" \
-  "  - Change default login shell"
+  "  - Install fresh $target_shell config" \
+  "  - Change default login shell" \
+  "" \
+  "Note: You'll need to manually copy" \
+  "your customizations to the new shell."
 
 echo ""
 if ! gum confirm "Proceed?"; then
@@ -105,12 +107,6 @@ case $target_shell in
     echo "Configuring Zsh..."
     cp $OMAKUB_PATH/configs/zshrc ~/.zshrc
 
-    if [ -f "$customizations" ]; then
-      echo "" >> ~/.zshrc
-      cat "$customizations" >> ~/.zshrc
-      echo "Customizations migrated"
-    fi
-
     echo "Setting default shell..."
     sudo chsh -s "$zsh_path" $USER
     echo "Default shell: Zsh"
@@ -122,12 +118,6 @@ case $target_shell in
     echo "Configuring Bash..."
     cp $OMAKUB_PATH/configs/bashrc ~/.bashrc
     cp $OMAKUB_PATH/configs/inputrc ~/.inputrc
-
-    if [ -f "$customizations" ]; then
-      echo "" >> ~/.bashrc
-      cat "$customizations" >> ~/.bashrc
-      echo "Customizations migrated"
-    fi
 
     echo "Setting default shell..."
     sudo chsh -s "$bash_path" $USER
@@ -146,8 +136,22 @@ gum style --border double --padding "1 2" --border-foreground 82 \
   "SWITCH COMPLETE" \
   "" \
   "Changed: $current_shell -> $target_shell" \
-  "Backup:  $backup_dir" \
-  "" \
+  "Backup:  $backup_dir"
+
+if [ -f "$customizations" ]; then
+  echo ""
+  gum style --foreground 214 \
+    "Your customizations were saved to:" \
+    "  $customizations" \
+    "" \
+    "Review and copy them to your new" \
+    "shell config (~/.${target_shell}rc)." \
+    "Some commands may need adjustment" \
+    "for the new shell (e.g., init bash -> init zsh)."
+fi
+
+echo ""
+gum style \
   "To activate:" \
   "  - Log out and back in, OR" \
   "  - Run: exec $target_shell"
