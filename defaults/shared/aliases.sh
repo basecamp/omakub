@@ -1,3 +1,8 @@
+# ============================================
+# OMAKUB SHARED ALIASES
+# Compatible with: bash, zsh
+# ============================================
+
 # File system
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
@@ -13,7 +18,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Tools
-n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
 alias g='git'
 alias d='docker'
 alias r='rails'

@@ -1,0 +1,11 @@
+# ============================================
+# OMAKUB ZSH PROMPT
+# ============================================
+
+autoload -Uz colors && colors
+
+# Minimal prompt matching Omakub aesthetic
+PROMPT=$'%F{white}\uf0a9%f '
+
+# Working directory in terminal title
+precmd() { print -Pn "\e]0;%~\a" }

@@ -1,15 +1,16 @@
 # ============================================
-# OMAKUB BASH RC - Main Loader
+# OMAKUB ZSH RC - Main Loader
 # ============================================
 
-# Bash-specific settings first
-source ~/.local/share/omakub/defaults/bash/shell
+# Zsh-specific settings first
+source ~/.local/share/omakub/defaults/zsh/shell
 
 # Shared configs (bash/zsh compatible)
 source ~/.local/share/omakub/defaults/shared/environment.sh
 source ~/.local/share/omakub/defaults/shared/aliases.sh
 source ~/.local/share/omakub/defaults/shared/functions.sh
 
-# Bash-specific configs
-source ~/.local/share/omakub/defaults/bash/prompt
-source ~/.local/share/omakub/defaults/bash/init
+# Zsh-specific configs
+source ~/.local/share/omakub/defaults/zsh/prompt
+source ~/.local/share/omakub/defaults/zsh/init
+source ~/.local/share/omakub/defaults/zsh/completions.zsh

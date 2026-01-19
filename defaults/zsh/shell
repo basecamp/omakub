@@ -1,0 +1,21 @@
+# ============================================
+# OMAKUB ZSH-SPECIFIC SHELL SETTINGS
+# ============================================
+
+# Zsh options for bash compatibility
+setopt NO_CASE_GLOB          # Case-insensitive globbing
+setopt NULL_GLOB             # No error on failed glob
+setopt KSH_ARRAYS            # 0-indexed arrays like bash
+setopt SH_WORD_SPLIT         # Word splitting like bash
+setopt NO_NOMATCH            # Pass failed globs as literal
+
+# Zsh-specific enhancements
+setopt AUTO_CD               # cd by typing directory name
+setopt CORRECT               # Command correction
+setopt APPEND_HISTORY        # Append to history
+setopt HIST_IGNORE_DUPS      # No duplicate history entries
+setopt HIST_IGNORE_SPACE     # Ignore commands starting with space
+setopt SHARE_HISTORY         # Share history between sessions
+
+# History file location
+HISTFILE=~/.zsh_history
