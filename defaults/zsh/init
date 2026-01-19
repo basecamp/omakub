@@ -3,8 +3,12 @@
 # ============================================
 
 # mise (version manager)
+# Note: mise's activation script uses $+functions[...] syntax which is
+# incompatible with KSH_ARRAYS. Temporarily disable it during activation.
 if command -v mise &> /dev/null; then
+  setopt NO_KSH_ARRAYS
   eval "$(mise activate zsh)"
+  setopt KSH_ARRAYS
 fi
 
 # zoxide (smart cd)
