@@ -126,21 +126,26 @@ app2folder-remove() {
 
   if [[ "$CURRENT_APPS" == *"$DESKTOP_FILE"* ]]; then
     local RAW_LIST=$(echo "$CURRENT_APPS" | tr -d "[]'")
-    IFS=',' read -ra APPS_ARRAY <<< "$RAW_LIST"
 
-    # Filter out the app to be removed
-    local NEW_APPS=()
-    for app in "${APPS_ARRAY[@]}"; do
+    # Split by comma - compatible with both bash and zsh
+    local NEW_APPS=""
+    local OLDIFS="$IFS"
+    IFS=','
+    for app in $RAW_LIST; do
+      IFS="$OLDIFS"
       app=$(echo "$app" | xargs) # trim spaces
       if [[ "$app" != "$DESKTOP_FILE" && -n "$app" ]]; then
-        NEW_APPS+=("'$app'")
+        if [[ -n "$NEW_APPS" ]]; then
+          NEW_APPS="$NEW_APPS,'$app'"
+        else
+          NEW_APPS="'$app'"
+        fi
       fi
+      IFS=','
     done
+    IFS="$OLDIFS"
 
-    # Join list again
-    local NEW_LIST=$(IFS=, ; echo "${NEW_APPS[*]}")
-
-    gsettings set "$SCHEMA" apps "[$NEW_LIST]"
+    gsettings set "$SCHEMA" apps "[$NEW_APPS]"
   fi
 }
 
