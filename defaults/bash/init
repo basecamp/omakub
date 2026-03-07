@@ -4,6 +4,20 @@ fi
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init bash)"
+  # Smart cd: use builtin for direct paths, zoxide for fuzzy matching
+  # This is more efficient and handles non-interactive shells gracefully
+  cd() {
+    if [ $# -eq 0 ]; then
+      builtin cd ~
+    elif [ -d "$1" ]; then
+      builtin cd "$1"
+    elif declare -f __zoxide_z &>/dev/null; then
+      __zoxide_z "$@"
+    else
+      # Fallback for non-interactive shells where zoxide isn't available
+      builtin cd "$@"
+    fi
+  }
 fi
 
 if command -v fzf &> /dev/null; then
