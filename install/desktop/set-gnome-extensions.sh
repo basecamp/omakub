@@ -21,6 +21,38 @@ gext install undecorate@sun.wxg@gmail.com
 gext install tophat@fflewddur.github.io
 gext install AlphabeticalAppGrid@stuarthayhurst
 
+# Install local theme switcher extension
+OMAKUB_PATH="${OMAKUB_PATH:-$HOME/.local/share/omakub}"
+EXTENSIONS_DIR="$HOME/.local/share/gnome-shell/extensions"
+LOCAL_THEME_EXT_SRC="$OMAKUB_PATH/extensions/omakub-theme@szamski"
+LOCAL_THEME_EXT_DST="$EXTENSIONS_DIR/omakub-theme@szamski"
+THEME_ICON_SRC="$OMAKUB_PATH/icons/omakub-theme-symbolic.svg"
+THEME_ICON_DST="$HOME/.local/share/icons/hicolor/scalable/apps/omakub-theme-symbolic.svg"
+
+if [[ -d "$LOCAL_THEME_EXT_SRC" ]]; then
+  echo "Installing Omakub Theme Switcher extension..."
+  mkdir -p "$EXTENSIONS_DIR"
+  rm -rf "$LOCAL_THEME_EXT_DST"
+  cp -r "$LOCAL_THEME_EXT_SRC" "$LOCAL_THEME_EXT_DST"
+  chmod -R go-w "$LOCAL_THEME_EXT_DST" >/dev/null 2>&1 || true
+  # Enable extension via gsettings (works before GNOME Shell detects it)
+  CURRENT_EXTENSIONS=$(gsettings get org.gnome.shell enabled-extensions)
+  if [[ "$CURRENT_EXTENSIONS" != *"omakub-theme@szamski"* ]]; then
+    if [[ "$CURRENT_EXTENSIONS" == "@as []" ]]; then
+      gsettings set org.gnome.shell enabled-extensions "['omakub-theme@szamski']"
+    else
+      NEW_EXTENSIONS=$(echo "$CURRENT_EXTENSIONS" | sed "s/]$/, 'omakub-theme@szamski']/")
+      gsettings set org.gnome.shell enabled-extensions "$NEW_EXTENSIONS"
+    fi
+  fi
+  echo "✓ Omakub Theme Switcher extension installed"
+fi
+
+if [[ -f "$THEME_ICON_SRC" ]]; then
+  mkdir -p "$(dirname "$THEME_ICON_DST")"
+  cp "$THEME_ICON_SRC" "$THEME_ICON_DST"
+fi
+
 # Compile gsettings schemas in order to be able to set them
 sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
 sudo cp ~/.local/share/gnome-shell/extensions/just-perfection-desktop\@just-perfection/schemas/org.gnome.shell.extensions.just-perfection.gschema.xml /usr/share/glib-2.0/schemas/

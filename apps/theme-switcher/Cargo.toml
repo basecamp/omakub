@@ -1,0 +1,8 @@
+[package]
+name = "omakub-theme-switcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtk4 = "0.8"
+glib = "0.19"

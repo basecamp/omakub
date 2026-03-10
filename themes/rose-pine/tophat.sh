@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#e92020"
+# Configure TopHat if installed
+gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#e92020" 2>/dev/null || true

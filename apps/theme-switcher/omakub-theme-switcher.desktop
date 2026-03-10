@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Omakub Theme Switcher
+Comment=Choose and apply Omakub themes
+Exec=%h/.local/bin/omakub-theme-switcher
+Icon=omakub-theme-symbolic
+Terminal=false
+Categories=Settings;GTK;
+StartupWMClass=io.omakub.ThemeSwitcher

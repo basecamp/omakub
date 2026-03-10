@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#214237"
+# Configure TopHat if installed
+gsettings set org.gnome.shell.extensions.tophat meter-fg-color "#214237" 2>/dev/null || true

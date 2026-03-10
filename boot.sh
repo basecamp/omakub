@@ -17,14 +17,12 @@ echo -e "\nBegin installation (or abort with ctrl+c)..."
 sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
-echo "Cloning Omakub..."
+echo "Cloning Omakub by Szamski..."
 rm -rf ~/.local/share/omakub
-git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
-if [[ $OMAKUB_REF != "master" ]]; then
-	cd ~/.local/share/omakub
-	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
-	cd -
-fi
+git clone https://github.com/szamski/Omakub_by_Szamski.git ~/.local/share/omakub >/dev/null
+cd ~/.local/share/omakub
+git fetch origin "${OMAKUB_REF:-master}" && git checkout "${OMAKUB_REF:-master}"
+cd -
 
 echo "Installation starting..."
 source ~/.local/share/omakub/install.sh

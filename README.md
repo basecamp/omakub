@@ -4,6 +4,12 @@ Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern 
 
 Watch the introduction video and read more at [omakub.org](https://omakub.org).
 
+## Install
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/szamski/Omakub_by_Szamski/main/boot.sh)
+```
+
 ## Contributing to the documentation
 
 Please help us improve Omakub's documentation on the [basecamp/omakub-site repository](https://github.com/basecamp/omakub-site).

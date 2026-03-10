@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -d "$SCRIPT_DIR/../install" ]]; then
+  OMAKUB_PATH="$(cd "$SCRIPT_DIR/.." && pwd)"
+else
+  OMAKUB_PATH="${OMAKUB_PATH:-$HOME/.local/share/omakub}"
+fi
+
+APP_DIR="$OMAKUB_PATH/apps/theme-switcher"
+BIN="$APP_DIR/target/release/omakub-theme-switcher"
+
+if [[ ! -x "$BIN" ]]; then
+  echo "Theme switcher binary not found: $BIN"
+  exit 1
+fi
+
+OMAKUB_PATH="$OMAKUB_PATH" "$BIN"
