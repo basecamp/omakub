@@ -4,6 +4,8 @@ HISTCONTROL=ignoreboth
 HISTSIZE=32768
 HISTFILESIZE="${HISTSIZE}"
 
+export QT_QPA_PLATFORMTHEME="qt6ct"
+
 # Autocompletion
 source /usr/share/bash-completion/bash_completion
 
