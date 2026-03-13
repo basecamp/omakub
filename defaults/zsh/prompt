@@ -1,0 +1,12 @@
+# ============================================
+# OMAKUB ZSH PROMPT
+# ============================================
+
+# Minimal prompt matching Omakub aesthetic (Nerd Font arrow icon)
+# Using the actual unicode character to avoid escape issues
+PROMPT=$'%F{white}\uf0a9%f '
+
+# Working directory in terminal title
+precmd() {
+  print -Pn "\e]0;%~\a"
+}

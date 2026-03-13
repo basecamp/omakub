@@ -1,14 +1,11 @@
-# History control
+# ============================================
+# OMAKUB BASH-SPECIFIC SHELL SETTINGS
+# ============================================
+
+# Bash-specific options
 shopt -s histappend
 HISTCONTROL=ignoreboth
-HISTSIZE=32768
-HISTFILESIZE="${HISTSIZE}"
+set +h  # Disable hashing for dynamic PATH
 
-# Autocompletion
+# Bash completion
 source /usr/share/bash-completion/bash_completion
-
-# Set complete path
-export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:$PATH"
-set +h
-
-export OMAKUB_PATH="$HOME/.local/share/omakub"

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Shell selection
+AVAILABLE_SHELLS=("Bash (default)" "Zsh")
+export OMAKUB_SHELL=$(gum choose "${AVAILABLE_SHELLS[@]}" --header "Select your preferred shell")
+
 # Only ask for default desktop app choices when running Gnome
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
   OPTIONAL_APPS=("1password" "Spotify" "Zoom" "Dropbox")

@@ -1,0 +1,28 @@
+# ============================================
+# OMAKUB ZSH TOOL INITIALIZATION
+# ============================================
+
+# mise (version manager)
+# Note: mise's activation script uses $+functions[...] syntax which is
+# incompatible with KSH_ARRAYS. Temporarily disable it during activation.
+if command -v mise &> /dev/null; then
+  setopt NO_KSH_ARRAYS
+  eval "$(mise activate zsh)"
+  setopt KSH_ARRAYS
+fi
+
+# zoxide (smart cd)
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# fzf (fuzzy finder)
+if command -v fzf &> /dev/null; then
+  # Try different possible locations for fzf zsh files
+  if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+  fi
+  if [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
+    source /usr/share/doc/fzf/examples/completion.zsh
+  fi
+fi
