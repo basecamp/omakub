@@ -11,5 +11,9 @@ themes {
         cyan 42 195 222
         white 192 202 245
         orange 255 158 100
+
+        // For a more obvious text highlight
+        selection_background "#e0af68" // This is the hex for your 'yellow'
+        selection_foreground "#1a1b26" // This is the hex for your 'bg'
     }
 }
