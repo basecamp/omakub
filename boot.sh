@@ -15,10 +15,15 @@ echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 . /etc/os-release
 if [ "$ID" = "fedora" ]; then
+  echo "=> Detected distro: Fedora $VERSION_ID — using Fedora build."
   sudo dnf install -y git >/dev/null
-else
+elif [ "$ID" = "ubuntu" ]; then
+  echo "=> Detected distro: Ubuntu $VERSION_ID — using Ubuntu build."
   sudo apt-get update >/dev/null
   sudo apt-get install -y git >/dev/null
+else
+  echo "Error: Unsupported distro '$ID'. Onyx supports Ubuntu 26.04 LTS and Fedora 40+."
+  exit 1
 fi
 
 echo "Cloning Onyx..."
@@ -31,7 +36,6 @@ if [[ -n $ONYX_REF && $ONYX_REF != "master" ]]; then
 fi
 
 echo "Installation starting..."
-. /etc/os-release
 if [ "$ID" = "fedora" ]; then
   source ~/.local/share/onyx/fedora/install.sh
 else
