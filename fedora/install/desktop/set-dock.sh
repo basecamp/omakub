@@ -11,7 +11,7 @@ apps=(
 	"Onyx.desktop"
 	"org.gnome.Settings.desktop"
 	"org.gnome.Nautilus.desktop"
-	"localsend_app.desktop"
+	"org.localsend.localsend_app.desktop"
 )
 
 # Array to hold installed favorite apps
