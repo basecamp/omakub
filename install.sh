@@ -3,13 +3,6 @@
 # Give people a chance to retry running the installation
 trap 'echo "Onyx installation failed! You can retry by running: bash ~/.local/share/onyx/install.sh"' ERR
 
-# Route Fedora users to the correct installer
-. /etc/os-release
-if [ "$ID" = "fedora" ]; then
-  source ~/.local/share/onyx/fedora/install.sh
-  exit 0
-fi
-
 # Check the distribution name and version and abort if incompatible
 source ~/.local/share/onyx/install/check-version.sh
 

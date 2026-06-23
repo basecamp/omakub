@@ -1,0 +1,15 @@
+themes {
+    lunar-peaks {
+        fg 232 234 240
+        bg 13 17 23
+        black 28 32 40
+        red 255 107 107
+        green 0 229 200
+        yellow 255 179 71
+        blue 79 195 247
+        magenta 156 143 212
+        cyan 0 229 200
+        white 201 209 217
+        orange 255 179 71
+    }
+}

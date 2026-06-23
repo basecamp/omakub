@@ -11,7 +11,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/ubuntu-26.04%20LTS-E95420?style=flat-square&logo=ubuntu&logoColor=white" />
-  <img src="https://img.shields.io/badge/fedora-40+-51A2DA?style=flat-square&logo=fedora&logoColor=white" />
   <img src="https://img.shields.io/badge/version-1.0.0-7C3AED?style=flat-square" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" />
 </p>
@@ -24,7 +23,7 @@
 wget -qO- https://raw.githubusercontent.com/Vicjocaso/onyx-setup/master/boot.sh | bash
 ```
 
-> **Note:** Onyx automatically detects your distro and uses the correct build. Supported: Ubuntu 26.04 LTS and Fedora 40+.
+> **Note:** Onyx is designed for Ubuntu 26.04 LTS.
 
 ## What You Get
 
@@ -96,12 +95,10 @@ Onyx ships with multiple themes that change your desktop, terminal, and VS Code 
 - Catppuccin
 - Nord
 - Everforest
-- Gruvbox
-- Kanagawa
 - Ristretto
-- Rose Pine
 - Matte Black
-- Osaka Jade
+- Lunar Peaks
+- Neon Circuit
 
 ## Post-Install
 
@@ -122,7 +119,7 @@ From there you can:
 
 ## Requirements
 
-- **Ubuntu 26.04 LTS** or **Fedora 40+** (fresh install recommended)
+- **Ubuntu 26.04 LTS** (fresh install recommended)
 - GNOME desktop environment
 - Internet connection
 - sudo access

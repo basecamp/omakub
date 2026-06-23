@@ -10,19 +10,16 @@ echo " ██    ██ ██  ██ ██    ██     ██ ██"
 echo "  ██████  ██   ████    ██    ██   ██"
 echo "          artificial-softworks"
 echo ""
-echo "=> Onyx supports Ubuntu 26.04 LTS and Fedora 40+."
+echo "=> Onyx supports Ubuntu 26.04 LTS."
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 . /etc/os-release
-if [ "$ID" = "fedora" ]; then
-  echo "=> Detected distro: Fedora $VERSION_ID — using Fedora build."
-  sudo dnf install -y git >/dev/null
-elif [ "$ID" = "ubuntu" ]; then
+if [ "$ID" = "ubuntu" ]; then
   echo "=> Detected distro: Ubuntu $VERSION_ID — using Ubuntu build."
   sudo apt-get update >/dev/null
   sudo apt-get install -y git >/dev/null
 else
-  echo "Error: Unsupported distro '$ID'. Onyx supports Ubuntu 26.04 LTS and Fedora 40+."
+  echo "Error: Unsupported distro '$ID'. Onyx supports Ubuntu 26.04 LTS."
   exit 1
 fi
 
@@ -36,8 +33,4 @@ if [[ -n $ONYX_REF && $ONYX_REF != "master" ]]; then
 fi
 
 echo "Installation starting..."
-if [ "$ID" = "fedora" ]; then
-  source ~/.local/share/onyx/fedora/install.sh
-else
-  source ~/.local/share/onyx/install.sh
-fi
+source ~/.local/share/onyx/install.sh

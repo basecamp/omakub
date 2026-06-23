@@ -1,0 +1,15 @@
+themes {
+    neon-circuit {
+        fg 205 214 244
+        bg 8 13 26
+        black 17 24 39
+        red 255 64 129
+        green 0 230 118
+        yellow 255 215 64
+        blue 41 121 255
+        magenta 224 64 251
+        cyan 0 229 255
+        white 160 174 192
+        orange 255 171 64
+    }
+}
