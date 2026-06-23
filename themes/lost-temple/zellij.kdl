@@ -1,0 +1,15 @@
+themes {
+    lost-temple {
+        fg 216 200 160
+        bg 15 26 10
+        black 26 42 16
+        red 160 72 40
+        green 58 106 42
+        yellow 200 160 80
+        blue 74 106 80
+        magenta 122 90 48
+        cyan 90 138 80
+        white 138 122 80
+        orange 232 192 96
+    }
+}

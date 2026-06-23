@@ -1,0 +1,15 @@
+themes {
+    chalk-board {
+        fg 212 212 212
+        bg 28 28 28
+        black 42 42 42
+        red 192 96 96
+        green 128 168 128
+        yellow 200 184 112
+        blue 112 144 176
+        magenta 144 128 160
+        cyan 112 160 168
+        white 160 160 160
+        orange 192 152 96
+    }
+}

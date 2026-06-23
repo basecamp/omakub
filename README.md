@@ -100,6 +100,11 @@ Onyx ships with multiple themes that change your desktop, terminal, and VS Code 
 - Lunar Peaks
 - Neon Circuit
 - Forest Haven
+- Castle Dusk
+- Autumn Walk
+- Chalk Board
+- Lost Temple
+- Azure Canyon
 
 ## Post-Install
 

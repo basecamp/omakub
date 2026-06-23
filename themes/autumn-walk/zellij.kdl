@@ -1,0 +1,15 @@
+themes {
+    autumn-walk {
+        fg 240 216 176
+        bg 42 24 8
+        black 58 32 16
+        red 192 72 32
+        green 122 96 48
+        yellow 232 114 42
+        blue 128 96 80
+        magenta 160 96 64
+        cyan 176 128 80
+        white 192 160 112
+        orange 240 168 64
+    }
+}

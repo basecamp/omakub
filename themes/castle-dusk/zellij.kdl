@@ -1,0 +1,15 @@
+themes {
+    castle-dusk {
+        fg 216 207 192
+        bg 22 17 30
+        black 35 28 42
+        red 192 80 64
+        green 106 138 90
+        yellow 240 168 48
+        blue 106 122 138
+        magenta 138 106 154
+        cyan 122 154 176
+        white 160 144 128
+        orange 232 132 58
+    }
+}

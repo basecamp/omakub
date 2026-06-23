@@ -1,0 +1,15 @@
+themes {
+    azure-canyon {
+        fg 200 216 224
+        bg 15 26 32
+        black 26 42 48
+        red 160 88 72
+        green 74 138 96
+        yellow 160 168 88
+        blue 74 138 170
+        magenta 122 122 170
+        cyan 64 200 184
+        white 122 138 144
+        orange 192 152 96
+    }
+}
