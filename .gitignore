@@ -1,0 +1,4 @@
+# Onyx TUI build artifacts (downloaded at install / built locally, never committed)
+/bin/onyx-tui
+/tui/onyx-tui
+/tui/onyx-tui_*

@@ -114,7 +114,8 @@ After installation, open the **Onyx** app from your app grid or run:
 onyx
 ```
 
-From there you can:
+This launches the Onyx control panel — an animated [Bubble Tea](https://github.com/charmbracelet/bubbletea)
+TUI (see [`tui/`](tui/)). From there you can:
 
 - **Theme** — Change your entire look and feel
 - **Font** — Switch terminal fonts

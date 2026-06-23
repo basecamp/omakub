@@ -1,4 +1,11 @@
 #!/bin/bash
 
+# Prefer the Bubble Tea control panel when the binary is present.
+TUI="$ONYX_PATH/bin/onyx-tui"
+if [ -x "$TUI" ]; then
+	exec "$TUI" "$@"
+fi
+
+# Fallback: legacy gum-based bash menu (used if the binary is missing).
 source $ONYX_PATH/bin/onyx-sub/header.sh
 source $ONYX_PATH/bin/onyx-sub/menu.sh

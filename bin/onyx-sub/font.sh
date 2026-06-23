@@ -1,26 +1,8 @@
 #!/bin/bash
 
-set_font() {
-	local font_name=$1
-	local url=$2
-	local file_type=$3
-	local file_name="${font_name/ Nerd Font/}"
-
-	if ! $(fc-list | grep -i "$font_name" >/dev/null); then
-		cd /tmp
-		wget -O "$file_name.zip" "$url"
-		unzip "$file_name.zip" -d "$file_name"
-		cp "$file_name"/*."$file_type" ~/.local/share/fonts
-		rm -rf "$file_name.zip" "$file_name"
-		fc-cache
-		cd -
-		clear
-		source $ONYX_PATH/ascii.sh
-	fi
-
-	gsettings set org.gnome.desktop.interface monospace-font-name "$font_name 10"
-	sed -i "s/\"editor.fontFamily\": \".*\"/\"editor.fontFamily\": \"$font_name\"/g" ~/.config/Code/User/settings.json
-}
+# Shared font-setting logic (set_font) lives in set-font.sh so the Bubble Tea
+# TUI and this menu stay in sync.
+source $ONYX_PATH/bin/onyx-sub/set-font.sh
 
 if [ "$#" -gt 1 ]; then
 	choice=${!#}
