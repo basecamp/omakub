@@ -1,0 +1,15 @@
+themes {
+    forest-haven {
+        fg 216 213 200
+        bg 18 20 15
+        black 30 33 24
+        red 192 97 74
+        green 74 124 89
+        yellow 212 168 90
+        blue 106 143 168
+        magenta 138 122 106
+        cyan 90 138 120
+        white 138 154 135
+        orange 240 200 122
+    }
+}

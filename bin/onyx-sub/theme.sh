@@ -1,6 +1,6 @@
 #!/bin/bash
 
-THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Ristretto" "Matte Black" "Lunar Peaks" "Neon Circuit")
+THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Ristretto" "Matte Black" "Lunar Peaks" "Neon Circuit" "Forest Haven")
 THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --height 12 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then

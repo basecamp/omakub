@@ -99,6 +99,7 @@ Onyx ships with multiple themes that change your desktop, terminal, and VS Code 
 - Matte Black
 - Lunar Peaks
 - Neon Circuit
+- Forest Haven
 
 ## Post-Install
 
