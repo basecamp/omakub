@@ -14,7 +14,7 @@ sudo bash -c "cat > $DESKTOP_FILE" <<EOL
 Name=Cursor
 Comment=AI-powered code editor
 Exec=/opt/cursor.appimage --no-sandbox
-Icon=/home/$USER/.local/share/omakub/applications/icons/cursor.png
+Icon=$HOME/.local/share/omakub/applications/icons/cursor.png
 Type=Application
 Categories=Development;IDE;
 EOL
