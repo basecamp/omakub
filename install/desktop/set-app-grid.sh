@@ -22,7 +22,10 @@ gsettings set org.gnome.desktop.app-folders folder-children "['Utilities', 'Sund
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updates/ name 'Install & Update'
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updates/ apps "['org.gnome.Software.desktop', 'software-properties-drivers.desktop', 'software-properties-gtk.desktop', 'update-manager.desktop', 'firmware-updater_firmware-updater.desktop', 'snap-store_snap-store.desktop']"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Xtra/ name 'Xtra'
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Xtra/ apps "['org.Characters.desktop', 'gnome-language-selector.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.Logs.desktop', 'yelp.desktop', 'org.gnome.Yelp.desktop', 'org.gnome.eog.desktop', 'org.gnome.Sysprof.desktop' ]"
+# Both the old and new ids are listed where Gnome renamed an app (Characters gained
+# its org.gnome prefix, Eye of Gnome became Loupe, Yelp gained one), so the folder
+# works whichever release is underneath. Ids with no installed app are ignored.
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Xtra/ apps "['org.Characters.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'org.gnome.PowerStats.desktop', 'org.gnome.Logs.desktop', 'yelp.desktop', 'org.gnome.Yelp.desktop', 'org.gnome.eog.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Sysprof.desktop' ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name 'LibreOffice'
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ apps "['libreoffice-base.desktop', 'libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop', 'libreoffice-xsltfilter.desktop']"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/WebApps/ name 'Web Apps'
