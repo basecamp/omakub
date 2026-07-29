@@ -1,8 +1,16 @@
 #!/bin/bash
 
+source "${OMAKUB_PATH:-$HOME/.local/share/omakub}/install/lib/compat.sh"
+
 sudo add-apt-repository universe -y
-sudo add-apt-repository ppa:agornostal/ulauncher -y
-sudo apt update
+
+# Ulauncher is only in the PPA, so stop here with a clear message rather than a
+# confusing apt failure if it has not built for this Ubuntu release yet.
+if ! add_ppa_if_published ppa:agornostal/ulauncher ulauncher; then
+	omakub_note "skipping Ulauncher; rerun 'omakub install' once the PPA catches up"
+	return 0 2>/dev/null || exit 0
+fi
+
 sudo apt install ulauncher -y
 
 # Start ulauncher to have it populate config before we overwrite
